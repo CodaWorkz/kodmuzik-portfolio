@@ -1,0 +1,1233 @@
+{
+  "events": [
+    {
+      "id": "event_001",
+      "artist": {
+        "tr": "Anthony Strong & CRR Caz Orkestrası",
+        "en": "Anthony Strong & CRR Jazz Orchestra"
+      },
+      "genre": {
+        "tr": "Caz",
+        "en": "Jazz"
+      },
+      "date": "2021-12-29",
+      "venue": {
+        "tr": "CRR Konser Salonu",
+        "en": "CRR Concert Hall"
+      },
+      "city": {
+        "tr": "İstanbul",
+        "en": "Istanbul"
+      },
+      "series": {
+        "tr": "",
+        "en": ""
+      },
+      "description": {
+        "tr": "CRR Caz Orkestrası işbirliği",
+        "en": "CRR Jazz Orchestra collaboration"
+      }
+    },
+    {
+      "id": "event_002",
+      "artist": {
+        "tr": "Michel Camilo & Tomatito",
+        "en": "Michel Camilo & Tomatito"
+      },
+      "genre": {
+        "tr": "Caz",
+        "en": "Jazz"
+      },
+      "date": "2021-12-18",
+      "venue": {
+        "tr": "CSO Ada",
+        "en": "CSO Ada Ankara"
+      },
+      "city": {
+        "tr": "Ankara",
+        "en": "Ankara"
+      },
+      "series": {
+        "tr": "",
+        "en": ""
+      },
+      "description": {
+        "tr": "Flamenko-Caz füzyon",
+        "en": "Flamenco-Jazz fusion"
+      }
+    },
+    {
+      "id": "event_003",
+      "artist": {
+        "tr": "Dave Weckl / Tom Kennedy Band",
+        "en": "Dave Weckl / Tom Kennedy Band"
+      },
+      "genre": {
+        "tr": "Caz",
+        "en": "Jazz"
+      },
+      "date": "2021-11-30",
+      "venue": {
+        "tr": "CRR Konser Salonu",
+        "en": "CRR Concert Hall"
+      },
+      "city": {
+        "tr": "İstanbul",
+        "en": "Istanbul"
+      },
+      "series": {
+        "tr": "",
+        "en": ""
+      },
+      "description": {
+        "tr": "Caz füzyon efsaneleri",
+        "en": "Jazz fusion legends"
+      }
+    },
+    {
+      "id": "event_004",
+      "artist": {
+        "tr": "Leprous",
+        "en": "Leprous"
+      },
+      "genre": {
+        "tr": "Progresif Rock",
+        "en": "Progressive Rock"
+      },
+      "date": "2021-11-27",
+      "venue": {
+        "tr": "Dorock XL Venue",
+        "en": "Dorock XL Venue"
+      },
+      "city": {
+        "tr": "İstanbul",
+        "en": "Istanbul"
+      },
+      "series": {
+        "tr": "",
+        "en": ""
+      },
+      "description": {
+        "tr": "Norveçli progresif metal",
+        "en": "Norwegian progressive metal"
+      }
+    },
+    {
+      "id": "event_005",
+      "artist": {
+        "tr": "Schnellertollermeier",
+        "en": "Schnellertollermeier"
+      },
+      "genre": {
+        "tr": "Deneysel",
+        "en": "Experimental"
+      },
+      "date": "2021-12-03",
+      "venue": {
+        "tr": "Borusan Müzik Evi",
+        "en": "Borusan Music House"
+      },
+      "city": {
+        "tr": "İstanbul",
+        "en": "Istanbul"
+      },
+      "series": {
+        "tr": "Nova Muzak #33",
+        "en": "Nova Muzak #33"
+      },
+      "description": {
+        "tr": "Borusan işbirliği",
+        "en": "Borusan collaboration"
+      }
+    },
+    {
+      "id": "event_006",
+      "artist": {
+        "tr": "Chris Botti",
+        "en": "Chris Botti"
+      },
+      "genre": {
+        "tr": "Caz",
+        "en": "Jazz"
+      },
+      "date": "2021-11-02",
+      "venue": {
+        "tr": "AKM İstanbul",
+        "en": "AKM Istanbul"
+      },
+      "city": {
+        "tr": "İstanbul",
+        "en": "Istanbul"
+      },
+      "series": {
+        "tr": "",
+        "en": ""
+      },
+      "description": {
+        "tr": "AKM açılış etkinlikleri",
+        "en": "AKM opening events"
+      }
+    },
+    {
+      "id": "event_007",
+      "artist": {
+        "tr": "Eivor",
+        "en": "Eivor"
+      },
+      "genre": {
+        "tr": "Dünya Müziği",
+        "en": "World Music"
+      },
+      "date": "2020-03-12",
+      "venue": {
+        "tr": "Zorlu PSM",
+        "en": "Zorlu PSM"
+      },
+      "city": {
+        "tr": "İstanbul",
+        "en": "Istanbul"
+      },
+      "series": {
+        "tr": "",
+        "en": ""
+      },
+      "description": {
+        "tr": "Faroe Adaları şarkıcı-söz yazarı",
+        "en": "Faroese singer-songwriter"
+      }
+    },
+    {
+      "id": "event_008",
+      "artist": {
+        "tr": "Riverside",
+        "en": "Riverside"
+      },
+      "genre": {
+        "tr": "Progresif Rock",
+        "en": "Progressive Rock"
+      },
+      "date": "2020-03-10",
+      "venue": {
+        "tr": "Zorlu PSM",
+        "en": "Zorlu PSM"
+      },
+      "city": {
+        "tr": "İstanbul",
+        "en": "Istanbul"
+      },
+      "series": {
+        "tr": "",
+        "en": ""
+      },
+      "description": {
+        "tr": "Polonyalı progresif rock",
+        "en": "Polish progressive rock"
+      }
+    },
+    {
+      "id": "event_009",
+      "artist": {
+        "tr": "MMMD (Mohammad)",
+        "en": "MMMD (Mohammad)"
+      },
+      "genre": {
+        "tr": "Elektronik",
+        "en": "Electronic"
+      },
+      "date": "2020-03-06",
+      "venue": {
+        "tr": "Borusan Müzik Evi",
+        "en": "Borusan Music House"
+      },
+      "city": {
+        "tr": "İstanbul",
+        "en": "Istanbul"
+      },
+      "series": {
+        "tr": "Nova Muzak #31",
+        "en": "Nova Muzak #31"
+      },
+      "description": {
+        "tr": "Deneysel elektronik",
+        "en": "Experimental electronic"
+      }
+    },
+    {
+      "id": "event_010",
+      "artist": {
+        "tr": "Tindersticks",
+        "en": "Tindersticks"
+      },
+      "genre": {
+        "tr": "Alternatif Rock",
+        "en": "Alternative Rock"
+      },
+      "date": "2020-02-15",
+      "venue": {
+        "tr": "İş Kuleleri Salonu",
+        "en": "İş Towers Hall"
+      },
+      "city": {
+        "tr": "İstanbul",
+        "en": "Istanbul"
+      },
+      "series": {
+        "tr": "",
+        "en": ""
+      },
+      "description": {
+        "tr": "İngiliz indie rock",
+        "en": "British indie rock"
+      }
+    },
+    {
+      "id": "event_011",
+      "artist": {
+        "tr": "Alan Parsons Live Project",
+        "en": "Alan Parsons Live Project"
+      },
+      "genre": {
+        "tr": "Progresif Rock",
+        "en": "Progressive Rock"
+      },
+      "date": "2019-05-31",
+      "venue": {
+        "tr": "Zorlu PSM",
+        "en": "Zorlu PSM"
+      },
+      "city": {
+        "tr": "İstanbul",
+        "en": "Istanbul"
+      },
+      "series": {
+        "tr": "3. Zorlu PSM Caz Festivali",
+        "en": "3rd Zorlu PSM Jazz Festival"
+      },
+      "description": {
+        "tr": "Progresif rock efsanesi",
+        "en": "Progressive rock legend"
+      }
+    },
+    {
+      "id": "event_012",
+      "artist": {
+        "tr": "Chris Botti",
+        "en": "Chris Botti"
+      },
+      "genre": {
+        "tr": "Caz",
+        "en": "Jazz"
+      },
+      "date": "2019-05-24",
+      "venue": {
+        "tr": "Zorlu PSM",
+        "en": "Zorlu PSM"
+      },
+      "city": {
+        "tr": "İstanbul",
+        "en": "Istanbul"
+      },
+      "series": {
+        "tr": "3. Zorlu PSM Caz Festivali",
+        "en": "3rd Zorlu PSM Jazz Festival"
+      },
+      "description": {
+        "tr": "Smooth caz trompetçisi",
+        "en": "Smooth jazz trumpeter"
+      }
+    },
+    {
+      "id": "event_013",
+      "artist": {
+        "tr": "Bobby McFerrin",
+        "en": "Bobby McFerrin"
+      },
+      "genre": {
+        "tr": "Caz",
+        "en": "Jazz"
+      },
+      "date": "2019-05-06",
+      "venue": {
+        "tr": "Zorlu PSM",
+        "en": "Zorlu PSM"
+      },
+      "city": {
+        "tr": "İstanbul",
+        "en": "Istanbul"
+      },
+      "series": {
+        "tr": "3. Zorlu PSM Caz Festivali",
+        "en": "3rd Zorlu PSM Jazz Festival"
+      },
+      "description": {
+        "tr": "Vokal caz virtüözü",
+        "en": "Vocal jazz virtuoso"
+      }
+    },
+    {
+      "id": "event_014",
+      "artist": {
+        "tr": "John McLaughlin & The 4th Dimension",
+        "en": "John McLaughlin & The 4th Dimension"
+      },
+      "genre": {
+        "tr": "Füzyon Caz",
+        "en": "Fusion Jazz"
+      },
+      "date": "2019-04-25",
+      "venue": {
+        "tr": "Zorlu PSM",
+        "en": "Zorlu PSM"
+      },
+      "city": {
+        "tr": "İstanbul",
+        "en": "Istanbul"
+      },
+      "series": {
+        "tr": "3. Zorlu PSM Caz Festivali",
+        "en": "3rd Zorlu PSM Jazz Festival"
+      },
+      "description": {
+        "tr": "Gitar füzyon ustası",
+        "en": "Guitar fusion master"
+      }
+    },
+    {
+      "id": "event_015",
+      "artist": {
+        "tr": "Chick Corea",
+        "en": "Chick Corea"
+      },
+      "genre": {
+        "tr": "Caz",
+        "en": "Jazz"
+      },
+      "date": "2018-11-07",
+      "venue": {
+        "tr": "AASSM İzmir",
+        "en": "AASSM Izmir"
+      },
+      "city": {
+        "tr": "İzmir",
+        "en": "Izmir"
+      },
+      "series": {
+        "tr": "",
+        "en": ""
+      },
+      "description": {
+        "tr": "Caz piyano efsanesi",
+        "en": "Jazz piano legend"
+      }
+    },
+    {
+      "id": "event_016",
+      "artist": {
+        "tr": "Victor Wooten Trio",
+        "en": "Victor Wooten Trio"
+      },
+      "genre": {
+        "tr": "Caz",
+        "en": "Jazz"
+      },
+      "date": "2018-10-24",
+      "venue": {
+        "tr": "Zorlu PSM",
+        "en": "Zorlu PSM"
+      },
+      "city": {
+        "tr": "İstanbul",
+        "en": "Istanbul"
+      },
+      "series": {
+        "tr": "",
+        "en": ""
+      },
+      "description": {
+        "tr": "Bas virtüözü",
+        "en": "Bass virtuoso"
+      }
+    },
+    {
+      "id": "event_017",
+      "artist": {
+        "tr": "Steven Wilson",
+        "en": "Steven Wilson"
+      },
+      "genre": {
+        "tr": "Progresif Rock",
+        "en": "Progressive Rock"
+      },
+      "date": "2018-08-22",
+      "venue": {
+        "tr": "Zorlu PSM",
+        "en": "Zorlu PSM"
+      },
+      "city": {
+        "tr": "İstanbul",
+        "en": "Istanbul"
+      },
+      "series": {
+        "tr": "",
+        "en": ""
+      },
+      "description": {
+        "tr": "Porcupine Tree önderi",
+        "en": "Porcupine Tree frontman"
+      }
+    },
+    {
+      "id": "event_018",
+      "artist": {
+        "tr": "Camel",
+        "en": "Camel"
+      },
+      "genre": {
+        "tr": "Progresif Rock",
+        "en": "Progressive Rock"
+      },
+      "date": "2018-05-22",
+      "venue": {
+        "tr": "Zorlu PSM",
+        "en": "Zorlu PSM"
+      },
+      "city": {
+        "tr": "İstanbul",
+        "en": "Istanbul"
+      },
+      "series": {
+        "tr": "",
+        "en": ""
+      },
+      "description": {
+        "tr": "İngiliz prog rock efsaneleri",
+        "en": "British prog rock legends"
+      }
+    },
+    {
+      "id": "event_019",
+      "artist": {
+        "tr": "Jan Garbarek Group feat Trilok Gurtu",
+        "en": "Jan Garbarek Group feat Trilok Gurtu"
+      },
+      "genre": {
+        "tr": "Dünya Müziği",
+        "en": "World Music"
+      },
+      "date": "2017-05-05",
+      "venue": {
+        "tr": "Zorlu PSM",
+        "en": "Zorlu PSM"
+      },
+      "city": {
+        "tr": "İstanbul",
+        "en": "Istanbul"
+      },
+      "series": {
+        "tr": "1. Zorlu PSM Caz Festivali",
+        "en": "1st Zorlu PSM Jazz Festival"
+      },
+      "description": {
+        "tr": "Nordik caz, Hint perküsyonu buluşuyor",
+        "en": "Nordic jazz meets Indian percussion"
+      }
+    },
+    {
+      "id": "event_020",
+      "artist": {
+        "tr": "Patti Smith",
+        "en": "Patti Smith"
+      },
+      "genre": {
+        "tr": "Alternatif Rock",
+        "en": "Alternative Rock"
+      },
+      "date": "2016-06-23",
+      "venue": {
+        "tr": "Zorlu PSM",
+        "en": "Zorlu PSM"
+      },
+      "city": {
+        "tr": "İstanbul",
+        "en": "Istanbul"
+      },
+      "series": {
+        "tr": "",
+        "en": ""
+      },
+      "description": {
+        "tr": "Punk şiir ikonu",
+        "en": "Punk poetry icon"
+      }
+    },
+    {
+      "id": "event_021",
+      "artist": {
+        "tr": "Tindersticks",
+        "en": "Tindersticks"
+      },
+      "genre": {
+        "tr": "Alternatif Rock",
+        "en": "Alternative Rock"
+      },
+      "date": "2016-05-28",
+      "venue": {
+        "tr": "Zorlu PSM",
+        "en": "Zorlu PSM"
+      },
+      "city": {
+        "tr": "İstanbul",
+        "en": "Istanbul"
+      },
+      "series": {
+        "tr": "",
+        "en": ""
+      },
+      "description": {
+        "tr": "İngiliz indie rock",
+        "en": "British indie rock"
+      }
+    },
+    {
+      "id": "event_022",
+      "artist": {
+        "tr": "Godspeed You! Black Emperor",
+        "en": "Godspeed You! Black Emperor"
+      },
+      "genre": {
+        "tr": "Post Rock",
+        "en": "Post Rock"
+      },
+      "date": "2015-11-17",
+      "venue": {
+        "tr": "Zorlu PSM",
+        "en": "Zorlu PSM"
+      },
+      "city": {
+        "tr": "İstanbul",
+        "en": "Istanbul"
+      },
+      "series": {
+        "tr": "",
+        "en": ""
+      },
+      "description": {
+        "tr": "Kanadalı post-rock kolektifi",
+        "en": "Canadian post-rock collective"
+      }
+    },
+    {
+      "id": "event_023",
+      "artist": {
+        "tr": "Jan Garbarek Group feat Trilok Gurtu",
+        "en": "Jan Garbarek Group feat Trilok Gurtu"
+      },
+      "genre": {
+        "tr": "Dünya Müziği",
+        "en": "World Music"
+      },
+      "date": "2015-04-26",
+      "venue": {
+        "tr": "CRR Konser Salonu",
+        "en": "CRR Concert Hall"
+      },
+      "city": {
+        "tr": "İstanbul",
+        "en": "Istanbul"
+      },
+      "series": {
+        "tr": "",
+        "en": ""
+      },
+      "description": {
+        "tr": "Saksofon tabla buluşması",
+        "en": "Saxophone meets tabla"
+      }
+    },
+    {
+      "id": "event_024",
+      "artist": {
+        "tr": "Swans",
+        "en": "Swans"
+      },
+      "genre": {
+        "tr": "Post Rock",
+        "en": "Post Rock"
+      },
+      "date": "2015-05-02",
+      "venue": {
+        "tr": "Salon İKSV",
+        "en": "Salon IKSV"
+      },
+      "city": {
+        "tr": "İstanbul",
+        "en": "Istanbul"
+      },
+      "series": {
+        "tr": "",
+        "en": ""
+      },
+      "description": {
+        "tr": "Deneysel rock efsaneleri",
+        "en": "Experimental rock legends"
+      }
+    },
+    {
+      "id": "event_025",
+      "artist": {
+        "tr": "Toto Cutugno",
+        "en": "Toto Cutugno"
+      },
+      "genre": {
+        "tr": "Pop",
+        "en": "Pop"
+      },
+      "date": "2015-05-28",
+      "venue": {
+        "tr": "CRR Konser Salonu",
+        "en": "CRR Concert Hall"
+      },
+      "city": {
+        "tr": "İstanbul",
+        "en": "Istanbul"
+      },
+      "series": {
+        "tr": "",
+        "en": ""
+      },
+      "description": {
+        "tr": "İtalyan pop ikonu",
+        "en": "Italian pop icon"
+      }
+    },
+    {
+      "id": "event_026",
+      "artist": {
+        "tr": "Chick Corea Trio",
+        "en": "Chick Corea Trio"
+      },
+      "genre": {
+        "tr": "Caz",
+        "en": "Jazz"
+      },
+      "date": "2012-11-27",
+      "venue": {
+        "tr": "CRR Konser Salonu",
+        "en": "CRR Concert Hall"
+      },
+      "city": {
+        "tr": "İstanbul",
+        "en": "Istanbul"
+      },
+      "series": {
+        "tr": "",
+        "en": ""
+      },
+      "description": {
+        "tr": "Piyano caz ustalığı",
+        "en": "Piano jazz mastery"
+      }
+    },
+    {
+      "id": "event_027",
+      "artist": {
+        "tr": "Pat Metheny Trio",
+        "en": "Pat Metheny Trio"
+      },
+      "genre": {
+        "tr": "Caz",
+        "en": "Jazz"
+      },
+      "date": "2011-11-30",
+      "venue": {
+        "tr": "CRR Konser Salonu",
+        "en": "CRR Concert Hall"
+      },
+      "city": {
+        "tr": "İstanbul",
+        "en": "Istanbul"
+      },
+      "series": {
+        "tr": "",
+        "en": ""
+      },
+      "description": {
+        "tr": "Gitar caz yenilikçisi",
+        "en": "Guitar jazz innovator"
+      }
+    },
+    {
+      "id": "event_028",
+      "artist": {
+        "tr": "Wayne Shorter Quartet",
+        "en": "Wayne Shorter Quartet"
+      },
+      "genre": {
+        "tr": "Caz",
+        "en": "Jazz"
+      },
+      "date": "2011-10-18",
+      "venue": {
+        "tr": "CRR Konser Salonu",
+        "en": "CRR Concert Hall"
+      },
+      "city": {
+        "tr": "İstanbul",
+        "en": "Istanbul"
+      },
+      "series": {
+        "tr": "",
+        "en": ""
+      },
+      "description": {
+        "tr": "Saksofon efsanesi",
+        "en": "Saxophone legend"
+      }
+    },
+    {
+      "id": "event_029",
+      "artist": {
+        "tr": "Chick Corea - Gary Burton",
+        "en": "Chick Corea - Gary Burton"
+      },
+      "genre": {
+        "tr": "Caz",
+        "en": "Jazz"
+      },
+      "date": "2011-03-18",
+      "venue": {
+        "tr": "CRR Konser Salonu",
+        "en": "CRR Concert Hall"
+      },
+      "city": {
+        "tr": "İstanbul",
+        "en": "Istanbul"
+      },
+      "series": {
+        "tr": "",
+        "en": ""
+      },
+      "description": {
+        "tr": "Piyano-vibrafon düeti",
+        "en": "Piano-vibraphone duo"
+      }
+    },
+    {
+      "id": "event_030",
+      "artist": {
+        "tr": "Chick Corea – John McLaughlin Five Peace Band",
+        "en": "Chick Corea – John McLaughlin Five Peace Band"
+      },
+      "genre": {
+        "tr": "Caz",
+        "en": "Jazz"
+      },
+      "date": "2008-10-30",
+      "venue": {
+        "tr": "CRR Konser Salonu",
+        "en": "CRR Concert Hall"
+      },
+      "city": {
+        "tr": "İstanbul",
+        "en": "Istanbul"
+      },
+      "series": {
+        "tr": "",
+        "en": ""
+      },
+      "description": {
+        "tr": "Füzyon efsaneleri işbirliği",
+        "en": "Fusion legends collaboration"
+      }
+    },
+    {
+      "id": "event_031",
+      "artist": {
+        "tr": "Faust",
+        "en": "Faust"
+      },
+      "genre": {
+        "tr": "Krautrock",
+        "en": "Krautrock"
+      },
+      "date": "2008-10-13",
+      "venue": {
+        "tr": "Garajistanbul",
+        "en": "Garajistanbul"
+      },
+      "city": {
+        "tr": "İstanbul",
+        "en": "Istanbul"
+      },
+      "series": {
+        "tr": "",
+        "en": ""
+      },
+      "description": {
+        "tr": "Alman deneysel rock öncüleri",
+        "en": "German experimental rock pioneers"
+      }
+    },
+    {
+      "id": "event_032",
+      "artist": {
+        "tr": "Pharoah Sanders",
+        "en": "Pharoah Sanders"
+      },
+      "genre": {
+        "tr": "Caz",
+        "en": "Jazz"
+      },
+      "date": "2007-12-08",
+      "venue": {
+        "tr": "CRR Konser Salonu",
+        "en": "CRR Concert Hall"
+      },
+      "city": {
+        "tr": "İstanbul",
+        "en": "Istanbul"
+      },
+      "series": {
+        "tr": "",
+        "en": ""
+      },
+      "description": {
+        "tr": "Spiritüel caz saksofon",
+        "en": "Spiritual jazz saxophone"
+      }
+    },
+    {
+      "id": "event_033",
+      "artist": {
+        "tr": "Joe Satriani",
+        "en": "Joe Satriani"
+      },
+      "genre": {
+        "tr": "Rock",
+        "en": "Rock"
+      },
+      "date": "2007-07-14",
+      "venue": {
+        "tr": "İstanbul Arena",
+        "en": "Istanbul Arena"
+      },
+      "city": {
+        "tr": "İstanbul",
+        "en": "Istanbul"
+      },
+      "series": {
+        "tr": "",
+        "en": ""
+      },
+      "description": {
+        "tr": "Gitar virtüözü",
+        "en": "Guitar virtuoso"
+      }
+    },
+    {
+      "id": "event_034",
+      "artist": {
+        "tr": "Dream Theater",
+        "en": "Dream Theater"
+      },
+      "genre": {
+        "tr": "Progresif Rock",
+        "en": "Progressive Rock"
+      },
+      "date": "2007-06-29",
+      "venue": {
+        "tr": "İstanbul Arena",
+        "en": "Istanbul Arena"
+      },
+      "city": {
+        "tr": "İstanbul",
+        "en": "Istanbul"
+      },
+      "series": {
+        "tr": "",
+        "en": ""
+      },
+      "description": {
+        "tr": "Progresif metal öncüleri",
+        "en": "Progressive metal pioneers"
+      }
+    },
+    {
+      "id": "event_035",
+      "artist": {
+        "tr": "Nick Cave Solo",
+        "en": "Nick Cave Solo"
+      },
+      "genre": {
+        "tr": "Alternatif Rock",
+        "en": "Alternative Rock"
+      },
+      "date": "2004-09-19",
+      "venue": {
+        "tr": "Harbiye Cemil Topuzlu",
+        "en": "Harbiye Cemil Topuzlu"
+      },
+      "city": {
+        "tr": "İstanbul",
+        "en": "Istanbul"
+      },
+      "series": {
+        "tr": "Event 4",
+        "en": "Event 4"
+      },
+      "description": {
+        "tr": "Cave'in samimi solo performansı",
+        "en": "Cave's intimate solo performance"
+      }
+    },
+    {
+      "id": "event_036",
+      "artist": {
+        "tr": "Einstürzende Neubauten",
+        "en": "Einstürzende Neubauten"
+      },
+      "genre": {
+        "tr": "Endüstriyel",
+        "en": "Industrial"
+      },
+      "date": "2004-04-10",
+      "venue": {
+        "tr": "Maslak Venue",
+        "en": "Maslak Venue"
+      },
+      "city": {
+        "tr": "İstanbul",
+        "en": "Istanbul"
+      },
+      "series": {
+        "tr": "",
+        "en": ""
+      },
+      "description": {
+        "tr": "Alman endüstriyel öncüler",
+        "en": "German industrial pioneers"
+      }
+    },
+    {
+      "id": "event_037",
+      "artist": {
+        "tr": "Tortoise",
+        "en": "Tortoise"
+      },
+      "genre": {
+        "tr": "Post Rock",
+        "en": "Post Rock"
+      },
+      "date": "2004-03-24",
+      "venue": {
+        "tr": "Babylon",
+        "en": "Babylon"
+      },
+      "city": {
+        "tr": "İstanbul",
+        "en": "Istanbul"
+      },
+      "series": {
+        "tr": "",
+        "en": ""
+      },
+      "description": {
+        "tr": "Chicago post-rock yenilikçileri",
+        "en": "Chicago post-rock innovators"
+      }
+    },
+    {
+      "id": "event_038",
+      "artist": {
+        "tr": "The Fall",
+        "en": "The Fall"
+      },
+      "genre": {
+        "tr": "Post Punk",
+        "en": "Post Punk"
+      },
+      "date": "2003-02-05",
+      "venue": {
+        "tr": "Babylon",
+        "en": "Babylon"
+      },
+      "city": {
+        "tr": "İstanbul",
+        "en": "Istanbul"
+      },
+      "series": {
+        "tr": "British Modern Music Fest. Vol. 2",
+        "en": "British Modern Music Fest. Vol. 2"
+      },
+      "description": {
+        "tr": "Mark E. Smith'in efsanevi grubu",
+        "en": "Mark E. Smith's legendary band"
+      }
+    },
+    {
+      "id": "event_039",
+      "artist": {
+        "tr": "Stereolab",
+        "en": "Stereolab"
+      },
+      "genre": {
+        "tr": "Elektronik",
+        "en": "Electronic"
+      },
+      "date": "2001-05-25",
+      "venue": {
+        "tr": "Babylon",
+        "en": "Babylon"
+      },
+      "city": {
+        "tr": "İstanbul",
+        "en": "Istanbul"
+      },
+      "series": {
+        "tr": "",
+        "en": ""
+      },
+      "description": {
+        "tr": "Fransız-İngiliz avant-pop",
+        "en": "French-British avant-pop"
+      }
+    },
+    {
+      "id": "event_040",
+      "artist": {
+        "tr": "Mouse on Mars",
+        "en": "Mouse on Mars"
+      },
+      "genre": {
+        "tr": "Elektronik",
+        "en": "Electronic"
+      },
+      "date": "2000-05-27",
+      "venue": {
+        "tr": "Babylon",
+        "en": "Babylon"
+      },
+      "city": {
+        "tr": "İstanbul",
+        "en": "Istanbul"
+      },
+      "series": {
+        "tr": "",
+        "en": ""
+      },
+      "description": {
+        "tr": "Alman elektronik ikilisi",
+        "en": "German electronic duo"
+      }
+    },
+    {
+      "id": "event_041",
+      "artist": {
+        "tr": "To Rococo Rot",
+        "en": "To Rococo Rot"
+      },
+      "genre": {
+        "tr": "Elektronik",
+        "en": "Electronic"
+      },
+      "date": "1999-12-01",
+      "venue": {
+        "tr": "Babylon",
+        "en": "Babylon"
+      },
+      "city": {
+        "tr": "İstanbul",
+        "en": "Istanbul"
+      },
+      "series": {
+        "tr": "Elec:tri:cities",
+        "en": "Elec:tri:cities"
+      },
+      "description": {
+        "tr": "Alman elektronik üçlüsü",
+        "en": "German electronic trio"
+      }
+    },
+    {
+      "id": "event_042",
+      "artist": {
+        "tr": "4-Hero",
+        "en": "4-Hero"
+      },
+      "genre": {
+        "tr": "Elektronik",
+        "en": "Electronic"
+      },
+      "date": "1997-05-03",
+      "venue": {
+        "tr": "Alt Kemancı",
+        "en": "Alt Kemancı"
+      },
+      "city": {
+        "tr": "İstanbul",
+        "en": "Istanbul"
+      },
+      "series": {
+        "tr": "",
+        "en": ""
+      },
+      "description": {
+        "tr": "İngiliz drum & bass öncüleri",
+        "en": "UK drum & bass pioneers"
+      }
+    }
+  ],
+  "meta": {
+    "totalEvents": 42,
+    "dateRange": {
+      "from": "1997-05-03",
+      "to": "2021-12-29"
+    },
+    "languages": ["tr", "en"],
+    "genres": [
+      {"tr": "Caz", "en": "Jazz"},
+      {"tr": "Progresif Rock", "en": "Progressive Rock"},
+      {"tr": "Alternatif Rock", "en": "Alternative Rock"},
+      {"tr": "Elektronik", "en": "Electronic"},
+      {"tr": "Dünya Müziği", "en": "World Music"},
+      {"tr": "Post Rock", "en": "Post Rock"},
+      {"tr": "Krautrock", "en": "Krautrock"},
+      {"tr": "Deneysel", "en": "Experimental"},
+      {"tr": "Füzyon Caz", "en": "Fusion Jazz"},
+      {"tr": "Pop", "en": "Pop"},
+      {"tr": "Rock", "en": "Rock"},
+      {"tr": "Post Punk", "en": "Post Punk"},
+      {"tr": "Endüstriyel", "en": "Industrial"}
+    ],
+    "venues": [
+      {"tr": "CRR Konser Salonu", "en": "CRR Concert Hall"},
+      {"tr": "Zorlu PSM", "en": "Zorlu PSM"},
+      {"tr": "Borusan Müzik Evi", "en": "Borusan Music House"},
+      {"tr": "Babylon", "en": "Babylon"},
+      {"tr": "İstanbul Arena", "en": "Istanbul Arena"},
+      {"tr": "Garajistanbul", "en": "Garajistanbul"},
+      {"tr": "Salon İKSV", "en": "Salon IKSV"},
+      {"tr": "İş Kuleleri Salonu", "en": "İş Towers Hall"},
+      {"tr": "CSO Ada", "en": "CSO Ada Ankara"},
+      {"tr": "AASSM İzmir", "en": "AASSM Izmir"},
+      {"tr": "AKM İstanbul", "en": "AKM Istanbul"},
+      {"tr": "Dorock XL Venue", "en": "Dorock XL Venue"},
+      {"tr": "Harbiye Cemil Topuzlu", "en": "Harbiye Cemil Topuzlu"},
+      {"tr": "Maslak Venue", "en": "Maslak Venue"},
+      {"tr": "Alt Kemancı", "en": "Alt Kemancı"}
+    ],
+    "cities": [
+      {"tr": "İstanbul", "en": "Istanbul"},
+      {"tr": "Ankara", "en": "Ankara"},
+      {"tr": "İzmir", "en": "Izmir"}
+    ],
+    "company": {
+      "name": "Kodmüzik Organizasyon",
+      "established": 1999,
+      "description": {
+        "tr": "25 yıldır müziği gerçekleştiriyoruz",
+        "en": "Making music happen for 25 years"
+      }
+    }
+  }
+}

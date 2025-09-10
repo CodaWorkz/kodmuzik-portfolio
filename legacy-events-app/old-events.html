@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kodmüzik - Since 1997</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-primary: #1a1a1a;
+            --text-primary: #ffffff;
+            --text-secondary: #888888;
+            --border-color: #333333;
+            --hover-bg: #2a2a2a;
+            --filter-bg: #0f0f0f;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        header {
+            padding: 60px 40px;
+            border-bottom: 1px solid var(--border-color);
+            position: relative;
+        }
+
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            height: 60px;
+            width: auto;
+            margin-bottom: 16px;
+            transition: var(--transition);
+        }
+
+        .logo:hover {
+            opacity: 0.8;
+        }
+
+        .subtitle {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            font-weight: 300;
+        }
+
+        /* Language Toggle */
+        .lang-toggle {
+            position: absolute;
+            top: 40px;
+            right: 40px;
+            background: var(--hover-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            padding: 4px;
+            display: flex;
+            gap: 4px;
+            transition: var(--transition);
+        }
+
+        .lang-toggle button {
+            background: transparent;
+            border: none;
+            color: var(--text-secondary);
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: var(--transition);
+            font-weight: 500;
+        }
+
+        .lang-toggle button.active {
+            background: var(--text-primary);
+            color: var(--bg-primary);
+        }
+
+        /* Filters */
+        .filters-section {
+            padding: 40px;
+            background: var(--filter-bg);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .filters-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            align-items: end;
+        }
+
+        .filter-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .filter-group label {
+            font-size: 12px;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-weight: 500;
+        }
+
+        .filter-group input,
+        .filter-group select {
+            background: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            padding: 12px 16px;
+            border-radius: 8px;
+            font-size: 14px;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .filter-group input:focus,
+        .filter-group select:focus {
+            outline: none;
+            border-color: var(--text-secondary);
+        }
+
+        .filter-group select option:disabled {
+            color: var(--border-color);
+        }
+
+        .filter-group select option[style*="display: none"] {
+            display: none !important;
+        }
+
+        .filter-actions {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+        }
+
+        .clear-filters {
+            background: transparent;
+            border: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            padding: 12px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: var(--transition);
+            white-space: nowrap;
+        }
+
+        .clear-filters:hover {
+            border-color: var(--text-primary);
+            color: var(--text-primary);
+        }
+
+        .results-count {
+            color: var(--text-secondary);
+            font-size: 14px;
+            white-space: nowrap;
+        }
+
+        /* Events Grid */
+        .events-section {
+            padding: 60px 40px;
+            min-height: 400px;
+        }
+
+        .events-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .events-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 24px;
+        }
+
+        .event-card {
+            background: transparent;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 32px;
+            transition: var(--transition);
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .event-card:hover {
+            background: var(--hover-bg);
+            transform: translateY(-2px);
+            border-color: var(--text-secondary);
+        }
+
+        .event-artist {
+            font-size: 1.4rem;
+            font-weight: 300;
+            line-height: 1.3;
+            letter-spacing: -0.01em;
+        }
+
+        .event-details {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+
+        .event-detail {
+            display: flex;
+            gap: 8px;
+        }
+
+        .event-detail-label {
+            font-weight: 500;
+            min-width: 60px;
+        }
+
+        /* Loading State */
+        .loading {
+            text-align: center;
+            padding: 80px 20px;
+            color: var(--text-secondary);
+        }
+
+        .error {
+            text-align: center;
+            padding: 80px 20px;
+            color: #ff6b6b;
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 80px 20px;
+            color: var(--text-secondary);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .events-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 40px 20px;
+            }
+
+            .lang-toggle {
+                top: 20px;
+                right: 20px;
+            }
+
+            .filters-section {
+                padding: 30px 20px;
+            }
+
+            .filters-container {
+                grid-template-columns: 1fr;
+            }
+
+            .events-section {
+                padding: 40px 20px;
+            }
+
+            .events-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+
+            .logo {
+                height: 50px;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .event-card {
+            animation: fadeIn 0.4s ease-out;
+            animation-fill-mode: both;
+        }
+
+        .event-card:nth-child(n) {
+            animation-delay: calc(0.05s * var(--i));
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <img src="KodLogo.svg" alt="Kodmüzik" class="logo">
+            <p class="subtitle" data-tr="Seçkin Müzik Etkinlikleri" data-en="Selective Music Events">Selective Music Events</p>
+        </div>
+        <div class="lang-toggle">
+            <button class="lang-btn" data-lang="en">EN</button>
+            <button class="lang-btn" data-lang="tr">TR</button>
+        </div>
+    </header>
+
+    <section class="filters-section">
+        <div class="filters-container">
+            <div class="filter-group">
+                <label data-tr="Sanatçı" data-en="Artist">Artist</label>
+                <input type="text" id="artist-filter" 
+                       data-placeholder-tr="Sanatçı ara..." 
+                       data-placeholder-en="Search artist..."
+                       placeholder="Search artist...">
+            </div>
+            <div class="filter-group">
+                <label data-tr="Tür" data-en="Genre">Genre</label>
+                <select id="genre-filter">
+                    <option value="" data-tr="Tümü" data-en="All">All</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label data-tr="Yıl" data-en="Year">Year</label>
+                <select id="year-filter">
+                    <option value="" data-tr="Tümü" data-en="All">All</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label data-tr="Mekan" data-en="Venue">Venue</label>
+                <select id="venue-filter">
+                    <option value="" data-tr="Tümü" data-en="All">All</option>
+                </select>
+            </div>
+            <div class="filter-actions">
+                <button class="clear-filters" data-tr="Filtreleri Temizle" data-en="Clear Filters">Clear Filters</button>
+                <span class="results-count">
+                    <span data-tr="Toplam" data-en="Total">Total</span>: 
+                    <span id="results-number">0</span>
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <section class="events-section">
+        <div class="events-container">
+            <div id="events-grid" class="events-grid">
+                <div class="loading" data-tr="Yükleniyor..." data-en="Loading...">Loading...</div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        let eventsData = [];
+        let currentLang = 'en';
+
+        // Language toggle functionality
+        const langButtons = document.querySelectorAll('.lang-btn');
+        langButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                currentLang = btn.dataset.lang;
+                updateLanguage();
+                applyFilters();
+            });
+        });
+
+        function updateLanguage() {
+            // Update active language button
+            langButtons.forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.lang === currentLang);
+            });
+
+            // Update all text elements
+            document.querySelectorAll('[data-tr][data-en]').forEach(el => {
+                el.textContent = el.dataset[currentLang];
+            });
+
+            // Update placeholders
+            document.querySelectorAll('[data-placeholder-tr][data-placeholder-en]').forEach(el => {
+                el.placeholder = el.dataset[`placeholder-${currentLang}`];
+            });
+
+            // Set initial active state
+            document.querySelector(`[data-lang="${currentLang}"]`).classList.add('active');
+        }
+
+        // Fetch and process data
+        async function loadEvents() {
+            try {
+                const response = await fetch('./kod_events.json');
+                if (!response.ok) throw new Error('Failed to load events');
+                
+                const data = await response.json();
+                eventsData = data.events;
+                
+                populateFilters(data.meta);
+                applyFilters();
+                
+            } catch (error) {
+                console.error('Error loading events:', error);
+                document.getElementById('events-grid').innerHTML = 
+                    `<div class="error" data-tr="Etkinlikler yüklenirken hata oluştu" data-en="Error loading events">Error loading events</div>`;
+            }
+        }
+
+        function populateFilters(meta) {
+            // Store all options data for cascading
+            window.allGenres = meta.genres;
+            window.allVenues = meta.venues;
+            
+            // Populate genre filter
+            const genreFilter = document.getElementById('genre-filter');
+            meta.genres.forEach(genre => {
+                const option = document.createElement('option');
+                option.value = genre.en;
+                option.dataset.tr = genre.tr;
+                option.dataset.en = genre.en;
+                option.textContent = genre[currentLang];
+                genreFilter.appendChild(option);
+            });
+
+            // Extract and populate years
+            const years = [...new Set(eventsData.map(event => 
+                new Date(event.date).getFullYear()
+            ))].sort((a, b) => b - a);
+            
+            window.allYears = years;
+            
+            const yearFilter = document.getElementById('year-filter');
+            years.forEach(year => {
+                const option = document.createElement('option');
+                option.value = year;
+                option.textContent = year;
+                yearFilter.appendChild(option);
+            });
+
+            // Populate venue filter
+            const venueFilter = document.getElementById('venue-filter');
+            meta.venues.forEach(venue => {
+                const option = document.createElement('option');
+                option.value = venue.en;
+                option.dataset.tr = venue.tr;
+                option.dataset.en = venue.en;
+                option.textContent = venue[currentLang];
+                venueFilter.appendChild(option);
+            });
+
+            // Initial cascade update
+            updateCascadingFilters();
+        }
+
+        function getFilteredEvents() {
+            const artistFilter = document.getElementById('artist-filter').value.toLowerCase();
+            const genreFilter = document.getElementById('genre-filter').value;
+            const yearFilter = document.getElementById('year-filter').value;
+            const venueFilter = document.getElementById('venue-filter').value;
+
+            return eventsData.filter(event => {
+                // Artist filter - search in both languages
+                if (artistFilter && 
+                    !event.artist.tr.toLowerCase().includes(artistFilter) && 
+                    !event.artist.en.toLowerCase().includes(artistFilter)) {
+                    return false;
+                }
+
+                // Genre filter
+                if (genreFilter && event.genre.en !== genreFilter) {
+                    return false;
+                }
+
+                // Year filter
+                if (yearFilter && new Date(event.date).getFullYear() !== parseInt(yearFilter)) {
+                    return false;
+                }
+
+                // Venue filter
+                if (venueFilter && event.venue.en !== venueFilter) {
+                    return false;
+                }
+
+                return true;
+            });
+        }
+
+        function applyFilters() {
+            const filteredEvents = getFilteredEvents();
+            displayEvents(filteredEvents);
+            updateResultsCount(filteredEvents.length);
+            updateCascadingFilters();
+        }
+
+        function updateCascadingFilters() {
+            const artistFilter = document.getElementById('artist-filter').value.toLowerCase();
+            const genreFilter = document.getElementById('genre-filter').value;
+            const yearFilter = document.getElementById('year-filter').value;
+            const venueFilter = document.getElementById('venue-filter').value;
+
+            // Get available options based on current filters
+            const availableGenres = new Set();
+            const availableYears = new Set();
+            const availableVenues = new Set();
+
+            eventsData.forEach(event => {
+                let matchesFilters = true;
+
+                // Check artist filter
+                if (artistFilter && 
+                    !event.artist.tr.toLowerCase().includes(artistFilter) && 
+                    !event.artist.en.toLowerCase().includes(artistFilter)) {
+                    matchesFilters = false;
+                }
+
+                // Check year filter
+                if (yearFilter && new Date(event.date).getFullYear() !== parseInt(yearFilter)) {
+                    matchesFilters = false;
+                }
+
+                // Check genre filter
+                if (genreFilter && event.genre.en !== genreFilter) {
+                    matchesFilters = false;
+                }
+
+                // Check venue filter
+                if (venueFilter && event.venue.en !== venueFilter) {
+                    matchesFilters = false;
+                }
+
+                if (matchesFilters) {
+                    // Add available options for other filters
+                    if (!genreFilter || event.genre.en === genreFilter) {
+                        availableGenres.add(event.genre.en);
+                    }
+                    if (!yearFilter || new Date(event.date).getFullYear() === parseInt(yearFilter)) {
+                        availableYears.add(new Date(event.date).getFullYear());
+                    }
+                    if (!venueFilter || event.venue.en === venueFilter) {
+                        availableVenues.add(event.venue.en);
+                    }
+                }
+            });
+
+            // Update genre filter options
+            const genreSelect = document.getElementById('genre-filter');
+            const currentGenreValue = genreSelect.value;
+            Array.from(genreSelect.options).forEach(option => {
+                if (option.value === '') return; // Keep "All" option
+                option.style.display = availableGenres.has(option.value) ? '' : 'none';
+                option.disabled = !availableGenres.has(option.value);
+            });
+
+            // Update year filter options
+            const yearSelect = document.getElementById('year-filter');
+            const currentYearValue = yearSelect.value;
+            Array.from(yearSelect.options).forEach(option => {
+                if (option.value === '') return; // Keep "All" option
+                const yearNum = parseInt(option.value);
+                option.style.display = availableYears.has(yearNum) ? '' : 'none';
+                option.disabled = !availableYears.has(yearNum);
+            });
+
+            // Update venue filter options
+            const venueSelect = document.getElementById('venue-filter');
+            const currentVenueValue = venueSelect.value;
+            Array.from(venueSelect.options).forEach(option => {
+                if (option.value === '') return; // Keep "All" option
+                option.style.display = availableVenues.has(option.value) ? '' : 'none';
+                option.disabled = !availableVenues.has(option.value);
+            });
+        }
+
+        function displayEvents(events) {
+            const grid = document.getElementById('events-grid');
+            
+            if (events.length === 0) {
+                grid.innerHTML = `<div class="no-results" data-tr="Sonuç bulunamadı" data-en="No results found">No results found</div>`;
+                updateLanguage();
+                return;
+            }
+
+            grid.innerHTML = events.map((event, index) => {
+                const date = new Date(event.date);
+                const formattedDate = date.toLocaleDateString(currentLang === 'tr' ? 'tr-TR' : 'en-US', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric'
+                });
+
+                return `
+                    <div class="event-card" style="--i: ${index}">
+                        <h3 class="event-artist">${event.artist[currentLang]}</h3>
+                        <div class="event-details">
+                            <div class="event-detail">
+                                <span class="event-detail-label" data-tr="Tür:" data-en="Genre:">${currentLang === 'tr' ? 'Tür:' : 'Genre:'}</span>
+                                <span>${event.genre[currentLang]}</span>
+                            </div>
+                            <div class="event-detail">
+                                <span class="event-detail-label" data-tr="Tarih:" data-en="Date:">${currentLang === 'tr' ? 'Tarih:' : 'Date:'}</span>
+                                <span>${formattedDate}</span>
+                            </div>
+                            <div class="event-detail">
+                                <span class="event-detail-label" data-tr="Mekan:" data-en="Venue:">${currentLang === 'tr' ? 'Mekan:' : 'Venue:'}</span>
+                                <span>${event.venue[currentLang]}</span>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function updateResultsCount(count) {
+            document.getElementById('results-number').textContent = count;
+        }
+
+        // Event listeners for filters
+        document.getElementById('artist-filter').addEventListener('input', applyFilters);
+        document.getElementById('genre-filter').addEventListener('change', applyFilters);
+        document.getElementById('year-filter').addEventListener('change', applyFilters);
+        document.getElementById('venue-filter').addEventListener('change', applyFilters);
+
+        // Clear filters
+        document.querySelector('.clear-filters').addEventListener('click', () => {
+            document.getElementById('artist-filter').value = '';
+            document.getElementById('genre-filter').value = '';
+            document.getElementById('year-filter').value = '';
+            document.getElementById('venue-filter').value = '';
+            applyFilters();
+        });
+
+        // Initialize
+        updateLanguage();
+        loadEvents();
+    </script>
+</body>
+</html>

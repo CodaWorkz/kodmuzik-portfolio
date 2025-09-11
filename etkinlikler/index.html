@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Etkinlikler - Kodmüzik</title>
+    <meta
+      name="description"
+      content="Kodmüzik etkinlikleri - 1999'dan beri düzenlenen seçkin müzik etkinlikleri"
+    />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Global Styles -->
+    <link rel="stylesheet" href="/css/main.css" />
+    <!-- Events Page Styles -->
+    <link rel="stylesheet" href="/css/events.css" />
+  </head>
+  <body>
+    <!-- Skip to content link for screen readers -->
+    <a href="#main-content" class="skip-to-content">İçeriğe geç</a>
+
+    <!-- Side Menu -->
+    <nav class="side-menu" aria-label="Ana menü">
+      <!-- Logo/Home -->
+      <a href="/" class="menu-logo" aria-label="Kodmüzik ana sayfa">
+        <img
+          src="/KodLogo.svg"
+          alt="Kodmüzik logosu"
+          class="menu-logo-img"
+          loading="eager"
+          decoding="async"
+        />
+      </a>
+
+      <!-- Navigation -->
+      <div class="menu-nav">
+        <ul class="menu-items">
+          <li class="menu-item">
+            <a href="/" class="menu-link" data-path="/">ANA SAYFA</a>
+          </li>
+          <li class="menu-item">
+            <a href="/hizmetler" class="menu-link" data-path="/hizmetler"
+              >HİZMETLER</a
+            >
+          </li>
+          <li class="menu-item">
+            <a href="/etkinlikler" class="menu-link" data-path="/etkinlikler"
+              >ETKİNLİKLER</a
+            >
+          </li>
+          <li class="menu-item">
+            <a href="/hakkimizda" class="menu-link" data-path="/hakkimizda"
+              >HAKKIMIZDA</a
+            >
+          </li>
+          <li class="menu-item">
+            <a href="/iletisim" class="menu-link" data-path="/iletisim"
+              >İLETİŞİM</a
+            >
+          </li>
+        </ul>
+      </div>
+
+      <!-- Language Toggle -->
+      <div class="lang-toggle-menu" aria-label="Dil seçimi">
+        <div class="lang-options">
+          <a
+            href="/etkinlikler"
+            class="lang-link"
+            id="lang-tr"
+            hreflang="tr"
+            lang="tr"
+            >TR</a
+          >
+          <span class="lang-separator" aria-hidden="true">|</span>
+          <a
+            href="/en/etkinlikler"
+            class="lang-link"
+            id="lang-en"
+            hreflang="en"
+            lang="en"
+            >EN</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main id="main-content" class="main-content">
+      <!-- Events Header -->
+      <section class="events-header">
+        <h1 class="events-title">Etkinlikler</h1>
+        <p class="events-subtitle">1999'dan bugüne unutulmaz konserler</p>
+      </section>
+
+      <!-- Filters Section -->
+      <section class="filters-section">
+        <div class="filters-container">
+          <div class="filter-group">
+            <label class="filter-label" data-label-key="artist">Sanatçı</label>
+            <input
+              type="text"
+              id="artist-filter"
+              class="filter-input"
+              placeholder="Sanatçı ara..."
+              aria-label="Sanatçı ara"
+            />
+          </div>
+          <div class="filter-group">
+            <label class="filter-label" data-label-key="genre">Tür</label>
+            <select
+              id="genre-filter"
+              class="filter-select"
+              aria-label="Tür seç"
+            >
+              <option value="">Tümü</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label class="filter-label" data-label-key="year">Yıl</label>
+            <select id="year-filter" class="filter-select" aria-label="Yıl seç">
+              <option value="">Tümü</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label class="filter-label" data-label-key="venue">Mekan</label>
+            <select
+              id="venue-filter"
+              class="filter-select"
+              aria-label="Mekan seç"
+            >
+              <option value="">Tümü</option>
+            </select>
+          </div>
+          <div class="filter-actions">
+            <button class="clear-filters" type="button">
+              Filtreleri Temizle
+            </button>
+            <span class="results-count">
+              <span data-label-key="total">Toplam</span>:
+              <span id="results-number">0</span>
+            </span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Events Grid -->
+      <section class="events-section">
+        <div id="events-grid" class="events-grid">
+          <div class="loading">Yükleniyor...</div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Global Scripts -->
+    <script src="/js/main.js" defer></script>
+    <!-- Events Page Scripts -->
+    <script src="/js/events.js" defer></script>
+  </body>
+</html>

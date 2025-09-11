@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Events - Kodmüzik</title>
+    <meta
+      name="description"
+      content="Kodmüzik events - Selective music events organized since 1999"
+    />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Global Styles -->
+    <link rel="stylesheet" href="/css/main.css" />
+    <!-- Events Page Styles -->
+    <link rel="stylesheet" href="/css/events.css" />
+  </head>
+  <body>
+    <!-- Skip to content link for screen readers -->
+    <a href="#main-content" class="skip-to-content">Skip to content</a>
+
+    <!-- Side Menu -->
+    <nav class="side-menu" aria-label="Main menu">
+      <!-- Logo/Home -->
+      <a href="/en" class="menu-logo" aria-label="Kodmüzik home">
+        <img
+          src="/KodLogo.svg"
+          alt="Kodmüzik logo"
+          class="menu-logo-img"
+          loading="eager"
+          decoding="async"
+        />
+      </a>
+
+      <!-- Navigation -->
+      <div class="menu-nav">
+        <ul class="menu-items">
+          <li class="menu-item">
+            <a href="/en" class="menu-link" data-path="/">HOME</a>
+          </li>
+          <li class="menu-item">
+            <a href="/en/hizmetler" class="menu-link" data-path="/hizmetler"
+              >SERVICES</a
+            >
+          </li>
+          <li class="menu-item">
+            <a href="/en/etkinlikler" class="menu-link" data-path="/etkinlikler"
+              >EVENTS</a
+            >
+          </li>
+          <li class="menu-item">
+            <a href="/en/hakkimizda" class="menu-link" data-path="/hakkimizda"
+              >ABOUT</a
+            >
+          </li>
+          <li class="menu-item">
+            <a href="/en/iletisim" class="menu-link" data-path="/iletisim"
+              >CONTACT</a
+            >
+          </li>
+        </ul>
+      </div>
+
+      <!-- Language Toggle -->
+      <div class="lang-toggle-menu" aria-label="Language selection">
+        <div class="lang-options">
+          <a
+            href="/etkinlikler"
+            class="lang-link"
+            id="lang-tr"
+            hreflang="tr"
+            lang="tr"
+            >TR</a
+          >
+          <span class="lang-separator" aria-hidden="true">|</span>
+          <a
+            href="/en/etkinlikler"
+            class="lang-link"
+            id="lang-en"
+            hreflang="en"
+            lang="en"
+            >EN</a
+          >
+        </div>
+      </div>
+    </nav>
+    <!-- Main Content -->
+    <main id="main-content" class="main-content">
+      <!-- Events Header -->
+      <section class="events-header">
+        <h1 class="events-title">Events</h1>
+        <p class="events-subtitle">Unforgettable concerts since 1999</p>
+      </section>
+
+      <!-- Filters Section -->
+      <section class="filters-section">
+        <div class="filters-container">
+          <div class="filter-group">
+            <label class="filter-label" data-label-key="artist">Artist</label>
+            <input
+              type="text"
+              id="artist-filter"
+              class="filter-input"
+              placeholder="Search artist..."
+              aria-label="Search artist"
+            />
+          </div>
+          <div class="filter-group">
+            <label class="filter-label" data-label-key="genre">Genre</label>
+            <select
+              id="genre-filter"
+              class="filter-select"
+              aria-label="Select genre"
+            >
+              <option value="">All</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label class="filter-label" data-label-key="year">Year</label>
+            <select
+              id="year-filter"
+              class="filter-select"
+              aria-label="Select year"
+            >
+              <option value="">All</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label class="filter-label" data-label-key="venue">Venue</label>
+            <select
+              id="venue-filter"
+              class="filter-select"
+              aria-label="Select venue"
+            >
+              <option value="">All</option>
+            </select>
+          </div>
+          <div class="filter-actions">
+            <button class="clear-filters" type="button">Clear Filters</button>
+            <span class="results-count">
+              <span data-label-key="total">Total</span>:
+              <span id="results-number">0</span>
+            </span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Events Grid -->
+      <section class="events-section">
+        <div id="events-grid" class="events-grid">
+          <div class="loading">Loading...</div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Global Scripts -->
+    <script src="/js/main.js" defer></script>
+    <!-- Events Page Scripts -->
+    <script src="/js/events.js" defer></script>
+  </body>
+</html>

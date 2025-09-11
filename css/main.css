@@ -25,6 +25,12 @@
   --menu-width-desktop: 200px;
   --menu-width-mobile: 80px;
   --transition-speed: 0.3s;
+  --menu-color-inactive: #b6b6b6; /* lighter than now */
+  --menu-color-active: #8a8a8a; /* your current inactive */
+  --menu-color-hover: #ececec; /* near-white for hover/focus */
+  /* slower hover animations */
+  --menu-hover-duration: 420ms;
+  --menu-hover-ease: cubic-bezier(0.22, 1, 0.36, 1); /* smooth ease-out */
 }
 
 /* 2. CSS Reset
@@ -93,7 +99,10 @@ p {
   z-index: 1000;
 }
 
+/* anchor that wraps the logo */
 .menu-logo {
+  display: block; /* make the whole logo area clickable */
+  line-height: 0; /* remove extra inline spacing */
   color: var(--color-accent);
   transition: transform var(--transition-speed);
 }
@@ -101,29 +110,102 @@ p {
   transform: scale(1.05);
 }
 
+/* the <img> itself */
+.menu-logo-img {
+  display: block; /* kill baseline gap */
+  width: 130px; /* match your HTML width */
+  height: auto;
+}
+
 .menu-nav {
   width: 100%;
 }
 
-.menu-items {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.5rem;
-}
-
+/* Base state */
 .menu-link {
+  position: relative;
+  padding-left: 18px; /* space for the indicator bar */
   font-family: var(--font-display);
   font-size: 1.2rem;
   letter-spacing: 1px;
-  color: var(--color-muted);
-  transition: color var(--transition-speed);
+  color: var(--menu-color-inactive);
+  transition: color var(--menu-hover-duration) var(--menu-hover-ease),
+    transform var(--menu-hover-duration) var(--menu-hover-ease);
 }
 
+/* Active (current page) */
 .menu-link.active,
 .menu-link[aria-current="page"] {
-  color: var(--color-accent);
+  color: var(--menu-color-active);
   font-weight: 500;
+}
+
+/* Keep active color on hover */
+.menu-link.active:hover,
+.menu-link[aria-current="page"]:hover {
+  color: var(--menu-color-active);
+}
+
+@media (max-width: 768px) {
+  .menu-logo-img {
+    width: 48px;
+  }
+}
+
+/* Align links left so the indicator has a home */
+.menu-items {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* was center */
+  gap: 1.5rem;
+}
+
+/* The thin vertical bar to the left of each item */
+.menu-link::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 2px;
+  height: 0; /* collapsed by default */
+  transform: translateY(-50%);
+  transition: height var(--menu-hover-duration) var(--menu-hover-ease),
+    background-color var(--menu-hover-duration) var(--menu-hover-ease);
+  opacity: 0.9;
+}
+
+/* Hover/keyboard focus: color + gentle nudge */
+.menu-link:hover,
+.menu-link:focus-visible {
+  color: var(--menu-color-hover); /* near-white, not full white */
+  transform: translateX(3px);
+}
+
+/* Grow the bar on hover/focus (active page has no bar) */
+.menu-link:hover::before,
+.menu-link:focus-visible::before {
+  height: 16px;
+}
+
+/* Bar color aligns with states */
+.menu-link::before {
+  background-color: var(--menu-color-active);
+}
+.menu-link:hover::before,
+.menu-link:focus-visible::before {
+  background-color: var(--menu-color-hover);
+}
+.menu-link[aria-current="page"]::before {
+  height: 0; /* no indicator for the active page */
+}
+
+/* Reduced motion: disable hover nudge on links & logo */
+@media (prefers-reduced-motion: reduce) {
+  .menu-link:hover,
+  .menu-link:focus-visible,
+  .menu-logo:hover {
+    transform: none;
+  }
 }
 
 /* 5. Main Content Layout
@@ -200,6 +282,13 @@ a:focus-visible {
   border-radius: 2px;
 }
 
+/* Focus outlines for keyboard users (menu items + logo) */
+.menu-logo:focus-visible,
+.menu-link:focus-visible {
+  outline: 2px dashed var(--color-accent);
+  outline-offset: 4px;
+}
+
 /* 8. Responsive Design
    ================================================ */
 @media (max-width: 768px) {
@@ -208,16 +297,55 @@ a:focus-visible {
     padding: 1.5rem 0.5rem;
   }
 
-  .menu-link {
-    font-size: 0.8rem; /* Smaller text or icons could go here */
-    writing-mode: vertical-rl;
-    text-orientation: mixed;
-  }
-
+  /* stack & center the vertical labels */
   .menu-items {
+    align-items: center;
     gap: 2rem;
   }
 
+  /* rotate the labels (90°), remove left padding reserved for the bar */
+  .menu-link {
+    font-size: 0.9rem;
+    padding-left: 0;
+    writing-mode: vertical-rl;
+    text-orientation: mixed; /* Safari-friendly */
+    -webkit-text-orientation: mixed; /* extra safety for WebKit */
+    transform: none; /* base */
+    transition: color var(--menu-hover-duration) var(--menu-hover-ease),
+      transform var(--menu-hover-duration) var(--menu-hover-ease);
+  }
+
+  /* turn the left vertical bar into a small horizontal bar ABOVE the label */
+  .menu-link::before {
+    top: -10px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    transform: translateX(-50%);
+    transition: width var(--menu-hover-duration) var(--menu-hover-ease),
+      background-color var(--menu-hover-duration) var(--menu-hover-ease);
+    background-color: var(--menu-color-active);
+  }
+
+  /* animate the bar & use a slight vertical nudge (since text is vertical) */
+  .menu-link:hover,
+  .menu-link:focus-visible {
+    color: var(--menu-color-hover);
+    transform: translateY(3px);
+  }
+  .menu-link:hover::before,
+  .menu-link:focus-visible::before {
+    width: 16px;
+    height: 2px;
+    background-color: var(--menu-color-hover);
+  }
+
+  /* active page: no persistent bar */
+  .menu-link[aria-current="page"]::before {
+    width: 0;
+  }
+
+  /* main content offset */
   .main-content {
     margin-left: var(--menu-width-mobile);
     padding: 2rem;
@@ -226,12 +354,23 @@ a:focus-visible {
   h1 {
     font-size: clamp(2rem, 8vw, 2.5rem);
   }
-
   p {
     font-size: 1rem;
   }
 
+  .menu-logo-img {
+    width: 48px;
+  }
   .lang-toggle-menu {
     font-size: 0.9rem;
+  }
+}
+
+/* reduced motion: also cancel the vertical nudge on mobile */
+@media (prefers-reduced-motion: reduce) {
+  .menu-link:hover,
+  .menu-link:focus-visible,
+  .menu-logo:hover {
+    transform: none;
   }
 }

@@ -1,6 +1,713 @@
 {
   "events": [
     {
+      "id": "event_043",
+      "artist": { "tr": "Hiromi's Sonicwonder", "en": "Hiromi's Sonicwonder" },
+      "genre": { "tr": "Caz", "en": "Jazz" },
+      "date": "2025-06-15",
+      "venue": { "tr": "İş Sanat", "en": "İş Sanat" },
+      "city": { "tr": "İstanbul", "en": "Istanbul" },
+      "series": { "tr": "", "en": "" },
+      "description": { "tr": "", "en": "" }
+    },
+    {
+      "id": "event_044",
+      "artist": {
+        "tr": "NOVA MUZAK #40 hackedepicciotto ve Rafael Toral",
+        "en": "NOVA MUZAK #40 hackedepicciotto ve Rafael Toral"
+      },
+      "genre": { "tr": "Deneysel", "en": "Experimental" },
+      "date": "2025-06-10",
+      "venue": { "tr": "Borusan Müzik Evi", "en": "Borusan Music House" },
+      "city": { "tr": "İstanbul", "en": "Istanbul" },
+      "series": { "tr": "Nova Muzak #40", "en": "Nova Muzak #40" },
+      "description": { "tr": "", "en": "" }
+    },
+    {
+      "id": "event_045",
+      "artist": {
+        "tr": "NOVA MUZAK #39  [Ahmed] أحمد",
+        "en": "NOVA MUZAK #39  [Ahmed] أحمد"
+      },
+      "genre": { "tr": "Deneysel", "en": "Experimental" },
+      "date": "2025-05-30",
+      "venue": { "tr": "Borusan Müzik Evi", "en": "Borusan Music House" },
+      "city": { "tr": "İstanbul", "en": "Istanbul" },
+      "series": { "tr": "Nova Muzak #39", "en": "Nova Muzak #39" },
+      "description": { "tr": "", "en": "" }
+    },
+    {
+      "id": "event_046",
+      "artist": { "tr": "Alex Skolnick Trio", "en": "Alex Skolnick Trio" },
+      "genre": { "tr": "Caz", "en": "Jazz" },
+      "date": "2025-03-28",
+      "venue": { "tr": "CRR Konser Salonu", "en": "CRR Concert Hall" },
+      "city": { "tr": "İstanbul", "en": "Istanbul" },
+      "series": { "tr": "", "en": "" },
+      "description": { "tr": "", "en": "" }
+    },
+    {
+      "id": "event_047",
+      "artist": {
+        "tr": "NOVA MUZAK #38  Poil + Ueda ve  Senyawa",
+        "en": "NOVA MUZAK #38  Poil + Ueda ve  Senyawa"
+      },
+      "genre": { "tr": "Deneysel", "en": "Experimental" },
+      "date": "2025-02-21",
+      "venue": { "tr": "Borusan Müzik Evi", "en": "Borusan Music House" },
+      "city": { "tr": "İstanbul", "en": "Istanbul" },
+      "series": { "tr": "Nova Muzak #38", "en": "Nova Muzak #38" },
+      "description": { "tr": "", "en": "" }
+    },
+    {
+      "id": "event_048",
+      "artist": { "tr": "Jethro Tull", "en": "Jethro Tull" },
+      "genre": { "tr": "Rock", "en": "Rock" },
+      "date": "2024-11-23",
+      "venue": { "tr": "VW Arena", "en": "Volkswagen Arena" },
+      "city": { "tr": "İstanbul", "en": "Istanbul" },
+      "series": { "tr": "", "en": "" },
+      "description": { "tr": "", "en": "" }
+    },
+    {
+      "id": "event_049",
+      "artist": {
+        "tr": "Chris Botti & CSO Orkestrası (Kültür Yolu Kapsamında)",
+        "en": "Chris Botti & CSO Orkestrası (Kültür Yolu Kapsamında)"
+      },
+      "genre": { "tr": "Caz", "en": "Jazz" },
+      "date": "2024-11-09",
+      "venue": { "tr": "CSO Ada Ankara", "en": "CSO Ada Ankara" },
+      "city": { "tr": "Ankara", "en": "Ankara" },
+      "series": { "tr": "Kültür Yolu", "en": "Culture Route" },
+      "description": { "tr": "", "en": "" }
+    },
+    {
+      "id": "event_050",
+      "artist": {
+        "tr": "Chris Botti & CSO Orkestrası (Kültür Yolu Kapsamında)",
+        "en": "Chris Botti & CSO Orkestrası (Kültür Yolu Kapsamında)"
+      },
+      "genre": { "tr": "Caz", "en": "Jazz" },
+      "date": "2024-11-07",
+      "venue": { "tr": "Aspendos Tiyatrosu", "en": "Aspendos Theatre" },
+      "city": { "tr": "Antalya", "en": "Antalya" },
+      "series": { "tr": "Kültür Yolu", "en": "Culture Route" },
+      "description": { "tr": "", "en": "" }
+    },
+    {
+      "id": "event_051",
+      "artist": {
+        "tr": "Brad Mehldau Trio (Akbank Caz Festivali kapsamında)",
+        "en": "Brad Mehldau Trio (Akbank Caz Festivali kapsamında)"
+      },
+      "genre": { "tr": "Caz", "en": "Jazz" },
+      "date": "2024-10-12",
+      "venue": { "tr": "CRR Konser Salonu", "en": "CRR Concert Hall" },
+      "city": { "tr": "İstanbul", "en": "Istanbul" },
+      "series": { "tr": "Akbank Caz Festivali", "en": "Akbank Jazz Festival" },
+      "description": { "tr": "", "en": "" }
+    },
+    {
+      "id": "event_052",
+      "artist": { "tr": "Brad Mehldau Trio", "en": "Brad Mehldau Trio" },
+      "genre": { "tr": "Caz", "en": "Jazz" },
+      "date": "2024-10-10",
+      "venue": { "tr": "Dubai Opera House", "en": "Dubai Opera House" },
+      "city": { "tr": "Dubai", "en": "Dubai" },
+      "series": { "tr": "", "en": "" },
+      "description": { "tr": "", "en": "" }
+    },
+    {
+      "id": "event_053",
+      "artist": { "tr": "John Surman Quartet", "en": "John Surman Quartet" },
+      "genre": { "tr": "Caz", "en": "Jazz" },
+      "date": "2024-06-12",
+      "venue": { "tr": "CRR Konser Salonu", "en": "CRR Concert Hall" },
+      "city": { "tr": "İstanbul", "en": "Istanbul" },
+      "series": { "tr": "", "en": "" },
+      "description": { "tr": "", "en": "" }
+    },
+    {
+      "id": "event_054",
+      "artist": { "tr": "Wishbone Ash", "en": "Wishbone Ash" },
+      "genre": { "tr": "Rock", "en": "Rock" },
+      "date": "2024-05-24",
+      "venue": { "tr": "AKM Salonu", "en": "AKM Hall" },
+      "city": { "tr": "İstanbul", "en": "Istanbul" },
+      "series": { "tr": "", "en": "" },
+      "description": { "tr": "", "en": "" }
+    },
+    {
+      "id": "event_055",
+      "artist": { "tr": "Chris Botti", "en": "Chris Botti" },
+      "genre": { "tr": "Caz", "en": "Jazz" },
+      "date": "2024-05-19",
+      "venue": { "tr": "Dubai Opera House", "en": "Dubai Opera House" },
+      "city": { "tr": "Dubai", "en": "Dubai" },
+      "series": { "tr": "", "en": "" },
+      "description": { "tr": "", "en": "" }
+    },
+    {
+      "id": "event_056",
+      "artist": { "tr": "Chris Botti", "en": "Chris Botti" },
+      "genre": { "tr": "Caz", "en": "Jazz" },
+      "date": "2024-05-17",
+      "venue": {
+        "tr": "Harbiye Cemil Topuzlu Açık Hava Tiyatrosu",
+        "en": "Harbiye Cemil Topuzlu Open-Air Theatre"
+      },
+      "city": { "tr": "İstanbul", "en": "Istanbul" },
+      "series": { "tr": "", "en": "" },
+      "description": { "tr": "", "en": "" }
+    },
+    {
+      "id": "event_057",
+      "artist": { "tr": "Henri Texier Trio", "en": "Henri Texier Trio" },
+      "genre": { "tr": "Caz", "en": "Jazz" },
+      "date": "2024-05-10",
+      "venue": { "tr": "CRR Konser Salonu", "en": "CRR Concert Hall" },
+      "city": { "tr": "İstanbul", "en": "Istanbul" },
+      "series": { "tr": "", "en": "" },
+      "description": { "tr": "", "en": "" }
+    },
+    {
+      "id": "event_058",
+      "artist": {
+        "tr": "David Eugene Edwards / Matt Elliott",
+        "en": "David Eugene Edwards / Matt Elliott"
+      },
+      "genre": { "tr": "Alternatif Rock", "en": "Alternative Rock" },
+      "date": "2024-04-27",
+      "venue": { "tr": "Babylon", "en": "Babylon" },
+      "city": { "tr": "İstanbul", "en": "Istanbul" },
+      "series": { "tr": "", "en": "" },
+      "description": { "tr": "", "en": "" }
+    },
+    {
+      "id": "event_059",
+      "artist": { "tr": "Incognito", "en": "Incognito" },
+      "genre": { "tr": "Caz", "en": "Jazz" },
+      "date": "2024-04-25",
+      "venue": { "tr": "Dubai Opera House", "en": "Dubai Opera House" },
+      "city": { "tr": "Dubai", "en": "Dubai" },
+      "series": { "tr": "", "en": "" },
+      "description": { "tr": "", "en": "" }
+    },
+    {
+      "id": "event_060",
+      "artist": {
+        "tr": "Gonzalo Rubalcaba Trio",
+        "en": "Gonzalo Rubalcaba Trio"
+      },
+      "genre": { "tr": "Caz", "en": "Jazz" },
+      "date": "2024-04-25",
+      "venue": { "tr": "CRR Konser Salonu", "en": "CRR Concert Hall" },
+      "city": { "tr": "İstanbul", "en": "Istanbul" },
+      "series": { "tr": "", "en": "" },
+      "description": { "tr": "", "en": "" }
+    },
+    {
+      "id": "event_061",
+      "artist": {
+        "tr": "Rabih Abou Khalil feat. Elina Duni",
+        "en": "Rabih Abou Khalil feat. Elina Duni"
+      },
+      "genre": { "tr": "Dünya Müziği", "en": "World Music" },
+      "date": "2024-03-09",
+      "venue": { "tr": "CRR Konser Salonu", "en": "CRR Concert Hall" },
+      "city": { "tr": "İstanbul", "en": "Istanbul" },
+      "series": { "tr": "", "en": "" },
+      "description": { "tr": "", "en": "" }
+    },
+    {
+      "id": "event_062",
+      "artist": {
+        "tr": "NOVA MUZAK #37 WA (Kamilya Jubran & Werner Hasler) / Void Ov Voices (Atilla Csihar)",
+        "en": "NOVA MUZAK #37 WA (Kamilya Jubran & Werner Hasler) / Void Ov Voices (Atilla Csihar)"
+      },
+      "genre": { "tr": "Deneysel", "en": "Experimental" },
+      "date": "2024-03-02",
+      "venue": { "tr": "Borusan Müzik Evi", "en": "Borusan Music House" },
+      "city": { "tr": "İstanbul", "en": "Istanbul" },
+      "series": { "tr": "Nova Muzak #37", "en": "Nova Muzak #37" },
+      "description": { "tr": "", "en": "" }
+    },
+    {
+      "id": "event_063",
+      "artist": { "tr": "Kronos Quartet", "en": "Kronos Quartet" },
+      "genre": { "tr": "Deneysel", "en": "Experimental" },
+      "date": "2024-01-16",
+      "venue": { "tr": "İş Sanat", "en": "İş Sanat" },
+      "city": { "tr": "İstanbul", "en": "Istanbul" },
+      "series": { "tr": "", "en": "" },
+      "description": { "tr": "", "en": "" }
+    },
+    {
+      "id": "event_064",
+      "artist": {
+        "tr": "GAS(Wolfgang Voigt) - Ali Demirel AV Set / İpek Görgün / Human Scum DJ Set (Noise Istanbul Kapsamında)",
+        "en": "GAS(Wolfgang Voigt) - Ali Demirel AV Set / İpek Görgün / Human Scum DJ Set (Noise Istanbul Kapsamında)"
+      },
+      "genre": { "tr": "Elektronik", "en": "Electronic" },
+      "date": "2024-01-14",
+      "venue": { "tr": "Alan Kadıköy", "en": "Alan Kadıköy" },
+      "city": { "tr": "İstanbul", "en": "Istanbul" },
+      "series": { "tr": "Noise Istanbul", "en": "Noise Istanbul" },
+      "description": { "tr": "", "en": "" }
+    },
+    {
+      "id": "event_065",
+      "artist": {
+        "tr": "Michael Rother plays Neu + Harmonica / Granül (Noise Istanbul Kapsamında)",
+        "en": "Michael Rother plays Neu + Harmonica / Granül (Noise Istanbul Kapsamında)"
+      },
+      "genre": { "tr": "Elektronik", "en": "Electronic" },
+      "date": "2024-01-13",
+      "venue": { "tr": "Alan Kadıköy", "en": "Alan Kadıköy" },
+      "city": { "tr": "İstanbul", "en": "Istanbul" },
+      "series": { "tr": "Noise Istanbul", "en": "Noise Istanbul" },
+      "description": { "tr": "", "en": "" }
+    },
+    {
+      "id": "event_066",
+      "artist": {
+        "tr": "The Bug feat. Flowdan / Andy Stott (Noise Istanbul Kapsamında)",
+        "en": "The Bug feat. Flowdan / Andy Stott (Noise Istanbul Kapsamında)"
+      },
+      "genre": { "tr": "Elektronik", "en": "Electronic" },
+      "date": "2024-01-12",
+      "venue": { "tr": "Alan Kadıköy", "en": "Alan Kadıköy" },
+      "city": { "tr": "İstanbul", "en": "Istanbul" },
+      "series": { "tr": "Noise Istanbul", "en": "Noise Istanbul" },
+      "description": { "tr": "", "en": "" }
+    },
+    {
+      "id": "event_067",
+      "artist": {
+        "tr": "Anna Maria Jopek & CRR Caz Orkestrası",
+        "en": "Anna Maria Jopek & CRR Caz Orkestrası"
+      },
+      "genre": { "tr": "Caz", "en": "Jazz" },
+      "date": "2023-12-29",
+      "venue": { "tr": "CRR Konser Salonu", "en": "CRR Concert Hall" },
+      "city": { "tr": "İstanbul", "en": "Istanbul" },
+      "series": { "tr": "", "en": "" },
+      "description": { "tr": "", "en": "" }
+    },
+    {
+      "id": "event_068",
+      "artist": {
+        "tr": "NOVA MUZAK #36  Patrick Walker",
+        "en": "NOVA MUZAK #36  Patrick Walker"
+      },
+      "genre": { "tr": "Deneysel", "en": "Experimental" },
+      "date": "2023-12-09",
+      "venue": { "tr": "Borusan Müzik Evi", "en": "Borusan Music House" },
+      "city": { "tr": "İstanbul", "en": "Istanbul" },
+      "series": { "tr": "Nova Muzak #36", "en": "Nova Muzak #36" },
+      "description": { "tr": "", "en": "" }
+    },
+    {
+      "id": "event_069",
+      "artist": {
+        "tr": "NOVA MUZAK #35  The Necks",
+        "en": "NOVA MUZAK #35  The Necks"
+      },
+      "genre": { "tr": "Deneysel", "en": "Experimental" },
+      "date": "2023-11-25",
+      "venue": { "tr": "Borusan Müzik Evi", "en": "Borusan Music House" },
+      "city": { "tr": "İstanbul", "en": "Istanbul" },
+      "series": { "tr": "Nova Muzak #35", "en": "Nova Muzak #35" },
+      "description": { "tr": "", "en": "" }
+    },
+    {
+      "id": "event_070",
+      "artist": { "tr": "Jethro Tull", "en": "Jethro Tull" },
+      "genre": { "tr": "Rock", "en": "Rock" },
+      "date": "2023-11-24",
+      "venue": { "tr": "Dubai Opera House", "en": "Dubai Opera House" },
+      "city": { "tr": "Dubai", "en": "Dubai" },
+      "series": { "tr": "", "en": "" },
+      "description": { "tr": "", "en": "" }
+    },
+    {
+      "id": "event_071",
+      "artist": {
+        "tr": "Mark Guiliana Quartet",
+        "en": "Mark Guiliana Quartet"
+      },
+      "genre": { "tr": "Caz", "en": "Jazz" },
+      "date": "2023-11-21",
+      "venue": { "tr": "CSO Ada Ankara", "en": "CSO Ada Ankara" },
+      "city": { "tr": "Ankara", "en": "Ankara" },
+      "series": { "tr": "", "en": "" },
+      "description": { "tr": "", "en": "" }
+    },
+    {
+      "id": "event_072",
+      "artist": {
+        "tr": "Steve Coleman & Reflex",
+        "en": "Steve Coleman & Reflex"
+      },
+      "genre": { "tr": "Caz", "en": "Jazz" },
+      "date": "2023-11-17",
+      "venue": { "tr": "CRR Konser Salonu", "en": "CRR Concert Hall" },
+      "city": { "tr": "İstanbul", "en": "Istanbul" },
+      "series": { "tr": "", "en": "" },
+      "description": { "tr": "", "en": "" }
+    },
+    {
+      "id": "event_073",
+      "artist": { "tr": "Geoff Tate", "en": "Geoff Tate" },
+      "genre": { "tr": "Rock", "en": "Rock" },
+      "date": "2023-11-15",
+      "venue": { "tr": "CSO Ada Ankara", "en": "CSO Ada Ankara" },
+      "city": { "tr": "Ankara", "en": "Ankara" },
+      "series": { "tr": "", "en": "" },
+      "description": { "tr": "", "en": "" }
+    },
+    {
+      "id": "event_074",
+      "artist": { "tr": "Anna Popovic", "en": "Anna Popovic" },
+      "genre": { "tr": "Rock", "en": "Rock" },
+      "date": "2023-11-12",
+      "venue": { "tr": "CSO Ada Ankara", "en": "CSO Ada Ankara" },
+      "city": { "tr": "Ankara", "en": "Ankara" },
+      "series": { "tr": "", "en": "" },
+      "description": { "tr": "", "en": "" }
+    },
+    {
+      "id": "event_075",
+      "artist": {
+        "tr": "Cecile Mc Lorin Salvant",
+        "en": "Cecile Mc Lorin Salvant"
+      },
+      "genre": { "tr": "Caz", "en": "Jazz" },
+      "date": "2023-11-07",
+      "venue": { "tr": "İş Sanat", "en": "İş Sanat" },
+      "city": { "tr": "İstanbul", "en": "Istanbul" },
+      "series": { "tr": "", "en": "" },
+      "description": { "tr": "", "en": "" }
+    },
+    {
+      "id": "event_076",
+      "artist": { "tr": "The Bad Plus", "en": "The Bad Plus" },
+      "genre": { "tr": "Caz", "en": "Jazz" },
+      "date": "2023-11-03",
+      "venue": { "tr": "CRR Konser Salonu", "en": "CRR Concert Hall" },
+      "city": { "tr": "İstanbul", "en": "Istanbul" },
+      "series": { "tr": "", "en": "" },
+      "description": { "tr": "", "en": "" }
+    },
+    {
+      "id": "event_077",
+      "artist": { "tr": "Marcus Miller", "en": "Marcus Miller" },
+      "genre": { "tr": "Caz", "en": "Jazz" },
+      "date": "2023-10-31",
+      "venue": { "tr": "VW Arena", "en": "Volkswagen Arena" },
+      "city": { "tr": "İstanbul", "en": "Istanbul" },
+      "series": { "tr": "", "en": "" },
+      "description": { "tr": "", "en": "" }
+    },
+    {
+      "id": "event_078",
+      "artist": { "tr": "Mike Stern Band", "en": "Mike Stern Band" },
+      "genre": { "tr": "Caz", "en": "Jazz" },
+      "date": "2023-10-21",
+      "venue": { "tr": "CSO Ada Ankara", "en": "CSO Ada Ankara" },
+      "city": { "tr": "Ankara", "en": "Ankara" },
+      "series": { "tr": "", "en": "" },
+      "description": { "tr": "", "en": "" }
+    },
+    {
+      "id": "event_079",
+      "artist": {
+        "tr": "Chucho Valdes Quartet",
+        "en": "Chucho Valdes Quartet"
+      },
+      "genre": { "tr": "Caz", "en": "Jazz" },
+      "date": "2023-10-21",
+      "venue": { "tr": "CRR Konser Salonu", "en": "CRR Concert Hall" },
+      "city": { "tr": "İstanbul", "en": "Istanbul" },
+      "series": { "tr": "", "en": "" },
+      "description": { "tr": "", "en": "" }
+    },
+    {
+      "id": "event_080",
+      "artist": { "tr": "Hooverphonic", "en": "Hooverphonic" },
+      "genre": { "tr": "Alternatif Rock", "en": "Alternative Rock" },
+      "date": "2023-07-14",
+      "venue": { "tr": "Maximum Uniq Hall", "en": "Maximum Uniq Hall" },
+      "city": { "tr": "İstanbul", "en": "Istanbul" },
+      "series": { "tr": "", "en": "" },
+      "description": { "tr": "", "en": "" }
+    },
+    {
+      "id": "event_081",
+      "artist": { "tr": "Tom Odell", "en": "Tom Odell" },
+      "genre": { "tr": "Pop", "en": "Pop" },
+      "date": "2023-06-24",
+      "venue": { "tr": "Maximum Uniq Hall", "en": "Maximum Uniq Hall" },
+      "city": { "tr": "İstanbul", "en": "Istanbul" },
+      "series": { "tr": "", "en": "" },
+      "description": { "tr": "", "en": "" }
+    },
+    {
+      "id": "event_082",
+      "artist": { "tr": "Portico Quartet", "en": "Portico Quartet" },
+      "genre": { "tr": "Caz", "en": "Jazz" },
+      "date": "2023-06-10",
+      "venue": { "tr": "CSO Ada Ankara", "en": "CSO Ada Ankara" },
+      "city": { "tr": "Ankara", "en": "Ankara" },
+      "series": { "tr": "", "en": "" },
+      "description": { "tr": "", "en": "" }
+    },
+    {
+      "id": "event_083",
+      "artist": {
+        "tr": "Lars Danielsson Libretto",
+        "en": "Lars Danielsson Libretto"
+      },
+      "genre": { "tr": "Caz", "en": "Jazz" },
+      "date": "2023-05-20",
+      "venue": { "tr": "CRR Konser Salonu", "en": "CRR Concert Hall" },
+      "city": { "tr": "İstanbul", "en": "Istanbul" },
+      "series": { "tr": "", "en": "" },
+      "description": { "tr": "", "en": "" }
+    },
+    {
+      "id": "event_084",
+      "artist": { "tr": "Anthony Strong Trio", "en": "Anthony Strong Trio" },
+      "genre": { "tr": "Caz", "en": "Jazz" },
+      "date": "2023-04-30",
+      "venue": { "tr": "CSO Ada Ankara", "en": "CSO Ada Ankara" },
+      "city": { "tr": "Ankara", "en": "Ankara" },
+      "series": { "tr": "", "en": "" },
+      "description": { "tr": "", "en": "" }
+    },
+    {
+      "id": "event_085",
+      "artist": {
+        "tr": "NOVA MUZAK #34  James Brandon Lewis Trio",
+        "en": "NOVA MUZAK #34  James Brandon Lewis Trio"
+      },
+      "genre": { "tr": "Caz", "en": "Jazz" },
+      "date": "2023-04-30",
+      "venue": { "tr": "Borusan Müzik Evi", "en": "Borusan Music House" },
+      "city": { "tr": "İstanbul", "en": "Istanbul" },
+      "series": { "tr": "Nova Muzak #34", "en": "Nova Muzak #34" },
+      "description": { "tr": "", "en": "" }
+    },
+    {
+      "id": "event_086",
+      "artist": {
+        "tr": "Jan Garbarek Quartet feat. Trilok Gurtu",
+        "en": "Jan Garbarek Quartet feat. Trilok Gurtu"
+      },
+      "genre": { "tr": "Dünya Müziği", "en": "World Music" },
+      "date": "2023-04-27",
+      "venue": { "tr": "İş Sanat", "en": "İş Sanat" },
+      "city": { "tr": "İstanbul", "en": "Istanbul" },
+      "series": { "tr": "", "en": "" },
+      "description": { "tr": "", "en": "" }
+    },
+    {
+      "id": "event_087",
+      "artist": { "tr": "Kenny Barron Trio", "en": "Kenny Barron Trio" },
+      "genre": { "tr": "Caz", "en": "Jazz" },
+      "date": "2023-04-21",
+      "venue": { "tr": "CRR Konser Salonu", "en": "CRR Concert Hall" },
+      "city": { "tr": "İstanbul", "en": "Istanbul" },
+      "series": { "tr": "", "en": "" },
+      "description": { "tr": "", "en": "" }
+    },
+    {
+      "id": "event_088",
+      "artist": { "tr": "Wishbone Ash", "en": "Wishbone Ash" },
+      "genre": { "tr": "Rock", "en": "Rock" },
+      "date": "2023-04-15",
+      "venue": { "tr": "CSO Ada Ankara", "en": "CSO Ada Ankara" },
+      "city": { "tr": "Ankara", "en": "Ankara" },
+      "series": { "tr": "", "en": "" },
+      "description": { "tr": "", "en": "" }
+    },
+    {
+      "id": "event_089",
+      "artist": { "tr": "Roberto Cacciapaglia", "en": "Roberto Cacciapaglia" },
+      "genre": { "tr": "Deneysel", "en": "Experimental" },
+      "date": "2024-03-05",
+      "venue": { "tr": "CSO Ada Ankara", "en": "CSO Ada Ankara" },
+      "city": { "tr": "Ankara", "en": "Ankara" },
+      "series": { "tr": "", "en": "" },
+      "description": { "tr": "", "en": "" }
+    },
+    {
+      "id": "event_090",
+      "artist": { "tr": "Jaga Jazzist", "en": "Jaga Jazzist" },
+      "genre": { "tr": "Elektronik", "en": "Electronic" },
+      "date": "2023-01-25",
+      "venue": { "tr": "İş Sanat", "en": "İş Sanat" },
+      "city": { "tr": "İstanbul", "en": "Istanbul" },
+      "series": { "tr": "", "en": "" },
+      "description": { "tr": "", "en": "" }
+    },
+    {
+      "id": "event_091",
+      "artist": {
+        "tr": "Hugh Coltman & CRR Caz Orkestrası",
+        "en": "Hugh Coltman & CRR Caz Orkestrası"
+      },
+      "genre": { "tr": "Caz", "en": "Jazz" },
+      "date": "2023-12-29",
+      "venue": { "tr": "CRR Konser Salonu", "en": "CRR Concert Hall" },
+      "city": { "tr": "İstanbul", "en": "Istanbul" },
+      "series": { "tr": "", "en": "" },
+      "description": { "tr": "", "en": "" }
+    },
+    {
+      "id": "event_092",
+      "artist": { "tr": "Soft Machine", "en": "Soft Machine" },
+      "genre": { "tr": "Progresif Rock", "en": "Progressive Rock" },
+      "date": "2023-12-09",
+      "venue": { "tr": "CRR Konser Salonu", "en": "CRR Concert Hall" },
+      "city": { "tr": "İstanbul", "en": "Istanbul" },
+      "series": { "tr": "", "en": "" },
+      "description": { "tr": "", "en": "" }
+    },
+    {
+      "id": "event_093",
+      "artist": { "tr": "Voivod /Nekropsi", "en": "Voivod /Nekropsi" },
+      "genre": { "tr": "Rock", "en": "Rock" },
+      "date": "2022-12-02",
+      "venue": { "tr": "Blind", "en": "Blind" },
+      "city": { "tr": "İstanbul", "en": "Istanbul" },
+      "series": { "tr": "", "en": "" },
+      "description": { "tr": "", "en": "" }
+    },
+    {
+      "id": "event_094",
+      "artist": { "tr": "Eivor", "en": "Eivor" },
+      "genre": { "tr": "Dünya Müziği", "en": "World Music" },
+      "date": "2022-11-27",
+      "venue": { "tr": "CSO Ada Ankara", "en": "CSO Ada Ankara" },
+      "city": { "tr": "Ankara", "en": "Ankara" },
+      "series": { "tr": "", "en": "" },
+      "description": { "tr": "", "en": "" }
+    },
+    {
+      "id": "event_095",
+      "artist": { "tr": "The Bad Plus", "en": "The Bad Plus" },
+      "genre": { "tr": "Caz", "en": "Jazz" },
+      "date": "2022-11-27",
+      "venue": { "tr": "CSO Ada Ankara", "en": "CSO Ada Ankara" },
+      "city": { "tr": "Ankara", "en": "Ankara" },
+      "series": { "tr": "", "en": "" },
+      "description": { "tr": "", "en": "" }
+    },
+    {
+      "id": "event_096",
+      "artist": { "tr": "Peter Bence", "en": "Peter Bence" },
+      "genre": { "tr": "Pop", "en": "Pop" },
+      "date": "2022-11-11",
+      "venue": { "tr": "Dubai Opera House", "en": "Dubai Opera House" },
+      "city": { "tr": "Dubai", "en": "Dubai" },
+      "series": { "tr": "", "en": "" },
+      "description": { "tr": "", "en": "" }
+    },
+    {
+      "id": "event_097",
+      "artist": { "tr": "Kinga Glyk", "en": "Kinga Glyk" },
+      "genre": { "tr": "Caz", "en": "Jazz" },
+      "date": "2022-11-05",
+      "venue": { "tr": "CSO Ada Ankara", "en": "CSO Ada Ankara" },
+      "city": { "tr": "Ankara", "en": "Ankara" },
+      "series": { "tr": "", "en": "" },
+      "description": { "tr": "", "en": "" }
+    },
+    {
+      "id": "event_098",
+      "artist": { "tr": "Manu Katche", "en": "Manu Katche" },
+      "genre": { "tr": "Caz", "en": "Jazz" },
+      "date": "2022-11-04",
+      "venue": { "tr": "CRR Konser Salonu", "en": "CRR Concert Hall" },
+      "city": { "tr": "İstanbul", "en": "Istanbul" },
+      "series": { "tr": "", "en": "" },
+      "description": { "tr": "", "en": "" }
+    },
+    {
+      "id": "event_099",
+      "artist": {
+        "tr": "Mark Guiliana Quartet",
+        "en": "Mark Guiliana Quartet"
+      },
+      "genre": { "tr": "Caz", "en": "Jazz" },
+      "date": "2022-10-21",
+      "venue": { "tr": "CRR Konser Salonu", "en": "CRR Concert Hall" },
+      "city": { "tr": "İstanbul", "en": "Istanbul" },
+      "series": { "tr": "", "en": "" },
+      "description": { "tr": "", "en": "" }
+    },
+    {
+      "id": "event_100",
+      "artist": { "tr": "Sona Jobarteh", "en": "Sona Jobarteh" },
+      "genre": { "tr": "Dünya Müziği", "en": "World Music" },
+      "date": "2022-10-14",
+      "venue": { "tr": "CRR Konser Salonu", "en": "CRR Concert Hall" },
+      "city": { "tr": "İstanbul", "en": "Istanbul" },
+      "series": { "tr": "", "en": "" },
+      "description": { "tr": "", "en": "" }
+    },
+    {
+      "id": "event_101",
+      "artist": {
+        "tr": "Godspeed You Black Emperor!",
+        "en": "Godspeed You Black Emperor!"
+      },
+      "genre": { "tr": "Post Rock", "en": "Post Rock" },
+      "date": "2022-07-13",
+      "venue": {
+        "tr": "Harbiye Cemil Topuzlu Açık Hava Tiyatrosu",
+        "en": "Harbiye Cemil Topuzlu Open-Air Theatre"
+      },
+      "city": { "tr": "İstanbul", "en": "Istanbul" },
+      "series": { "tr": "", "en": "" },
+      "description": { "tr": "", "en": "" }
+    },
+    {
+      "id": "event_102",
+      "artist": { "tr": "Marc Eliyahu", "en": "Marc Eliyahu" },
+      "genre": { "tr": "Dünya Müziği", "en": "World Music" },
+      "date": "2022-06-18",
+      "venue": {
+        "tr": "Bursa Açık Hava Tiyatrosu",
+        "en": "Bursa Open-Air Theatre"
+      },
+      "city": { "tr": "Bursa", "en": "Bursa" },
+      "series": { "tr": "", "en": "" },
+      "description": { "tr": "", "en": "" }
+    },
+    {
+      "id": "event_103",
+      "artist": { "tr": "Jethro Tull", "en": "Jethro Tull" },
+      "genre": { "tr": "Progresif Rock", "en": "Progressive Rock" },
+      "date": "2022-06-17",
+      "venue": { "tr": "Zorlu PSM", "en": "Zorlu PSM" },
+      "city": { "tr": "İstanbul", "en": "Istanbul" },
+      "series": { "tr": "", "en": "" },
+      "description": { "tr": "", "en": "" }
+    },
+    {
+      "id": "event_104",
+      "artist": { "tr": "Marc Eliyahu", "en": "Marc Eliyahu" },
+      "genre": { "tr": "Dünya Müziği", "en": "World Music" },
+      "date": "2022-06-16",
+      "venue": { "tr": "Akra Caz Festivali", "en": "Akra Jazz Festival" },
+      "city": { "tr": "Antalya", "en": "Antalya" },
+      "series": { "tr": "", "en": "" },
+      "description": { "tr": "", "en": "" }
+    },
+    {
       "id": "event_001",
       "artist": {
         "tr": "Anthony Strong & CRR Caz Orkestrası",
@@ -40,7 +747,7 @@
       },
       "date": "2021-12-18",
       "venue": {
-        "tr": "CSO Ada",
+        "tr": "CSO Ada Ankara",
         "en": "CSO Ada Ankara"
       },
       "city": {
@@ -152,8 +859,8 @@
       },
       "date": "2021-11-02",
       "venue": {
-        "tr": "AKM İstanbul",
-        "en": "AKM Istanbul"
+        "tr": "AKM Salonu",
+        "en": "AKM Hall"
       },
       "city": {
         "tr": "İstanbul",
@@ -964,8 +1671,8 @@
       },
       "date": "2004-09-19",
       "venue": {
-        "tr": "Harbiye Cemil Topuzlu",
-        "en": "Harbiye Cemil Topuzlu"
+        "tr": "Harbiye Cemil Topuzlu Açık Hava Tiyatrosu",
+        "en": "Harbiye Cemil Topuzlu Open-Air Theatre"
       },
       "city": {
         "tr": "İstanbul",
@@ -1178,48 +1885,63 @@
     }
   ],
   "meta": {
-    "totalEvents": 42,
+    "totalEvents": 104,
     "dateRange": {
       "from": "1997-05-03",
-      "to": "2021-12-29"
+      "to": "2025-06-15"
     },
     "languages": ["tr", "en"],
     "genres": [
-      {"tr": "Caz", "en": "Jazz"},
-      {"tr": "Progresif Rock", "en": "Progressive Rock"},
-      {"tr": "Alternatif Rock", "en": "Alternative Rock"},
-      {"tr": "Elektronik", "en": "Electronic"},
-      {"tr": "Dünya Müziği", "en": "World Music"},
-      {"tr": "Post Rock", "en": "Post Rock"},
-      {"tr": "Krautrock", "en": "Krautrock"},
-      {"tr": "Deneysel", "en": "Experimental"},
-      {"tr": "Füzyon Caz", "en": "Fusion Jazz"},
-      {"tr": "Pop", "en": "Pop"},
-      {"tr": "Rock", "en": "Rock"},
-      {"tr": "Post Punk", "en": "Post Punk"},
-      {"tr": "Endüstriyel", "en": "Industrial"}
+      { "tr": "Alternatif Rock", "en": "Alternative Rock" },
+      { "tr": "Caz", "en": "Jazz" },
+      { "tr": "Deneysel", "en": "Experimental" },
+      { "tr": "Dünya Müziği", "en": "World Music" },
+      { "tr": "Elektronik", "en": "Electronic" },
+      { "tr": "Endüstriyel", "en": "Industrial" },
+      { "tr": "Füzyon Caz", "en": "Fusion Jazz" },
+      { "tr": "Krautrock", "en": "Krautrock" },
+      { "tr": "Pop", "en": "Pop" },
+      { "tr": "Post Punk", "en": "Post Punk" },
+      { "tr": "Post Rock", "en": "Post Rock" },
+      { "tr": "Progresif Rock", "en": "Progressive Rock" },
+      { "tr": "Rock", "en": "Rock" }
     ],
     "venues": [
-      {"tr": "CRR Konser Salonu", "en": "CRR Concert Hall"},
-      {"tr": "Zorlu PSM", "en": "Zorlu PSM"},
-      {"tr": "Borusan Müzik Evi", "en": "Borusan Music House"},
-      {"tr": "Babylon", "en": "Babylon"},
-      {"tr": "İstanbul Arena", "en": "Istanbul Arena"},
-      {"tr": "Garajistanbul", "en": "Garajistanbul"},
-      {"tr": "Salon İKSV", "en": "Salon IKSV"},
-      {"tr": "İş Kuleleri Salonu", "en": "İş Towers Hall"},
-      {"tr": "CSO Ada", "en": "CSO Ada Ankara"},
-      {"tr": "AASSM İzmir", "en": "AASSM Izmir"},
-      {"tr": "AKM İstanbul", "en": "AKM Istanbul"},
-      {"tr": "Dorock XL Venue", "en": "Dorock XL Venue"},
-      {"tr": "Harbiye Cemil Topuzlu", "en": "Harbiye Cemil Topuzlu"},
-      {"tr": "Maslak Venue", "en": "Maslak Venue"},
-      {"tr": "Alt Kemancı", "en": "Alt Kemancı"}
+      { "tr": "AASSM İzmir", "en": "AASSM Izmir" },
+      { "tr": "Akra Caz Festivali", "en": "Akra Jazz Festival" },
+      { "tr": "AKM Salonu", "en": "AKM Hall" },
+      { "tr": "Alan Kadıköy", "en": "Alan Kadıköy" },
+      { "tr": "Alt Kemancı", "en": "Alt Kemancı" },
+      { "tr": "Aspendos Tiyatrosu", "en": "Aspendos Theatre" },
+      { "tr": "Babylon", "en": "Babylon" },
+      { "tr": "Blind", "en": "Blind" },
+      { "tr": "Borusan Müzik Evi", "en": "Borusan Music House" },
+      { "tr": "Bursa Açık Hava Tiyatrosu", "en": "Bursa Open-Air Theatre" },
+      { "tr": "CRR Konser Salonu", "en": "CRR Concert Hall" },
+      { "tr": "CSO Ada Ankara", "en": "CSO Ada Ankara" },
+      { "tr": "Dorock XL Venue", "en": "Dorock XL Venue" },
+      { "tr": "Dubai Opera House", "en": "Dubai Opera House" },
+      { "tr": "Garajistanbul", "en": "Garajistanbul" },
+      {
+        "tr": "Harbiye Cemil Topuzlu Açık Hava Tiyatrosu",
+        "en": "Harbiye Cemil Topuzlu Open-Air Theatre"
+      },
+      { "tr": "İş Kuleleri Salonu", "en": "İş Towers Hall" },
+      { "tr": "İş Sanat", "en": "İş Sanat" },
+      { "tr": "İstanbul Arena", "en": "Istanbul Arena" },
+      { "tr": "Maximum Uniq Hall", "en": "Maximum Uniq Hall" },
+      { "tr": "Maslak Venue", "en": "Maslak Venue" },
+      { "tr": "Salon İKSV", "en": "Salon IKSV" },
+      { "tr": "VW Arena", "en": "Volkswagen Arena" },
+      { "tr": "Zorlu PSM", "en": "Zorlu PSM" }
     ],
     "cities": [
-      {"tr": "İstanbul", "en": "Istanbul"},
-      {"tr": "Ankara", "en": "Ankara"},
-      {"tr": "İzmir", "en": "Izmir"}
+      { "tr": "İstanbul", "en": "Istanbul" },
+      { "tr": "Ankara", "en": "Ankara" },
+      { "tr": "İzmir", "en": "Izmir" },
+      { "tr": "Antalya", "en": "Antalya" },
+      { "tr": "Bursa", "en": "Bursa" },
+      { "tr": "Dubai", "en": "Dubai" }
     ],
     "company": {
       "name": "Kodmüzik Organizasyon",

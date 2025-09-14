@@ -46,11 +46,6 @@
             <a href="/en" class="menu-link" data-path="/">HOME</a>
           </li>
           <li class="menu-item">
-            <a href="/en/hizmetler" class="menu-link" data-path="/hizmetler"
-              >SERVICES</a
-            >
-          </li>
-          <li class="menu-item">
             <a href="/en/etkinlikler" class="menu-link" data-path="/etkinlikler"
               >EVENTS</a
             >
@@ -96,43 +91,69 @@
       <!-- Events Header -->
       <section class="events-header">
         <h1 class="events-title">Events</h1>
-        <p class="events-subtitle">Unforgettable concerts since 1999</p>
+        <p class="events-subtitle">Between 1999 and 2025</p>
       </section>
 
       <!-- Filters Section -->
       <section class="filters-section">
         <div class="filters-container">
           <div class="filter-group">
-            <label class="filter-label" data-label-key="artist">Artist</label>
-            <input
-              type="text"
-              id="artist-filter"
-              class="filter-input"
-              placeholder="Search artist..."
-              aria-label="Search artist"
-            />
-          </div>
-          <div class="filter-group">
             <label class="filter-label" data-label-key="genre">Genre</label>
-            <select
-              id="genre-filter"
-              class="filter-select"
-              aria-label="Select genre"
-            >
-              <option value="">All</option>
-            </select>
+            <div id="genre-filter" class="custom-select" data-value="">
+              <button
+                type="button"
+                class="custom-select-trigger"
+                aria-haspopup="listbox"
+                aria-expanded="false"
+              >
+                <span class="custom-select-label">All</span>
+                <svg
+                  class="custom-select-arrow"
+                  viewBox="0 0 10 6"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M1 1L5 5L9 1"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
+              <div class="custom-select-options" role="listbox" hidden></div>
+            </div>
           </div>
           <div class="filter-group">
             <label class="filter-label" data-label-key="year">Year</label>
-            <select
-              id="year-filter"
-              class="filter-select"
-              aria-label="Select year"
-            >
-              <option value="">All</option>
-            </select>
+            <div id="year-filter" class="custom-select" data-value="">
+              <button
+                type="button"
+                class="custom-select-trigger"
+                aria-haspopup="listbox"
+                aria-expanded="false"
+              >
+                <span class="custom-select-label">All</span>
+                <svg
+                  class="custom-select-arrow"
+                  viewBox="0 0 10 6"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M1 1L5 5L9 1"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
+              <div class="custom-select-options" role="listbox" hidden></div>
+            </div>
           </div>
-          <div class="filter-group">
+          <div class="filter-group" style="display: none">
             <label class="filter-label" data-label-key="venue">Venue</label>
             <select
               id="venue-filter"
@@ -141,6 +162,16 @@
             >
               <option value="">All</option>
             </select>
+          </div>
+          <div class="filter-group">
+            <label class="filter-label" data-label-key="artist">Artist</label>
+            <input
+              type="text"
+              id="artist-filter"
+              class="filter-input"
+              placeholder="Search..."
+              aria-label="Search"
+            />
           </div>
           <div class="filter-actions">
             <button class="clear-filters" type="button">Clear Filters</button>

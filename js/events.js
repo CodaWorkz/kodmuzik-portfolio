@@ -26,7 +26,7 @@ const translations = {
     noResults: "Sonuç bulunamadı",
     total: "Toplam",
     all: "Tümü",
-    searchArtist: "Sanatçı ara...",
+    searchArtist: "Ara...",
     artist: "Sanatçı",
     genre: "Tür",
     year: "Yıl",
@@ -42,7 +42,7 @@ const translations = {
     noResults: "No results found",
     total: "Total",
     all: "All",
-    searchArtist: "Search artist...",
+    searchArtist: "Search...",
     artist: "Artist",
     genre: "Genre",
     year: "Year",
@@ -106,26 +106,19 @@ function updateEventPageLanguage() {
 }
 
 function updateFilterOptionsLanguage() {
-  // Update "All" option in all selects
-  document.querySelectorAll(".filter-select").forEach((select) => {
-    const allOption = select.querySelector('option[value=""]');
-    if (allOption) {
-      allOption.textContent = translations[currentLang].all;
+  // Update custom select options
+  document.querySelectorAll(".custom-select").forEach((select) => {
+    const optionsContainer = select.querySelector(".custom-select-options");
+    if (optionsContainer) {
+      optionsContainer
+        .querySelectorAll(".custom-select-option")
+        .forEach((option) => {
+          option.textContent = option.dataset[currentLang];
+        });
     }
   });
 
-  // Update genre options
-  const genreSelect = document.getElementById("genre-filter");
-  if (genreSelect && window.allGenres) {
-    genreSelect.querySelectorAll('option[value!=""]').forEach((option) => {
-      const genreData = window.allGenres.find((g) => g.en === option.value);
-      if (genreData) {
-        option.textContent = genreData[currentLang];
-      }
-    });
-  }
-
-  // Update venue options
+  // Update native venue select
   const venueSelect = document.getElementById("venue-filter");
   if (venueSelect && window.allVenues) {
     venueSelect.querySelectorAll('option[value!=""]').forEach((option) => {
@@ -144,30 +137,34 @@ function populateFilters(meta) {
   window.allGenres = meta.genres;
   window.allVenues = meta.venues;
 
-  // Populate genre filter
-  const genreFilter = document.getElementById("genre-filter");
-  genreFilter.innerHTML = `<option value="">${translations[currentLang].all}</option>`;
-  meta.genres.forEach((genre) => {
-    const option = document.createElement("option");
-    option.value = genre.en;
-    option.textContent = genre[currentLang];
-    genreFilter.appendChild(option);
+  // Populate custom genre filter
+  const genreOptions = document.querySelector(
+    "#genre-filter .custom-select-options"
+  );
+  genreOptions.innerHTML = createCustomOption(
+    "",
+    translations[currentLang].all,
+    translations[currentLang].all
+  );
+  meta.genres.forEach((g) => {
+    genreOptions.innerHTML += createCustomOption(g.en, g.tr, g.en);
   });
 
-  // Extract and populate years
+  // Populate custom year filter
   const years = [
     ...new Set(eventsData.map((event) => new Date(event.date).getFullYear())),
   ].sort((a, b) => b - a);
-
   window.allYears = years;
-
-  const yearFilter = document.getElementById("year-filter");
-  yearFilter.innerHTML = `<option value="">${translations[currentLang].all}</option>`;
+  const yearOptions = document.querySelector(
+    "#year-filter .custom-select-options"
+  );
+  yearOptions.innerHTML = createCustomOption(
+    "",
+    translations[currentLang].all,
+    translations[currentLang].all
+  );
   years.forEach((year) => {
-    const option = document.createElement("option");
-    option.value = year;
-    option.textContent = year;
-    yearFilter.appendChild(option);
+    yearOptions.innerHTML += createCustomOption(year, year, year);
   });
 
   // Populate venue filter
@@ -184,14 +181,19 @@ function populateFilters(meta) {
   updateCascadingFilters();
 }
 
+function createCustomOption(value, textTr, textEn) {
+  const text = currentLang === "tr" ? textTr : textEn;
+  return `<div class="custom-select-option" role="option" tabindex="-1" data-value="${value}" data-tr="${textTr}" data-en="${textEn}">${text}</div>`;
+}
+
 // 5. Filter Logic & Cascading
 // ================================================
 function getFilteredEvents() {
   const artistFilter = document
     .getElementById("artist-filter")
     .value.toLowerCase();
-  const genreFilter = document.getElementById("genre-filter").value;
-  const yearFilter = document.getElementById("year-filter").value;
+  const genreFilter = document.getElementById("genre-filter").dataset.value;
+  const yearFilter = document.getElementById("year-filter").dataset.value;
   const venueFilter = document.getElementById("venue-filter").value;
 
   return eventsData.filter((event) => {
@@ -237,8 +239,8 @@ function updateCascadingFilters() {
   const artistFilter = document
     .getElementById("artist-filter")
     .value.toLowerCase();
-  const genreFilter = document.getElementById("genre-filter").value;
-  const yearFilter = document.getElementById("year-filter").value;
+  const genreFilter = document.getElementById("genre-filter").dataset.value;
+  const yearFilter = document.getElementById("year-filter").dataset.value;
   const venueFilter = document.getElementById("venue-filter").value;
 
   // Get available options based on current filters
@@ -300,16 +302,19 @@ function updateCascadingFilters() {
 }
 
 function updateFilterOptions(filterId, availableValues, isNumeric = false) {
-  const select = document.getElementById(filterId);
-  Array.from(select.options).forEach((option) => {
-    if (option.value === "") return; // Keep "All" option
-
-    const value = isNumeric ? parseInt(option.value) : option.value;
-    const isAvailable = availableValues.has(value);
-
-    option.style.display = isAvailable ? "" : "none";
-    option.disabled = !isAvailable;
-  });
+  const customSelect = document.getElementById(filterId);
+  if (customSelect.classList.contains("custom-select")) {
+    const options = customSelect.querySelectorAll(".custom-select-option");
+    options.forEach((option) => {
+      if (option.dataset.value === "") return;
+      const value = isNumeric
+        ? parseInt(option.dataset.value)
+        : option.dataset.value;
+      const isAvailable = availableValues.has(value);
+      option.classList.toggle("is-disabled", !isAvailable);
+      option.setAttribute("aria-disabled", !isAvailable);
+    });
+  }
 }
 
 // 6. Event Display
@@ -361,6 +366,72 @@ function updateResultsCount(count) {
   document.getElementById("results-number").textContent = count;
 }
 
+function setupCustomSelects() {
+  document.querySelectorAll(".custom-select").forEach((customSelect) => {
+    const trigger = customSelect.querySelector(".custom-select-trigger");
+    const optionsContainer = customSelect.querySelector(
+      ".custom-select-options"
+    );
+    const label = trigger.querySelector(".custom-select-label");
+
+    trigger.addEventListener("click", (e) => {
+      e.stopPropagation();
+      // Close other open selects
+      document.querySelectorAll(".custom-select.is-open").forEach((open) => {
+        if (open !== customSelect) {
+          open.classList.remove("is-open");
+          open
+            .querySelector(".custom-select-trigger")
+            .setAttribute("aria-expanded", "false");
+          open.querySelector(".custom-select-options").hidden = true;
+        }
+      });
+
+      const isOpen = customSelect.classList.toggle("is-open");
+      trigger.setAttribute("aria-expanded", isOpen);
+      optionsContainer.hidden = !isOpen;
+    });
+
+    optionsContainer.addEventListener("click", (e) => {
+      const option = e.target.closest(".custom-select-option");
+      if (option && !option.classList.contains("is-disabled")) {
+        const value = option.dataset.value;
+        const text = option.textContent;
+
+        label.textContent = text;
+        customSelect.dataset.value = value;
+
+        // Close dropdown
+        customSelect.classList.remove("is-open");
+        trigger.setAttribute("aria-expanded", "false");
+        optionsContainer.hidden = true;
+
+        // Apply filters
+        applyFilters();
+      }
+    });
+
+    customSelect.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        customSelect.classList.remove("is-open");
+        trigger.setAttribute("aria-expanded", "false");
+        optionsContainer.hidden = true;
+      }
+    });
+  });
+
+  // Close when clicking outside
+  document.addEventListener("click", () => {
+    document.querySelectorAll(".custom-select.is-open").forEach((open) => {
+      open.classList.remove("is-open");
+      open
+        .querySelector(".custom-select-trigger")
+        .setAttribute("aria-expanded", "false");
+      open.querySelector(".custom-select-options").hidden = true;
+    });
+  });
+}
+
 // 7. Event Listeners
 // ================================================
 function initializeEventListeners() {
@@ -378,13 +449,7 @@ function initializeEventListeners() {
     .getElementById("artist-filter")
     .addEventListener("input", debounce(applyFilters, 300));
 
-  // Other filters
-  document
-    .getElementById("genre-filter")
-    .addEventListener("change", applyFilters);
-  document
-    .getElementById("year-filter")
-    .addEventListener("change", applyFilters);
+  // Venue filter (still a native select)
   document
     .getElementById("venue-filter")
     .addEventListener("change", applyFilters);
@@ -392,9 +457,17 @@ function initializeEventListeners() {
   // Clear filters
   document.querySelector(".clear-filters").addEventListener("click", () => {
     document.getElementById("artist-filter").value = "";
-    document.getElementById("genre-filter").value = "";
-    document.getElementById("year-filter").value = "";
     document.getElementById("venue-filter").value = "";
+
+    // Reset custom selects
+    document.querySelectorAll(".custom-select").forEach((select) => {
+      select.dataset.value = "";
+      const allText = select.querySelector(
+        '.custom-select-option[data-value=""]'
+      ).dataset[currentLang];
+      select.querySelector(".custom-select-label").textContent = allText;
+    });
+
     applyFilters();
   });
 }
@@ -405,6 +478,7 @@ function initializeEventsPage() {
   detectLanguage();
   loadEvents();
   initializeEventListeners();
+  setupCustomSelects();
 }
 
 // Start when DOM is ready

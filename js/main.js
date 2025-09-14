@@ -155,13 +155,14 @@ function updateLanguageLinks() {
  */
 function updateContentForLocale() {
   const isEnglish = getLocalePrefix() === "/en";
+  // This function is intended for generic content sections, not the menu links,
+  // as menu links are already correctly rendered in the language-specific HTML files.
   const translatableElements = document.querySelectorAll(
-    ".menu-link, .content-section h1, .content-section p"
+    ".content-section h1, .content-section p"
   );
 
   const translations = {
     "ANA SAYFA": "HOME",
-    HİZMETLER: "SERVICES",
     ETKİNLİKLER: "EVENTS",
     HAKKIMIZDA: "ABOUT",
     İLETİŞİM: "CONTACT",

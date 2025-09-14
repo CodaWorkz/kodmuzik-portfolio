@@ -1,0 +1,83 @@
+/* ================================================
+   about.css - About Page Styles
+   KOD Müzik Website - Archival Statement
+   
+   Pure typographic treatment on black
+   ================================================ */
+
+/* About Page Container
+   ================================================ */
+.about-container {
+  min-height: 100vh;
+  padding: 80px 40px;
+}
+
+/* Content Column
+   ================================================ */
+.about-content {
+  max-width: 70ch;
+  margin: 0 auto;
+}
+
+/* Typography
+   ================================================ */
+.about-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin-bottom: 60px;
+}
+
+.about-text {
+  font-family: var(--font-primary);
+  font-size: 1.1rem;
+  font-weight: 300;
+  line-height: 1.7;
+  color: #f5f5f5;
+}
+
+.about-text p {
+  margin-bottom: 2rem;
+}
+
+.about-text p:last-child {
+  margin-bottom: 0;
+}
+
+/* Responsive
+   ================================================ */
+@media (max-width: 768px) {
+  .about-container {
+    padding: 60px 20px;
+  }
+
+  .about-content {
+    max-width: 100%;
+  }
+
+  .about-title {
+    font-size: 2rem;
+    margin-bottom: 40px;
+  }
+
+  .about-text {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+}
+
+/* Focus States for Dark Background
+   ================================================ */
+.about-container a:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 4px;
+}
+
+/* Ensure skip link is visible on dark background */
+.skip-to-content:focus {
+  background-color: #ffffff;
+  color: #000000;
+}

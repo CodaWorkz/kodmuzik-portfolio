@@ -25,6 +25,7 @@
   --menu-width-desktop: 200px;
   --menu-width-mobile: 80px;
   --transition-speed: 0.3s;
+  --logo-top-offset: calc(2rem + 3rem); /* ~80px */
   --menu-color-inactive: #b6b6b6; /* lighter than now */
   --menu-color-active: #8a8a8a; /* your current inactive */
   --menu-color-hover: #ececec; /* near-white for hover/focus */
@@ -45,6 +46,8 @@
 
 html {
   scroll-behavior: smooth;
+  /* Globally hint that this is a dark-themed document */
+  color-scheme: dark;
 }
 
 body {
@@ -104,10 +107,12 @@ p {
   display: block; /* make the whole logo area clickable */
   line-height: 0; /* remove extra inline spacing */
   color: var(--color-accent);
-  transition: transform var(--transition-speed);
+  /* Align logo top with content top (4rem content padding - 2rem menu padding) */
+  transform: translateY(3rem);
+  transition: transform var(--transition-speed); /* Keep hover transition */
 }
 .menu-logo:hover {
-  transform: scale(1.05);
+  transform: translateY(2.75rem) scale(1.05);
 }
 
 /* the <img> itself */
@@ -201,10 +206,13 @@ p {
 
 /* Reduced motion: disable hover nudge on links & logo */
 @media (prefers-reduced-motion: reduce) {
+  /* This applies to both desktop and mobile link hover effects */
   .menu-link:hover,
-  .menu-link:focus-visible,
-  .menu-logo:hover {
+  .menu-link:focus-visible {
     transform: none;
+  }
+  .menu-logo:hover {
+    transform: translateY(2.75rem); /* Keep position, disable scale */
   }
 }
 
@@ -292,6 +300,13 @@ a:focus-visible {
 /* 8. Responsive Design
    ================================================ */
 @media (max-width: 768px) {
+  .menu-logo {
+    transform: translateY(3rem) rotate(90deg);
+  }
+  .menu-logo:hover {
+    transform: translateY(2.75rem) rotate(90deg) scale(1.05);
+  }
+
   .side-menu {
     width: var(--menu-width-mobile);
     padding: 1.5rem 0.5rem;
@@ -300,12 +315,12 @@ a:focus-visible {
   /* stack & center the vertical labels */
   .menu-items {
     align-items: center;
-    gap: 2rem;
+    gap: 1.5rem;
   }
 
   /* rotate the labels (90°), remove left padding reserved for the bar */
   .menu-link {
-    font-size: 0.9rem;
+    font-size: 1.1rem;
     padding-left: 0;
     writing-mode: vertical-rl;
     text-orientation: mixed; /* Safari-friendly */
@@ -359,18 +374,9 @@ a:focus-visible {
   }
 
   .menu-logo-img {
-    width: 48px;
+    width: 60px;
   }
   .lang-toggle-menu {
     font-size: 0.9rem;
-  }
-}
-
-/* reduced motion: also cancel the vertical nudge on mobile */
-@media (prefers-reduced-motion: reduce) {
-  .menu-link:hover,
-  .menu-link:focus-visible,
-  .menu-logo:hover {
-    transform: none;
   }
 }

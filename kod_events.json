@@ -13,8 +13,8 @@
     {
       "id": "event_044",
       "artist": {
-        "tr": "NOVA MUZAK #40 hackedepicciotto ve Rafael Toral",
-        "en": "NOVA MUZAK #40 hackedepicciotto ve Rafael Toral"
+        "tr": "NOVA MUZAK #40 Hackedepicciotto ve Rafael Toral",
+        "en": "NOVA MUZAK #40 Hackedepicciotto and Rafael Toral"
       },
       "genre": { "tr": "Deneysel", "en": "Experimental" },
       "date": "2025-06-10",
@@ -50,7 +50,7 @@
       "id": "event_047",
       "artist": {
         "tr": "NOVA MUZAK #38  Poil + Ueda ve  Senyawa",
-        "en": "NOVA MUZAK #38  Poil + Ueda ve  Senyawa"
+        "en": "NOVA MUZAK #38 Poil + Ueda and Senyawa"
       },
       "genre": { "tr": "Deneysel", "en": "Experimental" },
       "date": "2025-02-21",
@@ -73,7 +73,7 @@
       "id": "event_049",
       "artist": {
         "tr": "Chris Botti & CSO Orkestrası (Kültür Yolu Kapsamında)",
-        "en": "Chris Botti & CSO Orkestrası (Kültür Yolu Kapsamında)"
+        "en": "Chris Botti & the CSO (Presidential Symphony Orchestra) — as part of the Culture Route program"
       },
       "genre": { "tr": "Caz", "en": "Jazz" },
       "date": "2024-11-09",
@@ -86,7 +86,7 @@
       "id": "event_050",
       "artist": {
         "tr": "Chris Botti & CSO Orkestrası (Kültür Yolu Kapsamında)",
-        "en": "Chris Botti & CSO Orkestrası (Kültür Yolu Kapsamında)"
+        "en": "Chris Botti & the CSO (Presidential Symphony Orchestra) — as part of the Culture Route program"
       },
       "genre": { "tr": "Caz", "en": "Jazz" },
       "date": "2024-11-07",
@@ -99,7 +99,7 @@
       "id": "event_051",
       "artist": {
         "tr": "Brad Mehldau Trio (Akbank Caz Festivali kapsamında)",
-        "en": "Brad Mehldau Trio (Akbank Caz Festivali kapsamında)"
+        "en": "Brad Mehldau Trio (as part of the Akbank Jazz Festival)"
       },
       "genre": { "tr": "Caz", "en": "Jazz" },
       "date": "2024-10-12",

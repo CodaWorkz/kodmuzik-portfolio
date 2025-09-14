@@ -1,0 +1,260 @@
+/* ================================================
+   home.css - Home Page Hero Slider Styles
+   KOD Müzik Website
+   
+   Contents:
+   1. Hero Slider Container
+   2. Slide Layout
+   3. Content Overlay
+   4. CTA Button & Animation
+   5. Responsive Design
+   6. Reduced Motion
+   ================================================ */
+
+/* 1. Hero Slider Container
+   ================================================ */
+.hero-slider {
+  margin: -4rem;
+  width: calc(100% + 8rem);
+  height: 100dvh;
+  position: relative;
+  overflow: hidden;
+  background: #000;
+}
+
+.slider-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.slider-wrapper:focus {
+  outline: none;
+}
+
+/* 2. Slide Layout
+   ================================================ */
+.slide {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  flex-shrink: 0;
+}
+
+.slide-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.slide-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.slide::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: transparent;
+}
+
+/* 3. Content Overlay
+   ================================================ */
+.slide-content {
+  position: absolute;
+  top: calc(var(--logo-top-offset) - 2px); /* Align with logo */
+  left: 60px;
+  right: 60px;
+  z-index: 2;
+  color: var(--color-accent);
+  pointer-events: none;
+}
+
+.slide-content > * {
+  pointer-events: auto;
+}
+
+.slide-artist {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: 400;
+  line-height: 1;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.7);
+  max-width: 90%;
+}
+
+.slide-details {
+  font-family: var(--font-primary);
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  font-weight: 300;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.7);
+}
+
+.slide-details p {
+  margin: 0;
+}
+
+.slide-location {
+  margin-bottom: 0.25rem;
+}
+
+/* 4. CTA Button & Animation
+   ================================================ */
+.slide-cta {
+  position: absolute;
+  bottom: 90px;
+  right: 60px;
+  z-index: 2;
+}
+
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: transparent;
+  border: none;
+  color: var(--color-accent);
+  font-family: var(--font-primary);
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 8px;
+  border-radius: 99px;
+  transition: color 0.3s ease;
+}
+
+.cta-button:hover,
+.cta-button:focus-visible {
+  color: #fff;
+  outline: none;
+}
+
+.cta-button:focus-visible {
+  box-shadow: 0 0 0 2px var(--color-background), 0 0 0 4px var(--color-accent);
+}
+
+.cta-arrow-wrapper {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  border: 1.5px solid var(--color-accent);
+  transition: border-color 0.3s ease;
+}
+
+.cta-arrow-wrapper::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: 50%;
+  background: conic-gradient(var(--color-accent) 0%, transparent 0%);
+  transition: background 0.5s ease-in-out;
+  z-index: -1;
+}
+
+.cta-arrow-icon {
+  color: var(--color-accent);
+  transition: color 0.5s ease-in-out;
+}
+
+.cta-button:hover .cta-arrow-wrapper::before,
+.cta-button:focus-visible .cta-arrow-wrapper::before {
+  background: conic-gradient(var(--color-accent) 100%, transparent 0%);
+}
+
+.cta-button:hover .cta-arrow-wrapper {
+  border-color: transparent;
+}
+
+.cta-button:hover .cta-arrow-icon,
+.cta-button:focus-visible .cta-arrow-icon {
+  color: #1a1a1a;
+}
+
+/* 5. Responsive Design
+   ================================================ */
+@media (max-width: 1023px) {
+  .slide-content {
+    top: 72px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-slider {
+    margin: -2rem;
+    width: calc(100% + 4rem);
+  }
+
+  .slide-content {
+    left: 20px;
+    right: 20px;
+    top: 40px;
+    text-align: left;
+  }
+
+  .slide-artist {
+    font-size: clamp(2rem, 8vw, 3rem);
+    line-height: 1.2;
+    max-width: 90%;
+  }
+
+  .slide-details {
+    font-size: 1rem;
+  }
+
+  .slide-cta {
+    bottom: 56px;
+    right: 20px;
+  }
+
+  .cta-button {
+    font-size: 0.8rem;
+  }
+
+  .cta-arrow-wrapper {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+/* Scrim for mobile readability */
+@media (max-width: 600px) {
+  .slide::after {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 0%, transparent 50%);
+  }
+}
+
+/* 6. Reduced Motion
+   ================================================ */
+@media (prefers-reduced-motion: reduce) {
+  .slider-wrapper {
+    transition: none;
+  }
+
+  .cta-arrow-wrapper::before {
+    transition: none;
+  }
+
+  .cta-button:hover .cta-arrow-wrapper::before,
+  .cta-button:focus-visible .cta-arrow-wrapper::before {
+    background: conic-gradient(var(--color-accent) 100%, transparent 0%);
+  }
+}
+

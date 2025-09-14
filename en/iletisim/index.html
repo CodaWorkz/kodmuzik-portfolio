@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact - Kodmüzik</title>
+    <meta name="description" content="Get in touch with KOD Müzik." />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="/css/contact.css" />
+  </head>
+  <body>
+    <a href="#main-content" class="skip-to-content">Skip to content</a>
+
+    <nav class="side-menu" aria-label="Main menu">
+      <a href="/en" class="menu-logo" aria-label="Kodmüzik home">
+        <img
+          src="/KodLogo.svg"
+          alt="Kodmüzik logo"
+          class="menu-logo-img"
+          loading="eager"
+          decoding="async"
+        />
+      </a>
+      <div class="menu-nav">
+        <ul class="menu-items">
+          <li class="menu-item">
+            <a href="/en" class="menu-link" data-path="/">HOME</a>
+          </li>
+          <li class="menu-item">
+            <a href="/en/etkinlikler" class="menu-link" data-path="/etkinlikler"
+              >EVENTS</a
+            >
+          </li>
+          <li class="menu-item">
+            <a href="/en/hakkimizda" class="menu-link" data-path="/hakkimizda"
+              >ABOUT</a
+            >
+          </li>
+          <li class="menu-item">
+            <a href="/en/iletisim" class="menu-link" data-path="/iletisim"
+              >CONTACT</a
+            >
+          </li>
+        </ul>
+      </div>
+      <div class="lang-toggle-menu" aria-label="Language selection">
+        <div class="lang-options">
+          <a
+            href="/iletisim"
+            class="lang-link"
+            id="lang-tr"
+            hreflang="tr"
+            lang="tr"
+            >TR</a
+          >
+          <span class="lang-separator" aria-hidden="true">|</span>
+          <a
+            href="/en/iletisim"
+            class="lang-link"
+            id="lang-en"
+            hreflang="en"
+            lang="en"
+            >EN</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <main id="main-content" class="main-content">
+      <section class="contact-container">
+        <h1 class="contact-title">CONTACT</h1>
+
+        <div class="contact-grid">
+          <div class="contact-form-wrapper">
+            <form
+              action="mailto:iletisim@kodmuzik.com"
+              method="POST"
+              enctype="text/plain"
+              class="contact-form"
+            >
+              <div class="form-group">
+                <label for="name" class="form-label">Name</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  class="form-input"
+                  required
+                  autocomplete="name"
+                />
+              </div>
+              <div class="form-group">
+                <label for="email" class="form-label">Email</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  class="form-input"
+                  required
+                  autocomplete="email"
+                  inputmode="email"
+                  autocapitalize="off"
+                />
+              </div>
+              <div class="form-group">
+                <label for="message" class="form-label">Message</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  class="form-textarea"
+                  required
+                ></textarea>
+              </div>
+              <button type="submit" class="form-button">Send</button>
+            </form>
+          </div>
+
+          <div class="contact-info-wrapper">
+            <div class="contact-info-block">
+              <h2 class="contact-info-title">EMAIL</h2>
+              <p class="contact-info-content">
+                <a href="mailto:iletisim@kodmuzik.com">iletisim@kodmuzik.com</a>
+              </p>
+            </div>
+
+            <div class="contact-info-block">
+              <h2 class="contact-info-title">SOCIAL</h2>
+              <p class="contact-info-content">
+                <a
+                  href="https://instagram.com/kodmuzik"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram"
+                  >Instagram</a
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="/js/main.js" defer></script>
+  </body>
+</html>

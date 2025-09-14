@@ -46,11 +46,6 @@
             <a href="/" class="menu-link" data-path="/">ANA SAYFA</a>
           </li>
           <li class="menu-item">
-            <a href="/hizmetler" class="menu-link" data-path="/hizmetler"
-              >HİZMETLER</a
-            >
-          </li>
-          <li class="menu-item">
             <a href="/etkinlikler" class="menu-link" data-path="/etkinlikler"
               >ETKİNLİKLER</a
             >
@@ -97,39 +92,69 @@
       <!-- Events Header -->
       <section class="events-header">
         <h1 class="events-title">Etkinlikler</h1>
-        <p class="events-subtitle">1999'dan bugüne unutulmaz konserler</p>
+        <p class="events-subtitle">1999 ve 2025 arası</p>
       </section>
 
       <!-- Filters Section -->
       <section class="filters-section">
         <div class="filters-container">
           <div class="filter-group">
-            <label class="filter-label" data-label-key="artist">Sanatçı</label>
-            <input
-              type="text"
-              id="artist-filter"
-              class="filter-input"
-              placeholder="Sanatçı ara..."
-              aria-label="Sanatçı ara"
-            />
-          </div>
-          <div class="filter-group">
             <label class="filter-label" data-label-key="genre">Tür</label>
-            <select
-              id="genre-filter"
-              class="filter-select"
-              aria-label="Tür seç"
-            >
-              <option value="">Tümü</option>
-            </select>
+            <div id="genre-filter" class="custom-select" data-value="">
+              <button
+                type="button"
+                class="custom-select-trigger"
+                aria-haspopup="listbox"
+                aria-expanded="false"
+              >
+                <span class="custom-select-label">Tümü</span>
+                <svg
+                  class="custom-select-arrow"
+                  viewBox="0 0 10 6"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M1 1L5 5L9 1"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
+              <div class="custom-select-options" role="listbox" hidden></div>
+            </div>
           </div>
           <div class="filter-group">
             <label class="filter-label" data-label-key="year">Yıl</label>
-            <select id="year-filter" class="filter-select" aria-label="Yıl seç">
-              <option value="">Tümü</option>
-            </select>
+            <div id="year-filter" class="custom-select" data-value="">
+              <button
+                type="button"
+                class="custom-select-trigger"
+                aria-haspopup="listbox"
+                aria-expanded="false"
+              >
+                <span class="custom-select-label">Tümü</span>
+                <svg
+                  class="custom-select-arrow"
+                  viewBox="0 0 10 6"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M1 1L5 5L9 1"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
+              <div class="custom-select-options" role="listbox" hidden></div>
+            </div>
           </div>
-          <div class="filter-group">
+          <div class="filter-group" style="display: none">
             <label class="filter-label" data-label-key="venue">Mekan</label>
             <select
               id="venue-filter"
@@ -138,6 +163,16 @@
             >
               <option value="">Tümü</option>
             </select>
+          </div>
+          <div class="filter-group">
+            <label class="filter-label" data-label-key="artist">Sanatçı</label>
+            <input
+              type="text"
+              id="artist-filter"
+              class="filter-input"
+              placeholder="Ara..."
+              aria-label="Ara"
+            />
           </div>
           <div class="filter-actions">
             <button class="clear-filters" type="button">

@@ -18,7 +18,9 @@
     />
 
     <!-- Global Styles -->
-    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="/css/main.css" />
+    <!-- Home (hero slider) Styles -->
+    <link rel="stylesheet" href="/css/home.css" />
   </head>
   <body>
     <!-- Skip to content link for screen readers -->
@@ -42,11 +44,6 @@
         <ul class="menu-items">
           <li class="menu-item">
             <a href="/" class="menu-link" data-path="/">ANA SAYFA</a>
-          </li>
-          <li class="menu-item">
-            <a href="/hizmetler" class="menu-link" data-path="/hizmetler"
-              >HİZMETLER</a
-            >
           </li>
           <li class="menu-item">
             <a href="/etkinlikler" class="menu-link" data-path="/etkinlikler"
@@ -82,13 +79,16 @@
 
     <!-- Main Content -->
     <main id="main-content" class="main-content">
-      <div class="content-section">
-        <h1>Kodmüzik'e Hoş Geldiniz</h1>
-        <p>1999'dan Beri Seçkin Müzik Etkinlikleri</p>
-      </div>
+      <section
+        id="hero-slider"
+        class="hero-slider"
+        aria-label="Geçmiş Etkinlikler"
+      ></section>
     </main>
 
     <!-- Global Scripts -->
-    <script src="js/main.js" defer></script>
+    <script src="/js/main.js" defer></script>
+    <!-- Home (hero slider) Scripts -->
+    <script src="/js/home.js" defer></script>
   </body>
 </html>

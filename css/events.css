@@ -19,7 +19,13 @@
 }
 
 .events-title {
+  /* Match About/Contact title typography */
+  font-family: var(--font-display);
   font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-accent);
   margin-bottom: 0.5rem;
 }
 
@@ -68,7 +74,6 @@
   font-family: var(--font-primary);
 }
 
-.filter-input:focus,
 .filter-input:focus {
   outline: none;
   border-color: var(--color-muted);

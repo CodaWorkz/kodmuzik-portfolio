@@ -7,8 +7,7 @@
    2. Path Management & Routing
    3. Menu Active State
    4. Language Toggle
-   5. Content Localization
-   6. Initialization
+   5. Initialization
    ================================================ */
 
 // 1. Helper Functions
@@ -146,46 +145,7 @@ function updateLanguageLinks() {
   }
 }
 
-// 5. Content Localization
-// ================================================
-
-/**
- * Updates UI text content based on the current language (locale).
- * Stores original text in data attributes for reliable toggling.
- */
-function updateContentForLocale() {
-  const isEnglish = getLocalePrefix() === "/en";
-  // This function is intended for generic content sections, not the menu links,
-  // as menu links are already correctly rendered in the language-specific HTML files.
-  const translatableElements = document.querySelectorAll(
-    ".content-section h1, .content-section p"
-  );
-
-  const translations = {
-    "ANA SAYFA": "HOME",
-    ETKİNLİKLER: "EVENTS",
-    HAKKIMIZDA: "ABOUT",
-    İLETİŞİM: "CONTACT",
-    "Kodmüzik'e Hoş Geldiniz": "Welcome to Kodmüzik",
-    "1999'dan Beri Seçkin Müzik Etkinlikleri":
-      "Selective Music Events Since 1999",
-  };
-
-  translatableElements.forEach((el) => {
-    // On first run, store the original Turkish text from the DOM.
-    if (!el.dataset.tr) {
-      const originalText = el.textContent.trim();
-      el.dataset.tr = originalText;
-      // Find and store the English translation.
-      el.dataset.en = translations[originalText] || originalText;
-    }
-
-    // Set the text content based on the current language.
-    el.textContent = isEnglish ? el.dataset.en : el.dataset.tr;
-  });
-}
-
-// 6. Initialization
+// 5. Initialization
 // ================================================
 
 /**
@@ -195,7 +155,6 @@ function initializeApp() {
   updateMenuLinksForLocale();
   setActiveLink();
   updateLanguageLinks();
-  updateContentForLocale(); // Added content translation
 }
 
 /**
@@ -212,6 +171,3 @@ function domReady(fn) {
 
 // Run initialization
 domReady(initializeApp);
-
-// Re-initialize on browser navigation (back/forward buttons)
-window.addEventListener("popstate", initializeApp);

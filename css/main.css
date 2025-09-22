@@ -19,7 +19,7 @@
   --font-primary: "Inter", sans-serif;
   --font-display: "Anton", sans-serif;
   --color-text: #eaeaea;
-  --color-background: #121212;
+  --color-background: #121212; /* base UI tokens used across the site */
   --color-accent: #ffffff;
   --color-muted: #a0a0a0;
   --menu-width-desktop: 200px;
@@ -32,6 +32,14 @@
   /* slower hover animations */
   --menu-hover-duration: 420ms;
   --menu-hover-ease: cubic-bezier(0.22, 1, 0.36, 1); /* smooth ease-out */
+  /* overlays */
+  --overlay-main: rgba(0, 0, 0, 0.1);
+  --overlay-menu: transparent;
+  /* optional fine-tuning for watermark centering */
+  --kod-watermark-shift-x: 0%;
+  /* background KOD logo transform controls */
+  --kod-bg-rotate: -14deg; /* subtle tilt */
+  --kod-bg-scale: 0.6; /* zoom to reveal < and > chevrons while keeping cover */
 }
 
 /* 2. CSS Reset
@@ -52,11 +60,37 @@ html {
 
 body {
   font-family: var(--font-primary);
-  background-color: var(--color-background);
+  /* Site-wide brand background */
+  background-color: var(--color-background); /* keep generic site color */
   color: var(--color-text);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  position: relative; /* create containing context for pseudo background */
+}
+
+/* Fixed KOD watermark element (injected by JS as #kod-bg) */
+#kod-bg {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(calc(-50% + var(--kod-watermark-shift-x)), -50%)
+    rotate(var(--kod-bg-rotate)) scale(var(--kod-bg-scale));
+  width: 200vmax;
+  height: 200vmax;
+  pointer-events: none;
+  background-color: rgba(44, 44, 44, 0.3);
+  -webkit-mask-image: url("/KodLogo.svg");
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  -webkit-mask-size: contain;
+  mask-image: url("/KodLogo.svg");
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: contain;
+  z-index: 0;
+  will-change: transform;
+  backface-visibility: hidden;
 }
 
 ul {
@@ -92,8 +126,9 @@ p {
   left: 0;
   bottom: 0;
   width: var(--menu-width-desktop);
-  background-color: var(--color-background);
-  border-right: 1px solid #282828;
+  /* Option A: fully transparent rail so background is continuous */
+  background-color: transparent;
+  border-right: none;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -104,15 +139,14 @@ p {
 
 /* anchor that wraps the logo */
 .menu-logo {
-  display: block; /* make the whole logo area clickable */
+  display: inline-flex; /* keep content width; caption inherits logo width */
+  flex-direction: column;
+  align-items: stretch;
   line-height: 0; /* remove extra inline spacing */
   color: var(--color-accent);
   /* Align logo top with content top (4rem content padding - 2rem menu padding) */
-  transform: translateY(3rem);
-  transition: transform var(--transition-speed); /* Keep hover transition */
-}
-.menu-logo:hover {
-  transform: translateY(2.75rem) scale(1.05);
+  margin-top: 3rem; /* avoid transforms on wrapper */
+  position: relative; /* anchor caption spacing */
 }
 
 /* the <img> itself */
@@ -120,6 +154,35 @@ p {
   display: block; /* kill baseline gap */
   width: 130px; /* match your HTML width */
   height: auto;
+}
+
+/* also support inline SVG as the logo graphic */
+.menu-logo > svg {
+  display: block;
+  width: 130px;
+  height: auto;
+}
+
+/* Hover scale applies to the graphic only, not the wrapper */
+.menu-logo:hover > .menu-logo-img,
+.menu-logo:hover > svg {
+  transform: scale(1.05);
+}
+
+/* Caption element directly under the logo (semantic HTML) */
+.menu-logo-caption {
+  display: block;
+  width: 100%;
+  text-align: center;
+  white-space: nowrap;
+  font-family: var(--font-display);
+  color: var(--color-accent);
+  font-size: 38px;
+  line-height: 1;
+  letter-spacing: 0.5rem;
+  margin-top: 8px;
+  padding-top: 4px; /* desktop-only tweak for spacing under logo */
+  text-indent: 0.3rem; /* Reduce this to match your letter-spacing */
 }
 
 .menu-nav {
@@ -153,9 +216,11 @@ p {
 
 @media (max-width: 768px) {
   .menu-logo-img {
-    width: 48px;
+    width: 60px; /* mobile logo width per spec */
   }
 }
+
+/* (Removed global background override that flattened all backgrounds) */
 
 /* Align links left so the indicator has a home */
 .menu-items {
@@ -221,6 +286,8 @@ p {
 .main-content {
   margin-left: var(--menu-width-desktop);
   padding: 4rem;
+  background-color: transparent; /* remove page-level tint */
+  min-height: 100vh; /* ensure overlay covers full viewport height */
 }
 
 .content-section {
@@ -300,12 +367,7 @@ a:focus-visible {
 /* 8. Responsive Design
    ================================================ */
 @media (max-width: 768px) {
-  .menu-logo {
-    transform: translateY(3rem) rotate(90deg);
-  }
-  .menu-logo:hover {
-    transform: translateY(2.75rem) rotate(90deg) scale(1.05);
-  }
+  /* wrapper remains untransformed on mobile */
 
   .side-menu {
     width: var(--menu-width-mobile);
@@ -364,6 +426,7 @@ a:focus-visible {
   .main-content {
     margin-left: var(--menu-width-mobile);
     padding: 2rem;
+    background-color: transparent;
   }
 
   h1 {
@@ -375,6 +438,33 @@ a:focus-visible {
 
   .menu-logo-img {
     width: 60px;
+  }
+
+  .menu-logo-caption {
+    position: absolute;
+    left: 29px; /* Position to the right of the logo */
+    top: calc(50% + 40px); /* Position 40px below the logo center */
+    transform: translateY(-50%) rotate(90deg);
+    transform-origin: left center;
+    font-size: 18px;
+    letter-spacing: 0.4rem;
+    text-indent: 0;
+    margin-top: 0;
+    padding-top: 0; /* reset desktop padding on mobile */
+    white-space: nowrap;
+    z-index: 2;
+  }
+
+  /* Rotate the graphic only; wrapper defines width for caption */
+  .menu-logo > .menu-logo-img,
+  .menu-logo > svg {
+    transform: rotate(90deg);
+    transform-origin: center center;
+  }
+
+  .menu-logo:hover > .menu-logo-img,
+  .menu-logo:hover > svg {
+    transform: rotate(90deg) scale(1.05);
   }
   .lang-toggle-menu {
     font-size: 0.9rem;

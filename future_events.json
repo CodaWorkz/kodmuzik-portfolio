@@ -1,0 +1,26 @@
+{
+  "meta": {
+    "schema": "kodmuzik.future.v1",
+    "generated": "2025-01-01"
+  },
+  "events": [
+    {
+      "id": "fe-2025-002",
+      "date": "15-10-2025",
+      "title": { "tr": "Yeni Konser", "en": "New Concert " },
+      "venue": { "tr": "CRR", "en": "CRR" },
+      "city": { "tr": "İstanbul", "en": "Istanbul" },
+      "ticketUrl": null,
+      "infoUrl": null
+    },
+    {
+      "id": "fe-2026-001",
+      "date": "10-10-2026",
+      "title": { "tr": "Özel Konser", "en": "Special Concert" },
+      "venue": { "tr": "CSO Ankara", "en": "CSO Ankara" },
+      "city": { "tr": "Ankara", "en": "Ankara" },
+      "ticketUrl": null,
+      "infoUrl": null
+    }
+  ]
+}

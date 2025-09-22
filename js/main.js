@@ -155,6 +155,7 @@ function initializeApp() {
   updateMenuLinksForLocale();
   setActiveLink();
   updateLanguageLinks();
+  installKodBackground();
 }
 
 /**
@@ -171,3 +172,56 @@ function domReady(fn) {
 
 // Run initialization
 domReady(initializeApp);
+
+// 6. Background watermark installer
+// ================================================
+function installKodBackground() {
+  const doc = document;
+  // Ensure a single instance
+  let bg = doc.getElementById("kod-bg");
+  if (!bg) {
+    bg = doc.createElement("div");
+    bg.id = "kod-bg";
+    // Insert as first child so it paints beneath others (z-index handles rest)
+    doc.body.insertBefore(bg, doc.body.firstChild);
+  }
+
+  const pr = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  function tune() {
+    const w = window.innerWidth;
+    const h = window.innerHeight;
+    const ar = w / h;
+    // Base values — keep in sync with CSS defaults
+    let scale = 0.6;
+    let rotate = -14; // degrees
+    let shiftX = 0; // percentage offset
+
+    // Aspect-ratio driven framing to keep <O> with chevrons peeking
+    if (ar >= 2.0) {
+      // ultra-wide → a touch more scale to avoid gaps, slight left nudge
+      scale = 0.65;
+      shiftX = -1; // show a bit more of the right chevron
+    } else if (ar <= 0.7) {
+      // tall phones → slightly more scale and small right nudge
+      scale = 0.7;
+      shiftX = 1;
+    }
+
+    // Fine tuning for small widths
+    if (w <= 600) scale = Math.max(scale, 0.75);
+
+    // Apply via CSS variables so CSS does the heavy lifting
+    const rs = doc.documentElement.style;
+    rs.setProperty("--kod-bg-scale", String(scale));
+    rs.setProperty("--kod-bg-rotate", rotate + "deg");
+    rs.setProperty("--kod-watermark-shift-x", shiftX + "%");
+  }
+
+  tune();
+  window.addEventListener("resize", tune, { passive: true });
+  window.addEventListener("orientationchange", tune, { passive: true });
+  if (!pr) {
+    // No animation now, but hook is here if a micro parallax is desired later
+  }
+}

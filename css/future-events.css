@@ -1,0 +1,299 @@
+/* ================================================
+   future-events.css - Future Events Page Styles
+   KOD Müzik Website
+   
+   Contents:
+   1. Page Header
+   2. Timeline Events
+   3. Action Pills
+   4. Newsletter Section
+   5. Responsive Design
+   ================================================ */
+
+/* 1. Page Header
+   ================================================ */
+.future-header {
+  /* Align top with main logo like other pages (top padding handled by .main-content) */
+  padding: 0 0 3rem;
+  border-bottom: 1px solid #282828;
+  margin-bottom: 3rem;
+}
+
+.future-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: 0.5rem;
+}
+
+.future-subtitle {
+  color: var(--color-muted);
+  font-weight: 300;
+}
+
+/* 2. Timeline Events
+   ================================================ */
+.timeline-section {
+  margin-bottom: 4rem;
+}
+
+.timeline-item {
+  /* Stronger glassmorphism card */
+  background: linear-gradient(
+      to bottom right,
+      rgba(255, 255, 255, 0.06),
+      rgba(255, 255, 255, 0.015)
+    ),
+    rgba(18, 18, 18, 0.5); /* fallback on browsers without blur */
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 8px;
+  padding: 2rem;
+  margin-bottom: 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 2rem;
+  align-items: start;
+  transition: var(--transition-speed);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
+  backdrop-filter: blur(16px) saturate(140%);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.6);
+}
+
+/* No hover effect on cards; pills handle subtle illumination */
+
+.timeline-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.timeline-date {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  color: var(--color-accent);
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.03em;
+}
+
+.timeline-title {
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: var(--color-accent);
+  margin-bottom: 0.5rem;
+}
+
+.timeline-venue {
+  color: var(--color-muted);
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+/* 3. Action Pills
+   ================================================ */
+.timeline-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: flex-start; /* left align with header */
+  justify-content: flex-start; /* left align with header */
+}
+
+.action-pill {
+  padding: 0.4rem 1.3rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+  transition: var(--transition-speed);
+  border: none;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+/* Dark neon amber */
+.pill-info {
+  background: rgba(255, 193, 7, 0.12);
+  color: #ffcd38;
+  box-shadow:
+    0 0 0 1px rgba(255, 193, 7, 0.28) inset,
+    0 0 10px rgba(255, 193, 7, 0.25),
+    0 0 26px rgba(255, 193, 7, 0.15);
+}
+
+.pill-info:hover,
+.pill-info:focus-visible {
+  background: rgba(255, 193, 7, 0.18);
+  box-shadow:
+    0 0 0 1px rgba(255, 193, 7, 0.35) inset,
+    0 0 14px rgba(255, 193, 7, 0.35),
+    0 0 34px rgba(255, 193, 7, 0.2);
+}
+
+/* Dark neon green */
+.pill-tickets {
+  background: rgba(76, 175, 80, 0.12);
+  color: #69e071;
+  box-shadow:
+    0 0 0 1px rgba(76, 175, 80, 0.28) inset,
+    0 0 10px rgba(76, 175, 80, 0.25),
+    0 0 26px rgba(76, 175, 80, 0.15);
+}
+
+.pill-tickets:hover,
+.pill-tickets:focus-visible {
+  background: rgba(76, 175, 80, 0.18);
+  box-shadow:
+    0 0 0 1px rgba(76, 175, 80, 0.35) inset,
+    0 0 14px rgba(76, 175, 80, 0.35),
+    0 0 34px rgba(76, 175, 80, 0.2);
+}
+
+/* 4. Newsletter Section
+   ================================================ */
+.newsletter-section {
+  /* Stronger glassmorphism panel */
+  background: linear-gradient(
+      to bottom right,
+      rgba(255, 255, 255, 0.06),
+      rgba(255, 255, 255, 0.015)
+    ),
+    rgba(18, 18, 18, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 8px;
+  padding: 3rem;
+  text-align: left; /* align content with header */
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
+  backdrop-filter: blur(16px) saturate(140%);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.6);
+}
+
+.newsletter-title {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  color: var(--color-accent);
+  margin-bottom: 1rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.newsletter-text {
+  color: var(--color-muted);
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+}
+
+.newsletter-form {
+  display: flex;
+  gap: 1rem;
+  max-width: 400px;
+  margin: 0; /* left align with header */
+}
+
+.newsletter-input {
+  flex: 1;
+  background: var(--color-background);
+  border: 1px solid #333;
+  color: var(--color-text);
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  font-family: var(--font-primary);
+}
+
+.newsletter-input:focus {
+  outline: none;
+  border-color: var(--color-muted);
+}
+
+.newsletter-button {
+  background: transparent;
+  border: 1px solid var(--color-accent);
+  color: var(--color-accent);
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  transition: var(--transition-speed);
+}
+
+.newsletter-button:hover {
+  background: var(--color-accent);
+  color: var(--color-background);
+}
+
+/* 5. Responsive Design
+   ================================================ */
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .future-header {
+    padding: 2rem 0; /* compact top spacing on mobile */
+    margin-bottom: 2rem;
+  }
+
+  .timeline-item {
+    padding: 1.5rem;
+    grid-template-columns: 1fr auto;
+    gap: 1rem;
+  }
+
+  .timeline-actions {
+    flex-direction: column;
+    justify-content: flex-start; /* keep left on mobile */
+    align-items: flex-start; /* keep left on mobile */
+    gap: 0.8rem;
+    margin-top: 0;
+  }
+
+  .action-pill {
+    font-size: 0.8rem;
+    padding: 0.35rem 1rem;
+  }
+
+  .newsletter-section {
+    padding: 2rem 1.5rem;
+  }
+
+  .newsletter-form {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start; /* left align inputs on mobile too */
+  }
+}
+
+/* Tablet responsiveness */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .timeline-item {
+    padding: 2rem 1.5rem;
+    grid-template-columns: 1fr auto;
+    gap: 1.5rem;
+  }
+
+  .timeline-title {
+    font-size: 1.2rem;
+  }
+
+  .timeline-date {
+    font-size: 1rem;
+  }
+}
+
+/* Large screen optimization: left-align without changing box width */
+@media (min-width: 1200px) {
+  .timeline-section,
+  .newsletter-section {
+    max-width: 800px;       /* requested max width */
+    margin-left: 0;         /* align to the left edge */
+    margin-right: auto;     /* prevents centering */
+  }
+
+  .timeline-item {
+    padding: 2.5rem;
+  }
+}

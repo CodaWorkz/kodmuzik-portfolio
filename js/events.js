@@ -35,6 +35,7 @@ const translations = {
     genreLabel: "Tür:",
     dateLabel: "Tarih:",
     venueLabel: "Mekan:",
+    seriesLabel: "Seri:",
   },
   en: {
     loading: "Loading...",
@@ -51,6 +52,7 @@ const translations = {
     genreLabel: "Genre:",
     dateLabel: "Date:",
     venueLabel: "Venue:",
+    seriesLabel: "Series:",
   },
 };
 
@@ -167,15 +169,20 @@ function populateFilters(meta) {
     yearOptions.innerHTML += createCustomOption(year, year, year);
   });
 
-  // Populate venue filter
-  const venueFilter = document.getElementById("venue-filter");
-  venueFilter.innerHTML = `<option value="">${translations[currentLang].all}</option>`;
-  meta.venues.forEach((venue) => {
-    const option = document.createElement("option");
-    option.value = venue.en;
-    option.textContent = venue[currentLang];
-    venueFilter.appendChild(option);
-  });
+  // Populate custom venue filter
+  const venueOptions = document.querySelector(
+    "#venue-filter .custom-select-options"
+  );
+  if (venueOptions) {
+    venueOptions.innerHTML = createCustomOption(
+      "",
+      translations[currentLang].all,
+      translations[currentLang].all
+    );
+    meta.venues.forEach((v) => {
+      venueOptions.innerHTML += createCustomOption(v.en, v.tr, v.en);
+    });
+  }
 
   // Initial cascade update
   updateCascadingFilters();
@@ -194,7 +201,7 @@ function getFilteredEvents() {
     .value.toLowerCase();
   const genreFilter = document.getElementById("genre-filter").dataset.value;
   const yearFilter = document.getElementById("year-filter").dataset.value;
-  const venueFilter = document.getElementById("venue-filter").value;
+  const venueFilter = document.getElementById("venue-filter").dataset.value;
 
   return eventsData.filter((event) => {
     // Artist filter - search in both languages
@@ -241,7 +248,7 @@ function updateCascadingFilters() {
     .value.toLowerCase();
   const genreFilter = document.getElementById("genre-filter").dataset.value;
   const yearFilter = document.getElementById("year-filter").dataset.value;
-  const venueFilter = document.getElementById("venue-filter").value;
+  const venueFilter = document.getElementById("venue-filter").dataset.value;
 
   // Get available options based on current filters
   const availableGenres = new Set();
@@ -334,19 +341,19 @@ function displayEvents(events) {
         currentLang === "tr" ? "tr-TR" : "en-US",
         {
           year: "numeric",
-          month: "long",
+          month: "short",
           day: "numeric",
         }
       );
 
+      const seriesValue = (event.series && event.series[currentLang]
+        ? String(event.series[currentLang]).trim()
+        : "");
+
       return `
       <div class="event-card">
-        <h3 class="event-artist">${event.artist[currentLang]}</h3>
+        <h3 class="event-artist">${seriesValue ? `<span class=\"event-series-inline\">${seriesValue}</span> ` : ""}<span class=\"event-artist-name\">${event.artist[currentLang]}</span></h3>
         <div class="event-details">
-          <div class="event-detail">
-            <span class="event-detail-label">${translations[currentLang].genreLabel}</span>
-            <span>${event.genre[currentLang]}</span>
-          </div>
           <div class="event-detail">
             <span class="event-detail-label">${translations[currentLang].dateLabel}</span>
             <span>${formattedDate}</span>
@@ -360,6 +367,19 @@ function displayEvents(events) {
     `;
     })
     .join("");
+
+  // Fit series text to one line and apply long-title sizing
+  if (typeof requestAnimationFrame === "function") {
+    requestAnimationFrame(() => {
+      applyLongTitleSizing();
+      fitSeriesOneLineAll();
+    });
+  } else {
+    setTimeout(() => {
+      applyLongTitleSizing();
+      fitSeriesOneLineAll();
+    }, 0);
+  }
 }
 
 function updateResultsCount(count) {
@@ -450,9 +470,7 @@ function initializeEventListeners() {
     .addEventListener("input", debounce(applyFilters, 300));
 
   // Venue filter (still a native select)
-  document
-    .getElementById("venue-filter")
-    .addEventListener("change", applyFilters);
+  // Switched to custom select; handled in setupCustomSelects()
 
   // Clear filters
   document.querySelector(".clear-filters").addEventListener("click", () => {
@@ -479,6 +497,13 @@ function initializeEventsPage() {
   loadEvents();
   initializeEventListeners();
   setupCustomSelects();
+
+  // Re-fit series line on resize/orientation changes (debounced)
+  let resizeSeriesTimer;
+  window.addEventListener("resize", () => {
+    clearTimeout(resizeSeriesTimer);
+    resizeSeriesTimer = setTimeout(fitSeriesOneLineAll, 150);
+  });
 }
 
 // Start when DOM is ready
@@ -493,3 +518,56 @@ window.addEventListener("popstate", () => {
   detectLanguage();
   applyFilters();
 });
+
+// ================================================
+// Series one-line fitting (per-card, subtle scaling)
+// ================================================
+function fitSeriesOneLineAll() {
+  const seriesNodes = document.querySelectorAll(".event-series-inline");
+  if (!seriesNodes.length) return;
+  seriesNodes.forEach((node) => fitSeriesOneLine(node));
+}
+
+function fitSeriesOneLine(node) {
+  // Force series on its own line and attempt single-line fit
+  node.style.whiteSpace = "nowrap";
+
+  // Reset any previous inline sizing to the CSS-defined base
+  node.style.fontSize = "";
+
+  const baseSize = parseFloat(getComputedStyle(node).fontSize);
+  if (!baseSize) return;
+
+  let scale = 1.0;
+  const minPx = 10; // minimum readable size
+  const step = 0.96; // ~4% per iteration for smooth changes
+  const maxIterations = 16;
+  let iterations = 0;
+
+  // Apply base first
+  node.style.fontSize = baseSize + "px";
+
+  // Reduce font-size until content fits on one line
+  while (node.scrollWidth > node.clientWidth + 0.5 && iterations < maxIterations) {
+    scale *= step;
+    const next = Math.max(minPx, baseSize * scale);
+    node.style.fontSize = next + "px";
+    iterations++;
+    if (next <= minPx) break;
+  }
+}
+
+// ================================================
+// Long title sizing (shrink by 20% if >30 chars)
+// ================================================
+function applyLongTitleSizing() {
+  const titles = document.querySelectorAll('.event-artist-name');
+  titles.forEach((node) => {
+    const text = (node.textContent || '').trim();
+    if (text.length > 30) {
+      node.classList.add('is-long');
+    } else {
+      node.classList.remove('is-long');
+    }
+  });
+}

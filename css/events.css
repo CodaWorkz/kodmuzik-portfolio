@@ -37,9 +37,9 @@
 /* 2. Filters Section
    ================================================ */
 .filters-section {
-  padding: 2rem 0;
-  background: rgba(0, 0, 0, 0.3);
-  border-bottom: 1px solid #282828;
+  padding: 1.25rem 0 0.5rem; /* tighter bottom spacing */
+  background: transparent; /* panel itself gets the style */
+  border-bottom: none;
 }
 
 .filters-container {
@@ -47,6 +47,20 @@
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 1.5rem;
   align-items: end;
+  padding: 1.25rem 2rem; /* internal padding for the glass panel */
+
+  /* Glassmorphism panel to match cards */
+  background: linear-gradient(
+      to bottom right,
+      rgba(255, 255, 255, 0.06),
+      rgba(255, 255, 255, 0.015)
+    ),
+    rgba(18, 18, 18, 0.48);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 8px;
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
+  backdrop-filter: blur(16px) saturate(140%);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.55);
 }
 
 .filter-group {
@@ -64,7 +78,7 @@
 }
 
 .filter-input {
-  background: var(--color-background);
+  background: var(--color-background); /* match Genre/Year/Venue triggers */
   border: 1px solid #333;
   color: var(--color-text);
   padding: 0.75rem 1rem;
@@ -74,7 +88,31 @@
   font-family: var(--font-primary);
 }
 
+/* Placeholder color to match the rest of the filters */
+.filter-input::placeholder {
+  color: var(--color-muted);
+  opacity: 1; /* ensure consistent tone across browsers */
+}
+
 .filter-input:focus {
+  outline: none;
+  border-color: var(--color-muted);
+}
+
+/* Native select styling to align with inputs */
+.filter-select {
+  background: var(--color-background);
+  border: 1px solid #333;
+  color: var(--color-text);
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  transition: var(--transition-speed);
+  font-family: var(--font-primary);
+  width: 100%;
+}
+
+.filter-select:focus {
   outline: none;
   border-color: var(--color-muted);
 }
@@ -153,6 +191,20 @@
   background-color: transparent;
 }
 
+/* Year filter width constraints: compact to content while keeping padding */
+#year-filter {
+  /* Middle-ground sizing: compact but not cramped */
+  width: fit-content;
+  min-width: 140px;
+  max-width: 160px;
+  align-self: flex-start; /* prevent stretching in .filter-group (flex column) */
+}
+
+/* Keep search input consistent with others */
+#artist-filter.filter-input {
+  background-color: var(--color-background) !important;
+}
+
 .filter-actions {
   display: flex;
   gap: 1rem;
@@ -179,15 +231,14 @@
 }
 
 .results-count {
-  color: var(--color-muted);
-  font-size: 0.9rem;
-  white-space: nowrap;
+  display: none !important; /* Hide total/results count everywhere */
 }
 
 /* 3. Events Grid & Cards
    ================================================ */
 .events-section {
-  padding: 3rem 0;
+  /* Bring results even closer to the search panel */
+  padding: 0.5rem 0 3rem;
   min-height: 400px;
 }
 
@@ -195,6 +246,8 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 1.5rem;
+  /* Squares derive height from width via aspect-ratio */
+  align-items: start; /* let cards keep square aspect; no stretching */
   /* Constrain the grid to a max of ~4 columns and center it */
   max-width: 1340px;
   margin-left: auto;
@@ -202,29 +255,68 @@
 }
 
 .event-card {
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid #333;
+  background: linear-gradient(
+      to bottom right,
+      rgba(255, 255, 255, 0.06),
+      rgba(255, 255, 255, 0.015)
+    ),
+    rgba(18, 18, 18, 0.48);
+  border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: 8px;
-  padding: 2rem;
+  padding: 3rem 1.5rem; /* spacing consistent with old style */
   transition: var(--transition-speed);
   cursor: pointer;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  justify-content: space-between;
+  gap: 0;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
+  backdrop-filter: blur(16px) saturate(140%);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.55);
 }
 
 .event-card:hover {
-  background: rgba(255, 255, 255, 0.05);
+  background: linear-gradient(
+      to bottom right,
+      rgba(255, 255, 255, 0.08),
+      rgba(255, 255, 255, 0.02)
+    ),
+    rgba(18, 18, 18, 0.52);
   transform: translateY(-2px);
-  border-color: #555;
+  border-color: rgba(255, 255, 255, 0.22);
+  box-shadow: 0 14px 42px rgba(0, 0, 0, 0.6);
 }
 
+/* Preview overrides removed: glass now applied to all cards */
+
+/* Rollback preset — SOLID style (previous look)
+   Apply per-card via: class="event-card event-card--solid" */
+.event-card--solid { background-color: #000; border: 1px solid #333; }
+.event-card--solid:hover { background-color: #0a0a0a; border-color: #555; }
+
 .event-artist {
-  font-size: 1.5rem;
+  font-size: 24px; /* Desktop reference */
   font-weight: 300;
   line-height: 1.2;
   letter-spacing: -0.01em;
   color: var(--color-accent);
+  margin: 0; /* remove default heading margins to eliminate extra spacing */
+  /* Show full titles without truncation */
+  overflow: visible;
+  text-overflow: clip;
+  overflow-wrap: anywhere; /* prevent horizontal overflow on very long words */
+}
+
+/* Inline series prefix placed before the title */
+.event-series-inline {
+  color: var(--color-muted);
+  font-size: 18px; /* base desktop/mobile default aligns with .event-details */
+  font-weight: 400;
+  display: block; /* place series on its own line */
+  white-space: nowrap; /* keep series on a single line */
+  margin-bottom: 4px; /* no extra spacing before artist name line */
 }
 
 .event-details {
@@ -232,7 +324,10 @@
   flex-direction: column;
   gap: 0.5rem;
   color: var(--color-muted);
-  font-size: 0.9rem;
+  /* Desktop reference size for labels + values */
+  font-size: 16px;
+  line-height: 1.4;
+  margin: 0; /* ensure no extra spacing around details */
 }
 
 .event-detail {
@@ -260,17 +355,106 @@
   color: #ff6b6b;
 }
 
-/* 5. Responsive Overrides
-   ================================================ */
-@media (max-width: 1024px) {
-  .events-grid {
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  }
-}
-
-@media (max-width: 768px) {
+/* 5. Responsive Overrides */
+@media (max-width: 767px) {
   .filters-container {
-    grid-template-columns: 1fr;
+    display: grid !important;
+    grid-template-columns: 3fr 1fr !important; /* TÜR | YIL */
+    column-gap: 0.5rem !important; /* keep columns comfortably apart */
+    row-gap: 0.9rem !important; /* increase vertical space between boxes */
+    padding: 0 1rem !important;
+  }
+
+  /* Allow grid items and inner selects to shrink within columns */
+  .filters-container > .filter-group {
+    min-width: 0;
+  }
+  .filters-container .custom-select {
+    min-width: 0;
+    width: 100%;
+  }
+  .filters-container .filter-input {
+    min-width: 0;
+    width: 100%;
+  }
+
+  /* Bring each label closer to its own field */
+  .filter-group {
+    gap: 0.2rem !important;
+  }
+
+  /* Year (YIL) select: remove desktop min/max so it fits the 1fr column */
+  #year-filter {
+    min-width: 0 !important;
+    max-width: none !important;
+    width: 100% !important;
+    align-self: stretch !important;
+  }
+
+  /* Second row: Venue spans full width */
+  .filter-group:nth-child(3) {
+    grid-column: 1 / -1;
+  }
+
+  /* Third row: Artist spans full width */
+  .filter-group:nth-child(4) {
+    grid-column: 1 / -1;
+  }
+
+  /* Fourth row: Actions span full width */
+  .filter-actions {
+    grid-column: 1 / -1;
+    justify-content: center;
+    margin-top: 0.5rem;
+  }
+
+  /* Compact mobile sizing */
+  .custom-select-trigger,
+  .filter-input {
+    padding: 0.5rem;
+    font-size: 0.8rem;
+  }
+
+  /* Match Genre and Venue trigger font sizing to Year */
+  .filter-group:nth-child(1) .custom-select-trigger,
+  .filter-group:nth-child(3) .custom-select-trigger {
+    font-size: 0.8rem !important;
+    padding: 0.4rem !important;
+  }
+
+  /* And align the dropdown option font sizes too */
+  .filter-group:nth-child(1) .custom-select-options,
+  .filter-group:nth-child(3) .custom-select-options {
+    font-size: 0.7rem;
+  }
+
+  /* Prevent label overflow in the narrow YIL column */
+  .custom-select-trigger {
+    overflow: hidden;
+  }
+  .custom-select-trigger .custom-select-label {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .filter-label {
+    font-size: 0.7rem;
+    margin-bottom: 0 !important; /* rely on reduced group gap */
+  }
+  /* Constrain the year dropdown to fit its column */
+  .filter-group:nth-child(2) .custom-select-trigger {
+    font-size: 0.8rem !important; /* Smaller text */
+    padding: 0.4rem !important; /* Less padding */
+    min-width: 0; /* Allow it to shrink */
+  }
+
+  /* Make sure dropdown options also fit */
+  .filter-group:nth-child(2) .custom-select-options {
+    font-size: 0.7rem;
+    right: 0; /* Align to right edge of column */
+    left: auto; /* Don't extend beyond left */
   }
 
   .events-grid {
@@ -279,11 +463,158 @@
   }
 
   .event-card {
-    padding: 1.5rem;
+    padding: 2.5rem 1.5rem;
   }
 
   .events-header {
     padding: 2rem 0 1.5rem;
+  }
+
+  .event-artist {
+    font-size: 24px;
+  }
+
+  .event-details {
+    font-size: 16px;
+  }
+
+  .event-series-inline {
+    font-size: 16px;
+  }
+}
+
+/* Five-column layout for filters on wider viewports */
+@media (min-width: 1024px) {
+  .filters-container {
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr) minmax(0, 1fr) auto;
+  }
+
+  #year-filter {
+    justify-self: start;
+  }
+  .filter-actions {
+    justify-self: start;
+  }
+}
+
+/* Breakpoint 7: Small Vertical Tablets (>=768px and <1024px and portrait) */
+@media (min-width: 768px) and (max-width: 1023px) and (orientation: portrait) {
+  .events-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .event-artist {
+    font-size: 22px;
+  }
+  .event-details {
+    font-size: 16px;
+  }
+  .event-series-inline {
+    font-size: 16px;
+  }
+}
+
+/* Breakpoint 5: Small Horizontal Tablets (>=768px and <1024px and landscape) */
+@media (min-width: 768px) and (max-width: 1023px) and (orientation: landscape) {
+  .events-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .event-artist {
+    font-size: 16px;
+  }
+  .event-details {
+    font-size: 12px;
+  }
+  .event-series-inline {
+    font-size: 12px;
+  }
+}
+
+/* Breakpoint 6: Large Vertical Tablets (>=1024px and portrait) */
+@media (min-width: 1024px) and (orientation: portrait) {
+  .events-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .event-artist {
+    font-size: 26px;
+  }
+  .event-details {
+    font-size: 18px;
+  }
+  .event-series-inline {
+    font-size: 18px;
+  }
+}
+
+/* (moved below to refine override ordering) */
+
+/* Breakpoint 3: Standard Laptops (>=1200px and <1440px) */
+@media (min-width: 1200px) and (max-width: 1439px) {
+  .events-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .event-artist {
+    font-size: 20px;
+  }
+  .event-details {
+    font-size: 14px;
+  }
+  .event-series-inline {
+    font-size: 14px;
+  }
+}
+
+/* Breakpoint 4: Large Horizontal Tablets (>=1024px and <=1365px and landscape) */
+@media (min-width: 1024px) and (max-width: 1365px) and (orientation: landscape) {
+  .events-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .event-artist {
+    font-size: 18px;
+  }
+  .event-details {
+    font-size: 12px;
+  }
+  .event-series-inline {
+    font-size: 12px;
+  }
+}
+
+/* Breakpoint 2: Large Screens (>=1440px and <1600px) */
+@media (min-width: 1440px) and (max-width: 1599px) {
+  .events-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .event-artist {
+    font-size: 24px;
+  }
+  .event-details {
+    font-size: 16px;
+  }
+  .event-series-inline {
+    font-size: 16px;
+  }
+}
+
+/* Breakpoint 1: Very Large Screens (>=1600px) */
+@media (min-width: 1600px) {
+  .events-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .event-artist {
+    font-size: 24px;
+  }
+  .event-details {
+    font-size: 16px;
+  }
+  .event-series-inline {
+    font-size: 16px;
+  }
+}
+
+/* Override: Exactly 1024px wide in landscape → 3 columns only */
+@media (width: 1024px) and (orientation: landscape) {
+  .events-grid {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 

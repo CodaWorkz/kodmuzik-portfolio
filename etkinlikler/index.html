@@ -37,28 +37,23 @@
           loading="eager"
           decoding="async"
         />
+        <span class="menu-logo-caption" aria-hidden="true"><span class="menu-logo-letter">M</span><span class="menu-logo-letter">Ü</span><span class="menu-logo-letter">Z</span><span class="menu-logo-letter">İ</span><span class="menu-logo-letter">K</span></span>
       </a>
 
       <!-- Navigation -->
       <div class="menu-nav">
         <ul class="menu-items">
           <li class="menu-item">
-            <a href="/" class="menu-link" data-path="/">ANA SAYFA</a>
+            <a href="/hakkimizda" class="menu-link" data-path="/hakkimizda">HAKKIMIZDA</a>
           </li>
           <li class="menu-item">
-            <a href="/etkinlikler" class="menu-link" data-path="/etkinlikler"
-              >ETKİNLİKLER</a
-            >
+            <a href="/etkinlikler" class="menu-link" data-path="/etkinlikler">GEÇMİŞ</a>
           </li>
           <li class="menu-item">
-            <a href="/hakkimizda" class="menu-link" data-path="/hakkimizda"
-              >HAKKIMIZDA</a
-            >
+            <a href="/gelecek-etkinlikler" class="menu-link" data-path="/gelecek-etkinlikler">GELECEK</a>
           </li>
           <li class="menu-item">
-            <a href="/iletisim" class="menu-link" data-path="/iletisim"
-              >İLETİŞİM</a
-            >
+            <a href="/iletisim" class="menu-link" data-path="/iletisim">İLETİŞİM</a>
           </li>
         </ul>
       </div>
@@ -91,7 +86,7 @@
     <main id="main-content" class="main-content">
       <!-- Events Header -->
       <section class="events-header">
-        <h1 class="events-title">Etkinlikler</h1>
+        <h1 class="events-title">Geçmiş</h1>
         <p class="events-subtitle">1999 ve 2025 arası</p>
       </section>
 
@@ -154,15 +149,33 @@
               <div class="custom-select-options" role="listbox" hidden></div>
             </div>
           </div>
-          <div class="filter-group" style="display: none">
+          <div class="filter-group">
             <label class="filter-label" data-label-key="venue">Mekan</label>
-            <select
-              id="venue-filter"
-              class="filter-select"
-              aria-label="Mekan seç"
-            >
-              <option value="">Tümü</option>
-            </select>
+            <div id="venue-filter" class="custom-select" data-value="">
+              <button
+                type="button"
+                class="custom-select-trigger"
+                aria-haspopup="listbox"
+                aria-expanded="false"
+              >
+                <span class="custom-select-label">Tümü</span>
+                <svg
+                  class="custom-select-arrow"
+                  viewBox="0 0 10 6"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M1 1L5 5L9 1"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
+              <div class="custom-select-options" role="listbox" hidden></div>
+            </div>
           </div>
           <div class="filter-group">
             <label class="filter-label" data-label-key="artist">Sanatçı</label>

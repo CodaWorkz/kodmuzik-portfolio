@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kodmüzik - Seçkin Müzik Etkinlikleri</title>
+    <title>Gelecek - Kodmüzik</title>
     <meta
       name="description"
-      content="Kodmüzik - 1999'dan beri prestijli müzik etkinlikleri organizasyonu"
+      content="KOD Müzik gelecek etkinlikleri - 2025 ve sonrası"
     />
 
     <!-- Fonts -->
@@ -19,6 +19,8 @@
 
     <!-- Global Styles -->
     <link rel="stylesheet" href="/css/main.css" />
+    <!-- Future Events Styles -->
+    <link rel="stylesheet" href="/css/future-events.css" />
   </head>
   <body>
     <!-- Skip to content link for screen readers -->
@@ -59,21 +61,54 @@
       <!-- Language Toggle -->
       <div class="lang-toggle-menu" aria-label="Dil seçimi">
         <div class="lang-options">
-          <a href="/" class="lang-link" id="lang-tr" hreflang="tr" lang="tr"
-            >TR</a
-          >
+          <a href="/gelecek-etkinlikler" class="lang-link" id="lang-tr" hreflang="tr" lang="tr">TR</a>
           <span class="lang-separator" aria-hidden="true">|</span>
-          <a href="/en" class="lang-link" id="lang-en" hreflang="en" lang="en"
-            >EN</a
-          >
+          <a href="/en/gelecek-etkinlikler" class="lang-link" id="lang-en" hreflang="en" lang="en">EN</a>
         </div>
       </div>
     </nav>
 
     <!-- Main Content -->
-    <main id="main-content" class="main-content"></main>
+    <main id="main-content" class="main-content">
+      <!-- Header -->
+      <section class="future-header">
+        <h1 class="future-title">Gelecek</h1>
+        <p class="future-subtitle">2025 ve sonrası — yakında açıklanacak</p>
+      </section>
+
+      <!-- Timeline -->
+      <section class="timeline-section" aria-label="Gelecek planlanan etkinlikler">
+        <article class="timeline-item">
+          <div class="timeline-content">
+            <div class="timeline-date">2025</div>
+            <h2 class="timeline-title">Yeni Seri Duyurusu</h2>
+            <div class="timeline-venue">İstanbul • Mekan TBA</div>
+            <p class="timeline-desc">Detaylar yakında.</p>
+          </div>
+          <div class="timeline-actions">
+            <a href="#" class="action-pill pill-info" aria-disabled="true">Bilgi</a>
+            <a href="#" class="action-pill pill-tickets" aria-disabled="true">Bilet</a>
+          </div>
+        </article>
+
+        <article class="timeline-item">
+          <div class="timeline-content">
+            <div class="timeline-date">2026</div>
+            <h2 class="timeline-title">Özel Konser</h2>
+            <div class="timeline-venue">Ankara • Mekan TBA</div>
+            <p class="timeline-desc">Program ve tarih duyurulacaktır.</p>
+          </div>
+          <div class="timeline-actions">
+            <a href="#" class="action-pill pill-info" aria-disabled="true">Bilgi</a>
+          </div>
+        </article>
+      </section>
+
+      
+    </main>
 
     <!-- Global Scripts -->
     <script src="/js/main.js" defer></script>
+    <script src="/js/future-events.js" defer></script>
   </body>
 </html>

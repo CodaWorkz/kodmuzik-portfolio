@@ -293,8 +293,14 @@
 
 /* Rollback preset — SOLID style (previous look)
    Apply per-card via: class="event-card event-card--solid" */
-.event-card--solid { background-color: #000; border: 1px solid #333; }
-.event-card--solid:hover { background-color: #0a0a0a; border-color: #555; }
+.event-card--solid {
+  background-color: #000;
+  border: 1px solid #333;
+}
+.event-card--solid:hover {
+  background-color: #0a0a0a;
+  border-color: #555;
+}
 
 .event-artist {
   font-size: 24px; /* Desktop reference */
@@ -359,10 +365,10 @@
 @media (max-width: 767px) {
   .filters-container {
     display: grid !important;
-    grid-template-columns: 3fr 1fr !important; /* TÜR | YIL */
+    grid-template-columns: 2.5fr 1.5fr !important; /* TÜR | YIL */
     column-gap: 0.5rem !important; /* keep columns comfortably apart */
     row-gap: 0.9rem !important; /* increase vertical space between boxes */
-    padding: 0 1rem !important;
+    padding: 1rem 1rem !important;
   }
 
   /* Allow grid items and inner selects to shrink within columns */

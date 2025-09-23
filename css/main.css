@@ -220,8 +220,6 @@ p {
   }
 }
 
-/* (Removed global background override that flattened all backgrounds) */
-
 /* Align links left so the indicator has a home */
 .menu-items {
   display: flex;
@@ -377,12 +375,12 @@ a:focus-visible {
   /* stack & center the vertical labels */
   .menu-items {
     align-items: center;
-    gap: 1.5rem;
+    gap: 1.1rem;
   }
 
   /* rotate the labels (90°), remove left padding reserved for the bar */
   .menu-link {
-    font-size: 1.1rem;
+    font-size: 0.98rem;
     padding-left: 0;
     writing-mode: vertical-rl;
     text-orientation: mixed; /* Safari-friendly */
@@ -442,12 +440,12 @@ a:focus-visible {
 
   .menu-logo-caption {
     position: absolute;
-    left: 29px; /* Position to the right of the logo */
-    top: calc(50% + 40px); /* Position 40px below the logo center */
+    left: 28px; /* Position to the right of the logo */
+    top: calc(50% + 36px); /* Position 40px below the logo center */
     transform: translateY(-50%) rotate(90deg);
     transform-origin: left center;
-    font-size: 18px;
-    letter-spacing: 0.4rem;
+    font-size: 14px;
+    letter-spacing: 0.28rem;
     text-indent: 0;
     margin-top: 0;
     padding-top: 0; /* reset desktop padding on mobile */

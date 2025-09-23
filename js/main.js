@@ -155,7 +155,15 @@ function initializeApp() {
   updateMenuLinksForLocale();
   setActiveLink();
   updateLanguageLinks();
-  installKodBackground();
+
+  // Only install watermark if NOT on about pages
+  const currentPath = getCurrentPath();
+  if (
+    !currentPath.includes("/hakkimizda") &&
+    !currentPath.includes("/en/hakkimizda")
+  ) {
+    installKodBackground();
+  }
 }
 
 /**

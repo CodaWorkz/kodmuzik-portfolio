@@ -104,6 +104,7 @@
       <div class="about-container">
         <article class="about-content">
           <h1 class="about-title">HAKKIMIZDA</h1>
+
           <div class="about-text">
             <p>
               KOD Müzik, 1990'ların sonundan bu yana Türkiye ve uluslararası
@@ -144,11 +145,169 @@
               sağlamaktadır.
             </p>
           </div>
+
+          <!-- Emotional Journey Link -->
+          <div class="journey-link-container">
+            <button
+              class="journey-link"
+              id="journeyButton"
+              aria-label="Tüm hikayenin başı için tıklayın"
+            >
+              <svg
+                class="journey-icon"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+              >
+                <!-- Outline chevron (always visible) -->
+                <polyline
+                  class="chevron-outline"
+                  points="8 4 16 12 8 20"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  fill="none"
+                  stroke-linejoin="miter"
+                  stroke-linecap="square"
+                />
+                <!-- Filled chevron (animated on hover) -->
+                <defs>
+                  <clipPath id="chevron-clip-tr">
+                    <rect
+                      x="0"
+                      y="0"
+                      width="0"
+                      height="24"
+                      class="chevron-fill-rect"
+                    />
+                  </clipPath>
+                </defs>
+                <polyline
+                  class="chevron-fill"
+                  points="8 4 16 12 8 20"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  fill="currentColor"
+                  stroke-linejoin="miter"
+                  stroke-linecap="square"
+                  clip-path="url(#chevron-clip-tr)"
+                />
+              </svg>
+              <span class="journey-text">Tüm hikayenin başı için tıklayın</span>
+            </button>
+          </div>
         </article>
       </div>
     </main>
 
+    <!-- Lightbox Overlay -->
+    <div class="lightbox-overlay" id="journeyLightbox" aria-hidden="true">
+      <div class="lightbox-container">
+        <button class="lightbox-close" id="closeLightbox" aria-label="Kapat">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M18 6L6 18M6 6L18 18"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </button>
+        <div class="lightbox-content">
+          <h2 class="lightbox-title" id="journeyTitle">Yükleniyor...</h2>
+          <div class="lightbox-text" id="journeyContent">
+            <!-- Content will be loaded here -->
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- Global Scripts -->
     <script src="/js/main.js" defer></script>
+
+    <!-- Journey Content Script -->
+    <script>
+      document.addEventListener("DOMContentLoaded", async function () {
+        const journeyButton = document.getElementById("journeyButton");
+        const lightbox = document.getElementById("journeyLightbox");
+        const closeButton = document.getElementById("closeLightbox");
+        const titleElement = document.getElementById("journeyTitle");
+        const contentElement = document.getElementById("journeyContent");
+        let journeyData = null;
+
+        // Load journey content
+        async function loadJourneyContent() {
+          if (journeyData) return journeyData;
+
+          try {
+            const response = await fetch("/kod_about_tr.json");
+            journeyData = await response.json();
+            return journeyData;
+          } catch (error) {
+            console.error("Error loading journey content:", error);
+            return {
+              heading: "İçerik Yüklenemedi",
+              paragraphs: [
+                "Üzgünüz, içerik şu anda yüklenemiyor. Lütfen daha sonra tekrar deneyin.",
+              ],
+            };
+          }
+        }
+
+        // Open lightbox
+        async function openLightbox() {
+          const data = await loadJourneyContent();
+
+          titleElement.textContent = data.heading;
+          contentElement.innerHTML = data.paragraphs
+            .map((p) => `<p>${p}</p>`)
+            .join("");
+
+          lightbox.classList.add("active");
+          lightbox.setAttribute("aria-hidden", "false");
+          document.body.style.overflow = "hidden";
+
+          // Focus management
+          closeButton.focus();
+        }
+
+        // Close lightbox
+        function closeLightbox() {
+          lightbox.classList.remove("active");
+          lightbox.setAttribute("aria-hidden", "true");
+          document.body.style.overflow = "";
+
+          // Return focus to button
+          journeyButton.focus();
+        }
+
+        // Event listeners
+        journeyButton.addEventListener("click", openLightbox);
+        closeButton.addEventListener("click", closeLightbox);
+
+        // Close on overlay click
+        lightbox.addEventListener("click", function (e) {
+          if (e.target === lightbox) {
+            closeLightbox();
+          }
+        });
+
+        // Close on Escape key
+        document.addEventListener("keydown", function (e) {
+          if (e.key === "Escape" && lightbox.classList.contains("active")) {
+            closeLightbox();
+          }
+        });
+      });
+    </script>
   </body>
 </html>

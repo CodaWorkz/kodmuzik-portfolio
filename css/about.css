@@ -51,6 +51,241 @@
   margin-bottom: 0;
 }
 
+/* Emotional Journey Link
+   ================================================ */
+.journey-link-container {
+  margin-top: 3rem;
+  margin-bottom: 0;
+}
+
+.journey-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  padding: 12px 20px;
+  font-family: var(--font-primary);
+  font-size: 0.95rem;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.9);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.journey-link::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  transition: width 0.3s ease;
+}
+
+.journey-link:hover::before {
+  width: 100%;
+}
+
+.journey-link:hover {
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
+}
+
+.journey-link:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 4px;
+}
+
+.journey-icon {
+  flex-shrink: 0;
+  color: currentColor;
+  position: relative;
+  width: 24px;
+  height: 24px;
+}
+
+/* Chevron styles - matching KOD logo aesthetics */
+.journey-icon .chevron-outline {
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.journey-icon .chevron-fill {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Animation for the fill effect */
+@keyframes chevronFill {
+  from {
+    width: 0;
+  }
+  to {
+    width: 24px;
+  }
+}
+
+.journey-link .chevron-fill-rect {
+  transition: none;
+}
+
+.journey-link:hover .chevron-fill-rect {
+  animation: chevronFill 2.5s ease-out forwards;
+}
+
+.journey-link:hover .chevron-outline {
+  opacity: 1;
+}
+
+.journey-link:hover .chevron-fill {
+  opacity: 1;
+  transition-delay: 0.1s;
+}
+
+/* Reset animation when not hovering */
+.journey-link:not(:hover) .chevron-fill-rect {
+  width: 0;
+  animation: none;
+}
+
+.journey-text {
+  letter-spacing: 0.02em;
+}
+
+/* Lightbox Overlay
+   ================================================ */
+.lightbox-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.lightbox-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.lightbox-container {
+  position: relative;
+  background: #1a1a1a;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  max-width: 900px;
+  width: 100%;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  transform: scale(0.95);
+  transition: transform 0.3s ease;
+}
+
+.lightbox-overlay.active .lightbox-container {
+  transform: scale(1);
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 10;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.8);
+  transition: all 0.2s ease;
+}
+
+.lightbox-close:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.5);
+  color: #ffffff;
+  transform: rotate(90deg);
+}
+
+.lightbox-close:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 2px;
+}
+
+.lightbox-content {
+  padding: 40px;
+  overflow-y: auto;
+  max-height: calc(90vh - 80px);
+}
+
+.lightbox-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.lightbox-text {
+  font-family: var(--font-primary);
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.7;
+  color: rgba(245, 245, 245, 0.95);
+}
+
+.lightbox-text p {
+  margin-bottom: 1.5rem;
+}
+
+.lightbox-text p:last-child {
+  margin-bottom: 0;
+}
+
+/* Custom Scrollbar for Lightbox
+   ================================================ */
+.lightbox-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.lightbox-content::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+}
+
+.lightbox-content::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+}
+
+.lightbox-content::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
 /* Responsive
    ================================================ */
 @media (max-width: 768px) {
@@ -72,6 +307,55 @@
   .about-text {
     font-size: 1rem;
     line-height: 1.6;
+  }
+
+  /* Journey Link Mobile */
+  .journey-link-container {
+    margin-top: 2rem;
+    margin-bottom: 0;
+  }
+
+  .journey-link {
+    font-size: 0.9rem;
+    padding: 10px 16px;
+    gap: 10px;
+  }
+
+  .journey-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  /* Lightbox Mobile */
+  .lightbox-container {
+    margin: 10px;
+    max-height: calc(100vh - 20px);
+  }
+
+  .lightbox-content {
+    padding: 30px 20px;
+    max-height: calc(100vh - 60px);
+  }
+
+  .lightbox-close {
+    top: 15px;
+    right: 15px;
+    width: 36px;
+    height: 36px;
+  }
+
+  .lightbox-title {
+    font-size: clamp(1.25rem, 3vw, 1.75rem);
+    margin-bottom: 1.5rem;
+  }
+
+  .lightbox-text {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .lightbox-text p {
+    margin-bottom: 1.25rem;
   }
 }
 

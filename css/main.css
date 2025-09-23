@@ -181,7 +181,7 @@ p {
   line-height: 1;
   letter-spacing: 0.5rem;
   margin-top: 8px;
-  padding-top: 4px; /* desktop-only tweak for spacing under logo */
+  padding-top: 8px; /* desktop-only tweak for spacing under logo */
   text-indent: 0.3rem; /* Reduce this to match your letter-spacing */
 }
 

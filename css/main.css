@@ -384,7 +384,7 @@ a:focus-visible {
   .menu-logo {
     display: inline-flex;
     align-items: center;
-    gap: 25px; /* Space between icon and caption */
+    gap: 22px; /* Space between icon and caption */
     margin-left: 1px; /* Align with menu items */
     transform: none; /* No rotation on container */
   }
@@ -406,7 +406,7 @@ a:focus-visible {
     font-size: 1rem; /* Small enough to fit nicely */
     letter-spacing: 0.02em;
     line-height: 1;
-    height: 48px; /* Match logo height */
+    height: 44px; /* Match logo height */
     align-items: center; /* Center letters vertically */
     justify-content: center; /* Center letters horizontally */
   }

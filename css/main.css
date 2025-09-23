@@ -364,35 +364,95 @@ a:focus-visible {
 
 /* 8. Responsive Design
    ================================================ */
-@media (max-width: 768px) {
-  /* wrapper remains untransformed on mobile */
+/* Mobile Menu Fix - Add this to your main.css file */
+/* Replace the existing @media (max-width: 768px) section with this updated version */
 
+/* Mobile Menu Fix - Add this to your main.css file */
+/* Replace the existing @media (max-width: 768px) section with this updated version */
+
+@media (max-width: 768px) {
   .side-menu {
     width: var(--menu-width-mobile);
-    padding: 1.5rem 0.5rem;
+    padding: 1rem 0.5rem 1.5rem 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: 1rem;
   }
 
-  /* stack & center the vertical labels */
-  .menu-items {
+  /* Logo block with icon and caption side by side */
+  .menu-logo {
+    display: inline-flex;
     align-items: center;
-    gap: 1.1rem;
+    gap: 6px; /* Space between icon and caption */
+    margin-left: 8px; /* Align with menu items */
+    transform: none; /* No rotation on container */
   }
 
-  /* rotate the labels (90°), remove left padding reserved for the bar */
-  .menu-link {
-    font-size: 0.98rem;
-    padding-left: 0;
+  /* Logo image - rotate only if needed based on your asset */
+  .menu-logo-img {
+    width: 48px;
+    height: auto;
+    display: block;
+    transform: rotate(90deg); /* Rotate just the logo image */
+    transform-origin: center;
+  }
+
+  /* Caption - vertical text matching logo size */
+  .menu-logo-caption {
+    display: inline-flex;
     writing-mode: vertical-rl;
-    text-orientation: mixed; /* Safari-friendly */
-    -webkit-text-orientation: mixed; /* extra safety for WebKit */
-    transform: none; /* base */
+    text-orientation: mixed;
+    font-size: 0.6rem; /* Small enough to fit nicely */
+    letter-spacing: 0.02em;
+    line-height: 1;
+    height: 48px; /* Match logo height */
+    align-items: center; /* Center letters vertically */
+    justify-content: center; /* Center letters horizontally */
+  }
+
+  .menu-logo-letter {
+    display: inline;
+  }
+
+  /* Remove hover transform on container */
+  .menu-logo:hover {
+    transform: none; /* Could add opacity change instead if desired */
+  }
+
+  /* Optional: Add hover effect to just the image */
+  .menu-logo:hover .menu-logo-img {
+    transform: rotate(90deg) scale(1.05);
+  }
+
+  /* Navigation section */
+  .menu-nav {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 0; /* Spacing handled by row-gap */
+  }
+
+  .menu-items {
+    align-items: flex-start;
+    gap: 1.2rem;
+    padding-left: 8px; /* Same as logo for alignment */
+  }
+
+  .menu-link {
+    font-size: 0.85rem;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    letter-spacing: 0.03em;
+    padding-left: 0;
+    transform: none;
     transition: color var(--menu-hover-duration) var(--menu-hover-ease),
       transform var(--menu-hover-duration) var(--menu-hover-ease);
   }
 
-  /* turn the left vertical bar into a small horizontal bar ABOVE the label */
+  /* Hover bar above text */
   .menu-link::before {
-    top: -10px;
+    top: -8px;
     left: 50%;
     width: 0;
     height: 2px;
@@ -402,69 +462,43 @@ a:focus-visible {
     background-color: var(--menu-color-active);
   }
 
-  /* animate the bar & use a slight vertical nudge (since text is vertical) */
   .menu-link:hover,
   .menu-link:focus-visible {
     color: var(--menu-color-hover);
     transform: translateY(3px);
   }
+
   .menu-link:hover::before,
   .menu-link:focus-visible::before {
-    width: 16px;
+    width: 14px;
     height: 2px;
     background-color: var(--menu-color-hover);
   }
 
-  /* active page: no persistent bar */
   .menu-link[aria-current="page"]::before {
     width: 0;
   }
 
-  /* main content offset */
+  /* Language toggle */
+  .lang-toggle-menu {
+    font-size: 0.7rem;
+    margin-left: auto;
+    margin-right: auto;
+    writing-mode: horizontal-tb;
+  }
+
+  /* Main content */
   .main-content {
     margin-left: var(--menu-width-mobile);
     padding: 2rem;
-    background-color: transparent;
   }
 
+  /* Typography */
   h1 {
     font-size: clamp(2rem, 8vw, 2.5rem);
   }
+
   p {
     font-size: 1rem;
-  }
-
-  .menu-logo-img {
-    width: 60px;
-  }
-
-  .menu-logo-caption {
-    position: absolute;
-    left: 28px; /* Position to the right of the logo */
-    top: calc(50% + 36px); /* Position 40px below the logo center */
-    transform: translateY(-50%) rotate(90deg);
-    transform-origin: left center;
-    font-size: 14px;
-    letter-spacing: 0.28rem;
-    text-indent: 0;
-    margin-top: 0;
-    padding-top: 0; /* reset desktop padding on mobile */
-    white-space: nowrap;
-    z-index: 2;
-  }
-
-  /* Rotate the graphic only; wrapper defines width for caption */
-  .menu-logo > .menu-logo-img,
-  .menu-logo > svg {
-    transform: rotate(90deg);
-    transform-origin: center center;
-  }
-
-  .menu-logo:hover > .menu-logo-img,
-  .menu-logo:hover > svg {
-    transform: rotate(90deg) scale(1.05);
-  }
-  .lang-toggle-menu {
-    font-size: 0.9rem;
   }
 }

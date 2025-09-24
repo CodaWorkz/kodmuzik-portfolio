@@ -13,10 +13,9 @@
 /* 1. Page Header
    ================================================ */
 .future-header {
-  /* Align top with main logo like other pages (top padding handled by .main-content) */
-  padding: 0 0 3rem;
+  /* Top padding is now handled by .main-content for alignment with logo */
+  padding: 0 0 2rem;
   border-bottom: 1px solid #282828;
-  margin-bottom: 3rem;
 }
 
 .future-title {
@@ -27,6 +26,7 @@
   text-transform: uppercase;
   color: var(--color-accent);
   margin-bottom: 0.5rem;
+  /* REMOVED margin-top from here - desktop doesn't need it */
 }
 
 .future-subtitle {
@@ -118,38 +118,30 @@
 .pill-info {
   background: rgba(255, 193, 7, 0.12);
   color: #ffcd38;
-  box-shadow:
-    0 0 0 1px rgba(255, 193, 7, 0.28) inset,
-    0 0 10px rgba(255, 193, 7, 0.25),
-    0 0 26px rgba(255, 193, 7, 0.15);
+  box-shadow: 0 0 0 1px rgba(255, 193, 7, 0.28) inset,
+    0 0 10px rgba(255, 193, 7, 0.25), 0 0 26px rgba(255, 193, 7, 0.15);
 }
 
 .pill-info:hover,
 .pill-info:focus-visible {
   background: rgba(255, 193, 7, 0.18);
-  box-shadow:
-    0 0 0 1px rgba(255, 193, 7, 0.35) inset,
-    0 0 14px rgba(255, 193, 7, 0.35),
-    0 0 34px rgba(255, 193, 7, 0.2);
+  box-shadow: 0 0 0 1px rgba(255, 193, 7, 0.35) inset,
+    0 0 14px rgba(255, 193, 7, 0.35), 0 0 34px rgba(255, 193, 7, 0.2);
 }
 
 /* Dark neon green */
 .pill-tickets {
   background: rgba(76, 175, 80, 0.12);
   color: #69e071;
-  box-shadow:
-    0 0 0 1px rgba(76, 175, 80, 0.28) inset,
-    0 0 10px rgba(76, 175, 80, 0.25),
-    0 0 26px rgba(76, 175, 80, 0.15);
+  box-shadow: 0 0 0 1px rgba(76, 175, 80, 0.28) inset,
+    0 0 10px rgba(76, 175, 80, 0.25), 0 0 26px rgba(76, 175, 80, 0.15);
 }
 
 .pill-tickets:hover,
 .pill-tickets:focus-visible {
   background: rgba(76, 175, 80, 0.18);
-  box-shadow:
-    0 0 0 1px rgba(76, 175, 80, 0.35) inset,
-    0 0 14px rgba(76, 175, 80, 0.35),
-    0 0 34px rgba(76, 175, 80, 0.2);
+  box-shadow: 0 0 0 1px rgba(76, 175, 80, 0.35) inset,
+    0 0 14px rgba(76, 175, 80, 0.35), 0 0 34px rgba(76, 175, 80, 0.2);
 }
 
 /* 4. Newsletter Section
@@ -233,8 +225,13 @@
 /* Mobile responsiveness */
 @media (max-width: 768px) {
   .future-header {
-    padding: 2rem 0; /* compact top spacing on mobile */
-    margin-bottom: 2rem;
+    /* Keep padding consistent with events page */
+    padding: 0 0 1.5rem;
+  }
+
+  /* FIX: Add margin-top ONLY for mobile to align with logo */
+  .future-title {
+    margin-top: calc(2.5rem - 38px);
   }
 
   .timeline-item {
@@ -288,9 +285,9 @@
 @media (min-width: 1200px) {
   .timeline-section,
   .newsletter-section {
-    max-width: 800px;       /* requested max width */
-    margin-left: 0;         /* align to the left edge */
-    margin-right: auto;     /* prevents centering */
+    max-width: 800px; /* requested max width */
+    margin-left: 0; /* align to the left edge */
+    margin-right: auto; /* prevents centering */
   }
 
   .timeline-item {

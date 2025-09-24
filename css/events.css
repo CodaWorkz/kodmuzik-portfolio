@@ -473,7 +473,7 @@
   }
 
   .events-header {
-    padding: 2rem 0 1.5rem;
+    margin-top: calc(2.5rem - 38px);
   }
 
   .event-artist {

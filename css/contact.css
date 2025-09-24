@@ -35,7 +35,7 @@
 @media (max-width: 768px) {
   .contact-title {
     /* On mobile, nudge up by additional 2px */
-    margin-top: calc(2.5rem - 14px);
+    margin-top: calc(1rem - 14px);
   }
 }
 

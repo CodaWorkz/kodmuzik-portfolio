@@ -481,7 +481,7 @@ a:focus-visible {
 
   /* Language toggle */
   .lang-toggle-menu {
-    font-size: 0.7rem;
+    font-size: 1rem;
     margin-left: auto;
     margin-right: auto;
     writing-mode: horizontal-tb;

@@ -301,6 +301,9 @@
   .about-title {
     /* Keep in sync with Events header */
     font-size: clamp(2rem, 4vw, 3rem);
+    margin-top: calc(
+      2.5rem - 38px
+    ); /* FIX: Add this line for mobile alignment */
     margin-bottom: 40px;
   }
 

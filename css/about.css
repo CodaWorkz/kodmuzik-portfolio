@@ -51,111 +51,114 @@
   margin-bottom: 0;
 }
 
-/* Emotional Journey Link
+/* Circular Media Button (Stop to Play Animation)
    ================================================ */
+:root {
+  --btn-size: 48px;
+  --btn-outline: rgba(255, 255, 255, 0.3);
+  --btn-fill: #ffffff;
+  --sweep-duration: 2s;
+  --icon-scale: 0.28;
+}
+
+@property --sweep {
+  syntax: "<number>";
+  initial-value: 0;
+  inherits: false;
+}
+
 .journey-link-container {
   margin-top: 3rem;
   margin-bottom: 0;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
 }
 
-.journey-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
+.media-button {
+  position: relative;
+  width: var(--btn-size);
+  height: var(--btn-size);
   background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 8px;
-  padding: 12px 20px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 140ms ease;
+  box-shadow: inset 0 0 0 1px var(--btn-outline);
+  overflow: hidden;
+}
+
+.media-button::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: 50%;
+  background: conic-gradient(
+    from -90deg,
+    var(--btn-fill) calc(var(--sweep, 0) * 1deg),
+    transparent calc(var(--sweep, 0) * 1deg)
+  );
+  z-index: 1;
+  pointer-events: none;
+  transition: --sweep var(--sweep-duration) cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.media-button:hover::before,
+.media-button:focus-visible::before {
+  --sweep: 360;
+}
+
+.media-button-icon {
+  position: relative;
+  width: calc(var(--btn-size) * var(--icon-scale));
+  height: calc(var(--btn-size) * var(--icon-scale));
+  background: white;
+  z-index: 2;
+  mix-blend-mode: difference;
+  clip-path: inset(0 round 2px);
+  transition: clip-path 0ms linear;
+}
+
+.media-button:hover .media-button-icon,
+.media-button:focus-visible .media-button-icon {
+  clip-path: polygon(18% 10%, 18% 90%, 88% 50%);
+}
+
+.media-button:active {
+  transform: scale(0.98);
+}
+
+.media-button:focus-visible {
+  outline: 2px solid var(--btn-fill);
+  outline-offset: 4px;
+}
+
+.journey-text {
   font-family: var(--font-primary);
   font-size: 0.95rem;
   font-weight: 300;
   color: rgba(255, 255, 255, 0.9);
-  cursor: pointer;
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-.journey-link::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 0;
-  height: 100%;
-  background: rgba(255, 255, 255, 0.05);
-  transition: width 0.3s ease;
-}
-
-.journey-link:hover::before {
-  width: 100%;
-}
-
-.journey-link:hover {
-  border-color: rgba(255, 255, 255, 0.5);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
-}
-
-.journey-link:focus-visible {
-  outline: 2px solid #ffffff;
-  outline-offset: 4px;
-}
-
-.journey-icon {
-  flex-shrink: 0;
-  color: currentColor;
-  position: relative;
-  width: 24px;
-  height: 24px;
-}
-
-/* Chevron styles - matching KOD logo aesthetics */
-.journey-icon .chevron-outline {
-  opacity: 0.7;
-  transition: opacity 0.3s ease;
-}
-
-.journey-icon .chevron-fill {
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-/* Animation for the fill effect */
-@keyframes chevronFill {
-  from {
-    width: 0;
-  }
-  to {
-    width: 24px;
-  }
-}
-
-.journey-link .chevron-fill-rect {
-  transition: none;
-}
-
-.journey-link:hover .chevron-fill-rect {
-  animation: chevronFill 2.5s ease-out forwards;
-}
-
-.journey-link:hover .chevron-outline {
-  opacity: 1;
-}
-
-.journey-link:hover .chevron-fill {
-  opacity: 1;
-  transition-delay: 0.1s;
-}
-
-/* Reset animation when not hovering */
-.journey-link:not(:hover) .chevron-fill-rect {
-  width: 0;
-  animation: none;
-}
-
-.journey-text {
   letter-spacing: 0.02em;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .media-button::before {
+    transition: none;
+  }
+
+  .media-button:hover::before,
+  .media-button:focus-visible::before {
+    --sweep: 360;
+  }
+
+  .media-button-icon {
+    transition: none;
+  }
 }
 
 /* Lightbox Overlay
@@ -318,15 +321,12 @@
     margin-bottom: 0;
   }
 
-  .journey-link {
-    font-size: 0.9rem;
-    padding: 10px 16px;
-    gap: 10px;
+  .media-button {
+    --btn-size: 40px; /* Smaller on mobile */
   }
 
-  .journey-icon {
-    width: 20px;
-    height: 20px;
+  .journey-text {
+    font-size: 0.9rem;
   }
 
   /* Lightbox Mobile */

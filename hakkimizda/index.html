@@ -148,58 +148,11 @@
 
           <!-- Emotional Journey Link -->
           <div class="journey-link-container">
-            <button
-              class="journey-link"
-              id="journeyButton"
-              aria-label="Tüm hikayenin başı için tıklayın"
-            >
-              <svg
-                class="journey-icon"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                aria-hidden="true"
-              >
-                <!-- Outline chevron (always visible) -->
-                <polyline
-                  class="chevron-outline"
-                  points="8 4 16 12 8 20"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                  fill="none"
-                  stroke-linejoin="miter"
-                  stroke-linecap="square"
-                />
-                <!-- Filled chevron (animated on hover) -->
-                <defs>
-                  <clipPath id="chevron-clip-tr">
-                    <rect
-                      x="0"
-                      y="0"
-                      width="0"
-                      height="24"
-                      class="chevron-fill-rect"
-                    />
-                  </clipPath>
-                </defs>
-                <polyline
-                  class="chevron-fill"
-                  points="8 4 16 12 8 20"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                  fill="currentColor"
-                  stroke-linejoin="miter"
-                  stroke-linecap="square"
-                  clip-path="url(#chevron-clip-tr)"
-                />
-              </svg>
-              <span class="journey-text">Tüm hikayenin başı için tıklayın</span>
-            </button>
-          </div>
-        </article>
-      </div>
+    <button class="media-button" id="journeyButton" aria-label="Hikayenin başı için tıklayın">
+        <span class="media-button-icon" aria-hidden="true"></span>
+    </button>
+    <span class="journey-text">Hikayenin başı için tıklayın</span>
+    </div>
     </main>
 
     <!-- Lightbox Overlay -->
@@ -235,79 +188,91 @@
     <script src="/js/main.js" defer></script>
 
     <!-- Journey Content Script -->
-    <script>
-      document.addEventListener("DOMContentLoaded", async function () {
-        const journeyButton = document.getElementById("journeyButton");
-        const lightbox = document.getElementById("journeyLightbox");
-        const closeButton = document.getElementById("closeLightbox");
-        const titleElement = document.getElementById("journeyTitle");
-        const contentElement = document.getElementById("journeyContent");
-        let journeyData = null;
+   <script>
+    document.addEventListener("DOMContentLoaded", async function () {
+    const journeyButton = document.getElementById("journeyButton");
+    const lightbox = document.getElementById("journeyLightbox");
+    const closeButton = document.getElementById("closeLightbox");
+    const titleElement = document.getElementById("journeyTitle");
+    const contentElement = document.getElementById("journeyContent");
+    let journeyData = null;
+    
+    // Check if button exists
+    if (!journeyButton) {
+      console.error("Journey button not found!");
+      return;
+    }
 
-        // Load journey content
-        async function loadJourneyContent() {
-          if (journeyData) return journeyData;
+    // Load journey content
+    async function loadJourneyContent() {
+      if (journeyData) return journeyData;
 
-          try {
-            const response = await fetch("/kod_about_tr.json");
-            journeyData = await response.json();
-            return journeyData;
-          } catch (error) {
-            console.error("Error loading journey content:", error);
-            return {
-              heading: "İçerik Yüklenemedi",
-              paragraphs: [
-                "Üzgünüz, içerik şu anda yüklenemiyor. Lütfen daha sonra tekrar deneyin.",
-              ],
-            };
-          }
-        }
+      try {
+        // Use correct JSON file based on language
+        const isEnglish = window.location.pathname.includes('/en/');
+        const jsonFile = isEnglish ? "/kod_about_en.json" : "/kod_about_tr.json";
+        const response = await fetch(jsonFile);
+        journeyData = await response.json();
+        return journeyData;
+      } catch (error) {
+        console.error("Error loading journey content:", error);
+        const isEnglish = window.location.pathname.includes('/en/');
+        return {
+          heading: isEnglish ? "Content Could Not Be Loaded" : "İçerik Yüklenemedi",
+          paragraphs: [
+            isEnglish 
+              ? "Sorry, the content cannot be loaded at this time. Please try again later."
+              : "Üzgünüz, içerik şu anda yüklenemiyor. Lütfen daha sonra tekrar deneyin."
+          ],
+        };
+      }
+    }
 
-        // Open lightbox
-        async function openLightbox() {
-          const data = await loadJourneyContent();
+    // Open lightbox
+    async function openLightbox() {
+      const data = await loadJourneyContent();
 
-          titleElement.textContent = data.heading;
-          contentElement.innerHTML = data.paragraphs
-            .map((p) => `<p>${p}</p>`)
-            .join("");
+      titleElement.textContent = data.heading;
+      contentElement.innerHTML = data.paragraphs
+        .map((p) => `<p>${p}</p>`)
+        .join("");
 
-          lightbox.classList.add("active");
-          lightbox.setAttribute("aria-hidden", "false");
-          document.body.style.overflow = "hidden";
+      lightbox.classList.add("active");
+      lightbox.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
 
-          // Focus management
-          closeButton.focus();
-        }
+      // Focus management
+      closeButton.focus();
+    }
 
-        // Close lightbox
-        function closeLightbox() {
-          lightbox.classList.remove("active");
-          lightbox.setAttribute("aria-hidden", "true");
-          document.body.style.overflow = "";
+    // Close lightbox
+    function closeLightbox() {
+      lightbox.classList.remove("active");
+      lightbox.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
 
-          // Return focus to button
-          journeyButton.focus();
-        }
+      // Return focus to button
+      journeyButton.focus();
+    }
 
-        // Event listeners
-        journeyButton.addEventListener("click", openLightbox);
-        closeButton.addEventListener("click", closeLightbox);
+    // Event listeners
+    journeyButton.addEventListener("click", openLightbox);
+    closeButton.addEventListener("click", closeLightbox);
 
-        // Close on overlay click
-        lightbox.addEventListener("click", function (e) {
-          if (e.target === lightbox) {
-            closeLightbox();
-          }
-        });
+    // Close on overlay click
+    lightbox.addEventListener("click", function (e) {
+      if (e.target === lightbox) {
+        closeLightbox();
+      }
+    });
 
-        // Close on Escape key
-        document.addEventListener("keydown", function (e) {
-          if (e.key === "Escape" && lightbox.classList.contains("active")) {
-            closeLightbox();
-          }
-        });
-      });
-    </script>
+    // Close on Escape key
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && lightbox.classList.contains("active")) {
+        closeLightbox();
+      }
+    });
+  });
+  </script>
   </body>
 </html>

@@ -40,6 +40,9 @@
   padding: 1.25rem 0 0.5rem; /* tighter bottom spacing */
   background: transparent; /* panel itself gets the style */
   border-bottom: none;
+  /* Ensure dropdowns overlay the events grid/cards below */
+  position: relative;
+  z-index: 2;
 }
 
 .filters-container {
@@ -163,7 +166,7 @@
   background: var(--color-background);
   border: 1px solid #333;
   border-radius: 6px;
-  z-index: 10;
+  z-index: 999;
   max-height: 200px;
   overflow-y: auto;
 }

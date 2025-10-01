@@ -79,7 +79,8 @@ body {
   width: 200vmax;
   height: 200vmax;
   pointer-events: none;
-  background-color: rgba(44, 44, 44, 0.3);
+  /* Lighten watermark for better contrast on dark bg */
+  background-color: rgba(255, 255, 255, 0.10);
   -webkit-mask-image: url("/KodLogo.svg");
   -webkit-mask-repeat: no-repeat;
   -webkit-mask-position: center;

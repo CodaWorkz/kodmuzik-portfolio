@@ -31,7 +31,7 @@
   --menu-color-hover: #ececec; /* near-white for hover/focus */
   /* slower hover animations */
   --menu-hover-duration: 420ms;
-  --menu-hover-ease: cubic-bezier(0.22, 1, 0.36, 1); /* smooth ease-out */
+  --menu-hover-ease: cubic-bezier(0.34, 1.56, 0.64, 1); /* bouncier ease-out */
   /* overlays */
   --overlay-main: rgba(0, 0, 0, 0.1);
   --overlay-menu: transparent;
@@ -40,6 +40,17 @@
   /* background KOD logo transform controls */
   --kod-bg-rotate: -14deg; /* subtle tilt */
   --kod-bg-scale: 0.6; /* zoom to reveal < and > chevrons while keeping cover */
+  /* Language switcher sizing */
+  --lang-circle-size-desktop: 45px; /* visible circle size on desktop */
+  --lang-circle-size-mobile: 36px;  /* visible circle size on mobile */
+  --lang-hit-desktop: 60px;         /* clickable area (>=44px) */
+  --lang-hit-mobile: 44px;          /* clickable area (>=44px) */
+  --lang-circle-gap: 2px;           /* vertical gap between visible circles */
+  --lang-hover-duration: 640ms;     /* slower hover/reveal */
+  --lang-bg-hover-duration: 420ms;  /* slower background tone animation */
+  --lang-text-color: #000000;       /* solid black text for max contrast */
+  --lang-text-size-desktop: 14px;
+  --lang-text-size-mobile: 12px;
 }
 
 /* 2. CSS Reset
@@ -148,6 +159,7 @@ p {
   /* Align logo top with content top (4rem content padding - 2rem menu padding) */
   margin-top: 3rem; /* avoid transforms on wrapper */
   position: relative; /* anchor caption spacing */
+  width: 130px; /* lock container to logo width so caption can't expand it */
 }
 
 /* the <img> itself */
@@ -172,18 +184,25 @@ p {
 
 /* Caption element directly under the logo (semantic HTML) */
 .menu-logo-caption {
-  display: block;
+  display: flex; /* render letters on one row */
   width: 100%;
-  text-align: center;
+  justify-content: space-between; /* stretch letters edge-to-edge within logo width */
+  align-items: baseline;
   white-space: nowrap;
+  overflow: hidden; /* ensure no overflow beyond logo width */
   font-family: var(--font-display);
   color: var(--color-accent);
-  font-size: 38px;
+  font-size: 22px; /* scaled to fit 8 letters within 130px safely */
   line-height: 1;
-  letter-spacing: 0.5rem;
+  letter-spacing: 0; /* natural kerning */
   margin-top: 8px;
   padding-top: 8px; /* desktop-only tweak for spacing under logo */
-  text-indent: 0.3rem; /* Reduce this to match your letter-spacing */
+  text-indent: 0; /* no extra offset when using flex layout */
+}
+
+/* individual letters as flex items for precise spacing */
+.menu-logo-letter {
+  display: inline-block;
 }
 
 .menu-nav {
@@ -216,9 +235,21 @@ p {
 }
 
 @media (max-width: 768px) {
+  /* Language switcher sizing on mobile */
+  .lang-switcher {
+    padding: 6px; /* compact tap zone */
+    min-width: var(--lang-circle-size-mobile);
+  }
+
+  .lang-link {
+    width: var(--lang-circle-size-mobile);
+    height: var(--lang-circle-size-mobile);
+    font-size: 18px;
+  }
   .menu-logo-img {
     width: 60px; /* mobile logo width per spec */
   }
+  .menu-logo { width: 60px; }
 }
 
 /* Align links left so the indicator has a home */
@@ -300,26 +331,163 @@ p {
    ================================================ */
 .lang-toggle-menu {
   font-family: var(--font-display);
+  position: relative;
+  z-index: 1000; /* ensure above nearby elements */
+  align-self: flex-start; /* align left like menu */
+  margin-left: 8px; /* align with menu items left padding */
 }
 
-.lang-options {
-  display: flex;
-  gap: 0.5rem;
-  align-items: center;
+/* New stacking container for language links */
+.lang-switcher {
+  position: relative;
+  display: inline-block;
+  padding: 20px; /* generous hover zone incl. buffer between circles */
+  min-width: var(--lang-hit-desktop);
+  line-height: 1;
+}
+
+/* Invisible hover zone extender above the active circle so moving upward keeps hover */
+.lang-switcher::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: calc(-1 * (var(--lang-hit-desktop) + var(--lang-circle-size-desktop)));
+  width: var(--lang-hit-desktop);
+  height: calc(var(--lang-hit-desktop) + var(--lang-circle-size-desktop));
+  background: transparent;
+  pointer-events: auto; /* retain hover when moving between circles */
+  z-index: 1001;
 }
 
 .lang-link {
-  color: var(--color-muted);
-  transition: color var(--transition-speed);
+  position: absolute;
+  left: 0;
+  bottom: 0; /* active baseline */
+  transform: translateY(0);
+  display: flex;
+  align-items: center;
+  justify-content: center; /* perfect centering for text */
+  width: var(--lang-hit-desktop);  /* clickable area (>=44px) */
+  height: var(--lang-hit-desktop);
+  color: var(--lang-text-color) !important; /* force solid black text */
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 1px;
+  font-size: var(--lang-text-size-desktop);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-shadow: none;
+  filter: none;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+  user-select: none;
+  cursor: pointer;
+  z-index: 1010; /* active baseline above container */
 }
 
+/* Circle background rendered on a separate layer to keep text crisp */
+.lang-link::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: var(--lang-circle-size-desktop);
+  height: var(--lang-circle-size-desktop);
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #f2f2f2 0%, #e6e6e6 30%, #d4d4d4 70%, #bfbfbf 100%);
+  box-shadow:
+    inset 0 2px 4px rgba(255, 255, 255, 0.8),  /* inner highlight */
+    inset 0 -2px 4px rgba(0, 0, 0, 0.10),      /* inner shadow */
+    0 6px 16px rgba(0, 0, 0, 0.20),            /* outer depth */
+    0 4px 12px rgba(0, 0, 0, 0.15);
+  transition:
+    box-shadow var(--lang-bg-hover-duration) ease-in-out,
+    background var(--lang-bg-hover-duration) ease-in-out,
+    background-color var(--lang-bg-hover-duration) ease-in-out;
+  z-index: -1; /* behind text */
+}
+
+/* Specular highlight */
+.lang-link::after {
+  content: "";
+  position: absolute;
+  top: 18%;
+  left: 22%;
+  width: 56%;
+  height: 56%;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0) 65%);
+  pointer-events: none;
+}
+
+/* Keep dark text color on hover/focus for language buttons */
+.lang-link:hover,
+.lang-link:focus,
+.lang-link:focus-visible {
+  color: var(--lang-text-color) !important;
+}
+
+/* Active language visible by default */
 .lang-link.active,
 .lang-link[aria-current="true"] {
-  color: var(--color-accent);
+  position: absolute;
 }
 
-.lang-separator {
-  color: var(--color-muted);
+/* Inactive language hidden by default (still accessible to SR) */
+.lang-switcher .lang-link:not(.active):not([aria-current="true"]) {
+  /* Start overlapped with the active circle; animate upward on reveal */
+  bottom: 0;
+  top: auto;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(0) scale(0.94);
+  pointer-events: none;
+  z-index: 1020;
+  transition: opacity var(--lang-hover-duration) var(--menu-hover-ease), visibility 0s 150ms, transform var(--lang-hover-duration) var(--menu-hover-ease);
+}
+
+/* Hover/focus reveal on hover-capable devices */
+  @media (hover: hover) {
+    /* Hover tone-down for either button (background layer only) */
+    .lang-link:hover::before {
+    background: radial-gradient(circle at 30% 30%, #eaeaea 0%, #e0e0e0 30%, #cdcdcd 70%, #b8b8b8 100%);
+      box-shadow:
+        inset 0 1px 3px rgba(255, 255, 255, 0.7),
+        inset 0 -3px 6px rgba(0, 0, 0, 0.16),
+        0 12px 24px rgba(0, 0, 0, 0.3),
+        0 5px 12px rgba(0, 0, 0, 0.24);
+    }
+
+  /* Reveal inactive on hover/focus */
+  .lang-switcher:hover .lang-link:not(.active):not([aria-current="true"]),
+  .lang-switcher:focus-within .lang-link:not(.active):not([aria-current="true"]) {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(calc(-1 * (var(--lang-circle-size-desktop) - var(--lang-circle-gap)))) scale(1);
+    pointer-events: all; /* clickable */
+    transition-delay: 0ms; /* show immediately */
+  }
+}
+
+/* Ensure keyboard focus reveals inactive link even without hover */
+.lang-switcher .lang-link:not(.active):not([aria-current="true"]):focus,
+.lang-switcher .lang-link:not(.active):not([aria-current="true"]):focus-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(calc(-1 * (var(--lang-circle-size-desktop) - var(--lang-circle-gap)))) scale(1);
+  pointer-events: all;
+}
+
+/* Backdrop-filter fallback no longer needed (solid fill used) */
+
+/* Respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .lang-link,
+  .lang-link::before,
+  .lang-link::after {
+    transition: none !important;
+  }
 }
 
 /* 7. Accessibility & Interaction
@@ -399,17 +567,19 @@ a:focus-visible {
     transform-origin: center;
   }
 
-  /* Caption - vertical text matching logo size */
+  /* Caption - vertical text; allow full length so it isn't clipped by the logo */
   .menu-logo-caption {
     display: inline-flex;
     writing-mode: vertical-rl;
     text-orientation: mixed;
-    font-size: 1rem; /* Small enough to fit nicely */
+    font-size: 1rem;
     letter-spacing: 0.02em;
     line-height: 1;
-    height: 44px; /* Match logo height */
-    align-items: center; /* Center letters vertically */
-    justify-content: center; /* Center letters horizontally */
+    height: auto; /* let full KODMÜZİK fit */
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1; /* ensure caption sits above logo if overlapping */
   }
 
   .menu-logo-letter {
@@ -486,6 +656,26 @@ a:focus-visible {
     margin-left: auto;
     margin-right: auto;
     writing-mode: horizontal-tb;
+  }
+
+  /* Language switcher sizing and positions (mobile) */
+  .lang-switcher {
+    padding: 16px; /* generous touch zone */
+    min-width: var(--lang-hit-mobile);
+  }
+  .lang-link {
+    width: var(--lang-hit-mobile);
+    height: var(--lang-hit-mobile);
+    font-size: var(--lang-text-size-mobile);
+  }
+  .lang-link::before {
+    width: var(--lang-circle-size-mobile);
+    height: var(--lang-circle-size-mobile);
+  }
+  .lang-switcher .lang-link:not(.active):not([aria-current="true"]) {
+    bottom: 0;
+    top: auto;
+    transform: translateY(0) scale(0.94);
   }
 
   /* Main content */

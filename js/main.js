@@ -145,6 +145,58 @@ function updateLanguageLinks() {
   }
 }
 
+// Additional enhancement: mobile/touch behavior for language switcher
+// - Show only active language (handled by CSS)
+// - Single tap (touch) should navigate to the other language
+// - Keep keyboard accessibility and avoid interfering with existing logic
+function enhanceLanguageSwitcher() {
+  try {
+    const switcher = document.querySelector('.lang-switcher');
+    if (!switcher) return;
+
+    const tr = document.getElementById('lang-tr');
+    const en = document.getElementById('lang-en');
+    if (!tr || !en) return;
+
+    // Determine links
+    const isENActive = en.classList.contains('active') || en.getAttribute('aria-current') === 'true';
+    const activeLink = isENActive ? en : tr;
+    const inactiveLink = isENActive ? tr : en;
+
+    // Detect environments where hover is unreliable or absent
+    const canHover = window.matchMedia && window.matchMedia('(hover: hover)').matches;
+    const coarsePointer = window.matchMedia && window.matchMedia('(pointer: coarse)').matches;
+
+    // For touch/coarse pointer devices, make a single tap on the visible (active) link
+    // navigate to the other language immediately.
+    if (!canHover || coarsePointer) {
+      const handler = (ev) => {
+        // Only redirect if the tap/click target is within the switcher
+        // and it's not already pointing to the inactive link directly.
+        ev.preventDefault();
+        if (inactiveLink && inactiveLink.href) {
+          window.location.assign(inactiveLink.href);
+        }
+      };
+
+      // Use pointer events to catch both touch and pen; fall back to click
+      switcher.addEventListener('pointerdown', (e) => {
+        if (e.pointerType === 'touch' || e.pointerType === 'pen') handler(e);
+      }, { passive: false });
+
+      // Fallback for browsers without Pointer Events
+      switcher.addEventListener('touchstart', handler, { passive: false });
+      switcher.addEventListener('click', handler);
+    }
+
+    // Ensure keyboard users can reveal and activate the hidden option using focus
+    // (CSS uses :focus-within to reveal visually)
+    // No JS needed for desktop hover behavior.
+  } catch (_) {
+    // Fail silently; do not block the page if any error occurs
+  }
+}
+
 // 5. Initialization
 // ================================================
 
@@ -180,6 +232,9 @@ function domReady(fn) {
 
 // Run initialization
 domReady(initializeApp);
+
+// Run language switcher enhancement separately to avoid touching initializeApp
+domReady(enhanceLanguageSwitcher);
 
 // 6. Background watermark installer
 // ================================================

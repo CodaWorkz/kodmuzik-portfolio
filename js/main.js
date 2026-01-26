@@ -208,14 +208,8 @@ function initializeApp() {
   setActiveLink();
   updateLanguageLinks();
 
-  // Only install watermark if NOT on about pages
-  const currentPath = getCurrentPath();
-  if (
-    !currentPath.includes("/hakkimizda") &&
-    !currentPath.includes("/en/hakkimizda")
-  ) {
-    installKodBackground();
-  }
+  // Install watermark on all pages for consistency
+  installKodBackground();
 }
 
 /**
@@ -255,24 +249,24 @@ function installKodBackground() {
     const w = window.innerWidth;
     const h = window.innerHeight;
     const ar = w / h;
-    // Base values — keep in sync with CSS defaults
-    let scale = 0.6;
-    let rotate = -14; // degrees
+    // Base values for bottom-left positioned logo
+    let scale = 1.0; // no additional scaling needed
+    let rotate = -15; // negative degrees for counter-clockwise tilt (bottom-left to top-right)
     let shiftX = 0; // percentage offset
 
-    // Aspect-ratio driven framing to keep <O> with chevrons peeking
+    // Aspect-ratio adjustments for different screen sizes
     if (ar >= 2.0) {
-      // ultra-wide → a touch more scale to avoid gaps, slight left nudge
-      scale = 0.65;
-      shiftX = -1; // show a bit more of the right chevron
+      // ultra-wide screens
+      scale = 0.9;
+      shiftX = 0;
     } else if (ar <= 0.7) {
-      // tall phones → slightly more scale and small right nudge
-      scale = 0.7;
-      shiftX = 1;
+      // tall/narrow screens
+      scale = 1.1;
+      shiftX = 0;
     }
 
     // Fine tuning for small widths
-    if (w <= 600) scale = Math.max(scale, 0.75);
+    if (w <= 600) scale = Math.min(scale, 1.2);
 
     // Apply via CSS variables so CSS does the heavy lifting
     const rs = doc.documentElement.style;

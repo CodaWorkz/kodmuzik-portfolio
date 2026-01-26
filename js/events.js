@@ -56,11 +56,43 @@ const translations = {
   },
 };
 
+// Helper Functions
+// ================================================
+/**
+ * Parse date in DD.MM.YYYY format to JavaScript Date object
+ * @param {string} dateString - Date in DD.MM.YYYY format
+ * @returns {Date} JavaScript Date object
+ */
+function parseEventDate(dateString) {
+  const parts = dateString.split('.');
+  if (parts.length === 3) {
+    const day = parseInt(parts[0], 10);
+    const month = parseInt(parts[1], 10) - 1; // JavaScript months are 0-indexed
+    const year = parseInt(parts[2], 10);
+    return new Date(year, month, day);
+  }
+  return new Date(dateString); // Fallback to default parsing
+}
+
+/**
+ * Get artist name as string from artist object (handles both string and array)
+ * @param {Object} artist - Artist object with tr and en properties
+ * @param {string} lang - Language code ('tr' or 'en')
+ * @returns {string} Artist name(s) as string
+ */
+function getArtistName(artist, lang) {
+  const value = artist[lang];
+  if (Array.isArray(value)) {
+    return value.join(', ');
+  }
+  return value || '';
+}
+
 // 2. Data Loading
 // ================================================
 async function loadEvents() {
   try {
-    const response = await fetch("/kod_events.json");
+    const response = await fetch("/kod_events_v2.json");
     if (!response.ok) throw new Error("Failed to load events");
 
     const data = await response.json();
@@ -154,7 +186,7 @@ function populateFilters(meta) {
 
   // Populate custom year filter
   const years = [
-    ...new Set(eventsData.map((event) => new Date(event.date).getFullYear())),
+    ...new Set(eventsData.map((event) => parseEventDate(event.date).getFullYear())),
   ].sort((a, b) => b - a);
   window.allYears = years;
   const yearOptions = document.querySelector(
@@ -207,8 +239,8 @@ function getFilteredEvents() {
     // Artist filter - search in both languages
     if (
       artistFilter &&
-      !event.artist.tr.toLowerCase().includes(artistFilter) &&
-      !event.artist.en.toLowerCase().includes(artistFilter)
+      !getArtistName(event.artist, 'tr').toLowerCase().includes(artistFilter) &&
+      !getArtistName(event.artist, 'en').toLowerCase().includes(artistFilter)
     ) {
       return false;
     }
@@ -221,7 +253,7 @@ function getFilteredEvents() {
     // Year filter
     if (
       yearFilter &&
-      new Date(event.date).getFullYear() !== parseInt(yearFilter)
+      parseEventDate(event.date).getFullYear() !== parseInt(yearFilter)
     ) {
       return false;
     }
@@ -261,8 +293,8 @@ function updateCascadingFilters() {
     // Check artist filter
     if (
       artistFilter &&
-      !event.artist.tr.toLowerCase().includes(artistFilter) &&
-      !event.artist.en.toLowerCase().includes(artistFilter)
+      !getArtistName(event.artist, 'tr').toLowerCase().includes(artistFilter) &&
+      !getArtistName(event.artist, 'en').toLowerCase().includes(artistFilter)
     ) {
       matchesFilters = false;
     }
@@ -270,7 +302,7 @@ function updateCascadingFilters() {
     // Check year filter
     if (
       yearFilter &&
-      new Date(event.date).getFullYear() !== parseInt(yearFilter)
+      parseEventDate(event.date).getFullYear() !== parseInt(yearFilter)
     ) {
       matchesFilters = false;
     }
@@ -292,9 +324,9 @@ function updateCascadingFilters() {
       }
       if (
         !yearFilter ||
-        new Date(event.date).getFullYear() === parseInt(yearFilter)
+        parseEventDate(event.date).getFullYear() === parseInt(yearFilter)
       ) {
-        availableYears.add(new Date(event.date).getFullYear());
+        availableYears.add(parseEventDate(event.date).getFullYear());
       }
       if (!venueFilter || event.venue.en === venueFilter) {
         availableVenues.add(event.venue.en);
@@ -336,7 +368,7 @@ function displayEvents(events) {
 
   grid.innerHTML = events
     .map((event, index) => {
-      const date = new Date(event.date);
+      const date = parseEventDate(event.date);
       const formattedDate = date.toLocaleDateString(
         currentLang === "tr" ? "tr-TR" : "en-US",
         {
@@ -352,7 +384,7 @@ function displayEvents(events) {
 
       return `
       <div class="event-card">
-        <h3 class="event-artist">${seriesValue ? `<span class=\"event-series-inline\">${seriesValue}</span> ` : ""}<span class=\"event-artist-name\">${event.artist[currentLang]}</span></h3>
+        <h3 class="event-artist">${seriesValue ? `<span class=\"event-series-inline\">${seriesValue}</span> ` : ""}<span class=\"event-artist-name\">${getArtistName(event.artist, currentLang)}</span></h3>
         <div class="event-details">
           <div class="event-detail">
             <span class="event-detail-label">${translations[currentLang].dateLabel}</span>

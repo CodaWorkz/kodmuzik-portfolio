@@ -38,8 +38,8 @@
   /* optional fine-tuning for watermark centering */
   --kod-watermark-shift-x: 0%;
   /* background KOD logo transform controls */
-  --kod-bg-rotate: -14deg; /* subtle tilt */
-  --kod-bg-scale: 0.6; /* zoom to reveal < and > chevrons while keeping cover */
+  --kod-bg-rotate: -15deg; /* counter-clockwise tilt from bottom-left to top-right */
+  --kod-bg-scale: 1.0; /* base scale for 60vw sized logo */
   /* Language switcher sizing */
   --lang-circle-size-desktop: 45px; /* visible circle size on desktop */
   --lang-circle-size-mobile: 36px;  /* visible circle size on mobile */
@@ -82,25 +82,29 @@ body {
 
 /* Fixed KOD watermark element (injected by JS as #kod-bg) */
 #kod-bg {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(calc(-50% + var(--kod-watermark-shift-x)), -50%)
-    rotate(var(--kod-bg-rotate)) scale(var(--kod-bg-scale));
-  width: 200vmax;
-  height: 200vmax;
+  position: fixed !important;
+  top: 50% !important;
+  left: 50% !important;
+  bottom: auto !important;
+  right: auto !important;
+  transform-origin: center center !important;
+  transform: translate(-50%, -50%) rotate(var(--kod-bg-rotate)) scale(var(--kod-bg-scale)) !important;
+  width: 161vmin !important;
+  max-width: 161vmin !important;
+  height: calc(161vmin * 28.05 / 74.62) !important;
+  max-height: calc(161vmin * 28.05 / 74.62) !important;
   pointer-events: none;
   /* Lighten watermark for better contrast on dark bg */
-  background-color: rgba(255, 255, 255, 0.10);
+  background-color: rgba(255, 255, 255, 0.10) !important;
   -webkit-mask-image: url("/KodLogo.svg");
   -webkit-mask-repeat: no-repeat;
-  -webkit-mask-position: center;
-  -webkit-mask-size: contain;
+  -webkit-mask-position: center center;
+  -webkit-mask-size: 100% 100%;
   mask-image: url("/KodLogo.svg");
   mask-repeat: no-repeat;
-  mask-position: center;
-  mask-size: contain;
-  z-index: 0;
+  mask-position: center center;
+  mask-size: 100% 100%;
+  z-index: 0 !important;
   will-change: transform;
   backface-visibility: hidden;
 }

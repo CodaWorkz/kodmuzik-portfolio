@@ -531,7 +531,7 @@ a:focus-visible {
     align-items: center;
     gap: 22px; /* Space between icon and caption */
     margin-left: -9px; /* Align with menu items */
-    margin-top: 5px; /* Fine-tune vertical position */
+    margin-top: 15px; /* Fine-tune vertical position */
     transform: none; /* No rotation on container */
     width: 60px; /* Lock width on mobile */
   }

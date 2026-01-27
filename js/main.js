@@ -160,7 +160,6 @@ function enhanceLanguageSwitcher() {
 
     // Determine links
     const isENActive = en.classList.contains('active') || en.getAttribute('aria-current') === 'true';
-    const activeLink = isENActive ? en : tr;
     const inactiveLink = isENActive ? tr : en;
 
     // Detect environments where hover is unreliable or absent
@@ -233,52 +232,12 @@ domReady(enhanceLanguageSwitcher);
 // 6. Background watermark installer
 // ================================================
 function installKodBackground() {
-  const doc = document;
-  // Ensure a single instance
-  let bg = doc.getElementById("kod-bg");
+  // Ensure a single instance of the background element
+  let bg = document.getElementById("kod-bg");
   if (!bg) {
-    bg = doc.createElement("div");
+    bg = document.createElement("div");
     bg.id = "kod-bg";
     // Insert as first child so it paints beneath others (z-index handles rest)
-    doc.body.insertBefore(bg, doc.body.firstChild);
-  }
-
-  const pr = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-  function tune() {
-    const w = window.innerWidth;
-    const h = window.innerHeight;
-    const ar = w / h;
-    // Base values for bottom-left positioned logo
-    let scale = 1.0; // no additional scaling needed
-    let rotate = -15; // negative degrees for counter-clockwise tilt (bottom-left to top-right)
-    let shiftX = 0; // percentage offset
-
-    // Aspect-ratio adjustments for different screen sizes
-    if (ar >= 2.0) {
-      // ultra-wide screens
-      scale = 0.9;
-      shiftX = 0;
-    } else if (ar <= 0.7) {
-      // tall/narrow screens
-      scale = 1.1;
-      shiftX = 0;
-    }
-
-    // Fine tuning for small widths
-    if (w <= 600) scale = Math.min(scale, 1.2);
-
-    // Apply via CSS variables so CSS does the heavy lifting
-    const rs = doc.documentElement.style;
-    rs.setProperty("--kod-bg-scale", String(scale));
-    rs.setProperty("--kod-bg-rotate", rotate + "deg");
-    rs.setProperty("--kod-watermark-shift-x", shiftX + "%");
-  }
-
-  tune();
-  window.addEventListener("resize", tune, { passive: true });
-  window.addEventListener("orientationchange", tune, { passive: true });
-  if (!pr) {
-    // No animation now, but hook is here if a micro parallax is desired later
+    document.body.insertBefore(bg, document.body.firstChild);
   }
 }

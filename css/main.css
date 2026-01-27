@@ -35,11 +35,9 @@
   /* overlays */
   --overlay-main: rgba(0, 0, 0, 0.1);
   --overlay-menu: transparent;
-  /* optional fine-tuning for watermark centering */
-  --kod-watermark-shift-x: 0%;
   /* background KOD logo transform controls */
   --kod-bg-rotate: -15deg; /* counter-clockwise tilt from bottom-left to top-right */
-  --kod-bg-scale: 1.0; /* base scale for 60vw sized logo */
+  --kod-bg-scale: 1.0; /* base scale for 161vmin sized logo */
   /* Language switcher sizing */
   --lang-circle-size-desktop: 45px; /* visible circle size on desktop */
   --lang-circle-size-mobile: 36px;  /* visible circle size on mobile */
@@ -83,19 +81,15 @@ body {
 /* Fixed KOD watermark element (injected by JS as #kod-bg) */
 #kod-bg {
   position: fixed !important;
-  top: 50% !important;
-  left: 50% !important;
-  bottom: auto !important;
-  right: auto !important;
-  transform-origin: center center !important;
-  transform: translate(-50%, -50%) rotate(var(--kod-bg-rotate)) scale(var(--kod-bg-scale)) !important;
-  width: 161vmin !important;
-  max-width: 161vmin !important;
-  height: calc(161vmin * 28.05 / 74.62) !important;
-  max-height: calc(161vmin * 28.05 / 74.62) !important;
+  top: 50%;
+  left: 50%;
+  transform-origin: center center;
+  transform: translate(-50%, -50%) rotate(var(--kod-bg-rotate)) scale(var(--kod-bg-scale));
+  width: 161vmin;
+  height: calc(161vmin * 28.05 / 74.62);
   pointer-events: none;
   /* Lighten watermark for better contrast on dark bg */
-  background-color: rgba(255, 255, 255, 0.10) !important;
+  background-color: rgba(255, 255, 255, 0.10);
   -webkit-mask-image: url("/KodLogo.svg");
   -webkit-mask-repeat: no-repeat;
   -webkit-mask-position: center center;
@@ -236,24 +230,6 @@ p {
 .menu-link.active:hover,
 .menu-link[aria-current="page"]:hover {
   color: var(--menu-color-active);
-}
-
-@media (max-width: 768px) {
-  /* Language switcher sizing on mobile */
-  .lang-switcher {
-    padding: 6px; /* compact tap zone */
-    min-width: var(--lang-circle-size-mobile);
-  }
-
-  .lang-link {
-    width: var(--lang-circle-size-mobile);
-    height: var(--lang-circle-size-mobile);
-    font-size: 18px;
-  }
-  .menu-logo-img {
-    width: 60px; /* mobile logo width per spec */
-  }
-  .menu-logo { width: 60px; }
 }
 
 /* Align links left so the indicator has a home */
@@ -537,20 +513,16 @@ a:focus-visible {
 
 /* 8. Responsive Design
    ================================================ */
-/* Mobile Menu Fix - Add this to your main.css file */
-/* Replace the existing @media (max-width: 768px) section with this updated version */
-
-/* Mobile Menu Fix - Add this to your main.css file */
-/* Replace the existing @media (max-width: 768px) section with this updated version */
 
 @media (max-width: 768px) {
   .side-menu {
     width: var(--menu-width-mobile);
-    padding: 1rem 0.5rem 1.5rem 0.5rem;
+    padding: 2rem 0.5rem 1.5rem 0.5rem; /* Align logo group with main content title */
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    row-gap: 1rem;
+    justify-content: space-between; /* Distribute: top, center, bottom */
+    row-gap: 0; /* Remove gap to let space-between handle spacing */
   }
 
   /* Logo block with icon and caption side by side */
@@ -559,7 +531,9 @@ a:focus-visible {
     align-items: center;
     gap: 22px; /* Space between icon and caption */
     margin-left: -9px; /* Align with menu items */
+    margin-top: 5px; /* Fine-tune vertical position */
     transform: none; /* No rotation on container */
+    width: 60px; /* Lock width on mobile */
   }
 
   /* Logo image - rotate only if needed based on your asset */
@@ -615,7 +589,7 @@ a:focus-visible {
   }
 
   .menu-link {
-    font-size: 0.85rem;
+    font-size: 0.95rem; /* Increased from 0.85rem for better prominence */
     writing-mode: vertical-rl;
     text-orientation: mixed;
     letter-spacing: 0.03em;

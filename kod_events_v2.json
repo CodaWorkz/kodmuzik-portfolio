@@ -12188,7 +12188,7 @@
     ],
     "genres": [
       {
-        "tr": "Alternatif",
+        "tr": "Alternatif Rock",
         "en": "Alternative Rock"
       },
       {
@@ -12196,35 +12196,11 @@
         "en": "Classical"
       },
       {
-        "tr": "Alternatif",
-        "en": "Electronic"
-      },
-      {
         "tr": "Elektronik",
         "en": "Electronic"
       },
       {
-        "tr": "Deneysel - Avant Gard",
-        "en": "Electronic"
-      },
-      {
-        "tr": "Deneysel - Avant Gard",
-        "en": "Experimental"
-      },
-      {
-        "tr": "Alternatif",
-        "en": "Experimental"
-      },
-      {
-        "tr": "Elektronik / Alternatif",
-        "en": "Experimental"
-      },
-      {
-        "tr": "Elektronik",
-        "en": "Experimental"
-      },
-      {
-        "tr": "Klasik",
+        "tr": "Deneysel",
         "en": "Experimental"
       },
       {
@@ -12232,7 +12208,7 @@
         "en": "Experimental - Avant Gard"
       },
       {
-        "tr": "Caz",
+        "tr": "Füzyon Caz",
         "en": "Fusion Jazz"
       },
       {
@@ -12240,7 +12216,7 @@
         "en": "Hip Hop"
       },
       {
-        "tr": "Alternatif",
+        "tr": "Endüstriyel",
         "en": "Industrial"
       },
       {
@@ -12248,15 +12224,7 @@
         "en": "Jazz"
       },
       {
-        "tr": "Klasik",
-        "en": "Jazz"
-      },
-      {
-        "tr": "Rock",
-        "en": "Jazz"
-      },
-      {
-        "tr": "Alternatif",
+        "tr": "Krautrock",
         "en": "Krautrock"
       },
       {
@@ -12264,44 +12232,24 @@
         "en": "Metal"
       },
       {
-        "tr": "Alternatif",
-        "en": "Metal"
-      },
-      {
         "tr": "Pop",
         "en": "Pop"
       },
       {
-        "tr": "Alternatif",
+        "tr": "Post Punk",
         "en": "Post Punk"
       },
       {
-        "tr": "Alternatif",
+        "tr": "Post Rock",
         "en": "Post Rock"
       },
       {
-        "tr": "Metal",
+        "tr": "Progresif Rock",
         "en": "Progressive Rock"
       },
       {
         "tr": "Rock",
-        "en": "Progressive Rock"
-      },
-      {
-        "tr": "Alternatif",
         "en": "Rock"
-      },
-      {
-        "tr": "Rock",
-        "en": "Rock"
-      },
-      {
-        "tr": "Metal",
-        "en": "Rock"
-      },
-      {
-        "tr": "Caz",
-        "en": "World Music"
       },
       {
         "tr": "Dünya Müziği",

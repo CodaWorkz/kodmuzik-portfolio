@@ -92,7 +92,7 @@ function getArtistName(artist, lang) {
 // ================================================
 async function loadEvents() {
   try {
-    const response = await fetch("/kod_events_v2.json");
+    const response = await fetch("/kod_muzik_events.json");
     if (!response.ok) throw new Error("Failed to load events");
 
     const data = await response.json();

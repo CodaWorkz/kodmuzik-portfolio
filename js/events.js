@@ -366,7 +366,14 @@ function displayEvents(events) {
     return;
   }
 
-  grid.innerHTML = events
+  // Sort events by date in descending order (newest first)
+  const sortedEvents = [...events].sort((a, b) => {
+    const dateA = parseEventDate(a.date);
+    const dateB = parseEventDate(b.date);
+    return dateB - dateA; // Descending order (newest first)
+  });
+
+  grid.innerHTML = sortedEvents
     .map((event, index) => {
       const date = parseEventDate(event.date);
       const formattedDate = date.toLocaleDateString(

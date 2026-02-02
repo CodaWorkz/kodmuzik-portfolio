@@ -515,6 +515,10 @@ a:focus-visible {
    ================================================ */
 
 @media (max-width: 768px) {
+  :root {
+    --kod-bg-rotate: 20deg; /* Vertical orientation with right tilt on mobile */
+  }
+
   .side-menu {
     width: var(--menu-width-mobile);
     padding: 2rem 0.5rem 1.5rem 0.5rem; /* Align logo group with main content title */

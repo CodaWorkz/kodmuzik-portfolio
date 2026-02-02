@@ -516,7 +516,8 @@ a:focus-visible {
 
 @media (max-width: 768px) {
   :root {
-    --kod-bg-rotate: 20deg; /* Vertical orientation with right tilt on mobile */
+    --kod-bg-rotate: 90deg; /* Fully vertical orientation on mobile */
+    --kod-bg-scale: 1.02; /* Slightly larger background for mobile viewport */
   }
 
   .side-menu {

@@ -126,6 +126,11 @@ function writeFiltersToURL() {
     : window.location.pathname;
 
   window.history.replaceState({}, '', newURL);
+
+  // Update language switcher links to include new query parameters
+  if (typeof updateLanguageLinks === 'function') {
+    updateLanguageLinks();
+  }
 }
 
 /**

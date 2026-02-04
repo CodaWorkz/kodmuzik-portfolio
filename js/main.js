@@ -113,6 +113,7 @@ function setActiveLink() {
  */
 function updateLanguageLinks() {
   const currentPath = getCurrentPath();
+  const queryString = window.location.search; // Preserve query parameters
   const langEN = document.getElementById("lang-en");
   const langTR = document.getElementById("lang-tr");
 
@@ -127,8 +128,8 @@ function updateLanguageLinks() {
   if (currentPath.startsWith("/en")) {
     // Current page is EN, switch to TR
     const pathWithoutEN = currentPath.substring(3) || "/";
-    langTR.href = pathWithoutEN;
-    langEN.href = currentPath; // Link to self
+    langTR.href = pathWithoutEN + queryString;
+    langEN.href = currentPath + queryString; // Link to self
 
     langEN.classList.add("active");
     langEN.setAttribute("aria-current", "true");
@@ -136,8 +137,8 @@ function updateLanguageLinks() {
   } else {
     // Current page is TR, switch to EN
     const enPath = joinPath("/en", currentPath);
-    langEN.href = enPath;
-    langTR.href = currentPath; // Link to self
+    langEN.href = enPath + queryString;
+    langTR.href = currentPath + queryString; // Link to self
 
     langTR.classList.add("active");
     langTR.setAttribute("aria-current", "true");

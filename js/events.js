@@ -88,6 +88,93 @@ function getArtistName(artist, lang) {
   return value || '';
 }
 
+/**
+ * Read filter values from URL query parameters
+ * @returns {Object} Filter values object with artist, genre, year, venue
+ */
+function readFiltersFromURL() {
+  const params = new URLSearchParams(window.location.search);
+  return {
+    artist: params.get('artist') || '',
+    genre: params.get('genre') || '',
+    year: params.get('year') || '',
+    venue: params.get('venue') || ''
+  };
+}
+
+/**
+ * Write current filter values to URL query parameters
+ * Updates the URL without reloading the page
+ */
+function writeFiltersToURL() {
+  const artistFilter = document.getElementById('artist-filter').value;
+  const genreFilter = document.getElementById('genre-filter').dataset.value;
+  const yearFilter = document.getElementById('year-filter').dataset.value;
+  const venueFilter = document.getElementById('venue-filter').dataset.value;
+
+  const params = new URLSearchParams();
+
+  // Only add non-empty filters to URL
+  if (artistFilter) params.set('artist', artistFilter);
+  if (genreFilter) params.set('genre', genreFilter);
+  if (yearFilter) params.set('year', yearFilter);
+  if (venueFilter) params.set('venue', venueFilter);
+
+  // Update URL without reloading the page
+  const newURL = params.toString()
+    ? `${window.location.pathname}?${params.toString()}`
+    : window.location.pathname;
+
+  window.history.replaceState({}, '', newURL);
+}
+
+/**
+ * Apply filter values from URL to UI controls
+ * Called after filters are populated to restore state from URL
+ */
+function applyURLFiltersToUI() {
+  const urlFilters = readFiltersFromURL();
+
+  // Apply artist filter
+  const artistInput = document.getElementById('artist-filter');
+  if (artistInput && urlFilters.artist) {
+    artistInput.value = urlFilters.artist;
+  }
+
+  // Apply custom select filters
+  applyCustomSelectValue('genre-filter', urlFilters.genre);
+  applyCustomSelectValue('year-filter', urlFilters.year);
+  applyCustomSelectValue('venue-filter', urlFilters.venue);
+}
+
+/**
+ * Helper function to set custom select value and label
+ * @param {string} selectId - The ID of the custom select element
+ * @param {string} value - The value to set
+ */
+function applyCustomSelectValue(selectId, value) {
+  if (!value) return;
+
+  const customSelect = document.getElementById(selectId);
+  if (!customSelect) return;
+
+  // Find the option with the matching value
+  const option = customSelect.querySelector(
+    `.custom-select-option[data-value="${value}"]`
+  );
+
+  if (option) {
+    // Set the value in dataset
+    customSelect.dataset.value = value;
+
+    // Update the label text
+    const label = customSelect.querySelector('.custom-select-label');
+    if (label) {
+      label.textContent = option.textContent;
+    }
+  }
+}
+
 // 2. Data Loading
 // ================================================
 async function loadEvents() {
@@ -99,6 +186,7 @@ async function loadEvents() {
     eventsData = data.events;
 
     populateFilters(data.meta);
+    applyURLFiltersToUI(); // Restore filters from URL
     applyFilters();
   } catch (error) {
     console.error("Error loading events:", error);
@@ -272,6 +360,7 @@ function applyFilters() {
   displayEvents(filteredEvents);
   updateResultsCount(filteredEvents.length);
   updateCascadingFilters();
+  writeFiltersToURL();
 }
 
 function updateCascadingFilters() {

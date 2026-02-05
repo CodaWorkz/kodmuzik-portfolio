@@ -1,0 +1,8 @@
+# robots.txt for KOD Müzik Portfolio
+# Allow all search engines to crawl all pages
+
+User-agent: *
+Allow: /
+
+# Sitemap location (if you add one in the future)
+# Sitemap: https://yourdomain.com/sitemap.xml

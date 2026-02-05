@@ -474,7 +474,7 @@ function displayEvents(events) {
         currentLang === "tr" ? "tr-TR" : "en-US",
         {
           year: "numeric",
-          month: "short",
+          month: "long",
           day: "numeric",
         }
       );

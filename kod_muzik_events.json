@@ -3,12 +3,8 @@
     {
       "id": "event_001",
       "artist": {
-        "tr": [
-          "Agathocles"
-        ],
-        "en": [
-          "Agathocles"
-        ]
+        "tr": ["Agathocles"],
+        "en": ["Agathocles"]
       },
       "genre": {
         "tr": "Metal",
@@ -35,12 +31,8 @@
     {
       "id": "event_002",
       "artist": {
-        "tr": [
-          "Monkeyshop"
-        ],
-        "en": [
-          "Monkeyshop"
-        ]
+        "tr": ["Monkeyshop"],
+        "en": ["Monkeyshop"]
       },
       "genre": {
         "tr": "Alternatif",
@@ -67,16 +59,8 @@
     {
       "id": "event_003",
       "artist": {
-        "tr": [
-          "Van Der Meer",
-          "Superstore",
-          "Reality Brothers"
-        ],
-        "en": [
-          "Van Der Meer",
-          "Superstore",
-          "Reality Brothers"
-        ]
+        "tr": ["Van Der Meer", "Superstore", "Reality Brothers"],
+        "en": ["Van Der Meer", "Superstore", "Reality Brothers"]
       },
       "genre": {
         "tr": "Elektronik",
@@ -103,14 +87,8 @@
     {
       "id": "event_004",
       "artist": {
-        "tr": [
-          "4-Hero",
-          "PFM"
-        ],
-        "en": [
-          "4-Hero",
-          "PFM"
-        ]
+        "tr": ["4-Hero", "PFM"],
+        "en": ["4-Hero", "PFM"]
       },
       "genre": {
         "tr": "Elektronik",
@@ -137,14 +115,8 @@
     {
       "id": "event_005",
       "artist": {
-        "tr": [
-          "Ruins",
-          "Nekropsi"
-        ],
-        "en": [
-          "Ruins",
-          "Nekropsi"
-        ]
+        "tr": ["Ruins", "Nekropsi"],
+        "en": ["Ruins", "Nekropsi"]
       },
       "genre": {
         "tr": "Deneysel - Avant Gard",
@@ -207,14 +179,8 @@
     {
       "id": "event_007",
       "artist": {
-        "tr": [
-          "To Rococo Rot",
-          "Kreidler"
-        ],
-        "en": [
-          "To Rococo Rot",
-          "Kreidler"
-        ]
+        "tr": ["To Rococo Rot", "Kreidler"],
+        "en": ["To Rococo Rot", "Kreidler"]
       },
       "genre": {
         "tr": "Elektronik",
@@ -241,16 +207,8 @@
     {
       "id": "event_008",
       "artist": {
-        "tr": [
-          "Silicone Soul",
-          "Funk D'Void",
-          "Maas (Live)"
-        ],
-        "en": [
-          "Silicone Soul",
-          "Funk D'Void",
-          "Maas (Live)"
-        ]
+        "tr": ["Silicone Soul", "Funk D'Void", "Maas (Live)"],
+        "en": ["Silicone Soul", "Funk D'Void", "Maas (Live)"]
       },
       "genre": {
         "tr": "Elektronik",
@@ -277,12 +235,8 @@
     {
       "id": "event_009",
       "artist": {
-        "tr": [
-          "Mouse on Mars"
-        ],
-        "en": [
-          "Mouse on Mars"
-        ]
+        "tr": ["Mouse on Mars"],
+        "en": ["Mouse on Mars"]
       },
       "genre": {
         "tr": "Elektronik",
@@ -309,14 +263,8 @@
     {
       "id": "event_010",
       "artist": {
-        "tr": [
-          "Les Gammas",
-          "Agent Orange (DJ Set)"
-        ],
-        "en": [
-          "Les Gammas",
-          "Agent Orange (DJ Set)"
-        ]
+        "tr": ["Les Gammas", "Agent Orange (DJ Set)"],
+        "en": ["Les Gammas", "Agent Orange (DJ Set)"]
       },
       "genre": {
         "tr": "Elektronik",
@@ -343,12 +291,8 @@
     {
       "id": "event_011",
       "artist": {
-        "tr": [
-          "Cabbageboy (Si Begg)"
-        ],
-        "en": [
-          "Cabbageboy (Si Begg)"
-        ]
+        "tr": ["Cabbageboy (Si Begg)"],
+        "en": ["Cabbageboy (Si Begg)"]
       },
       "genre": {
         "tr": "Elektronik",
@@ -375,12 +319,8 @@
     {
       "id": "event_012",
       "artist": {
-        "tr": [
-          "Fuzz Against Junk"
-        ],
-        "en": [
-          "Fuzz Against Junk"
-        ]
+        "tr": ["Fuzz Against Junk"],
+        "en": ["Fuzz Against Junk"]
       },
       "genre": {
         "tr": "Elektronik",
@@ -407,12 +347,8 @@
     {
       "id": "event_013",
       "artist": {
-        "tr": [
-          "Mixmaster Morris"
-        ],
-        "en": [
-          "Mixmaster Morris"
-        ]
+        "tr": ["Mixmaster Morris"],
+        "en": ["Mixmaster Morris"]
       },
       "genre": {
         "tr": "Elektronik",
@@ -439,12 +375,8 @@
     {
       "id": "event_014",
       "artist": {
-        "tr": [
-          "Ashley Beedle"
-        ],
-        "en": [
-          "Ashley Beedle"
-        ]
+        "tr": ["Ashley Beedle"],
+        "en": ["Ashley Beedle"]
       },
       "genre": {
         "tr": "Elektronik",
@@ -471,12 +403,8 @@
     {
       "id": "event_015",
       "artist": {
-        "tr": [
-          "DJ Spice"
-        ],
-        "en": [
-          "DJ Spice"
-        ]
+        "tr": ["DJ Spice"],
+        "en": ["DJ Spice"]
       },
       "genre": {
         "tr": "Elektronik",
@@ -503,12 +431,8 @@
     {
       "id": "event_016",
       "artist": {
-        "tr": [
-          "DJ Food"
-        ],
-        "en": [
-          "DJ Food"
-        ]
+        "tr": ["DJ Food"],
+        "en": ["DJ Food"]
       },
       "genre": {
         "tr": "Elektronik",
@@ -535,12 +459,8 @@
     {
       "id": "event_017",
       "artist": {
-        "tr": [
-          "Stereolab"
-        ],
-        "en": [
-          "Stereolab"
-        ]
+        "tr": ["Stereolab"],
+        "en": ["Stereolab"]
       },
       "genre": {
         "tr": "Alternatif",
@@ -567,12 +487,8 @@
     {
       "id": "event_018",
       "artist": {
-        "tr": [
-          "Carl Clarke"
-        ],
-        "en": [
-          "Carl Clarke"
-        ]
+        "tr": ["Carl Clarke"],
+        "en": ["Carl Clarke"]
       },
       "genre": {
         "tr": "Elektronik",
@@ -599,12 +515,8 @@
     {
       "id": "event_019",
       "artist": {
-        "tr": [
-          "Jeff Mills"
-        ],
-        "en": [
-          "Jeff Mills"
-        ]
+        "tr": ["Jeff Mills"],
+        "en": ["Jeff Mills"]
       },
       "genre": {
         "tr": "Elektronik",
@@ -631,12 +543,8 @@
     {
       "id": "event_020",
       "artist": {
-        "tr": [
-          "Thomas Brinkmann"
-        ],
-        "en": [
-          "Thomas Brinkmann"
-        ]
+        "tr": ["Thomas Brinkmann"],
+        "en": ["Thomas Brinkmann"]
       },
       "genre": {
         "tr": "Elektronik",
@@ -663,12 +571,8 @@
     {
       "id": "event_021",
       "artist": {
-        "tr": [
-          "Lo Soul"
-        ],
-        "en": [
-          "Lo Soul"
-        ]
+        "tr": ["Lo Soul"],
+        "en": ["Lo Soul"]
       },
       "genre": {
         "tr": "Elektronik",
@@ -695,12 +599,8 @@
     {
       "id": "event_022",
       "artist": {
-        "tr": [
-          "Evan Parker & Lawrence Casserly"
-        ],
-        "en": [
-          "Evan Parker & Lawrence Casserly"
-        ]
+        "tr": ["Evan Parker & Lawrence Casserly"],
+        "en": ["Evan Parker & Lawrence Casserly"]
       },
       "genre": {
         "tr": "Deneysel - Avant Gard",
@@ -727,16 +627,8 @@
     {
       "id": "event_023",
       "artist": {
-        "tr": [
-          "Andrea Parker",
-          "Max Tundra",
-          "Four Tet (DJ Set)"
-        ],
-        "en": [
-          "Andrea Parker",
-          "Max Tundra",
-          "Four Tet (DJ Set)"
-        ]
+        "tr": ["Andrea Parker", "Max Tundra", "Four Tet (DJ Set)"],
+        "en": ["Andrea Parker", "Max Tundra", "Four Tet (DJ Set)"]
       },
       "genre": {
         "tr": "Elektronik",
@@ -763,14 +655,8 @@
     {
       "id": "event_024",
       "artist": {
-        "tr": [
-          "Colin Dale",
-          "Terry Francis"
-        ],
-        "en": [
-          "Colin Dale",
-          "Terry Francis"
-        ]
+        "tr": ["Colin Dale", "Terry Francis"],
+        "en": ["Colin Dale", "Terry Francis"]
       },
       "genre": {
         "tr": "Elektronik",
@@ -797,14 +683,8 @@
     {
       "id": "event_025",
       "artist": {
-        "tr": [
-          "Pram",
-          "Quickspace"
-        ],
-        "en": [
-          "Pram",
-          "Quickspace"
-        ]
+        "tr": ["Pram", "Quickspace"],
+        "en": ["Pram", "Quickspace"]
       },
       "genre": {
         "tr": "Alternatif",
@@ -831,12 +711,8 @@
     {
       "id": "event_026",
       "artist": {
-        "tr": [
-          "Gallon Drunk"
-        ],
-        "en": [
-          "Gallon Drunk"
-        ]
+        "tr": ["Gallon Drunk"],
+        "en": ["Gallon Drunk"]
       },
       "genre": {
         "tr": "Alternatif",
@@ -863,14 +739,8 @@
     {
       "id": "event_027",
       "artist": {
-        "tr": [
-          "Penthouse",
-          "Replikas"
-        ],
-        "en": [
-          "Penthouse",
-          "Replikas"
-        ]
+        "tr": ["Penthouse", "Replikas"],
+        "en": ["Penthouse", "Replikas"]
       },
       "genre": {
         "tr": "Alternatif",
@@ -897,12 +767,8 @@
     {
       "id": "event_028",
       "artist": {
-        "tr": [
-          "Bonnie Prince Billy"
-        ],
-        "en": [
-          "Bonnie Prince Billy"
-        ]
+        "tr": ["Bonnie Prince Billy"],
+        "en": ["Bonnie Prince Billy"]
       },
       "genre": {
         "tr": "Alternatif",
@@ -929,12 +795,8 @@
     {
       "id": "event_029",
       "artist": {
-        "tr": [
-          "The Fall"
-        ],
-        "en": [
-          "The Fall"
-        ]
+        "tr": ["The Fall"],
+        "en": ["The Fall"]
       },
       "genre": {
         "tr": "Alternatif",
@@ -961,12 +823,8 @@
     {
       "id": "event_030",
       "artist": {
-        "tr": [
-          "Funk D'Void"
-        ],
-        "en": [
-          "Funk D'Void"
-        ]
+        "tr": ["Funk D'Void"],
+        "en": ["Funk D'Void"]
       },
       "genre": {
         "tr": "Elektronik",
@@ -993,14 +851,8 @@
     {
       "id": "event_031",
       "artist": {
-        "tr": [
-          "Scanner live",
-          "Mira Calix (DJ Set)"
-        ],
-        "en": [
-          "Scanner live",
-          "Mira Calix (DJ Set)"
-        ]
+        "tr": ["Scanner live", "Mira Calix (DJ Set)"],
+        "en": ["Scanner live", "Mira Calix (DJ Set)"]
       },
       "genre": {
         "tr": "Elektronik",
@@ -1027,14 +879,8 @@
     {
       "id": "event_032",
       "artist": {
-        "tr": [
-          "Scanner live",
-          "Mira Calix (DJ Set)"
-        ],
-        "en": [
-          "Scanner live",
-          "Mira Calix (DJ Set)"
-        ]
+        "tr": ["Scanner live", "Mira Calix (DJ Set)"],
+        "en": ["Scanner live", "Mira Calix (DJ Set)"]
       },
       "genre": {
         "tr": "Elektronik",
@@ -1061,12 +907,8 @@
     {
       "id": "event_033",
       "artist": {
-        "tr": [
-          "Steve Beresford feat. Terrie Ex"
-        ],
-        "en": [
-          "Steve Beresford feat. Terrie Ex"
-        ]
+        "tr": ["Steve Beresford feat. Terrie Ex"],
+        "en": ["Steve Beresford feat. Terrie Ex"]
       },
       "genre": {
         "tr": "Deneysel - Avant Gard",
@@ -1093,12 +935,8 @@
     {
       "id": "event_034",
       "artist": {
-        "tr": [
-          "Steve Beresford feat. Terrie Ex"
-        ],
-        "en": [
-          "Steve Beresford feat. Terrie Ex"
-        ]
+        "tr": ["Steve Beresford feat. Terrie Ex"],
+        "en": ["Steve Beresford feat. Terrie Ex"]
       },
       "genre": {
         "tr": "Deneysel - Avant Gard",
@@ -1125,16 +963,8 @@
     {
       "id": "event_035",
       "artist": {
-        "tr": [
-          "Carl Craig",
-          "DJ T-1000",
-          "Blake Baxter"
-        ],
-        "en": [
-          "Carl Craig",
-          "DJ T-1000",
-          "Blake Baxter"
-        ]
+        "tr": ["Carl Craig", "DJ T-1000", "Blake Baxter"],
+        "en": ["Carl Craig", "DJ T-1000", "Blake Baxter"]
       },
       "genre": {
         "tr": "Elektronik",
@@ -1161,14 +991,8 @@
     {
       "id": "event_036",
       "artist": {
-        "tr": [
-          "Mu-ziq",
-          "Pan Sonic"
-        ],
-        "en": [
-          "Mu-ziq",
-          "Pan Sonic"
-        ]
+        "tr": ["Mu-ziq", "Pan Sonic"],
+        "en": ["Mu-ziq", "Pan Sonic"]
       },
       "genre": {
         "tr": "Elektronik",
@@ -1195,14 +1019,8 @@
     {
       "id": "event_037",
       "artist": {
-        "tr": [
-          "Tarwater",
-          "Rechenzentrum"
-        ],
-        "en": [
-          "Tarwater",
-          "Rechenzentrum"
-        ]
+        "tr": ["Tarwater", "Rechenzentrum"],
+        "en": ["Tarwater", "Rechenzentrum"]
       },
       "genre": {
         "tr": "Elektronik",
@@ -1229,14 +1047,8 @@
     {
       "id": "event_038",
       "artist": {
-        "tr": [
-          "Luomo",
-          "Thomas Brinkmann"
-        ],
-        "en": [
-          "Luomo",
-          "Thomas Brinkmann"
-        ]
+        "tr": ["Luomo", "Thomas Brinkmann"],
+        "en": ["Luomo", "Thomas Brinkmann"]
       },
       "genre": {
         "tr": "Elektronik",
@@ -1263,14 +1075,8 @@
     {
       "id": "event_039",
       "artist": {
-        "tr": [
-          "Chris Liebing",
-          "Monika Kruse"
-        ],
-        "en": [
-          "Chris Liebing",
-          "Monika Kruse"
-        ]
+        "tr": ["Chris Liebing", "Monika Kruse"],
+        "en": ["Chris Liebing", "Monika Kruse"]
       },
       "genre": {
         "tr": "Elektronik",
@@ -1297,12 +1103,8 @@
     {
       "id": "event_040",
       "artist": {
-        "tr": [
-          "Cinerama"
-        ],
-        "en": [
-          "Cinerama"
-        ]
+        "tr": ["Cinerama"],
+        "en": ["Cinerama"]
       },
       "genre": {
         "tr": "Alternatif",
@@ -1329,12 +1131,8 @@
     {
       "id": "event_041",
       "artist": {
-        "tr": [
-          "Justin Sullivan & Friends"
-        ],
-        "en": [
-          "Justin Sullivan & Friends"
-        ]
+        "tr": ["Justin Sullivan & Friends"],
+        "en": ["Justin Sullivan & Friends"]
       },
       "genre": {
         "tr": "Alternatif",
@@ -1361,12 +1159,8 @@
     {
       "id": "event_042",
       "artist": {
-        "tr": [
-          "Justin Sullivan & Friends"
-        ],
-        "en": [
-          "Justin Sullivan & Friends"
-        ]
+        "tr": ["Justin Sullivan & Friends"],
+        "en": ["Justin Sullivan & Friends"]
       },
       "genre": {
         "tr": "Alternatif",
@@ -1393,12 +1187,8 @@
     {
       "id": "event_043",
       "artist": {
-        "tr": [
-          "Stephan Malkmus & The Jicks"
-        ],
-        "en": [
-          "Stephan Malkmus & The Jicks"
-        ]
+        "tr": ["Stephan Malkmus & The Jicks"],
+        "en": ["Stephan Malkmus & The Jicks"]
       },
       "genre": {
         "tr": "Alternatif",
@@ -1425,12 +1215,8 @@
     {
       "id": "event_044",
       "artist": {
-        "tr": [
-          "Janek Schaefer & Philip Jeck"
-        ],
-        "en": [
-          "Janek Schaefer & Philip Jeck"
-        ]
+        "tr": ["Janek Schaefer & Philip Jeck"],
+        "en": ["Janek Schaefer & Philip Jeck"]
       },
       "genre": {
         "tr": "Deneysel - Avant Gard",
@@ -1457,12 +1243,8 @@
     {
       "id": "event_045",
       "artist": {
-        "tr": [
-          "Quickspace"
-        ],
-        "en": [
-          "Quickspace"
-        ]
+        "tr": ["Quickspace"],
+        "en": ["Quickspace"]
       },
       "genre": {
         "tr": "Alternatif",
@@ -1489,12 +1271,8 @@
     {
       "id": "event_046",
       "artist": {
-        "tr": [
-          "Patrick Forge"
-        ],
-        "en": [
-          "Patrick Forge"
-        ]
+        "tr": ["Patrick Forge"],
+        "en": ["Patrick Forge"]
       },
       "genre": {
         "tr": "Elektronik",
@@ -1521,12 +1299,8 @@
     {
       "id": "event_047",
       "artist": {
-        "tr": [
-          "Tortoise"
-        ],
-        "en": [
-          "Tortoise"
-        ]
+        "tr": ["Tortoise"],
+        "en": ["Tortoise"]
       },
       "genre": {
         "tr": "Alternatif",
@@ -1553,12 +1327,8 @@
     {
       "id": "event_048",
       "artist": {
-        "tr": [
-          "Clinic"
-        ],
-        "en": [
-          "Clinic"
-        ]
+        "tr": ["Clinic"],
+        "en": ["Clinic"]
       },
       "genre": {
         "tr": "Alternatif",
@@ -1585,16 +1355,8 @@
     {
       "id": "event_049",
       "artist": {
-        "tr": [
-          "Einstürzende Neubauten",
-          "Selim Sesler Orkestrası",
-          "D2GG"
-        ],
-        "en": [
-          "Einstürzende Neubauten",
-          "Selim Sesler Orkestrası",
-          "D2GG"
-        ]
+        "tr": ["Einstürzende Neubauten", "Selim Sesler Orkestrası", "D2GG"],
+        "en": ["Einstürzende Neubauten", "Selim Sesler Orkestrası", "D2GG"]
       },
       "genre": {
         "tr": "Alternatif",
@@ -1621,12 +1383,8 @@
     {
       "id": "event_050",
       "artist": {
-        "tr": [
-          "Violent Femmes"
-        ],
-        "en": [
-          "Violent Femmes"
-        ]
+        "tr": ["Violent Femmes"],
+        "en": ["Violent Femmes"]
       },
       "genre": {
         "tr": "Alternatif",
@@ -1653,16 +1411,8 @@
     {
       "id": "event_051",
       "artist": {
-        "tr": [
-          "U.N.K.L.E (DJ set)",
-          "Mouse On Mars",
-          "Cobra Killer"
-        ],
-        "en": [
-          "U.N.K.L.E (DJ set)",
-          "Mouse On Mars",
-          "Cobra Killer"
-        ]
+        "tr": ["U.N.K.L.E (DJ set)", "Mouse On Mars", "Cobra Killer"],
+        "en": ["U.N.K.L.E (DJ set)", "Mouse On Mars", "Cobra Killer"]
       },
       "genre": {
         "tr": "Elektronik",
@@ -1689,14 +1439,8 @@
     {
       "id": "event_052",
       "artist": {
-        "tr": [
-          "Schneider TM",
-          "Manitoba"
-        ],
-        "en": [
-          "Schneider TM",
-          "Manitoba"
-        ]
+        "tr": ["Schneider TM", "Manitoba"],
+        "en": ["Schneider TM", "Manitoba"]
       },
       "genre": {
         "tr": "Elektronik",
@@ -1723,14 +1467,8 @@
     {
       "id": "event_053",
       "artist": {
-        "tr": [
-          "Four Tet",
-          "Lali Puna"
-        ],
-        "en": [
-          "Four Tet",
-          "Lali Puna"
-        ]
+        "tr": ["Four Tet", "Lali Puna"],
+        "en": ["Four Tet", "Lali Puna"]
       },
       "genre": {
         "tr": "Elektronik",
@@ -1757,14 +1495,8 @@
     {
       "id": "event_054",
       "artist": {
-        "tr": [
-          "Burnt Friedman & Jaki Liebezeit",
-          "Console"
-        ],
-        "en": [
-          "Burnt Friedman & Jaki Liebezeit",
-          "Console"
-        ]
+        "tr": ["Burnt Friedman & Jaki Liebezeit", "Console"],
+        "en": ["Burnt Friedman & Jaki Liebezeit", "Console"]
       },
       "genre": {
         "tr": "Elektronik",
@@ -1791,14 +1523,8 @@
     {
       "id": "event_055",
       "artist": {
-        "tr": [
-          "Layo & Bushwacka!",
-          "Craig Richards"
-        ],
-        "en": [
-          "Layo & Bushwacka!",
-          "Craig Richards"
-        ]
+        "tr": ["Layo & Bushwacka!", "Craig Richards"],
+        "en": ["Layo & Bushwacka!", "Craig Richards"]
       },
       "genre": {
         "tr": "Elektronik",
@@ -1825,14 +1551,8 @@
     {
       "id": "event_056",
       "artist": {
-        "tr": [
-          "RZA",
-          ""
-        ],
-        "en": [
-          "RZA",
-          ""
-        ]
+        "tr": ["RZA", ""],
+        "en": ["RZA", ""]
       },
       "genre": {
         "tr": "Hip Hop",
@@ -1897,18 +1617,8 @@
     {
       "id": "event_058",
       "artist": {
-        "tr": [
-          "Pink",
-          "Teoman",
-          "Kurban",
-          "Spitney Beers"
-        ],
-        "en": [
-          "Pink",
-          "Teoman",
-          "Kurban",
-          "Spitney Beers"
-        ]
+        "tr": ["Pink", "Teoman", "Kurban", "Spitney Beers"],
+        "en": ["Pink", "Teoman", "Kurban", "Spitney Beers"]
       },
       "genre": {
         "tr": "Pop",
@@ -1935,12 +1645,8 @@
     {
       "id": "event_059",
       "artist": {
-        "tr": [
-          "Patricia Kaas"
-        ],
-        "en": [
-          "Patricia Kaas"
-        ]
+        "tr": ["Patricia Kaas"],
+        "en": ["Patricia Kaas"]
       },
       "genre": {
         "tr": "Pop",
@@ -1967,12 +1673,8 @@
     {
       "id": "event_060",
       "artist": {
-        "tr": [
-          "Nick Cave Solo"
-        ],
-        "en": [
-          "Nick Cave Solo"
-        ]
+        "tr": ["Nick Cave Solo"],
+        "en": ["Nick Cave Solo"]
       },
       "genre": {
         "tr": "Alternatif",
@@ -1999,12 +1701,8 @@
     {
       "id": "event_061",
       "artist": {
-        "tr": [
-          "Pram"
-        ],
-        "en": [
-          "Pram"
-        ]
+        "tr": ["Pram"],
+        "en": ["Pram"]
       },
       "genre": {
         "tr": "Alternatif",
@@ -2031,12 +1729,8 @@
     {
       "id": "event_062",
       "artist": {
-        "tr": [
-          "To Rococo Rot"
-        ],
-        "en": [
-          "To Rococo Rot"
-        ]
+        "tr": ["To Rococo Rot"],
+        "en": ["To Rococo Rot"]
       },
       "genre": {
         "tr": "Elektronik",
@@ -2063,14 +1757,8 @@
     {
       "id": "event_063",
       "artist": {
-        "tr": [
-          "Khan",
-          "Louie Austen"
-        ],
-        "en": [
-          "Khan",
-          "Louie Austen"
-        ]
+        "tr": ["Khan", "Louie Austen"],
+        "en": ["Khan", "Louie Austen"]
       },
       "genre": {
         "tr": "Elektronik",
@@ -2097,12 +1785,8 @@
     {
       "id": "event_064",
       "artist": {
-        "tr": [
-          "Fly Pan Am"
-        ],
-        "en": [
-          "Fly Pan Am"
-        ]
+        "tr": ["Fly Pan Am"],
+        "en": ["Fly Pan Am"]
       },
       "genre": {
         "tr": "Alternatif",
@@ -2129,12 +1813,8 @@
     {
       "id": "event_065",
       "artist": {
-        "tr": [
-          "Lydia Lunch"
-        ],
-        "en": [
-          "Lydia Lunch"
-        ]
+        "tr": ["Lydia Lunch"],
+        "en": ["Lydia Lunch"]
       },
       "genre": {
         "tr": "Alternatif",
@@ -2161,12 +1841,8 @@
     {
       "id": "event_066",
       "artist": {
-        "tr": [
-          "Funkstörung"
-        ],
-        "en": [
-          "Funkstörung"
-        ]
+        "tr": ["Funkstörung"],
+        "en": ["Funkstörung"]
       },
       "genre": {
         "tr": "Elektronik",
@@ -2193,14 +1869,8 @@
     {
       "id": "event_067",
       "artist": {
-        "tr": [
-          "Kosheen live",
-          "Decoder & Subtrance (DJ set)"
-        ],
-        "en": [
-          "Kosheen live",
-          "Decoder & Subtrance (DJ set)"
-        ]
+        "tr": ["Kosheen live", "Decoder & Subtrance (DJ set)"],
+        "en": ["Kosheen live", "Decoder & Subtrance (DJ set)"]
       },
       "genre": {
         "tr": "Elektronik",
@@ -2227,12 +1897,8 @@
     {
       "id": "event_068",
       "artist": {
-        "tr": [
-          "DJ Lady Kier (ex Dee Lite)"
-        ],
-        "en": [
-          "DJ Lady Kier (ex Dee Lite)"
-        ]
+        "tr": ["DJ Lady Kier (ex Dee Lite)"],
+        "en": ["DJ Lady Kier (ex Dee Lite)"]
       },
       "genre": {
         "tr": "Elektronik",
@@ -2259,12 +1925,8 @@
     {
       "id": "event_069",
       "artist": {
-        "tr": [
-          "Fates Warning"
-        ],
-        "en": [
-          "Fates Warning"
-        ]
+        "tr": ["Fates Warning"],
+        "en": ["Fates Warning"]
       },
       "genre": {
         "tr": "Metal",
@@ -2291,12 +1953,8 @@
     {
       "id": "event_070",
       "artist": {
-        "tr": [
-          "Girls Against Boys"
-        ],
-        "en": [
-          "Girls Against Boys"
-        ]
+        "tr": ["Girls Against Boys"],
+        "en": ["Girls Against Boys"]
       },
       "genre": {
         "tr": "Alternatif",
@@ -2323,12 +1981,8 @@
     {
       "id": "event_071",
       "artist": {
-        "tr": [
-          "New Model Army"
-        ],
-        "en": [
-          "New Model Army"
-        ]
+        "tr": ["New Model Army"],
+        "en": ["New Model Army"]
       },
       "genre": {
         "tr": "Alternatif",
@@ -2355,12 +2009,8 @@
     {
       "id": "event_072",
       "artist": {
-        "tr": [
-          "Jonathan Richman"
-        ],
-        "en": [
-          "Jonathan Richman"
-        ]
+        "tr": ["Jonathan Richman"],
+        "en": ["Jonathan Richman"]
       },
       "genre": {
         "tr": "Alternatif",
@@ -2387,14 +2037,8 @@
     {
       "id": "event_073",
       "artist": {
-        "tr": [
-          "Tied & Tickled Trio",
-          "Tiefschwarz"
-        ],
-        "en": [
-          "Tied & Tickled Trio",
-          "Tiefschwarz"
-        ]
+        "tr": ["Tied & Tickled Trio", "Tiefschwarz"],
+        "en": ["Tied & Tickled Trio", "Tiefschwarz"]
       },
       "genre": {
         "tr": "Elektronik",
@@ -2421,14 +2065,8 @@
     {
       "id": "event_074",
       "artist": {
-        "tr": [
-          "The Notwist",
-          "Peaches"
-        ],
-        "en": [
-          "The Notwist",
-          "Peaches"
-        ]
+        "tr": ["The Notwist", "Peaches"],
+        "en": ["The Notwist", "Peaches"]
       },
       "genre": {
         "tr": "Elektronik",
@@ -2455,14 +2093,8 @@
     {
       "id": "event_075",
       "artist": {
-        "tr": [
-          "Amon Tobin",
-          "Electrocute"
-        ],
-        "en": [
-          "Amon Tobin",
-          "Electrocute"
-        ]
+        "tr": ["Amon Tobin", "Electrocute"],
+        "en": ["Amon Tobin", "Electrocute"]
       },
       "genre": {
         "tr": "Elektronik",
@@ -2489,14 +2121,8 @@
     {
       "id": "event_076",
       "artist": {
-        "tr": [
-          "Andrew Weatherall",
-          "Radioactive Man"
-        ],
-        "en": [
-          "Andrew Weatherall",
-          "Radioactive Man"
-        ]
+        "tr": ["Andrew Weatherall", "Radioactive Man"],
+        "en": ["Andrew Weatherall", "Radioactive Man"]
       },
       "genre": {
         "tr": "Elektronik",
@@ -2523,16 +2149,8 @@
     {
       "id": "event_077",
       "artist": {
-        "tr": [
-          "Sonic Youth",
-          "Replikas",
-          "Ayyuka"
-        ],
-        "en": [
-          "Sonic Youth",
-          "Replikas",
-          "Ayyuka"
-        ]
+        "tr": ["Sonic Youth", "Replikas", "Ayyuka"],
+        "en": ["Sonic Youth", "Replikas", "Ayyuka"]
       },
       "genre": {
         "tr": "Alternatif",
@@ -2559,12 +2177,8 @@
     {
       "id": "event_078",
       "artist": {
-        "tr": [
-          "Rechenzentrum vs. Schneider TM"
-        ],
-        "en": [
-          "Rechenzentrum vs. Schneider TM"
-        ]
+        "tr": ["Rechenzentrum vs. Schneider TM"],
+        "en": ["Rechenzentrum vs. Schneider TM"]
       },
       "genre": {
         "tr": "Elektronik",
@@ -2591,12 +2205,8 @@
     {
       "id": "event_079",
       "artist": {
-        "tr": [
-          "Cat Power"
-        ],
-        "en": [
-          "Cat Power"
-        ]
+        "tr": ["Cat Power"],
+        "en": ["Cat Power"]
       },
       "genre": {
         "tr": "Alternatif",
@@ -2623,16 +2233,8 @@
     {
       "id": "event_080",
       "artist": {
-        "tr": [
-          "Mogwai",
-          "Replikas",
-          "Kafa Bin Dünya"
-        ],
-        "en": [
-          "Mogwai",
-          "Replikas",
-          "Kafa Bin Dünya"
-        ]
+        "tr": ["Mogwai", "Replikas", "Kafa Bin Dünya"],
+        "en": ["Mogwai", "Replikas", "Kafa Bin Dünya"]
       },
       "genre": {
         "tr": "Alternatif",
@@ -2659,12 +2261,8 @@
     {
       "id": "event_081",
       "artist": {
-        "tr": [
-          "Highfish & Erlend Øye (DJ set)"
-        ],
-        "en": [
-          "Highfish & Erlend Øye (DJ set)"
-        ]
+        "tr": ["Highfish & Erlend Øye (DJ set)"],
+        "en": ["Highfish & Erlend Øye (DJ set)"]
       },
       "genre": {
         "tr": "Elektronik",
@@ -2691,14 +2289,8 @@
     {
       "id": "event_082",
       "artist": {
-        "tr": [
-          "The Whitest Boy Alive",
-          "Highfish"
-        ],
-        "en": [
-          "The Whitest Boy Alive",
-          "Highfish"
-        ]
+        "tr": ["The Whitest Boy Alive", "Highfish"],
+        "en": ["The Whitest Boy Alive", "Highfish"]
       },
       "genre": {
         "tr": "Alternatif",
@@ -2725,14 +2317,8 @@
     {
       "id": "event_083",
       "artist": {
-        "tr": [
-          "Colder",
-          "Konrad Black"
-        ],
-        "en": [
-          "Colder",
-          "Konrad Black"
-        ]
+        "tr": ["Colder", "Konrad Black"],
+        "en": ["Colder", "Konrad Black"]
       },
       "genre": {
         "tr": "Elektronik",
@@ -2759,12 +2345,8 @@
     {
       "id": "event_084",
       "artist": {
-        "tr": [
-          "Fennesz"
-        ],
-        "en": [
-          "Fennesz"
-        ]
+        "tr": ["Fennesz"],
+        "en": ["Fennesz"]
       },
       "genre": {
         "tr": "Elektronik",
@@ -2791,14 +2373,8 @@
     {
       "id": "event_085",
       "artist": {
-        "tr": [
-          "Spektrum",
-          "Portecho"
-        ],
-        "en": [
-          "Spektrum",
-          "Portecho"
-        ]
+        "tr": ["Spektrum", "Portecho"],
+        "en": ["Spektrum", "Portecho"]
       },
       "genre": {
         "tr": "Elektronik",
@@ -2825,14 +2401,8 @@
     {
       "id": "event_086",
       "artist": {
-        "tr": [
-          "Junior Boys",
-          "Justus Köhncke"
-        ],
-        "en": [
-          "Junior Boys",
-          "Justus Köhncke"
-        ]
+        "tr": ["Junior Boys", "Justus Köhncke"],
+        "en": ["Junior Boys", "Justus Köhncke"]
       },
       "genre": {
         "tr": "Elektronik",
@@ -2859,12 +2429,8 @@
     {
       "id": "event_087",
       "artist": {
-        "tr": [
-          "Stuart Staples"
-        ],
-        "en": [
-          "Stuart Staples"
-        ]
+        "tr": ["Stuart Staples"],
+        "en": ["Stuart Staples"]
       },
       "genre": {
         "tr": "Alternatif",
@@ -2891,12 +2457,8 @@
     {
       "id": "event_088",
       "artist": {
-        "tr": [
-          "Bonnie Prince Billy"
-        ],
-        "en": [
-          "Bonnie Prince Billy"
-        ]
+        "tr": ["Bonnie Prince Billy"],
+        "en": ["Bonnie Prince Billy"]
       },
       "genre": {
         "tr": "Alternatif",
@@ -2923,12 +2485,8 @@
     {
       "id": "event_089",
       "artist": {
-        "tr": [
-          "Scott Henderson Trio"
-        ],
-        "en": [
-          "Scott Henderson Trio"
-        ]
+        "tr": ["Scott Henderson Trio"],
+        "en": ["Scott Henderson Trio"]
       },
       "genre": {
         "tr": "Caz",
@@ -2955,12 +2513,8 @@
     {
       "id": "event_090",
       "artist": {
-        "tr": [
-          "Deerhoof"
-        ],
-        "en": [
-          "Deerhoof"
-        ]
+        "tr": ["Deerhoof"],
+        "en": ["Deerhoof"]
       },
       "genre": {
         "tr": "Alternatif",
@@ -2987,12 +2541,8 @@
     {
       "id": "event_091",
       "artist": {
-        "tr": [
-          "Dirty Three"
-        ],
-        "en": [
-          "Dirty Three"
-        ]
+        "tr": ["Dirty Three"],
+        "en": ["Dirty Three"]
       },
       "genre": {
         "tr": "Alternatif",
@@ -3019,12 +2569,8 @@
     {
       "id": "event_092",
       "artist": {
-        "tr": [
-          "Dream Theater"
-        ],
-        "en": [
-          "Dream Theater"
-        ]
+        "tr": ["Dream Theater"],
+        "en": ["Dream Theater"]
       },
       "genre": {
         "tr": "Metal",
@@ -3051,12 +2597,8 @@
     {
       "id": "event_093",
       "artist": {
-        "tr": [
-          "Joe Satriani"
-        ],
-        "en": [
-          "Joe Satriani"
-        ]
+        "tr": ["Joe Satriani"],
+        "en": ["Joe Satriani"]
       },
       "genre": {
         "tr": "Rock",
@@ -3083,12 +2625,8 @@
     {
       "id": "event_094",
       "artist": {
-        "tr": [
-          "Datarock"
-        ],
-        "en": [
-          "Datarock"
-        ]
+        "tr": ["Datarock"],
+        "en": ["Datarock"]
       },
       "genre": {
         "tr": "Elektronik",
@@ -3115,12 +2653,8 @@
     {
       "id": "event_095",
       "artist": {
-        "tr": [
-          "Devendra Banhart"
-        ],
-        "en": [
-          "Devendra Banhart"
-        ]
+        "tr": ["Devendra Banhart"],
+        "en": ["Devendra Banhart"]
       },
       "genre": {
         "tr": "Alternatif",
@@ -3147,14 +2681,8 @@
     {
       "id": "event_096",
       "artist": {
-        "tr": [
-          "Monolake",
-          "The Field"
-        ],
-        "en": [
-          "Monolake",
-          "The Field"
-        ]
+        "tr": ["Monolake", "The Field"],
+        "en": ["Monolake", "The Field"]
       },
       "genre": {
         "tr": "Elektronik",
@@ -3181,12 +2709,8 @@
     {
       "id": "event_097",
       "artist": {
-        "tr": [
-          "Au Revoir Simone"
-        ],
-        "en": [
-          "Au Revoir Simone"
-        ]
+        "tr": ["Au Revoir Simone"],
+        "en": ["Au Revoir Simone"]
       },
       "genre": {
         "tr": "Elektronik",
@@ -3213,12 +2737,8 @@
     {
       "id": "event_098",
       "artist": {
-        "tr": [
-          "Lo-Fi-Fnk"
-        ],
-        "en": [
-          "Lo-Fi-Fnk"
-        ]
+        "tr": ["Lo-Fi-Fnk"],
+        "en": ["Lo-Fi-Fnk"]
       },
       "genre": {
         "tr": "Elektronik",
@@ -3245,12 +2765,8 @@
     {
       "id": "event_099",
       "artist": {
-        "tr": [
-          "Gang Of Four"
-        ],
-        "en": [
-          "Gang Of Four"
-        ]
+        "tr": ["Gang Of Four"],
+        "en": ["Gang Of Four"]
       },
       "genre": {
         "tr": "Alternatif",
@@ -3277,12 +2793,8 @@
     {
       "id": "event_100",
       "artist": {
-        "tr": [
-          "Pharoah Sanders Quartet"
-        ],
-        "en": [
-          "Pharoah Sanders Quartet"
-        ]
+        "tr": ["Pharoah Sanders Quartet"],
+        "en": ["Pharoah Sanders Quartet"]
       },
       "genre": {
         "tr": "Caz",
@@ -3309,12 +2821,8 @@
     {
       "id": "event_101",
       "artist": {
-        "tr": [
-          "Sebadoh"
-        ],
-        "en": [
-          "Sebadoh"
-        ]
+        "tr": ["Sebadoh"],
+        "en": ["Sebadoh"]
       },
       "genre": {
         "tr": "Alternatif",
@@ -3341,12 +2849,8 @@
     {
       "id": "event_102",
       "artist": {
-        "tr": [
-          "Shellac"
-        ],
-        "en": [
-          "Shellac"
-        ]
+        "tr": ["Shellac"],
+        "en": ["Shellac"]
       },
       "genre": {
         "tr": "Alternatif",
@@ -3373,18 +2877,8 @@
     {
       "id": "event_103",
       "artist": {
-        "tr": [
-          "Travis",
-          "New Model Army",
-          "Mor ve Ötesi",
-          "Sakin"
-        ],
-        "en": [
-          "Travis",
-          "New Model Army",
-          "Mor ve Ötesi",
-          "Sakin"
-        ]
+        "tr": ["Travis", "New Model Army", "Mor ve Ötesi", "Sakin"],
+        "en": ["Travis", "New Model Army", "Mor ve Ötesi", "Sakin"]
       },
       "genre": {
         "tr": "Alternatif",
@@ -3411,12 +2905,8 @@
     {
       "id": "event_104",
       "artist": {
-        "tr": [
-          "Faust playing Nosferatu"
-        ],
-        "en": [
-          "Faust playing Nosferatu"
-        ]
+        "tr": ["Faust playing Nosferatu"],
+        "en": ["Faust playing Nosferatu"]
       },
       "genre": {
         "tr": "Alternatif",
@@ -3443,12 +2933,8 @@
     {
       "id": "event_105",
       "artist": {
-        "tr": [
-          "Chick Corea & John McLaughlin Five Peace Band"
-        ],
-        "en": [
-          "Chick Corea & John McLaughlin Five Peace Band"
-        ]
+        "tr": ["Chick Corea & John McLaughlin Five Peace Band"],
+        "en": ["Chick Corea & John McLaughlin Five Peace Band"]
       },
       "genre": {
         "tr": "Caz",
@@ -3475,12 +2961,8 @@
     {
       "id": "event_106",
       "artist": {
-        "tr": [
-          "The Wedding Present"
-        ],
-        "en": [
-          "The Wedding Present"
-        ]
+        "tr": ["The Wedding Present"],
+        "en": ["The Wedding Present"]
       },
       "genre": {
         "tr": "Alternatif",
@@ -3507,12 +2989,8 @@
     {
       "id": "event_107",
       "artist": {
-        "tr": [
-          "Tindersticks"
-        ],
-        "en": [
-          "Tindersticks"
-        ]
+        "tr": ["Tindersticks"],
+        "en": ["Tindersticks"]
       },
       "genre": {
         "tr": "Alternatif",
@@ -3539,12 +3017,8 @@
     {
       "id": "event_108",
       "artist": {
-        "tr": [
-          "Bonnie Prince Billy"
-        ],
-        "en": [
-          "Bonnie Prince Billy"
-        ]
+        "tr": ["Bonnie Prince Billy"],
+        "en": ["Bonnie Prince Billy"]
       },
       "genre": {
         "tr": "Alternatif",
@@ -3571,14 +3045,8 @@
     {
       "id": "event_109",
       "artist": {
-        "tr": [
-          "Dream Theater",
-          "Cynic"
-        ],
-        "en": [
-          "Dream Theater",
-          "Cynic"
-        ]
+        "tr": ["Dream Theater", "Cynic"],
+        "en": ["Dream Theater", "Cynic"]
       },
       "genre": {
         "tr": "Metal",
@@ -3605,16 +3073,8 @@
     {
       "id": "event_110",
       "artist": {
-        "tr": [
-          "Faith No More",
-          "Kurban",
-          "Nekropsi"
-        ],
-        "en": [
-          "Faith No More",
-          "Kurban",
-          "Nekropsi"
-        ]
+        "tr": ["Faith No More", "Kurban", "Nekropsi"],
+        "en": ["Faith No More", "Kurban", "Nekropsi"]
       },
       "genre": {
         "tr": "Alternatif",
@@ -3641,12 +3101,8 @@
     {
       "id": "event_111",
       "artist": {
-        "tr": [
-          "Alphaville"
-        ],
-        "en": [
-          "Alphaville"
-        ]
+        "tr": ["Alphaville"],
+        "en": ["Alphaville"]
       },
       "genre": {
         "tr": "Pop",
@@ -3673,12 +3129,8 @@
     {
       "id": "event_112",
       "artist": {
-        "tr": [
-          "Saxophone Summit (Joe Lovano & Ravi Coltrane & Dave Liebman)"
-        ],
-        "en": [
-          "Saxophone Summit (Joe Lovano & Ravi Coltrane & Dave Liebman)"
-        ]
+        "tr": ["Saxophone Summit (Joe Lovano & Ravi Coltrane & Dave Liebman)"],
+        "en": ["Saxophone Summit (Joe Lovano & Ravi Coltrane & Dave Liebman)"]
       },
       "genre": {
         "tr": "Caz",
@@ -3705,12 +3157,8 @@
     {
       "id": "event_113",
       "artist": {
-        "tr": [
-          "Neu feat. Steve Shelley"
-        ],
-        "en": [
-          "Neu feat. Steve Shelley"
-        ]
+        "tr": ["Neu feat. Steve Shelley"],
+        "en": ["Neu feat. Steve Shelley"]
       },
       "genre": {
         "tr": "Alternatif",
@@ -3737,12 +3185,8 @@
     {
       "id": "event_114",
       "artist": {
-        "tr": [
-          "Chick Corea & Gary Burton Duo"
-        ],
-        "en": [
-          "Chick Corea & Gary Burton Duo"
-        ]
+        "tr": ["Chick Corea & Gary Burton Duo"],
+        "en": ["Chick Corea & Gary Burton Duo"]
       },
       "genre": {
         "tr": "Caz",
@@ -3769,12 +3213,8 @@
     {
       "id": "event_115",
       "artist": {
-        "tr": [
-          "The Wedding Present"
-        ],
-        "en": [
-          "The Wedding Present"
-        ]
+        "tr": ["The Wedding Present"],
+        "en": ["The Wedding Present"]
       },
       "genre": {
         "tr": "Alternatif",
@@ -3801,12 +3241,8 @@
     {
       "id": "event_116",
       "artist": {
-        "tr": [
-          "Fennesz & Lillevan"
-        ],
-        "en": [
-          "Fennesz & Lillevan"
-        ]
+        "tr": ["Fennesz & Lillevan"],
+        "en": ["Fennesz & Lillevan"]
       },
       "genre": {
         "tr": "Elektronik",
@@ -3833,14 +3269,8 @@
     {
       "id": "event_117",
       "artist": {
-        "tr": [
-          "Haggard",
-          "Kırmızı"
-        ],
-        "en": [
-          "Haggard",
-          "Kırmızı"
-        ]
+        "tr": ["Haggard", "Kırmızı"],
+        "en": ["Haggard", "Kırmızı"]
       },
       "genre": {
         "tr": "Metal",
@@ -3867,12 +3297,8 @@
     {
       "id": "event_118",
       "artist": {
-        "tr": [
-          "Wayne Shorter Quartet"
-        ],
-        "en": [
-          "Wayne Shorter Quartet"
-        ]
+        "tr": ["Wayne Shorter Quartet"],
+        "en": ["Wayne Shorter Quartet"]
       },
       "genre": {
         "tr": "Caz",
@@ -3899,12 +3325,8 @@
     {
       "id": "event_119",
       "artist": {
-        "tr": [
-          "Murcof"
-        ],
-        "en": [
-          "Murcof"
-        ]
+        "tr": ["Murcof"],
+        "en": ["Murcof"]
       },
       "genre": {
         "tr": "Elektronik",
@@ -3931,12 +3353,8 @@
     {
       "id": "event_120",
       "artist": {
-        "tr": [
-          "Pat Metheny Trio"
-        ],
-        "en": [
-          "Pat Metheny Trio"
-        ]
+        "tr": ["Pat Metheny Trio"],
+        "en": ["Pat Metheny Trio"]
       },
       "genre": {
         "tr": "Caz",
@@ -3963,12 +3381,8 @@
     {
       "id": "event_121",
       "artist": {
-        "tr": [
-          "Vladislav Delay"
-        ],
-        "en": [
-          "Vladislav Delay"
-        ]
+        "tr": ["Vladislav Delay"],
+        "en": ["Vladislav Delay"]
       },
       "genre": {
         "tr": "Elektronik",
@@ -3995,12 +3409,8 @@
     {
       "id": "event_122",
       "artist": {
-        "tr": [
-          "Tarwater"
-        ],
-        "en": [
-          "Tarwater"
-        ]
+        "tr": ["Tarwater"],
+        "en": ["Tarwater"]
       },
       "genre": {
         "tr": "Elektronik",
@@ -4027,12 +3437,8 @@
     {
       "id": "event_123",
       "artist": {
-        "tr": [
-          "Trio Elf"
-        ],
-        "en": [
-          "Trio Elf"
-        ]
+        "tr": ["Trio Elf"],
+        "en": ["Trio Elf"]
       },
       "genre": {
         "tr": "Caz",
@@ -4059,12 +3465,8 @@
     {
       "id": "event_124",
       "artist": {
-        "tr": [
-          "Alva Noto"
-        ],
-        "en": [
-          "Alva Noto"
-        ]
+        "tr": ["Alva Noto"],
+        "en": ["Alva Noto"]
       },
       "genre": {
         "tr": "Elektronik",
@@ -4091,12 +3493,8 @@
     {
       "id": "event_125",
       "artist": {
-        "tr": [
-          "Gabriela Montero"
-        ],
-        "en": [
-          "Gabriela Montero"
-        ]
+        "tr": ["Gabriela Montero"],
+        "en": ["Gabriela Montero"]
       },
       "genre": {
         "tr": "Klasik",
@@ -4123,12 +3521,8 @@
     {
       "id": "event_126",
       "artist": {
-        "tr": [
-          "Jan Garbarek Group"
-        ],
-        "en": [
-          "Jan Garbarek Group"
-        ]
+        "tr": ["Jan Garbarek Group"],
+        "en": ["Jan Garbarek Group"]
       },
       "genre": {
         "tr": "Caz",
@@ -4155,12 +3549,8 @@
     {
       "id": "event_127",
       "artist": {
-        "tr": [
-          "Hauschka"
-        ],
-        "en": [
-          "Hauschka"
-        ]
+        "tr": ["Hauschka"],
+        "en": ["Hauschka"]
       },
       "genre": {
         "tr": "Deneysel - Avant Gard",
@@ -4187,12 +3577,8 @@
     {
       "id": "event_128",
       "artist": {
-        "tr": [
-          "Büyük Ev Ablukada"
-        ],
-        "en": [
-          "Büyük Ev Ablukada"
-        ]
+        "tr": ["Büyük Ev Ablukada"],
+        "en": ["Büyük Ev Ablukada"]
       },
       "genre": {
         "tr": "Alternatif",
@@ -4219,12 +3605,8 @@
     {
       "id": "event_129",
       "artist": {
-        "tr": [
-          "Stephan Micus"
-        ],
-        "en": [
-          "Stephan Micus"
-        ]
+        "tr": ["Stephan Micus"],
+        "en": ["Stephan Micus"]
       },
       "genre": {
         "tr": "Dünya Müziği",
@@ -4251,12 +3633,8 @@
     {
       "id": "event_130",
       "artist": {
-        "tr": [
-          "Kammerflimmer Kollektief"
-        ],
-        "en": [
-          "Kammerflimmer Kollektief"
-        ]
+        "tr": ["Kammerflimmer Kollektief"],
+        "en": ["Kammerflimmer Kollektief"]
       },
       "genre": {
         "tr": "Deneysel - Avant Gard",
@@ -4283,12 +3661,8 @@
     {
       "id": "event_131",
       "artist": {
-        "tr": [
-          "Pelican"
-        ],
-        "en": [
-          "Pelican"
-        ]
+        "tr": ["Pelican"],
+        "en": ["Pelican"]
       },
       "genre": {
         "tr": "Alternatif",
@@ -4315,14 +3689,8 @@
     {
       "id": "event_132",
       "artist": {
-        "tr": [
-          "Michael Gira",
-          "A Hawk And A Hacksaw"
-        ],
-        "en": [
-          "Michael Gira",
-          "A Hawk And A Hacksaw"
-        ]
+        "tr": ["Michael Gira", "A Hawk And A Hacksaw"],
+        "en": ["Michael Gira", "A Hawk And A Hacksaw"]
       },
       "genre": {
         "tr": "Alternatif",
@@ -4349,12 +3717,8 @@
     {
       "id": "event_133",
       "artist": {
-        "tr": [
-          "Moritz Von Oswald Trio"
-        ],
-        "en": [
-          "Moritz Von Oswald Trio"
-        ]
+        "tr": ["Moritz Von Oswald Trio"],
+        "en": ["Moritz Von Oswald Trio"]
       },
       "genre": {
         "tr": "Elektronik",
@@ -4381,12 +3745,8 @@
     {
       "id": "event_134",
       "artist": {
-        "tr": [
-          "Marc Ribot 'Ceramic Dog'"
-        ],
-        "en": [
-          "Marc Ribot 'Ceramic Dog'"
-        ]
+        "tr": ["Marc Ribot 'Ceramic Dog'"],
+        "en": ["Marc Ribot 'Ceramic Dog'"]
       },
       "genre": {
         "tr": "Deneysel - Avant Gard",
@@ -4413,12 +3773,8 @@
     {
       "id": "event_135",
       "artist": {
-        "tr": [
-          "Katona Twins & CRR Senfoni Orkestrası"
-        ],
-        "en": [
-          "Katona Twins & CRR Senfoni Orkestrası"
-        ]
+        "tr": ["Katona Twins & CRR Senfoni Orkestrası"],
+        "en": ["Katona Twins & CRR Senfoni Orkestrası"]
       },
       "genre": {
         "tr": "Klasik",
@@ -4445,12 +3801,8 @@
     {
       "id": "event_136",
       "artist": {
-        "tr": [
-          "Chick Corea Trio"
-        ],
-        "en": [
-          "Chick Corea Trio"
-        ]
+        "tr": ["Chick Corea Trio"],
+        "en": ["Chick Corea Trio"]
       },
       "genre": {
         "tr": "Caz",
@@ -4477,12 +3829,8 @@
     {
       "id": "event_137",
       "artist": {
-        "tr": [
-          "ANBB (Alva Noto & Blixa Bargeld)"
-        ],
-        "en": [
-          "ANBB (Alva Noto & Blixa Bargeld)"
-        ]
+        "tr": ["ANBB (Alva Noto & Blixa Bargeld)"],
+        "en": ["ANBB (Alva Noto & Blixa Bargeld)"]
       },
       "genre": {
         "tr": "Elektronik",
@@ -4509,12 +3857,8 @@
     {
       "id": "event_138",
       "artist": {
-        "tr": [
-          "Al Di Meola & Gonzalo Rubalcaba Duo"
-        ],
-        "en": [
-          "Al Di Meola & Gonzalo Rubalcaba Duo"
-        ]
+        "tr": ["Al Di Meola & Gonzalo Rubalcaba Duo"],
+        "en": ["Al Di Meola & Gonzalo Rubalcaba Duo"]
       },
       "genre": {
         "tr": "Caz",
@@ -4541,12 +3885,8 @@
     {
       "id": "event_139",
       "artist": {
-        "tr": [
-          "Leonard Elschenbroich"
-        ],
-        "en": [
-          "Leonard Elschenbroich"
-        ]
+        "tr": ["Leonard Elschenbroich"],
+        "en": ["Leonard Elschenbroich"]
       },
       "genre": {
         "tr": "Klasik",
@@ -4573,12 +3913,8 @@
     {
       "id": "event_140",
       "artist": {
-        "tr": [
-          "Marcin Wasilewski Trio"
-        ],
-        "en": [
-          "Marcin Wasilewski Trio"
-        ]
+        "tr": ["Marcin Wasilewski Trio"],
+        "en": ["Marcin Wasilewski Trio"]
       },
       "genre": {
         "tr": "Caz",
@@ -4605,12 +3941,8 @@
     {
       "id": "event_141",
       "artist": {
-        "tr": [
-          "Robin Guthrie Trio"
-        ],
-        "en": [
-          "Robin Guthrie Trio"
-        ]
+        "tr": ["Robin Guthrie Trio"],
+        "en": ["Robin Guthrie Trio"]
       },
       "genre": {
         "tr": "Alternatif",
@@ -4637,12 +3969,8 @@
     {
       "id": "event_142",
       "artist": {
-        "tr": [
-          "Giora Feidman Ensemble & Hüsnü Şenlendirici"
-        ],
-        "en": [
-          "Giora Feidman Ensemble & Hüsnü Şenlendirici"
-        ]
+        "tr": ["Giora Feidman Ensemble & Hüsnü Şenlendirici"],
+        "en": ["Giora Feidman Ensemble & Hüsnü Şenlendirici"]
       },
       "genre": {
         "tr": "Dünya Müziği",
@@ -4669,12 +3997,8 @@
     {
       "id": "event_143",
       "artist": {
-        "tr": [
-          "Eivind Aarset & Jan Bang"
-        ],
-        "en": [
-          "Eivind Aarset & Jan Bang"
-        ]
+        "tr": ["Eivind Aarset & Jan Bang"],
+        "en": ["Eivind Aarset & Jan Bang"]
       },
       "genre": {
         "tr": "Elektronik",
@@ -4701,12 +4025,8 @@
     {
       "id": "event_144",
       "artist": {
-        "tr": [
-          "Tortoise"
-        ],
-        "en": [
-          "Tortoise"
-        ]
+        "tr": ["Tortoise"],
+        "en": ["Tortoise"]
       },
       "genre": {
         "tr": "Alternatif",
@@ -4733,12 +4053,8 @@
     {
       "id": "event_145",
       "artist": {
-        "tr": [
-          "Rabih Abou Khalil Mediterranean Quintet"
-        ],
-        "en": [
-          "Rabih Abou Khalil Mediterranean Quintet"
-        ]
+        "tr": ["Rabih Abou Khalil Mediterranean Quintet"],
+        "en": ["Rabih Abou Khalil Mediterranean Quintet"]
       },
       "genre": {
         "tr": "Caz",
@@ -4765,12 +4081,8 @@
     {
       "id": "event_146",
       "artist": {
-        "tr": [
-          "Mono"
-        ],
-        "en": [
-          "Mono"
-        ]
+        "tr": ["Mono"],
+        "en": ["Mono"]
       },
       "genre": {
         "tr": "Alternatif",
@@ -4797,12 +4109,8 @@
     {
       "id": "event_147",
       "artist": {
-        "tr": [
-          "Frank Gambale 'Natural High ' Trio"
-        ],
-        "en": [
-          "Frank Gambale 'Natural High ' Trio"
-        ]
+        "tr": ["Frank Gambale 'Natural High ' Trio"],
+        "en": ["Frank Gambale 'Natural High ' Trio"]
       },
       "genre": {
         "tr": "Caz",
@@ -4829,12 +4137,8 @@
     {
       "id": "event_148",
       "artist": {
-        "tr": [
-          "Ron Carter 'Golden Striker' Trio"
-        ],
-        "en": [
-          "Ron Carter 'Golden Striker' Trio"
-        ]
+        "tr": ["Ron Carter 'Golden Striker' Trio"],
+        "en": ["Ron Carter 'Golden Striker' Trio"]
       },
       "genre": {
         "tr": "Caz",
@@ -4861,14 +4165,8 @@
     {
       "id": "event_149",
       "artist": {
-        "tr": [
-          "Murcof",
-          "Philippe Petit & Mark Cunningham"
-        ],
-        "en": [
-          "Murcof",
-          "Philippe Petit & Mark Cunningham"
-        ]
+        "tr": ["Murcof", "Philippe Petit & Mark Cunningham"],
+        "en": ["Murcof", "Philippe Petit & Mark Cunningham"]
       },
       "genre": {
         "tr": "Elektronik",
@@ -4927,12 +4225,8 @@
     {
       "id": "event_151",
       "artist": {
-        "tr": [
-          "Swans"
-        ],
-        "en": [
-          "Swans"
-        ]
+        "tr": ["Swans"],
+        "en": ["Swans"]
       },
       "genre": {
         "tr": "Alternatif",
@@ -4959,14 +4253,8 @@
     {
       "id": "event_152",
       "artist": {
-        "tr": [
-          "Bohren & Der Club of Gore",
-          "Library Tapes"
-        ],
-        "en": [
-          "Bohren & Der Club of Gore",
-          "Library Tapes"
-        ]
+        "tr": ["Bohren & Der Club of Gore", "Library Tapes"],
+        "en": ["Bohren & Der Club of Gore", "Library Tapes"]
       },
       "genre": {
         "tr": "Elektronik",
@@ -4993,12 +4281,8 @@
     {
       "id": "event_153",
       "artist": {
-        "tr": [
-          "Patricia Barber"
-        ],
-        "en": [
-          "Patricia Barber"
-        ]
+        "tr": ["Patricia Barber"],
+        "en": ["Patricia Barber"]
       },
       "genre": {
         "tr": "Caz",
@@ -5025,14 +4309,8 @@
     {
       "id": "event_154",
       "artist": {
-        "tr": [
-          "Joe Satriani",
-          "Cem Köksal feat. Joe Lynn Turner"
-        ],
-        "en": [
-          "Joe Satriani",
-          "Cem Köksal feat. Joe Lynn Turner"
-        ]
+        "tr": ["Joe Satriani", "Cem Köksal feat. Joe Lynn Turner"],
+        "en": ["Joe Satriani", "Cem Köksal feat. Joe Lynn Turner"]
       },
       "genre": {
         "tr": "Rock",
@@ -5059,12 +4337,8 @@
     {
       "id": "event_155",
       "artist": {
-        "tr": [
-          "HBC Super Trio"
-        ],
-        "en": [
-          "HBC Super Trio"
-        ]
+        "tr": ["HBC Super Trio"],
+        "en": ["HBC Super Trio"]
       },
       "genre": {
         "tr": "Caz",
@@ -5091,12 +4365,8 @@
     {
       "id": "event_156",
       "artist": {
-        "tr": [
-          "Body/Head"
-        ],
-        "en": [
-          "Body/Head"
-        ]
+        "tr": ["Body/Head"],
+        "en": ["Body/Head"]
       },
       "genre": {
         "tr": "Deneysel - Avant Gard",
@@ -5123,12 +4393,8 @@
     {
       "id": "event_157",
       "artist": {
-        "tr": [
-          "Stephan Micus"
-        ],
-        "en": [
-          "Stephan Micus"
-        ]
+        "tr": ["Stephan Micus"],
+        "en": ["Stephan Micus"]
       },
       "genre": {
         "tr": "Dünya Müziği",
@@ -5155,12 +4421,8 @@
     {
       "id": "event_158",
       "artist": {
-        "tr": [
-          "Charles Lloyd Quartet"
-        ],
-        "en": [
-          "Charles Lloyd Quartet"
-        ]
+        "tr": ["Charles Lloyd Quartet"],
+        "en": ["Charles Lloyd Quartet"]
       },
       "genre": {
         "tr": "Caz",
@@ -5187,12 +4449,8 @@
     {
       "id": "event_159",
       "artist": {
-        "tr": [
-          "Parker Quartet"
-        ],
-        "en": [
-          "Parker Quartet"
-        ]
+        "tr": ["Parker Quartet"],
+        "en": ["Parker Quartet"]
       },
       "genre": {
         "tr": "Klasik",
@@ -5219,12 +4477,8 @@
     {
       "id": "event_160",
       "artist": {
-        "tr": [
-          "OM"
-        ],
-        "en": [
-          "OM"
-        ]
+        "tr": ["OM"],
+        "en": ["OM"]
       },
       "genre": {
         "tr": "Metal",
@@ -5251,12 +4505,8 @@
     {
       "id": "event_161",
       "artist": {
-        "tr": [
-          "Jaga Jazzist"
-        ],
-        "en": [
-          "Jaga Jazzist"
-        ]
+        "tr": ["Jaga Jazzist"],
+        "en": ["Jaga Jazzist"]
       },
       "genre": {
         "tr": "Alternatif",
@@ -5283,12 +4533,8 @@
     {
       "id": "event_162",
       "artist": {
-        "tr": [
-          "Dionne Warwick"
-        ],
-        "en": [
-          "Dionne Warwick"
-        ]
+        "tr": ["Dionne Warwick"],
+        "en": ["Dionne Warwick"]
       },
       "genre": {
         "tr": "Pop",
@@ -5315,12 +4561,8 @@
     {
       "id": "event_163",
       "artist": {
-        "tr": [
-          "Thee Silver Mt. Zion Memorial Orchestra"
-        ],
-        "en": [
-          "Thee Silver Mt. Zion Memorial Orchestra"
-        ]
+        "tr": ["Thee Silver Mt. Zion Memorial Orchestra"],
+        "en": ["Thee Silver Mt. Zion Memorial Orchestra"]
       },
       "genre": {
         "tr": "Alternatif",
@@ -5347,12 +4589,8 @@
     {
       "id": "event_164",
       "artist": {
-        "tr": [
-          "The Wedding Present"
-        ],
-        "en": [
-          "The Wedding Present"
-        ]
+        "tr": ["The Wedding Present"],
+        "en": ["The Wedding Present"]
       },
       "genre": {
         "tr": "Alternatif",
@@ -5379,12 +4617,8 @@
     {
       "id": "event_165",
       "artist": {
-        "tr": [
-          "Amiina"
-        ],
-        "en": [
-          "Amiina"
-        ]
+        "tr": ["Amiina"],
+        "en": ["Amiina"]
       },
       "genre": {
         "tr": "Deneysel - Avant Gard",
@@ -5411,12 +4645,8 @@
     {
       "id": "event_166",
       "artist": {
-        "tr": [
-          "Grails"
-        ],
-        "en": [
-          "Grails"
-        ]
+        "tr": ["Grails"],
+        "en": ["Grails"]
       },
       "genre": {
         "tr": "Alternatif",
@@ -5443,12 +4673,8 @@
     {
       "id": "event_167",
       "artist": {
-        "tr": [
-          "Hiromi Trio Project"
-        ],
-        "en": [
-          "Hiromi Trio Project"
-        ]
+        "tr": ["Hiromi Trio Project"],
+        "en": ["Hiromi Trio Project"]
       },
       "genre": {
         "tr": "Caz",
@@ -5475,14 +4701,8 @@
     {
       "id": "event_168",
       "artist": {
-        "tr": [
-          "Keiji Haino",
-          "Fennesz & Lillevan"
-        ],
-        "en": [
-          "Keiji Haino",
-          "Fennesz & Lillevan"
-        ]
+        "tr": ["Keiji Haino", "Fennesz & Lillevan"],
+        "en": ["Keiji Haino", "Fennesz & Lillevan"]
       },
       "genre": {
         "tr": "Deneysel - Avant Gard",
@@ -5509,12 +4729,8 @@
     {
       "id": "event_169",
       "artist": {
-        "tr": [
-          "Victor Wooten Band"
-        ],
-        "en": [
-          "Victor Wooten Band"
-        ]
+        "tr": ["Victor Wooten Band"],
+        "en": ["Victor Wooten Band"]
       },
       "genre": {
         "tr": "Caz",
@@ -5541,12 +4757,8 @@
     {
       "id": "event_170",
       "artist": {
-        "tr": [
-          "Al Di Meola plays Beatles & More"
-        ],
-        "en": [
-          "Al Di Meola plays Beatles & More"
-        ]
+        "tr": ["Al Di Meola plays Beatles & More"],
+        "en": ["Al Di Meola plays Beatles & More"]
       },
       "genre": {
         "tr": "Caz",
@@ -5573,12 +4785,8 @@
     {
       "id": "event_171",
       "artist": {
-        "tr": [
-          "Al Di Meola plays Beatles & More"
-        ],
-        "en": [
-          "Al Di Meola plays Beatles & More"
-        ]
+        "tr": ["Al Di Meola plays Beatles & More"],
+        "en": ["Al Di Meola plays Beatles & More"]
       },
       "genre": {
         "tr": "Caz",
@@ -5605,12 +4813,8 @@
     {
       "id": "event_172",
       "artist": {
-        "tr": [
-          "Chris Botti"
-        ],
-        "en": [
-          "Chris Botti"
-        ]
+        "tr": ["Chris Botti"],
+        "en": ["Chris Botti"]
       },
       "genre": {
         "tr": "Caz",
@@ -5637,12 +4841,8 @@
     {
       "id": "event_173",
       "artist": {
-        "tr": [
-          "The Cinematic Orchestra"
-        ],
-        "en": [
-          "The Cinematic Orchestra"
-        ]
+        "tr": ["The Cinematic Orchestra"],
+        "en": ["The Cinematic Orchestra"]
       },
       "genre": {
         "tr": "Elektronik",
@@ -5669,12 +4869,8 @@
     {
       "id": "event_174",
       "artist": {
-        "tr": [
-          "Dianne Reeves"
-        ],
-        "en": [
-          "Dianne Reeves"
-        ]
+        "tr": ["Dianne Reeves"],
+        "en": ["Dianne Reeves"]
       },
       "genre": {
         "tr": "Caz",
@@ -5701,12 +4897,8 @@
     {
       "id": "event_175",
       "artist": {
-        "tr": [
-          "Jesu"
-        ],
-        "en": [
-          "Jesu"
-        ]
+        "tr": ["Jesu"],
+        "en": ["Jesu"]
       },
       "genre": {
         "tr": "Alternatif",
@@ -5733,12 +4925,8 @@
     {
       "id": "event_176",
       "artist": {
-        "tr": [
-          "Kronos Quartet"
-        ],
-        "en": [
-          "Kronos Quartet"
-        ]
+        "tr": ["Kronos Quartet"],
+        "en": ["Kronos Quartet"]
       },
       "genre": {
         "tr": "Deneysel - Avant Gard",
@@ -5765,12 +4953,8 @@
     {
       "id": "event_177",
       "artist": {
-        "tr": [
-          "Earth"
-        ],
-        "en": [
-          "Earth"
-        ]
+        "tr": ["Earth"],
+        "en": ["Earth"]
       },
       "genre": {
         "tr": "Alternatif",
@@ -5797,12 +4981,8 @@
     {
       "id": "event_178",
       "artist": {
-        "tr": [
-          "Bobby McFerrin 'Spirityouall'"
-        ],
-        "en": [
-          "Bobby McFerrin 'Spirityouall'"
-        ]
+        "tr": ["Bobby McFerrin 'Spirityouall'"],
+        "en": ["Bobby McFerrin 'Spirityouall'"]
       },
       "genre": {
         "tr": "Caz",
@@ -5829,12 +5009,8 @@
     {
       "id": "event_179",
       "artist": {
-        "tr": [
-          "Bobby McFerrin 'Spirityouall'"
-        ],
-        "en": [
-          "Bobby McFerrin 'Spirityouall'"
-        ]
+        "tr": ["Bobby McFerrin 'Spirityouall'"],
+        "en": ["Bobby McFerrin 'Spirityouall'"]
       },
       "genre": {
         "tr": "Caz",
@@ -5861,12 +5037,8 @@
     {
       "id": "event_180",
       "artist": {
-        "tr": [
-          "Stanley Clarke Band"
-        ],
-        "en": [
-          "Stanley Clarke Band"
-        ]
+        "tr": ["Stanley Clarke Band"],
+        "en": ["Stanley Clarke Band"]
       },
       "genre": {
         "tr": "Caz",
@@ -5893,12 +5065,8 @@
     {
       "id": "event_181",
       "artist": {
-        "tr": [
-          "Mike Stern Band"
-        ],
-        "en": [
-          "Mike Stern Band"
-        ]
+        "tr": ["Mike Stern Band"],
+        "en": ["Mike Stern Band"]
       },
       "genre": {
         "tr": "Caz",
@@ -5925,18 +5093,12 @@
     {
       "id": "event_182",
       "artist": {
-        "tr": [
-          "Ben Frost",
-          "Aluk Todolo"
-        ],
-        "en": [
-          "Ben Frost",
-          "Aluk Todolo"
-        ]
+        "tr": ["Ben Frost", "Aluk Todolo"],
+        "en": ["Ben Frost", "Aluk Todolo"]
       },
       "genre": {
-        "tr": "Elektronik - Alternatif",
-        "en": "Electronic - Alternative"
+        "tr": "Alternatif",
+        "en": "Alternative"
       },
       "date": "23.04.2015",
       "venue": {
@@ -5959,12 +5121,8 @@
     {
       "id": "event_183",
       "artist": {
-        "tr": [
-          "Jan Garbarek Group feat Trilok Gurtu"
-        ],
-        "en": [
-          "Jan Garbarek Group feat Trilok Gurtu"
-        ]
+        "tr": ["Jan Garbarek Group feat Trilok Gurtu"],
+        "en": ["Jan Garbarek Group feat Trilok Gurtu"]
       },
       "genre": {
         "tr": "Caz",
@@ -5991,12 +5149,8 @@
     {
       "id": "event_184",
       "artist": {
-        "tr": [
-          "Swans"
-        ],
-        "en": [
-          "Swans"
-        ]
+        "tr": ["Swans"],
+        "en": ["Swans"]
       },
       "genre": {
         "tr": "Alternatif",
@@ -6023,12 +5177,8 @@
     {
       "id": "event_185",
       "artist": {
-        "tr": [
-          "Toto Cutugno"
-        ],
-        "en": [
-          "Toto Cutugno"
-        ]
+        "tr": ["Toto Cutugno"],
+        "en": ["Toto Cutugno"]
       },
       "genre": {
         "tr": "Pop",
@@ -6055,14 +5205,8 @@
     {
       "id": "event_186",
       "artist": {
-        "tr": [
-          "Mudhoney",
-          "Shellac"
-        ],
-        "en": [
-          "Mudhoney",
-          "Shellac"
-        ]
+        "tr": ["Mudhoney", "Shellac"],
+        "en": ["Mudhoney", "Shellac"]
       },
       "genre": {
         "tr": "Alternatif",
@@ -6089,12 +5233,8 @@
     {
       "id": "event_187",
       "artist": {
-        "tr": [
-          "MUM"
-        ],
-        "en": [
-          "MUM"
-        ]
+        "tr": ["MUM"],
+        "en": ["MUM"]
       },
       "genre": {
         "tr": "Elektronik",
@@ -6121,12 +5261,8 @@
     {
       "id": "event_188",
       "artist": {
-        "tr": [
-          "Fourplay"
-        ],
-        "en": [
-          "Fourplay"
-        ]
+        "tr": ["Fourplay"],
+        "en": ["Fourplay"]
       },
       "genre": {
         "tr": "Caz",
@@ -6153,12 +5289,8 @@
     {
       "id": "event_189",
       "artist": {
-        "tr": [
-          "Hiromi Trio Project"
-        ],
-        "en": [
-          "Hiromi Trio Project"
-        ]
+        "tr": ["Hiromi Trio Project"],
+        "en": ["Hiromi Trio Project"]
       },
       "genre": {
         "tr": "Caz",
@@ -6185,14 +5317,8 @@
     {
       "id": "event_190",
       "artist": {
-        "tr": [
-          "FIRE!",
-          "Zu"
-        ],
-        "en": [
-          "FIRE!",
-          "Zu"
-        ]
+        "tr": ["FIRE!", "Zu"],
+        "en": ["FIRE!", "Zu"]
       },
       "genre": {
         "tr": "Deneysel - Avant Gard",
@@ -6219,12 +5345,8 @@
     {
       "id": "event_191",
       "artist": {
-        "tr": [
-          "Godspeed You! Black Emperor"
-        ],
-        "en": [
-          "Godspeed You! Black Emperor"
-        ]
+        "tr": ["Godspeed You! Black Emperor"],
+        "en": ["Godspeed You! Black Emperor"]
       },
       "genre": {
         "tr": "Alternatif",
@@ -6251,12 +5373,8 @@
     {
       "id": "event_192",
       "artist": {
-        "tr": [
-          "Marianne Faithfull"
-        ],
-        "en": [
-          "Marianne Faithfull"
-        ]
+        "tr": ["Marianne Faithfull"],
+        "en": ["Marianne Faithfull"]
       },
       "genre": {
         "tr": "Alternatif",
@@ -6283,14 +5401,8 @@
     {
       "id": "event_193",
       "artist": {
-        "tr": [
-          "Nils Petter Molvaer Band",
-          "Jaga Jazzist"
-        ],
-        "en": [
-          "Nils Petter Molvaer Band",
-          "Jaga Jazzist"
-        ]
+        "tr": ["Nils Petter Molvaer Band", "Jaga Jazzist"],
+        "en": ["Nils Petter Molvaer Band", "Jaga Jazzist"]
       },
       "genre": {
         "tr": "Caz",
@@ -6317,12 +5429,8 @@
     {
       "id": "event_194",
       "artist": {
-        "tr": [
-          "Ian Anderson - Jethro Tull The Rock Opera"
-        ],
-        "en": [
-          "Ian Anderson - Jethro Tull The Rock Opera"
-        ]
+        "tr": ["Ian Anderson - Jethro Tull The Rock Opera"],
+        "en": ["Ian Anderson - Jethro Tull The Rock Opera"]
       },
       "genre": {
         "tr": "Rock",
@@ -6349,12 +5457,8 @@
     {
       "id": "event_195",
       "artist": {
-        "tr": [
-          "Dany Brillant"
-        ],
-        "en": [
-          "Dany Brillant"
-        ]
+        "tr": ["Dany Brillant"],
+        "en": ["Dany Brillant"]
       },
       "genre": {
         "tr": "Pop",
@@ -6381,12 +5485,8 @@
     {
       "id": "event_196",
       "artist": {
-        "tr": [
-          "Chris Botti"
-        ],
-        "en": [
-          "Chris Botti"
-        ]
+        "tr": ["Chris Botti"],
+        "en": ["Chris Botti"]
       },
       "genre": {
         "tr": "Caz",
@@ -6413,12 +5513,8 @@
     {
       "id": "event_197",
       "artist": {
-        "tr": [
-          "Lee Konitz & Walter Lang"
-        ],
-        "en": [
-          "Lee Konitz & Walter Lang"
-        ]
+        "tr": ["Lee Konitz & Walter Lang"],
+        "en": ["Lee Konitz & Walter Lang"]
       },
       "genre": {
         "tr": "Caz",
@@ -6445,12 +5541,8 @@
     {
       "id": "event_198",
       "artist": {
-        "tr": [
-          "Al Di Meola - Elysium & More Unplugged"
-        ],
-        "en": [
-          "Al Di Meola - Elysium & More Unplugged"
-        ]
+        "tr": ["Al Di Meola - Elysium & More Unplugged"],
+        "en": ["Al Di Meola - Elysium & More Unplugged"]
       },
       "genre": {
         "tr": "Caz",
@@ -6477,14 +5569,8 @@
     {
       "id": "event_199",
       "artist": {
-        "tr": [
-          "Tortoise",
-          "The Ex feat. Ken Vandermark"
-        ],
-        "en": [
-          "Tortoise",
-          "The Ex feat. Ken Vandermark"
-        ]
+        "tr": ["Tortoise", "The Ex feat. Ken Vandermark"],
+        "en": ["Tortoise", "The Ex feat. Ken Vandermark"]
       },
       "genre": {
         "tr": "Alternatif",
@@ -6511,12 +5597,8 @@
     {
       "id": "event_200",
       "artist": {
-        "tr": [
-          "Anthony Strong"
-        ],
-        "en": [
-          "Anthony Strong"
-        ]
+        "tr": ["Anthony Strong"],
+        "en": ["Anthony Strong"]
       },
       "genre": {
         "tr": "Caz",
@@ -6543,12 +5625,8 @@
     {
       "id": "event_201",
       "artist": {
-        "tr": [
-          "Stanley Clarke & Hiromi Duo"
-        ],
-        "en": [
-          "Stanley Clarke & Hiromi Duo"
-        ]
+        "tr": ["Stanley Clarke & Hiromi Duo"],
+        "en": ["Stanley Clarke & Hiromi Duo"]
       },
       "genre": {
         "tr": "Caz",
@@ -6575,14 +5653,8 @@
     {
       "id": "event_202",
       "artist": {
-        "tr": [
-          "William Basinski",
-          "Dopplereffekt"
-        ],
-        "en": [
-          "William Basinski",
-          "Dopplereffekt"
-        ]
+        "tr": ["William Basinski", "Dopplereffekt"],
+        "en": ["William Basinski", "Dopplereffekt"]
       },
       "genre": {
         "tr": "Elektronik",
@@ -6609,12 +5681,8 @@
     {
       "id": "event_203",
       "artist": {
-        "tr": [
-          "Stacey Kent"
-        ],
-        "en": [
-          "Stacey Kent"
-        ]
+        "tr": ["Stacey Kent"],
+        "en": ["Stacey Kent"]
       },
       "genre": {
         "tr": "Caz",
@@ -6641,12 +5709,8 @@
     {
       "id": "event_204",
       "artist": {
-        "tr": [
-          "Meredith Monk"
-        ],
-        "en": [
-          "Meredith Monk"
-        ]
+        "tr": ["Meredith Monk"],
+        "en": ["Meredith Monk"]
       },
       "genre": {
         "tr": "Deneysel - Avant Gard",
@@ -6673,12 +5737,8 @@
     {
       "id": "event_205",
       "artist": {
-        "tr": [
-          "Steven Wilson"
-        ],
-        "en": [
-          "Steven Wilson"
-        ]
+        "tr": ["Steven Wilson"],
+        "en": ["Steven Wilson"]
       },
       "genre": {
         "tr": "Rock",
@@ -6705,12 +5765,8 @@
     {
       "id": "event_206",
       "artist": {
-        "tr": [
-          "Tindersticks"
-        ],
-        "en": [
-          "Tindersticks"
-        ]
+        "tr": ["Tindersticks"],
+        "en": ["Tindersticks"]
       },
       "genre": {
         "tr": "Alternatif",
@@ -6737,12 +5793,8 @@
     {
       "id": "event_207",
       "artist": {
-        "tr": [
-          "Patti Smith"
-        ],
-        "en": [
-          "Patti Smith"
-        ]
+        "tr": ["Patti Smith"],
+        "en": ["Patti Smith"]
       },
       "genre": {
         "tr": "Alternatif",
@@ -6769,12 +5821,8 @@
     {
       "id": "event_208",
       "artist": {
-        "tr": [
-          "Empyrium"
-        ],
-        "en": [
-          "Empyrium"
-        ]
+        "tr": ["Empyrium"],
+        "en": ["Empyrium"]
       },
       "genre": {
         "tr": "Metal",
@@ -6801,14 +5849,8 @@
     {
       "id": "event_209",
       "artist": {
-        "tr": [
-          "Alex von Schlippenbach Trio",
-          "Ghedalia Tezartes"
-        ],
-        "en": [
-          "Alex von Schlippenbach Trio",
-          "Ghedalia Tezartes"
-        ]
+        "tr": ["Alex von Schlippenbach Trio", "Ghedalia Tezartes"],
+        "en": ["Alex von Schlippenbach Trio", "Ghedalia Tezartes"]
       },
       "genre": {
         "tr": "Deneysel - Avant Gard",
@@ -6835,12 +5877,8 @@
     {
       "id": "event_210",
       "artist": {
-        "tr": [
-          "Mike Stern & Dave Weckl Band"
-        ],
-        "en": [
-          "Mike Stern & Dave Weckl Band"
-        ]
+        "tr": ["Mike Stern & Dave Weckl Band"],
+        "en": ["Mike Stern & Dave Weckl Band"]
       },
       "genre": {
         "tr": "Caz",
@@ -6867,14 +5905,8 @@
     {
       "id": "event_211",
       "artist": {
-        "tr": [
-          "Fennesz",
-          "Lubomyr Melnyk"
-        ],
-        "en": [
-          "Fennesz",
-          "Lubomyr Melnyk"
-        ]
+        "tr": ["Fennesz", "Lubomyr Melnyk"],
+        "en": ["Fennesz", "Lubomyr Melnyk"]
       },
       "genre": {
         "tr": "Elektronik",
@@ -6901,12 +5933,8 @@
     {
       "id": "event_212",
       "artist": {
-        "tr": [
-          "Victor Wooten Trio"
-        ],
-        "en": [
-          "Victor Wooten Trio"
-        ]
+        "tr": ["Victor Wooten Trio"],
+        "en": ["Victor Wooten Trio"]
       },
       "genre": {
         "tr": "Caz",
@@ -6933,14 +5961,8 @@
     {
       "id": "event_213",
       "artist": {
-        "tr": [
-          "Rob Mazurek Sao Paulo Underground",
-          "Jozef van Wissem"
-        ],
-        "en": [
-          "Rob Mazurek Sao Paulo Underground",
-          "Jozef van Wissem"
-        ]
+        "tr": ["Rob Mazurek Sao Paulo Underground", "Jozef van Wissem"],
+        "en": ["Rob Mazurek Sao Paulo Underground", "Jozef van Wissem"]
       },
       "genre": {
         "tr": "Deneysel - Avant Gard",
@@ -6967,12 +5989,8 @@
     {
       "id": "event_214",
       "artist": {
-        "tr": [
-          "Jose Feliciano"
-        ],
-        "en": [
-          "Jose Feliciano"
-        ]
+        "tr": ["Jose Feliciano"],
+        "en": ["Jose Feliciano"]
       },
       "genre": {
         "tr": "Pop",
@@ -6999,12 +6017,8 @@
     {
       "id": "event_215",
       "artist": {
-        "tr": [
-          "Madeleine Peyroux"
-        ],
-        "en": [
-          "Madeleine Peyroux"
-        ]
+        "tr": ["Madeleine Peyroux"],
+        "en": ["Madeleine Peyroux"]
       },
       "genre": {
         "tr": "Caz",
@@ -7031,12 +6045,8 @@
     {
       "id": "event_216",
       "artist": {
-        "tr": [
-          "Crippled Black Phoenix"
-        ],
-        "en": [
-          "Crippled Black Phoenix"
-        ]
+        "tr": ["Crippled Black Phoenix"],
+        "en": ["Crippled Black Phoenix"]
       },
       "genre": {
         "tr": "Alternatif",
@@ -7063,14 +6073,8 @@
     {
       "id": "event_217",
       "artist": {
-        "tr": [
-          "Terje Rypdal & Ketil Bjornstad Duo",
-          "Fred Frith Trio"
-        ],
-        "en": [
-          "Terje Rypdal & Ketil Bjornstad Duo",
-          "Fred Frith Trio"
-        ]
+        "tr": ["Terje Rypdal & Ketil Bjornstad Duo", "Fred Frith Trio"],
+        "en": ["Terje Rypdal & Ketil Bjornstad Duo", "Fred Frith Trio"]
       },
       "genre": {
         "tr": "Caz",
@@ -7097,14 +6101,8 @@
     {
       "id": "event_218",
       "artist": {
-        "tr": [
-          "Enrico Rava New Quartet",
-          "Trio Elf"
-        ],
-        "en": [
-          "Enrico Rava New Quartet",
-          "Trio Elf"
-        ]
+        "tr": ["Enrico Rava New Quartet", "Trio Elf"],
+        "en": ["Enrico Rava New Quartet", "Trio Elf"]
       },
       "genre": {
         "tr": "Caz",
@@ -7131,12 +6129,8 @@
     {
       "id": "event_219",
       "artist": {
-        "tr": [
-          "Toto Cutugno"
-        ],
-        "en": [
-          "Toto Cutugno"
-        ]
+        "tr": ["Toto Cutugno"],
+        "en": ["Toto Cutugno"]
       },
       "genre": {
         "tr": "Pop",
@@ -7163,12 +6157,8 @@
     {
       "id": "event_220",
       "artist": {
-        "tr": [
-          "Grails"
-        ],
-        "en": [
-          "Grails"
-        ]
+        "tr": ["Grails"],
+        "en": ["Grails"]
       },
       "genre": {
         "tr": "Alternatif",
@@ -7195,12 +6185,8 @@
     {
       "id": "event_221",
       "artist": {
-        "tr": [
-          "Murcof & Vanessa Wagner"
-        ],
-        "en": [
-          "Murcof & Vanessa Wagner"
-        ]
+        "tr": ["Murcof & Vanessa Wagner"],
+        "en": ["Murcof & Vanessa Wagner"]
       },
       "genre": {
         "tr": "Elektronik",
@@ -7227,12 +6213,8 @@
     {
       "id": "event_222",
       "artist": {
-        "tr": [
-          "Alcest"
-        ],
-        "en": [
-          "Alcest"
-        ]
+        "tr": ["Alcest"],
+        "en": ["Alcest"]
       },
       "genre": {
         "tr": "Metal",
@@ -7259,12 +6241,8 @@
     {
       "id": "event_223",
       "artist": {
-        "tr": [
-          "Dianne Reeves"
-        ],
-        "en": [
-          "Dianne Reeves"
-        ]
+        "tr": ["Dianne Reeves"],
+        "en": ["Dianne Reeves"]
       },
       "genre": {
         "tr": "Caz",
@@ -7291,14 +6269,8 @@
     {
       "id": "event_224",
       "artist": {
-        "tr": [
-          "Charlemagne Palestine & Rhys Chatham Duo",
-          "Grouper"
-        ],
-        "en": [
-          "Charlemagne Palestine & Rhys Chatham Duo",
-          "Grouper"
-        ]
+        "tr": ["Charlemagne Palestine & Rhys Chatham Duo", "Grouper"],
+        "en": ["Charlemagne Palestine & Rhys Chatham Duo", "Grouper"]
       },
       "genre": {
         "tr": "Deneysel - Avant Gard",
@@ -7325,12 +6297,8 @@
     {
       "id": "event_225",
       "artist": {
-        "tr": [
-          "Michel Camilo & Tomatito Duo"
-        ],
-        "en": [
-          "Michel Camilo & Tomatito Duo"
-        ]
+        "tr": ["Michel Camilo & Tomatito Duo"],
+        "en": ["Michel Camilo & Tomatito Duo"]
       },
       "genre": {
         "tr": "Caz",
@@ -7357,12 +6325,8 @@
     {
       "id": "event_226",
       "artist": {
-        "tr": [
-          "Jan Garbarek Group feat. Trilok Gurtu"
-        ],
-        "en": [
-          "Jan Garbarek Group feat. Trilok Gurtu"
-        ]
+        "tr": ["Jan Garbarek Group feat. Trilok Gurtu"],
+        "en": ["Jan Garbarek Group feat. Trilok Gurtu"]
       },
       "genre": {
         "tr": "Caz",
@@ -7389,12 +6353,8 @@
     {
       "id": "event_227",
       "artist": {
-        "tr": [
-          "Beth Hart"
-        ],
-        "en": [
-          "Beth Hart"
-        ]
+        "tr": ["Beth Hart"],
+        "en": ["Beth Hart"]
       },
       "genre": {
         "tr": "Rock",
@@ -7421,12 +6381,8 @@
     {
       "id": "event_228",
       "artist": {
-        "tr": [
-          "Chick Corea Trio feat. Eddie Gomez & Brian Blade"
-        ],
-        "en": [
-          "Chick Corea Trio feat. Eddie Gomez & Brian Blade"
-        ]
+        "tr": ["Chick Corea Trio feat. Eddie Gomez & Brian Blade"],
+        "en": ["Chick Corea Trio feat. Eddie Gomez & Brian Blade"]
       },
       "genre": {
         "tr": "Caz",
@@ -7453,12 +6409,8 @@
     {
       "id": "event_229",
       "artist": {
-        "tr": [
-          "Swans"
-        ],
-        "en": [
-          "Swans"
-        ]
+        "tr": ["Swans"],
+        "en": ["Swans"]
       },
       "genre": {
         "tr": "Alternatif",
@@ -7485,12 +6437,8 @@
     {
       "id": "event_230",
       "artist": {
-        "tr": [
-          "Kronos Quartet"
-        ],
-        "en": [
-          "Kronos Quartet"
-        ]
+        "tr": ["Kronos Quartet"],
+        "en": ["Kronos Quartet"]
       },
       "genre": {
         "tr": "Deneysel - Avant Gard",
@@ -7517,12 +6465,8 @@
     {
       "id": "event_231",
       "artist": {
-        "tr": [
-          "Mono"
-        ],
-        "en": [
-          "Mono"
-        ]
+        "tr": ["Mono"],
+        "en": ["Mono"]
       },
       "genre": {
         "tr": "Alternatif",
@@ -7549,12 +6493,8 @@
     {
       "id": "event_232",
       "artist": {
-        "tr": [
-          "Ruins"
-        ],
-        "en": [
-          "Ruins"
-        ]
+        "tr": ["Ruins"],
+        "en": ["Ruins"]
       },
       "genre": {
         "tr": "Deneysel - Avant Gard",
@@ -7581,12 +6521,8 @@
     {
       "id": "event_233",
       "artist": {
-        "tr": [
-          "Mor Karbasi"
-        ],
-        "en": [
-          "Mor Karbasi"
-        ]
+        "tr": ["Mor Karbasi"],
+        "en": ["Mor Karbasi"]
       },
       "genre": {
         "tr": "Dünya Müziği",
@@ -7613,12 +6549,8 @@
     {
       "id": "event_234",
       "artist": {
-        "tr": [
-          "The Wedding Present"
-        ],
-        "en": [
-          "The Wedding Present"
-        ]
+        "tr": ["The Wedding Present"],
+        "en": ["The Wedding Present"]
       },
       "genre": {
         "tr": "Alternatif",
@@ -7645,14 +6577,8 @@
     {
       "id": "event_235",
       "artist": {
-        "tr": [
-          "The Ex",
-          "Bulbul"
-        ],
-        "en": [
-          "The Ex",
-          "Bulbul"
-        ]
+        "tr": ["The Ex", "Bulbul"],
+        "en": ["The Ex", "Bulbul"]
       },
       "genre": {
         "tr": "Alternatif",
@@ -7679,12 +6605,8 @@
     {
       "id": "event_236",
       "artist": {
-        "tr": [
-          "Anna Maria Jopek"
-        ],
-        "en": [
-          "Anna Maria Jopek"
-        ]
+        "tr": ["Anna Maria Jopek"],
+        "en": ["Anna Maria Jopek"]
       },
       "genre": {
         "tr": "Caz",
@@ -7743,12 +6665,8 @@
     {
       "id": "event_238",
       "artist": {
-        "tr": [
-          "Enslaved"
-        ],
-        "en": [
-          "Enslaved"
-        ]
+        "tr": ["Enslaved"],
+        "en": ["Enslaved"]
       },
       "genre": {
         "tr": "Metal",
@@ -7775,14 +6693,8 @@
     {
       "id": "event_239",
       "artist": {
-        "tr": [
-          "Embryo",
-          "Radian"
-        ],
-        "en": [
-          "Embryo",
-          "Radian"
-        ]
+        "tr": ["Embryo", "Radian"],
+        "en": ["Embryo", "Radian"]
       },
       "genre": {
         "tr": "Deneysel - Avant Gard",
@@ -7809,14 +6721,8 @@
     {
       "id": "event_240",
       "artist": {
-        "tr": [
-          "Sin Fang",
-          "Soley, Örvar Smarason"
-        ],
-        "en": [
-          "Sin Fang",
-          "Soley, Örvar Smarason"
-        ]
+        "tr": ["Sin Fang", "Soley, Örvar Smarason"],
+        "en": ["Sin Fang", "Soley, Örvar Smarason"]
       },
       "genre": {
         "tr": "Alternatif",
@@ -7843,12 +6749,8 @@
     {
       "id": "event_241",
       "artist": {
-        "tr": [
-          "Eleni Karaindrou & CRR Senfoni Orkestrası"
-        ],
-        "en": [
-          "Eleni Karaindrou & CRR Senfoni Orkestrası"
-        ]
+        "tr": ["Eleni Karaindrou & CRR Senfoni Orkestrası"],
+        "en": ["Eleni Karaindrou & CRR Senfoni Orkestrası"]
       },
       "genre": {
         "tr": "Klasik",
@@ -7875,12 +6777,8 @@
     {
       "id": "event_242",
       "artist": {
-        "tr": [
-          "Guthrie Govan feat. Yiorgos Fakanas Group"
-        ],
-        "en": [
-          "Guthrie Govan feat. Yiorgos Fakanas Group"
-        ]
+        "tr": ["Guthrie Govan feat. Yiorgos Fakanas Group"],
+        "en": ["Guthrie Govan feat. Yiorgos Fakanas Group"]
       },
       "genre": {
         "tr": "Caz",
@@ -7907,12 +6805,8 @@
     {
       "id": "event_243",
       "artist": {
-        "tr": [
-          "Guthrie Govan clinic"
-        ],
-        "en": [
-          "Guthrie Govan clinic"
-        ]
+        "tr": ["Guthrie Govan clinic"],
+        "en": ["Guthrie Govan clinic"]
       },
       "genre": {
         "tr": "Caz",
@@ -7939,14 +6833,8 @@
     {
       "id": "event_244",
       "artist": {
-        "tr": [
-          "Bill Frisell",
-          "Thomas Morgan Duo"
-        ],
-        "en": [
-          "Bill Frisell",
-          "Thomas Morgan Duo"
-        ]
+        "tr": ["Bill Frisell", "Thomas Morgan Duo"],
+        "en": ["Bill Frisell", "Thomas Morgan Duo"]
       },
       "genre": {
         "tr": "Caz",
@@ -7976,9 +6864,7 @@
         "tr": [
           "Miroslav Vitous Group: Weather Report Project feat. Aydın Esen"
         ],
-        "en": [
-          "Miroslav Vitous Group: Weather Report Project feat. Aydın Esen"
-        ]
+        "en": ["Miroslav Vitous Group: Weather Report Project feat. Aydın Esen"]
       },
       "genre": {
         "tr": "Caz",
@@ -8005,12 +6891,8 @@
     {
       "id": "event_246",
       "artist": {
-        "tr": [
-          "Grails"
-        ],
-        "en": [
-          "Grails"
-        ]
+        "tr": ["Grails"],
+        "en": ["Grails"]
       },
       "genre": {
         "tr": "Alternatif",
@@ -8037,12 +6919,8 @@
     {
       "id": "event_247",
       "artist": {
-        "tr": [
-          "Jason Moran & The Bandwagon"
-        ],
-        "en": [
-          "Jason Moran & The Bandwagon"
-        ]
+        "tr": ["Jason Moran & The Bandwagon"],
+        "en": ["Jason Moran & The Bandwagon"]
       },
       "genre": {
         "tr": "Caz",
@@ -8069,12 +6947,8 @@
     {
       "id": "event_248",
       "artist": {
-        "tr": [
-          "Stacey Kent"
-        ],
-        "en": [
-          "Stacey Kent"
-        ]
+        "tr": ["Stacey Kent"],
+        "en": ["Stacey Kent"]
       },
       "genre": {
         "tr": "Caz",
@@ -8101,12 +6975,8 @@
     {
       "id": "event_249",
       "artist": {
-        "tr": [
-          "Martin Barre Band"
-        ],
-        "en": [
-          "Martin Barre Band"
-        ]
+        "tr": ["Martin Barre Band"],
+        "en": ["Martin Barre Band"]
       },
       "genre": {
         "tr": "Rock",
@@ -8133,12 +7003,8 @@
     {
       "id": "event_250",
       "artist": {
-        "tr": [
-          "Camel"
-        ],
-        "en": [
-          "Camel"
-        ]
+        "tr": ["Camel"],
+        "en": ["Camel"]
       },
       "genre": {
         "tr": "Rock",
@@ -8165,12 +7031,8 @@
     {
       "id": "event_251",
       "artist": {
-        "tr": [
-          "Camel"
-        ],
-        "en": [
-          "Camel"
-        ]
+        "tr": ["Camel"],
+        "en": ["Camel"]
       },
       "genre": {
         "tr": "Rock",
@@ -8197,12 +7059,8 @@
     {
       "id": "event_252",
       "artist": {
-        "tr": [
-          "Steven Wilson"
-        ],
-        "en": [
-          "Steven Wilson"
-        ]
+        "tr": ["Steven Wilson"],
+        "en": ["Steven Wilson"]
       },
       "genre": {
         "tr": "Rock",
@@ -8229,12 +7087,8 @@
     {
       "id": "event_253",
       "artist": {
-        "tr": [
-          "Empyrium"
-        ],
-        "en": [
-          "Empyrium"
-        ]
+        "tr": ["Empyrium"],
+        "en": ["Empyrium"]
       },
       "genre": {
         "tr": "Metal",
@@ -8261,12 +7115,8 @@
     {
       "id": "event_254",
       "artist": {
-        "tr": [
-          "Ihsahn"
-        ],
-        "en": [
-          "Ihsahn"
-        ]
+        "tr": ["Ihsahn"],
+        "en": ["Ihsahn"]
       },
       "genre": {
         "tr": "Metal",
@@ -8293,12 +7143,8 @@
     {
       "id": "event_255",
       "artist": {
-        "tr": [
-          "Anna Maria Jopek"
-        ],
-        "en": [
-          "Anna Maria Jopek"
-        ]
+        "tr": ["Anna Maria Jopek"],
+        "en": ["Anna Maria Jopek"]
       },
       "genre": {
         "tr": "Caz",
@@ -8325,12 +7171,8 @@
     {
       "id": "event_256",
       "artist": {
-        "tr": [
-          "Pain Of Salvation"
-        ],
-        "en": [
-          "Pain Of Salvation"
-        ]
+        "tr": ["Pain Of Salvation"],
+        "en": ["Pain Of Salvation"]
       },
       "genre": {
         "tr": "Metal",
@@ -8357,12 +7199,8 @@
     {
       "id": "event_257",
       "artist": {
-        "tr": [
-          "Mark Kozelek of Sun Kil Moon"
-        ],
-        "en": [
-          "Mark Kozelek of Sun Kil Moon"
-        ]
+        "tr": ["Mark Kozelek of Sun Kil Moon"],
+        "en": ["Mark Kozelek of Sun Kil Moon"]
       },
       "genre": {
         "tr": "Alternatif",
@@ -8389,12 +7227,8 @@
     {
       "id": "event_258",
       "artist": {
-        "tr": [
-          "Victor Wooten Trio feat. Dennis Chambers & Bob Franceshini"
-        ],
-        "en": [
-          "Victor Wooten Trio feat. Dennis Chambers & Bob Franceshini"
-        ]
+        "tr": ["Victor Wooten Trio feat. Dennis Chambers & Bob Franceshini"],
+        "en": ["Victor Wooten Trio feat. Dennis Chambers & Bob Franceshini"]
       },
       "genre": {
         "tr": "Caz",
@@ -8421,12 +7255,8 @@
     {
       "id": "event_259",
       "artist": {
-        "tr": [
-          "Victor Wooten Trio feat. Dennis Chambers & Bob Franceshini"
-        ],
-        "en": [
-          "Victor Wooten Trio feat. Dennis Chambers & Bob Franceshini"
-        ]
+        "tr": ["Victor Wooten Trio feat. Dennis Chambers & Bob Franceshini"],
+        "en": ["Victor Wooten Trio feat. Dennis Chambers & Bob Franceshini"]
       },
       "genre": {
         "tr": "Caz",
@@ -8453,12 +7283,8 @@
     {
       "id": "event_260",
       "artist": {
-        "tr": [
-          "Youn Sun Nah"
-        ],
-        "en": [
-          "Youn Sun Nah"
-        ]
+        "tr": ["Youn Sun Nah"],
+        "en": ["Youn Sun Nah"]
       },
       "genre": {
         "tr": "Caz",
@@ -8485,14 +7311,8 @@
     {
       "id": "event_261",
       "artist": {
-        "tr": [
-          "Heldon",
-          "Phurpa"
-        ],
-        "en": [
-          "Heldon",
-          "Phurpa"
-        ]
+        "tr": ["Heldon", "Phurpa"],
+        "en": ["Heldon", "Phurpa"]
       },
       "genre": {
         "tr": "Deneysel - Avant Gard",
@@ -8519,12 +7339,8 @@
     {
       "id": "event_262",
       "artist": {
-        "tr": [
-          "Chick Corea Solo"
-        ],
-        "en": [
-          "Chick Corea Solo"
-        ]
+        "tr": ["Chick Corea Solo"],
+        "en": ["Chick Corea Solo"]
       },
       "genre": {
         "tr": "Caz",
@@ -8551,12 +7367,8 @@
     {
       "id": "event_263",
       "artist": {
-        "tr": [
-          "Konstrukt feat. Ken Vandermark"
-        ],
-        "en": [
-          "Konstrukt feat. Ken Vandermark"
-        ]
+        "tr": ["Konstrukt feat. Ken Vandermark"],
+        "en": ["Konstrukt feat. Ken Vandermark"]
       },
       "genre": {
         "tr": "Deneysel - Avant Gard",
@@ -8583,12 +7395,8 @@
     {
       "id": "event_264",
       "artist": {
-        "tr": [
-          "Peter Bence"
-        ],
-        "en": [
-          "Peter Bence"
-        ]
+        "tr": ["Peter Bence"],
+        "en": ["Peter Bence"]
       },
       "genre": {
         "tr": "Pop",
@@ -8615,12 +7423,8 @@
     {
       "id": "event_265",
       "artist": {
-        "tr": [
-          "Ana Popovic Band"
-        ],
-        "en": [
-          "Ana Popovic Band"
-        ]
+        "tr": ["Ana Popovic Band"],
+        "en": ["Ana Popovic Band"]
       },
       "genre": {
         "tr": "Rock",
@@ -8647,12 +7451,8 @@
     {
       "id": "event_266",
       "artist": {
-        "tr": [
-          "Evgeny Grinko"
-        ],
-        "en": [
-          "Evgeny Grinko"
-        ]
+        "tr": ["Evgeny Grinko"],
+        "en": ["Evgeny Grinko"]
       },
       "genre": {
         "tr": "Klasik",
@@ -8679,12 +7479,8 @@
     {
       "id": "event_267",
       "artist": {
-        "tr": [
-          "God Is an Astronaut"
-        ],
-        "en": [
-          "God Is an Astronaut"
-        ]
+        "tr": ["God Is an Astronaut"],
+        "en": ["God Is an Astronaut"]
       },
       "genre": {
         "tr": "Alternatif",
@@ -8711,12 +7507,8 @@
     {
       "id": "event_268",
       "artist": {
-        "tr": [
-          "Solstafir"
-        ],
-        "en": [
-          "Solstafir"
-        ]
+        "tr": ["Solstafir"],
+        "en": ["Solstafir"]
       },
       "genre": {
         "tr": "Metal",
@@ -8743,12 +7535,8 @@
     {
       "id": "event_269",
       "artist": {
-        "tr": [
-          "Alex Skolnick Trio"
-        ],
-        "en": [
-          "Alex Skolnick Trio"
-        ]
+        "tr": ["Alex Skolnick Trio"],
+        "en": ["Alex Skolnick Trio"]
       },
       "genre": {
         "tr": "Caz",
@@ -8775,14 +7563,8 @@
     {
       "id": "event_270",
       "artist": {
-        "tr": [
-          "Matt Elliott & Vacarme",
-          "Colleen"
-        ],
-        "en": [
-          "Matt Elliott & Vacarme",
-          "Colleen"
-        ]
+        "tr": ["Matt Elliott & Vacarme", "Colleen"],
+        "en": ["Matt Elliott & Vacarme", "Colleen"]
       },
       "genre": {
         "tr": "Deneysel - Avant Gard",
@@ -8809,12 +7591,8 @@
     {
       "id": "event_271",
       "artist": {
-        "tr": [
-          "Haken"
-        ],
-        "en": [
-          "Haken"
-        ]
+        "tr": ["Haken"],
+        "en": ["Haken"]
       },
       "genre": {
         "tr": "Metal",
@@ -8841,12 +7619,8 @@
     {
       "id": "event_272",
       "artist": {
-        "tr": [
-          "Mike Stern & Dave Weckl Band"
-        ],
-        "en": [
-          "Mike Stern & Dave Weckl Band"
-        ]
+        "tr": ["Mike Stern & Dave Weckl Band"],
+        "en": ["Mike Stern & Dave Weckl Band"]
       },
       "genre": {
         "tr": "Caz",
@@ -8873,12 +7647,8 @@
     {
       "id": "event_273",
       "artist": {
-        "tr": [
-          "John McLaughlin & The 4th Dimension"
-        ],
-        "en": [
-          "John McLaughlin & The 4th Dimension"
-        ]
+        "tr": ["John McLaughlin & The 4th Dimension"],
+        "en": ["John McLaughlin & The 4th Dimension"]
       },
       "genre": {
         "tr": "Caz",
@@ -8905,12 +7675,8 @@
     {
       "id": "event_274",
       "artist": {
-        "tr": [
-          "Madeleine Peyroux"
-        ],
-        "en": [
-          "Madeleine Peyroux"
-        ]
+        "tr": ["Madeleine Peyroux"],
+        "en": ["Madeleine Peyroux"]
       },
       "genre": {
         "tr": "Caz",
@@ -8937,12 +7703,8 @@
     {
       "id": "event_275",
       "artist": {
-        "tr": [
-          "Bobby McFerrin: Gimme 5"
-        ],
-        "en": [
-          "Bobby McFerrin: Gimme 5"
-        ]
+        "tr": ["Bobby McFerrin: Gimme 5"],
+        "en": ["Bobby McFerrin: Gimme 5"]
       },
       "genre": {
         "tr": "Caz",
@@ -8969,12 +7731,8 @@
     {
       "id": "event_276",
       "artist": {
-        "tr": [
-          "Mark Guiliana Beat Music"
-        ],
-        "en": [
-          "Mark Guiliana Beat Music"
-        ]
+        "tr": ["Mark Guiliana Beat Music"],
+        "en": ["Mark Guiliana Beat Music"]
       },
       "genre": {
         "tr": "Caz",
@@ -9001,12 +7759,8 @@
     {
       "id": "event_277",
       "artist": {
-        "tr": [
-          "Lars Danielsson Group"
-        ],
-        "en": [
-          "Lars Danielsson Group"
-        ]
+        "tr": ["Lars Danielsson Group"],
+        "en": ["Lars Danielsson Group"]
       },
       "genre": {
         "tr": "Caz",
@@ -9033,12 +7787,8 @@
     {
       "id": "event_278",
       "artist": {
-        "tr": [
-          "Myrkur"
-        ],
-        "en": [
-          "Myrkur"
-        ]
+        "tr": ["Myrkur"],
+        "en": ["Myrkur"]
       },
       "genre": {
         "tr": "Metal",
@@ -9065,12 +7815,8 @@
     {
       "id": "event_279",
       "artist": {
-        "tr": [
-          "John Scofield Combo 66"
-        ],
-        "en": [
-          "John Scofield Combo 66"
-        ]
+        "tr": ["John Scofield Combo 66"],
+        "en": ["John Scofield Combo 66"]
       },
       "genre": {
         "tr": "Caz",
@@ -9097,12 +7843,8 @@
     {
       "id": "event_280",
       "artist": {
-        "tr": [
-          "Chris Botti"
-        ],
-        "en": [
-          "Chris Botti"
-        ]
+        "tr": ["Chris Botti"],
+        "en": ["Chris Botti"]
       },
       "genre": {
         "tr": "Caz",
@@ -9129,12 +7871,8 @@
     {
       "id": "event_281",
       "artist": {
-        "tr": [
-          "Alan Parsons Live Project"
-        ],
-        "en": [
-          "Alan Parsons Live Project"
-        ]
+        "tr": ["Alan Parsons Live Project"],
+        "en": ["Alan Parsons Live Project"]
       },
       "genre": {
         "tr": "Rock",
@@ -9161,12 +7899,8 @@
     {
       "id": "event_282",
       "artist": {
-        "tr": [
-          "Diablo Swing Orchestra"
-        ],
-        "en": [
-          "Diablo Swing Orchestra"
-        ]
+        "tr": ["Diablo Swing Orchestra"],
+        "en": ["Diablo Swing Orchestra"]
       },
       "genre": {
         "tr": "Metal",
@@ -9193,12 +7927,8 @@
     {
       "id": "event_283",
       "artist": {
-        "tr": [
-          "Stanley Clarke Band"
-        ],
-        "en": [
-          "Stanley Clarke Band"
-        ]
+        "tr": ["Stanley Clarke Band"],
+        "en": ["Stanley Clarke Band"]
       },
       "genre": {
         "tr": "Caz",
@@ -9225,12 +7955,8 @@
     {
       "id": "event_284",
       "artist": {
-        "tr": [
-          "Stanley Clarke Band"
-        ],
-        "en": [
-          "Stanley Clarke Band"
-        ]
+        "tr": ["Stanley Clarke Band"],
+        "en": ["Stanley Clarke Band"]
       },
       "genre": {
         "tr": "Caz",
@@ -9257,12 +7983,8 @@
     {
       "id": "event_285",
       "artist": {
-        "tr": [
-          "Youn Sun Nah"
-        ],
-        "en": [
-          "Youn Sun Nah"
-        ]
+        "tr": ["Youn Sun Nah"],
+        "en": ["Youn Sun Nah"]
       },
       "genre": {
         "tr": "Caz",
@@ -9289,12 +8011,8 @@
     {
       "id": "event_286",
       "artist": {
-        "tr": [
-          "Sun Of Goldfinger (David Torn & Tim Berne & Ches Smith)"
-        ],
-        "en": [
-          "Sun Of Goldfinger (David Torn & Tim Berne & Ches Smith)"
-        ]
+        "tr": ["Sun Of Goldfinger (David Torn & Tim Berne & Ches Smith)"],
+        "en": ["Sun Of Goldfinger (David Torn & Tim Berne & Ches Smith)"]
       },
       "genre": {
         "tr": "Deneysel - Avant Gard",
@@ -9321,12 +8039,8 @@
     {
       "id": "event_287",
       "artist": {
-        "tr": [
-          "Sona Jobarteh"
-        ],
-        "en": [
-          "Sona Jobarteh"
-        ]
+        "tr": ["Sona Jobarteh"],
+        "en": ["Sona Jobarteh"]
       },
       "genre": {
         "tr": "Dünya Müziği",
@@ -9353,12 +8067,8 @@
     {
       "id": "event_288",
       "artist": {
-        "tr": [
-          "Mono"
-        ],
-        "en": [
-          "Mono"
-        ]
+        "tr": ["Mono"],
+        "en": ["Mono"]
       },
       "genre": {
         "tr": "Alternatif",
@@ -9385,12 +8095,8 @@
     {
       "id": "event_289",
       "artist": {
-        "tr": [
-          "The Aristocrats"
-        ],
-        "en": [
-          "The Aristocrats"
-        ]
+        "tr": ["The Aristocrats"],
+        "en": ["The Aristocrats"]
       },
       "genre": {
         "tr": "Rock",
@@ -9451,12 +8157,8 @@
     {
       "id": "event_291",
       "artist": {
-        "tr": [
-          "Gravetemple (Atilla Csihar, Stephen O'malley, Oren Ambarchi)"
-        ],
-        "en": [
-          "Gravetemple (Atilla Csihar, Stephen O'malley, Oren Ambarchi)"
-        ]
+        "tr": ["Gravetemple (Atilla Csihar, Stephen O'malley, Oren Ambarchi)"],
+        "en": ["Gravetemple (Atilla Csihar, Stephen O'malley, Oren Ambarchi)"]
       },
       "genre": {
         "tr": "Deneysel - Avant Gard",
@@ -9483,12 +8185,8 @@
     {
       "id": "event_292",
       "artist": {
-        "tr": [
-          "Omar Sosa & Trilok Gurtu & Paolo Fresu"
-        ],
-        "en": [
-          "Omar Sosa & Trilok Gurtu & Paolo Fresu"
-        ]
+        "tr": ["Omar Sosa & Trilok Gurtu & Paolo Fresu"],
+        "en": ["Omar Sosa & Trilok Gurtu & Paolo Fresu"]
       },
       "genre": {
         "tr": "Caz",
@@ -9515,12 +8213,8 @@
     {
       "id": "event_293",
       "artist": {
-        "tr": [
-          "Vicente Amigo"
-        ],
-        "en": [
-          "Vicente Amigo"
-        ]
+        "tr": ["Vicente Amigo"],
+        "en": ["Vicente Amigo"]
       },
       "genre": {
         "tr": "Dünya Müziği",
@@ -9547,14 +8241,8 @@
     {
       "id": "event_294",
       "artist": {
-        "tr": [
-          "Leprous",
-          "Klone"
-        ],
-        "en": [
-          "Leprous",
-          "Klone"
-        ]
+        "tr": ["Leprous", "Klone"],
+        "en": ["Leprous", "Klone"]
       },
       "genre": {
         "tr": "Metal",
@@ -9581,12 +8269,8 @@
     {
       "id": "event_295",
       "artist": {
-        "tr": [
-          "Tindersticks"
-        ],
-        "en": [
-          "Tindersticks"
-        ]
+        "tr": ["Tindersticks"],
+        "en": ["Tindersticks"]
       },
       "genre": {
         "tr": "Alternatif",
@@ -9613,12 +8297,8 @@
     {
       "id": "event_296",
       "artist": {
-        "tr": [
-          "Philip Catherine Trio"
-        ],
-        "en": [
-          "Philip Catherine Trio"
-        ]
+        "tr": ["Philip Catherine Trio"],
+        "en": ["Philip Catherine Trio"]
       },
       "genre": {
         "tr": "Caz",
@@ -9645,12 +8325,8 @@
     {
       "id": "event_297",
       "artist": {
-        "tr": [
-          "MMMD (Mohammad)"
-        ],
-        "en": [
-          "MMMD (Mohammad)"
-        ]
+        "tr": ["MMMD (Mohammad)"],
+        "en": ["MMMD (Mohammad)"]
       },
       "genre": {
         "tr": "Elektronik",
@@ -9677,12 +8353,8 @@
     {
       "id": "event_298",
       "artist": {
-        "tr": [
-          "Riverside"
-        ],
-        "en": [
-          "Riverside"
-        ]
+        "tr": ["Riverside"],
+        "en": ["Riverside"]
       },
       "genre": {
         "tr": "Rock",
@@ -9709,12 +8381,8 @@
     {
       "id": "event_299",
       "artist": {
-        "tr": [
-          "Eivor"
-        ],
-        "en": [
-          "Eivor"
-        ]
+        "tr": ["Eivor"],
+        "en": ["Eivor"]
       },
       "genre": {
         "tr": "Dünya Müziği",
@@ -9741,12 +8409,8 @@
     {
       "id": "event_300",
       "artist": {
-        "tr": [
-          "Avishai Cohen Trio"
-        ],
-        "en": [
-          "Avishai Cohen Trio"
-        ]
+        "tr": ["Avishai Cohen Trio"],
+        "en": ["Avishai Cohen Trio"]
       },
       "genre": {
         "tr": "Caz",
@@ -9773,12 +8437,8 @@
     {
       "id": "event_301",
       "artist": {
-        "tr": [
-          "Avishai Cohen Trio & CSO"
-        ],
-        "en": [
-          "Avishai Cohen Trio & CSO"
-        ]
+        "tr": ["Avishai Cohen Trio & CSO"],
+        "en": ["Avishai Cohen Trio & CSO"]
       },
       "genre": {
         "tr": "Caz",
@@ -9805,12 +8465,8 @@
     {
       "id": "event_302",
       "artist": {
-        "tr": [
-          "Chris Botti"
-        ],
-        "en": [
-          "Chris Botti"
-        ]
+        "tr": ["Chris Botti"],
+        "en": ["Chris Botti"]
       },
       "genre": {
         "tr": "Caz",
@@ -9837,12 +8493,8 @@
     {
       "id": "event_303",
       "artist": {
-        "tr": [
-          "Chris Botti"
-        ],
-        "en": [
-          "Chris Botti"
-        ]
+        "tr": ["Chris Botti"],
+        "en": ["Chris Botti"]
       },
       "genre": {
         "tr": "Caz",
@@ -9869,12 +8521,8 @@
     {
       "id": "event_304",
       "artist": {
-        "tr": [
-          "Brom"
-        ],
-        "en": [
-          "Brom"
-        ]
+        "tr": ["Brom"],
+        "en": ["Brom"]
       },
       "genre": {
         "tr": "Deneysel - Avant Gard",
@@ -9901,12 +8549,8 @@
     {
       "id": "event_305",
       "artist": {
-        "tr": [
-          "Leprous"
-        ],
-        "en": [
-          "Leprous"
-        ]
+        "tr": ["Leprous"],
+        "en": ["Leprous"]
       },
       "genre": {
         "tr": "Metal",
@@ -9933,12 +8577,8 @@
     {
       "id": "event_306",
       "artist": {
-        "tr": [
-          "Dave Weckl & Tom Kennedy Band"
-        ],
-        "en": [
-          "Dave Weckl & Tom Kennedy Band"
-        ]
+        "tr": ["Dave Weckl & Tom Kennedy Band"],
+        "en": ["Dave Weckl & Tom Kennedy Band"]
       },
       "genre": {
         "tr": "Caz",
@@ -9965,12 +8605,8 @@
     {
       "id": "event_307",
       "artist": {
-        "tr": [
-          "Schnellertollermeier"
-        ],
-        "en": [
-          "Schnellertollermeier"
-        ]
+        "tr": ["Schnellertollermeier"],
+        "en": ["Schnellertollermeier"]
       },
       "genre": {
         "tr": "Deneysel - Avant Gard",
@@ -9997,12 +8633,8 @@
     {
       "id": "event_308",
       "artist": {
-        "tr": [
-          "Michel Camilo & CSO şef Cemi'i Can Deliorman"
-        ],
-        "en": [
-          "Michel Camilo & CSO şef Cemi'i Can Deliorman"
-        ]
+        "tr": ["Michel Camilo & CSO şef Cemi'i Can Deliorman"],
+        "en": ["Michel Camilo & CSO şef Cemi'i Can Deliorman"]
       },
       "genre": {
         "tr": "Caz",
@@ -10029,12 +8661,8 @@
     {
       "id": "event_309",
       "artist": {
-        "tr": [
-          "Michel Camilo & Tomatito Duo"
-        ],
-        "en": [
-          "Michel Camilo & Tomatito Duo"
-        ]
+        "tr": ["Michel Camilo & Tomatito Duo"],
+        "en": ["Michel Camilo & Tomatito Duo"]
       },
       "genre": {
         "tr": "Caz",
@@ -10061,12 +8689,8 @@
     {
       "id": "event_310",
       "artist": {
-        "tr": [
-          "Anthony Strong & CRR Caz Orkestrası"
-        ],
-        "en": [
-          "Anthony Strong & CRR Caz Orkestrası"
-        ]
+        "tr": ["Anthony Strong & CRR Caz Orkestrası"],
+        "en": ["Anthony Strong & CRR Caz Orkestrası"]
       },
       "genre": {
         "tr": "Caz",
@@ -10093,12 +8717,8 @@
     {
       "id": "event_311",
       "artist": {
-        "tr": [
-          "Marc Eliyahu"
-        ],
-        "en": [
-          "Marc Eliyahu"
-        ]
+        "tr": ["Marc Eliyahu"],
+        "en": ["Marc Eliyahu"]
       },
       "genre": {
         "tr": "Dünya Müziği",
@@ -10125,12 +8745,8 @@
     {
       "id": "event_312",
       "artist": {
-        "tr": [
-          "Jethro Tull"
-        ],
-        "en": [
-          "Jethro Tull"
-        ]
+        "tr": ["Jethro Tull"],
+        "en": ["Jethro Tull"]
       },
       "genre": {
         "tr": "Rock",
@@ -10157,12 +8773,8 @@
     {
       "id": "event_313",
       "artist": {
-        "tr": [
-          "Marc Eliyahu"
-        ],
-        "en": [
-          "Marc Eliyahu"
-        ]
+        "tr": ["Marc Eliyahu"],
+        "en": ["Marc Eliyahu"]
       },
       "genre": {
         "tr": "Dünya Müziği",
@@ -10189,12 +8801,8 @@
     {
       "id": "event_314",
       "artist": {
-        "tr": [
-          "Godspeed You! Black Emperor"
-        ],
-        "en": [
-          "Godspeed You! Black Emperor"
-        ]
+        "tr": ["Godspeed You! Black Emperor"],
+        "en": ["Godspeed You! Black Emperor"]
       },
       "genre": {
         "tr": "Alternatif",
@@ -10221,12 +8829,8 @@
     {
       "id": "event_315",
       "artist": {
-        "tr": [
-          "Sona Jobarteh"
-        ],
-        "en": [
-          "Sona Jobarteh"
-        ]
+        "tr": ["Sona Jobarteh"],
+        "en": ["Sona Jobarteh"]
       },
       "genre": {
         "tr": "Dünya Müziği",
@@ -10253,12 +8857,8 @@
     {
       "id": "event_316",
       "artist": {
-        "tr": [
-          "Mark Guiliana Quartet"
-        ],
-        "en": [
-          "Mark Guiliana Quartet"
-        ]
+        "tr": ["Mark Guiliana Quartet"],
+        "en": ["Mark Guiliana Quartet"]
       },
       "genre": {
         "tr": "Caz",
@@ -10285,12 +8885,8 @@
     {
       "id": "event_317",
       "artist": {
-        "tr": [
-          "Manu Katche"
-        ],
-        "en": [
-          "Manu Katche"
-        ]
+        "tr": ["Manu Katche"],
+        "en": ["Manu Katche"]
       },
       "genre": {
         "tr": "Caz",
@@ -10317,12 +8913,8 @@
     {
       "id": "event_318",
       "artist": {
-        "tr": [
-          "Kinga Glyk"
-        ],
-        "en": [
-          "Kinga Glyk"
-        ]
+        "tr": ["Kinga Glyk"],
+        "en": ["Kinga Glyk"]
       },
       "genre": {
         "tr": "Caz",
@@ -10349,12 +8941,8 @@
     {
       "id": "event_319",
       "artist": {
-        "tr": [
-          "Peter Bence"
-        ],
-        "en": [
-          "Peter Bence"
-        ]
+        "tr": ["Peter Bence"],
+        "en": ["Peter Bence"]
       },
       "genre": {
         "tr": "Pop",
@@ -10381,12 +8969,8 @@
     {
       "id": "event_320",
       "artist": {
-        "tr": [
-          "The Bad Plus"
-        ],
-        "en": [
-          "The Bad Plus"
-        ]
+        "tr": ["The Bad Plus"],
+        "en": ["The Bad Plus"]
       },
       "genre": {
         "tr": "Caz",
@@ -10413,12 +8997,8 @@
     {
       "id": "event_321",
       "artist": {
-        "tr": [
-          "Eivor"
-        ],
-        "en": [
-          "Eivor"
-        ]
+        "tr": ["Eivor"],
+        "en": ["Eivor"]
       },
       "genre": {
         "tr": "Dünya Müziği",
@@ -10445,14 +9025,8 @@
     {
       "id": "event_322",
       "artist": {
-        "tr": [
-          "Voivod",
-          "Nekropsi"
-        ],
-        "en": [
-          "Voivod",
-          "Nekropsi"
-        ]
+        "tr": ["Voivod", "Nekropsi"],
+        "en": ["Voivod", "Nekropsi"]
       },
       "genre": {
         "tr": "Metal",
@@ -10479,12 +9053,8 @@
     {
       "id": "event_323",
       "artist": {
-        "tr": [
-          "Soft Machine"
-        ],
-        "en": [
-          "Soft Machine"
-        ]
+        "tr": ["Soft Machine"],
+        "en": ["Soft Machine"]
       },
       "genre": {
         "tr": "Rock",
@@ -10511,12 +9081,8 @@
     {
       "id": "event_324",
       "artist": {
-        "tr": [
-          "Jaga Jazzist"
-        ],
-        "en": [
-          "Jaga Jazzist"
-        ]
+        "tr": ["Jaga Jazzist"],
+        "en": ["Jaga Jazzist"]
       },
       "genre": {
         "tr": "Alternatif",
@@ -10543,12 +9109,8 @@
     {
       "id": "event_325",
       "artist": {
-        "tr": [
-          "Roberto Cacciapaglia"
-        ],
-        "en": [
-          "Roberto Cacciapaglia"
-        ]
+        "tr": ["Roberto Cacciapaglia"],
+        "en": ["Roberto Cacciapaglia"]
       },
       "genre": {
         "tr": "Klasik",
@@ -10575,12 +9137,8 @@
     {
       "id": "event_326",
       "artist": {
-        "tr": [
-          "Wishbone Ash"
-        ],
-        "en": [
-          "Wishbone Ash"
-        ]
+        "tr": ["Wishbone Ash"],
+        "en": ["Wishbone Ash"]
       },
       "genre": {
         "tr": "Rock",
@@ -10607,12 +9165,8 @@
     {
       "id": "event_327",
       "artist": {
-        "tr": [
-          "Kenny Barron Trio"
-        ],
-        "en": [
-          "Kenny Barron Trio"
-        ]
+        "tr": ["Kenny Barron Trio"],
+        "en": ["Kenny Barron Trio"]
       },
       "genre": {
         "tr": "Caz",
@@ -10639,12 +9193,8 @@
     {
       "id": "event_328",
       "artist": {
-        "tr": [
-          "Jan Garbarek Quartet feat. Trilok Gurtu"
-        ],
-        "en": [
-          "Jan Garbarek Quartet feat. Trilok Gurtu"
-        ]
+        "tr": ["Jan Garbarek Quartet feat. Trilok Gurtu"],
+        "en": ["Jan Garbarek Quartet feat. Trilok Gurtu"]
       },
       "genre": {
         "tr": "Caz",
@@ -10671,12 +9221,8 @@
     {
       "id": "event_329",
       "artist": {
-        "tr": [
-          "Anthony Strong Trio"
-        ],
-        "en": [
-          "Anthony Strong Trio"
-        ]
+        "tr": ["Anthony Strong Trio"],
+        "en": ["Anthony Strong Trio"]
       },
       "genre": {
         "tr": "Caz",
@@ -10703,12 +9249,8 @@
     {
       "id": "event_330",
       "artist": {
-        "tr": [
-          "James Brandon Lewis Trio"
-        ],
-        "en": [
-          "James Brandon Lewis Trio"
-        ]
+        "tr": ["James Brandon Lewis Trio"],
+        "en": ["James Brandon Lewis Trio"]
       },
       "genre": {
         "tr": "Caz",
@@ -10735,12 +9277,8 @@
     {
       "id": "event_331",
       "artist": {
-        "tr": [
-          "Lars Danielsson Libretto"
-        ],
-        "en": [
-          "Lars Danielsson Libretto"
-        ]
+        "tr": ["Lars Danielsson Libretto"],
+        "en": ["Lars Danielsson Libretto"]
       },
       "genre": {
         "tr": "Caz",
@@ -10767,12 +9305,8 @@
     {
       "id": "event_332",
       "artist": {
-        "tr": [
-          "Portico Quartet"
-        ],
-        "en": [
-          "Portico Quartet"
-        ]
+        "tr": ["Portico Quartet"],
+        "en": ["Portico Quartet"]
       },
       "genre": {
         "tr": "Caz",
@@ -10799,12 +9333,8 @@
     {
       "id": "event_333",
       "artist": {
-        "tr": [
-          "Tom Odell"
-        ],
-        "en": [
-          "Tom Odell"
-        ]
+        "tr": ["Tom Odell"],
+        "en": ["Tom Odell"]
       },
       "genre": {
         "tr": "Pop",
@@ -10831,12 +9361,8 @@
     {
       "id": "event_334",
       "artist": {
-        "tr": [
-          "Hooverphonic"
-        ],
-        "en": [
-          "Hooverphonic"
-        ]
+        "tr": ["Hooverphonic"],
+        "en": ["Hooverphonic"]
       },
       "genre": {
         "tr": "Alternatif",
@@ -10863,12 +9389,8 @@
     {
       "id": "event_335",
       "artist": {
-        "tr": [
-          "Chucho Valdes Quartet"
-        ],
-        "en": [
-          "Chucho Valdes Quartet"
-        ]
+        "tr": ["Chucho Valdes Quartet"],
+        "en": ["Chucho Valdes Quartet"]
       },
       "genre": {
         "tr": "Caz",
@@ -10895,12 +9417,8 @@
     {
       "id": "event_336",
       "artist": {
-        "tr": [
-          "Mike Stern Band"
-        ],
-        "en": [
-          "Mike Stern Band"
-        ]
+        "tr": ["Mike Stern Band"],
+        "en": ["Mike Stern Band"]
       },
       "genre": {
         "tr": "Caz",
@@ -10927,12 +9445,8 @@
     {
       "id": "event_337",
       "artist": {
-        "tr": [
-          "Marcus Miller"
-        ],
-        "en": [
-          "Marcus Miller"
-        ]
+        "tr": ["Marcus Miller"],
+        "en": ["Marcus Miller"]
       },
       "genre": {
         "tr": "Caz",
@@ -10959,12 +9473,8 @@
     {
       "id": "event_338",
       "artist": {
-        "tr": [
-          "The Bad Plus"
-        ],
-        "en": [
-          "The Bad Plus"
-        ]
+        "tr": ["The Bad Plus"],
+        "en": ["The Bad Plus"]
       },
       "genre": {
         "tr": "Caz",
@@ -10991,12 +9501,8 @@
     {
       "id": "event_339",
       "artist": {
-        "tr": [
-          "Cecile Mc Lorin Salvant"
-        ],
-        "en": [
-          "Cecile Mc Lorin Salvant"
-        ]
+        "tr": ["Cecile Mc Lorin Salvant"],
+        "en": ["Cecile Mc Lorin Salvant"]
       },
       "genre": {
         "tr": "Caz",
@@ -11023,12 +9529,8 @@
     {
       "id": "event_340",
       "artist": {
-        "tr": [
-          "Ana Popovic"
-        ],
-        "en": [
-          "Ana Popovic"
-        ]
+        "tr": ["Ana Popovic"],
+        "en": ["Ana Popovic"]
       },
       "genre": {
         "tr": "Rock",
@@ -11055,12 +9557,8 @@
     {
       "id": "event_341",
       "artist": {
-        "tr": [
-          "Geoff Tate"
-        ],
-        "en": [
-          "Geoff Tate"
-        ]
+        "tr": ["Geoff Tate"],
+        "en": ["Geoff Tate"]
       },
       "genre": {
         "tr": "Metal",
@@ -11087,12 +9585,8 @@
     {
       "id": "event_342",
       "artist": {
-        "tr": [
-          "Steve Coleman & Reflex"
-        ],
-        "en": [
-          "Steve Coleman & Reflex"
-        ]
+        "tr": ["Steve Coleman & Reflex"],
+        "en": ["Steve Coleman & Reflex"]
       },
       "genre": {
         "tr": "Caz",
@@ -11119,12 +9613,8 @@
     {
       "id": "event_343",
       "artist": {
-        "tr": [
-          "Mark Guiliana Quartet"
-        ],
-        "en": [
-          "Mark Guiliana Quartet"
-        ]
+        "tr": ["Mark Guiliana Quartet"],
+        "en": ["Mark Guiliana Quartet"]
       },
       "genre": {
         "tr": "Caz",
@@ -11151,12 +9641,8 @@
     {
       "id": "event_344",
       "artist": {
-        "tr": [
-          "Jethro Tull"
-        ],
-        "en": [
-          "Jethro Tull"
-        ]
+        "tr": ["Jethro Tull"],
+        "en": ["Jethro Tull"]
       },
       "genre": {
         "tr": "Rock",
@@ -11183,12 +9669,8 @@
     {
       "id": "event_345",
       "artist": {
-        "tr": [
-          "The Necks"
-        ],
-        "en": [
-          "The Necks"
-        ]
+        "tr": ["The Necks"],
+        "en": ["The Necks"]
       },
       "genre": {
         "tr": "Deneysel - Avant Gard",
@@ -11215,12 +9697,8 @@
     {
       "id": "event_346",
       "artist": {
-        "tr": [
-          "Patrick Walker"
-        ],
-        "en": [
-          "Patrick Walker"
-        ]
+        "tr": ["Patrick Walker"],
+        "en": ["Patrick Walker"]
       },
       "genre": {
         "tr": "Alternatif",
@@ -11247,12 +9725,8 @@
     {
       "id": "event_347",
       "artist": {
-        "tr": [
-          "Hugh Coltman & CRR Caz Orkestrası"
-        ],
-        "en": [
-          "Hugh Coltman & CRR Caz Orkestrası"
-        ]
+        "tr": ["Hugh Coltman & CRR Caz Orkestrası"],
+        "en": ["Hugh Coltman & CRR Caz Orkestrası"]
       },
       "genre": {
         "tr": "Caz",
@@ -11279,12 +9753,8 @@
     {
       "id": "event_348",
       "artist": {
-        "tr": [
-          "Anna Maria Jopek & CRR Caz Orkestrası"
-        ],
-        "en": [
-          "Anna Maria Jopek & CRR Caz Orkestrası"
-        ]
+        "tr": ["Anna Maria Jopek & CRR Caz Orkestrası"],
+        "en": ["Anna Maria Jopek & CRR Caz Orkestrası"]
       },
       "genre": {
         "tr": "Caz",
@@ -11311,14 +9781,8 @@
     {
       "id": "event_349",
       "artist": {
-        "tr": [
-          "The Bug feat. Flowdan",
-          "Andy Stott"
-        ],
-        "en": [
-          "The Bug feat. Flowdan",
-          "Andy Stott"
-        ]
+        "tr": ["The Bug feat. Flowdan", "Andy Stott"],
+        "en": ["The Bug feat. Flowdan", "Andy Stott"]
       },
       "genre": {
         "tr": "Elektronik",
@@ -11345,14 +9809,8 @@
     {
       "id": "event_350",
       "artist": {
-        "tr": [
-          "Michael Rother plays Neu + Harmonica",
-          "Granül"
-        ],
-        "en": [
-          "Michael Rother plays Neu + Harmonica",
-          "Granül"
-        ]
+        "tr": ["Michael Rother plays Neu + Harmonica", "Granül"],
+        "en": ["Michael Rother plays Neu + Harmonica", "Granül"]
       },
       "genre": {
         "tr": "Elektronik",
@@ -11415,12 +9873,8 @@
     {
       "id": "event_352",
       "artist": {
-        "tr": [
-          "Kronos Quartet"
-        ],
-        "en": [
-          "Kronos Quartet"
-        ]
+        "tr": ["Kronos Quartet"],
+        "en": ["Kronos Quartet"]
       },
       "genre": {
         "tr": "Deneysel - Avant Gard",
@@ -11481,12 +9935,8 @@
     {
       "id": "event_354",
       "artist": {
-        "tr": [
-          "Rabih Abou Khalil feat. Elina Duni"
-        ],
-        "en": [
-          "Rabih Abou Khalil feat. Elina Duni"
-        ]
+        "tr": ["Rabih Abou Khalil feat. Elina Duni"],
+        "en": ["Rabih Abou Khalil feat. Elina Duni"]
       },
       "genre": {
         "tr": "Caz",
@@ -11513,12 +9963,8 @@
     {
       "id": "event_355",
       "artist": {
-        "tr": [
-          "Gonzalo Rubalcaba Trio"
-        ],
-        "en": [
-          "Gonzalo Rubalcaba Trio"
-        ]
+        "tr": ["Gonzalo Rubalcaba Trio"],
+        "en": ["Gonzalo Rubalcaba Trio"]
       },
       "genre": {
         "tr": "Caz",
@@ -11545,12 +9991,8 @@
     {
       "id": "event_356",
       "artist": {
-        "tr": [
-          "Incognito"
-        ],
-        "en": [
-          "Incognito"
-        ]
+        "tr": ["Incognito"],
+        "en": ["Incognito"]
       },
       "genre": {
         "tr": "Caz",
@@ -11577,14 +10019,8 @@
     {
       "id": "event_357",
       "artist": {
-        "tr": [
-          "David Eugene Edwards",
-          "Matt Elliott"
-        ],
-        "en": [
-          "David Eugene Edwards",
-          "Matt Elliott"
-        ]
+        "tr": ["David Eugene Edwards", "Matt Elliott"],
+        "en": ["David Eugene Edwards", "Matt Elliott"]
       },
       "genre": {
         "tr": "Alternatif",
@@ -11611,12 +10047,8 @@
     {
       "id": "event_358",
       "artist": {
-        "tr": [
-          "Henri Texier Trio"
-        ],
-        "en": [
-          "Henri Texier Trio"
-        ]
+        "tr": ["Henri Texier Trio"],
+        "en": ["Henri Texier Trio"]
       },
       "genre": {
         "tr": "Caz",
@@ -11643,12 +10075,8 @@
     {
       "id": "event_359",
       "artist": {
-        "tr": [
-          "Chris Botti"
-        ],
-        "en": [
-          "Chris Botti"
-        ]
+        "tr": ["Chris Botti"],
+        "en": ["Chris Botti"]
       },
       "genre": {
         "tr": "Caz",
@@ -11675,12 +10103,8 @@
     {
       "id": "event_360",
       "artist": {
-        "tr": [
-          "Chris Botti"
-        ],
-        "en": [
-          "Chris Botti"
-        ]
+        "tr": ["Chris Botti"],
+        "en": ["Chris Botti"]
       },
       "genre": {
         "tr": "Caz",
@@ -11707,12 +10131,8 @@
     {
       "id": "event_361",
       "artist": {
-        "tr": [
-          "Wishbone Ash"
-        ],
-        "en": [
-          "Wishbone Ash"
-        ]
+        "tr": ["Wishbone Ash"],
+        "en": ["Wishbone Ash"]
       },
       "genre": {
         "tr": "Rock",
@@ -11739,12 +10159,8 @@
     {
       "id": "event_362",
       "artist": {
-        "tr": [
-          "John Surman Quartet"
-        ],
-        "en": [
-          "John Surman Quartet"
-        ]
+        "tr": ["John Surman Quartet"],
+        "en": ["John Surman Quartet"]
       },
       "genre": {
         "tr": "Caz",
@@ -11771,12 +10187,8 @@
     {
       "id": "event_363",
       "artist": {
-        "tr": [
-          "Brad Mehldau Trio"
-        ],
-        "en": [
-          "Brad Mehldau Trio"
-        ]
+        "tr": ["Brad Mehldau Trio"],
+        "en": ["Brad Mehldau Trio"]
       },
       "genre": {
         "tr": "Caz",
@@ -11803,12 +10215,8 @@
     {
       "id": "event_364",
       "artist": {
-        "tr": [
-          "Brad Mehldau Trio"
-        ],
-        "en": [
-          "Brad Mehldau Trio"
-        ]
+        "tr": ["Brad Mehldau Trio"],
+        "en": ["Brad Mehldau Trio"]
       },
       "genre": {
         "tr": "Caz",
@@ -11835,12 +10243,8 @@
     {
       "id": "event_365",
       "artist": {
-        "tr": [
-          "Chris Botti & CSO Orkestrası"
-        ],
-        "en": [
-          "Chris Botti & CSO Orkestrası"
-        ]
+        "tr": ["Chris Botti & CSO Orkestrası"],
+        "en": ["Chris Botti & CSO Orkestrası"]
       },
       "genre": {
         "tr": "Caz",
@@ -11867,12 +10271,8 @@
     {
       "id": "event_366",
       "artist": {
-        "tr": [
-          "Chris Botti & CSO Orkestrası"
-        ],
-        "en": [
-          "Chris Botti & CSO Orkestrası"
-        ]
+        "tr": ["Chris Botti & CSO Orkestrası"],
+        "en": ["Chris Botti & CSO Orkestrası"]
       },
       "genre": {
         "tr": "Caz",
@@ -11899,12 +10299,8 @@
     {
       "id": "event_367",
       "artist": {
-        "tr": [
-          "Jethro Tull"
-        ],
-        "en": [
-          "Jethro Tull"
-        ]
+        "tr": ["Jethro Tull"],
+        "en": ["Jethro Tull"]
       },
       "genre": {
         "tr": "Rock",
@@ -11931,14 +10327,8 @@
     {
       "id": "event_368",
       "artist": {
-        "tr": [
-          "Poil + Ueda",
-          "Senyawa"
-        ],
-        "en": [
-          "Poil + Ueda",
-          "Senyawa"
-        ]
+        "tr": ["Poil + Ueda", "Senyawa"],
+        "en": ["Poil + Ueda", "Senyawa"]
       },
       "genre": {
         "tr": "Deneysel - Avant Gard",
@@ -11965,12 +10355,8 @@
     {
       "id": "event_369",
       "artist": {
-        "tr": [
-          "Alex Skolnick Trio"
-        ],
-        "en": [
-          "Alex Skolnick Trio"
-        ]
+        "tr": ["Alex Skolnick Trio"],
+        "en": ["Alex Skolnick Trio"]
       },
       "genre": {
         "tr": "Caz",
@@ -11997,12 +10383,8 @@
     {
       "id": "event_370",
       "artist": {
-        "tr": [
-          "[Ahmed] أحمد"
-        ],
-        "en": [
-          "[Ahmed] أحمد"
-        ]
+        "tr": ["[Ahmed] أحمد"],
+        "en": ["[Ahmed] أحمد"]
       },
       "genre": {
         "tr": "Deneysel - Avant Gard",
@@ -12029,14 +10411,8 @@
     {
       "id": "event_371",
       "artist": {
-        "tr": [
-          "hackedepicciotto",
-          "Rafael Toral"
-        ],
-        "en": [
-          "hackedepicciotto",
-          "Rafael Toral"
-        ]
+        "tr": ["hackedepicciotto", "Rafael Toral"],
+        "en": ["hackedepicciotto", "Rafael Toral"]
       },
       "genre": {
         "tr": "Deneysel - Avant Gard",
@@ -12063,12 +10439,8 @@
     {
       "id": "event_372",
       "artist": {
-        "tr": [
-          "Hiromi's Sonicwonder"
-        ],
-        "en": [
-          "Hiromi's Sonicwonder"
-        ]
+        "tr": ["Hiromi's Sonicwonder"],
+        "en": ["Hiromi's Sonicwonder"]
       },
       "genre": {
         "tr": "Caz",
@@ -12095,12 +10467,8 @@
     {
       "id": "event_373",
       "artist": {
-        "tr": [
-          "Rymden"
-        ],
-        "en": [
-          "Rymden"
-        ]
+        "tr": ["Rymden"],
+        "en": ["Rymden"]
       },
       "genre": {
         "tr": "Caz",
@@ -12127,12 +10495,8 @@
     {
       "id": "event_374",
       "artist": {
-        "tr": [
-          "Bohren & Der Club of Gore"
-        ],
-        "en": [
-          "Bohren & Der Club of Gore"
-        ]
+        "tr": ["Bohren & Der Club of Gore"],
+        "en": ["Bohren & Der Club of Gore"]
       },
       "genre": {
         "tr": "Deneysel - Avant Gard",
@@ -12159,12 +10523,8 @@
     {
       "id": "event_375",
       "artist": {
-        "tr": [
-          "Victor Wooten & The Wooten Brothers"
-        ],
-        "en": [
-          "Victor Wooten & The Wooten Brothers"
-        ]
+        "tr": ["Victor Wooten & The Wooten Brothers"],
+        "en": ["Victor Wooten & The Wooten Brothers"]
       },
       "genre": {
         "tr": "Caz",

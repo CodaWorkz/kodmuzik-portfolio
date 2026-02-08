@@ -89,6 +89,32 @@ function getArtistName(artist, lang) {
 }
 
 /**
+ * Get genres as an array (handles both string and array formats)
+ * @param {Object} genre - Genre object with tr and en properties
+ * @param {string} lang - Language code ('tr' or 'en')
+ * @returns {Array} Array of genre strings
+ */
+function getGenresArray(genre, lang) {
+  const value = genre[lang];
+  if (Array.isArray(value)) {
+    return value;
+  }
+  return [value];
+}
+
+/**
+ * Check if an event's genre matches the target genre
+ * Handles both string and array genre formats
+ * @param {Object} event - Event object
+ * @param {string} targetGenre - Genre to match (in English)
+ * @returns {boolean} True if event has the target genre
+ */
+function genreMatches(event, targetGenre) {
+  const genres = getGenresArray(event.genre, 'en');
+  return genres.includes(targetGenre);
+}
+
+/**
  * Read filter values from URL query parameters
  * @returns {Object} Filter values object with artist, genre, year, venue
  */
@@ -339,7 +365,7 @@ function getFilteredEvents() {
     }
 
     // Genre filter
-    if (genreFilter && event.genre.en !== genreFilter) {
+    if (genreFilter && !genreMatches(event, genreFilter)) {
       return false;
     }
 
@@ -402,7 +428,7 @@ function updateCascadingFilters() {
     }
 
     // Check genre filter
-    if (genreFilter && event.genre.en !== genreFilter) {
+    if (genreFilter && !genreMatches(event, genreFilter)) {
       matchesFilters = false;
     }
 
@@ -413,8 +439,10 @@ function updateCascadingFilters() {
 
     if (matchesFilters) {
       // Add available options for other filters
-      if (!genreFilter || event.genre.en === genreFilter) {
-        availableGenres.add(event.genre.en);
+      if (!genreFilter || genreMatches(event, genreFilter)) {
+        // Add all genres from this event to available genres
+        const eventGenres = getGenresArray(event.genre, 'en');
+        eventGenres.forEach(g => availableGenres.add(g));
       }
       if (
         !yearFilter ||

@@ -5097,8 +5097,8 @@
         "en": ["Ben Frost", "Aluk Todolo"]
       },
       "genre": {
-        "tr": "Alternatif",
-        "en": "Alternative"
+        "tr": ["Alternatif", "Elektronik"],
+        "en": ["Alternative", "Electronic"]
       },
       "date": "23.04.2015",
       "venue": {

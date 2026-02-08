@@ -23,6 +23,10 @@ KOD Müzik is a professional portfolio site featuring a comprehensive events dat
 - **URL Query Parameters**: Share pre-filtered event results with clients
   - Example: `/etkinlikler?genre=Jazz&year=2020&venue=CRR`
   - Filter state preserved when switching languages
+- **Multiple Genres Support**: Events can belong to multiple genres
+  - Clean dropdown with only base genres (no combined entries)
+  - Event appears in all applicable genre filters
+  - Backward compatible with single genre format
 - **Responsive Design**: Mobile-first approach with optimized layouts
 - **CSS-Only Background Logo**: Performance-optimized watermark system
 - **Custom Select Components**: Accessible dropdown filters with keyboard navigation
@@ -140,6 +144,20 @@ Edit `kod_muzik_events.json` following this structure:
 }
 ```
 
+**Multiple Genres Support:**
+Events can belong to multiple genres. Use an array instead of a single string:
+```json
+{
+  "genre": {
+    "tr": ["Alternatif", "Elektronik"],
+    "en": ["Alternative", "Electronic"]
+  }
+}
+```
+- Event appears in all selected genre filters
+- Dropdown remains clean with only base genres (no combined entries)
+- Backward compatible with single genre strings
+
 #### Modifying Styles
 - Global styles: Edit `css/main.css`
 - Events page styles: Edit `css/events.css`
@@ -199,7 +217,12 @@ The language switcher updates dynamically when filters change, ensuring query pa
 ### Cascading Filters
 Filters intelligently update based on available options. For example, selecting a genre shows only years and venues that have events in that genre.
 
-**Files**: `js/events.js` (lines 278-341)
+**Files**: `js/events.js` (lines 371-448)
+
+### Multiple Genres Support
+Events can belong to multiple genres without cluttering the dropdown menu. Helper functions normalize both string and array formats, allowing flexible genre assignments while maintaining a clean UI.
+
+**Files**: `js/events.js` (lines 91-115, 342, 405, 416-420)
 
 ### Mobile-Optimized Background Logo
 CSS-only implementation using pseudo-elements for better performance.

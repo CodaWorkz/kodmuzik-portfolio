@@ -47,7 +47,7 @@
 
 .filters-container {
   display: grid;
-  grid-template-columns: minmax(153px, 0.85fr) minmax(119px, 0.85fr) minmax(216px, 1.2fr) minmax(180px, 1fr); /* Genre: -15%, Year: -15%, Venue: +20%, Artist: normal */
+  grid-template-columns: 21.8% 21.8% 30.8% 25.6%; /* Genre: -15%, Year: -15%, Venue: +20%, Artist: normal (normalized percentages) */
   gap: 1.5rem;
   align-items: end;
   padding: 1.25rem 2rem; /* internal padding for the glass panel */
@@ -194,7 +194,7 @@
   background-color: transparent;
 }
 
-/* Year filter: let grid control width, reduced by 15% via minmax() in grid */
+/* Year filter: let grid control width, reduced by 15% via percentage in grid */
 #year-filter {
   width: 100%; /* fill grid column */
   align-self: stretch; /* use full grid column width */

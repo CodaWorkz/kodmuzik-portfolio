@@ -1,7 +1,7 @@
 /* ================================================
    events.css - Events Page Specific Styles
    KOD Müzik Website
-   
+
    Contents:
    1. Events Header
    2. Filters Section
@@ -9,6 +9,11 @@
    4. Loading & Error States
    5. Responsive Overrides
    ================================================ */
+
+/* Fix: Ensure navbar always uses Anton font */
+.menu-link {
+  font-family: var(--font-display) !important;
+}
 
 /* 1. Events Header
    ================================================ */

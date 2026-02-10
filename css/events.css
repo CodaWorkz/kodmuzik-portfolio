@@ -72,25 +72,25 @@
   gap: 0.5rem;
 }
 
-/* Specific widths for each filter */
+/* Specific widths for each filter - percentage based */
 .filter-group:nth-child(1) {
-  /* Genre */
-  flex: 0 0 180px;
+  /* Genre: 25% */
+  flex: 0 0 25%;
 }
 
 .filter-group:nth-child(2) {
-  /* Year */
-  flex: 0 0 160px;
+  /* Year: 20% */
+  flex: 0 0 20%;
 }
 
 .filter-group:nth-child(3) {
-  /* Venue */
-  flex: 0 0 228px;
+  /* Venue: 30% */
+  flex: 0 0 30%;
 }
 
 .filter-group:nth-child(4) {
-  /* Artist - fills remaining space */
-  flex: 1 1 auto;
+  /* Artist: 25% */
+  flex: 0 0 25%;
 }
 
 .filter-label {

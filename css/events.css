@@ -47,7 +47,7 @@
 
 .filters-container {
   display: grid;
-  grid-template-columns: 0.85fr 0.85fr 1.2fr 1fr; /* Genre: -15%, Year: -15%, Venue: +20%, Artist: normal */
+  grid-template-columns: minmax(153px, 0.85fr) minmax(119px, 0.85fr) minmax(216px, 1.2fr) minmax(180px, 1fr); /* Genre: -15%, Year: -15%, Venue: +20%, Artist: normal */
   gap: 1.5rem;
   align-items: end;
   padding: 1.25rem 2rem; /* internal padding for the glass panel */
@@ -194,13 +194,10 @@
   background-color: transparent;
 }
 
-/* Year filter width constraints: compact to content while keeping padding */
+/* Year filter: let grid control width, reduced by 15% via minmax() in grid */
 #year-filter {
-  /* Middle-ground sizing: compact but not cramped, reduced by 15% */
-  width: fit-content;
-  min-width: 119px;
-  max-width: 136px;
-  align-self: flex-start; /* prevent stretching in .filter-group (flex column) */
+  width: 100%; /* fill grid column */
+  align-self: stretch; /* use full grid column width */
 }
 
 /* Keep search input consistent with others */

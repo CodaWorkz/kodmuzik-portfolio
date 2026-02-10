@@ -52,7 +52,8 @@
   padding: 1.25rem 2rem; /* internal padding for the glass panel */
 
   /* Glassmorphism panel to match cards */
-  background: linear-gradient(
+  background:
+    linear-gradient(
       to bottom right,
       rgba(255, 255, 255, 0.06),
       rgba(255, 255, 255, 0.015)
@@ -74,7 +75,7 @@
 /* Specific widths for each filter */
 .filter-group:nth-child(1) {
   /* Genre */
-  flex: 0 0 130px;
+  flex: 0 0 150px;
 }
 
 .filter-group:nth-child(2) {
@@ -84,7 +85,7 @@
 
 .filter-group:nth-child(3) {
   /* Venue */
-  flex: 0 0 220px;
+  flex: 0 0 228px;
 }
 
 .filter-group:nth-child(4) {
@@ -279,7 +280,8 @@
 }
 
 .event-card {
-  background: linear-gradient(
+  background:
+    linear-gradient(
       to bottom right,
       rgba(255, 255, 255, 0.06),
       rgba(255, 255, 255, 0.015)
@@ -302,7 +304,8 @@
 }
 
 .event-card:hover {
-  background: linear-gradient(
+  background:
+    linear-gradient(
       to bottom right,
       rgba(255, 255, 255, 0.08),
       rgba(255, 255, 255, 0.02)
@@ -516,7 +519,10 @@
 /* Five-column layout for filters on wider viewports */
 @media (min-width: 1024px) {
   .filters-container {
-    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr) minmax(0, 1fr) auto;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr) minmax(
+        0,
+        1fr
+      ) auto;
   }
 
   #year-filter {

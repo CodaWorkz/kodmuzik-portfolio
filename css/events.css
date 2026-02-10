@@ -47,7 +47,7 @@
 
 .filters-container {
   display: grid;
-  grid-template-columns: 0.9fr 0.75fr 1.35fr 1fr;
+  grid-template-columns: 0.72fr 0.9fr 1.35fr 1fr;
   gap: 1.5rem;
   align-items: end;
   padding: 1.25rem 2rem; /* internal padding for the glass panel */

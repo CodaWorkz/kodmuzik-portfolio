@@ -391,54 +391,40 @@
 /* 5. Responsive Overrides */
 @media (max-width: 767px) {
   .filters-container {
-    display: grid !important;
-    grid-template-columns: 2.5fr 1.5fr !important; /* TÜR | YIL */
-    column-gap: 0.5rem !important; /* keep columns comfortably apart */
-    row-gap: 0.9rem !important; /* increase vertical space between boxes */
-    padding: 1rem 1rem !important;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding: 1rem;
   }
 
-  /* Allow grid items and inner selects to shrink within columns */
-  .filters-container > .filter-group {
-    min-width: 0;
-  }
-  .filters-container .custom-select {
-    min-width: 0;
-    width: 100%;
-  }
-  .filters-container .filter-input {
-    min-width: 0;
-    width: 100%;
+  /* Mobile: Genre and Year on first row */
+  .filter-group:nth-child(1) {
+    flex: 0 0 62%;
   }
 
-  /* Bring each label closer to its own field */
-  .filter-group {
-    gap: 0.2rem !important;
+  .filter-group:nth-child(2) {
+    flex: 0 0 35%;
   }
 
-  /* Year (YIL) select: remove desktop min/max so it fits the 1fr column */
-  #year-filter {
-    min-width: 0 !important;
-    max-width: none !important;
-    width: 100% !important;
-    align-self: stretch !important;
-  }
-
-  /* Second row: Venue spans full width */
+  /* Mobile: Venue spans full width on second row */
   .filter-group:nth-child(3) {
-    grid-column: 1 / -1;
+    flex: 0 0 100%;
   }
 
-  /* Third row: Artist spans full width */
+  /* Mobile: Artist spans full width on third row */
   .filter-group:nth-child(4) {
-    grid-column: 1 / -1;
+    flex: 0 0 100%;
   }
 
-  /* Fourth row: Actions span full width */
+  /* Mobile: Actions span full width on fourth row */
   .filter-actions {
-    grid-column: 1 / -1;
+    flex: 0 0 100%;
     justify-content: center;
     margin-top: 0.5rem;
+    margin-left: 0;
+  }
+
+  .filter-group {
+    gap: 0.2rem;
   }
 
   /* Compact mobile sizing */
@@ -517,21 +503,6 @@
 }
 
 /* Five-column layout for filters on wider viewports */
-@media (min-width: 1024px) {
-  .filters-container {
-    grid-template-columns:
-      minmax(0, 1fr) auto minmax(0, 1fr) minmax(0, 1fr)
-      auto;
-  }
-
-  #year-filter {
-    justify-self: start;
-  }
-  .filter-actions {
-    justify-self: start;
-  }
-}
-
 /* Breakpoint 7: Small Vertical Tablets (>=768px and <1024px and portrait) */
 @media (min-width: 768px) and (max-width: 1023px) and (orientation: portrait) {
   .events-grid {

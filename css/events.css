@@ -46,10 +46,9 @@
 }
 
 .filters-container {
-  display: grid;
-  grid-template-columns: 0.72fr 0.9fr 1.35fr 1fr;
-  gap: 1.5rem;
-  align-items: end;
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
   padding: 1.25rem 2rem; /* internal padding for the glass panel */
 
   /* Glassmorphism panel to match cards */
@@ -72,6 +71,27 @@
   gap: 0.5rem;
 }
 
+/* Specific widths for each filter */
+.filter-group:nth-child(1) {
+  /* Genre */
+  flex: 0 0 180px;
+}
+
+.filter-group:nth-child(2) {
+  /* Year */
+  flex: 0 0 160px;
+}
+
+.filter-group:nth-child(3) {
+  /* Venue */
+  flex: 0 0 220px;
+}
+
+.filter-group:nth-child(4) {
+  /* Artist - fills remaining space */
+  flex: 1 1 auto;
+}
+
 .filter-label {
   font-size: 0.75rem;
   color: var(--color-muted);
@@ -89,6 +109,7 @@
   font-size: 0.9rem;
   transition: var(--transition-speed);
   font-family: var(--font-primary);
+  width: 100%;
 }
 
 /* Placeholder color to match the rest of the filters */
@@ -123,6 +144,7 @@
 /* Custom Select Dropdown */
 .custom-select {
   position: relative;
+  width: 100%;
 }
 
 .custom-select-trigger {
@@ -210,6 +232,8 @@
   gap: 1rem;
   align-items: center;
   flex-wrap: wrap;
+  flex: 0 0 auto;
+  margin-left: auto;
 }
 
 .clear-filters {

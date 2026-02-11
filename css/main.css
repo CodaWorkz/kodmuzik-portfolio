@@ -519,7 +519,9 @@ a:focus-visible {
 
 @media (min-width: 769px) {
   .discogs-link {
-    display: block;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
     position: fixed;
     bottom: 2rem;
     right: 2rem;
@@ -532,7 +534,7 @@ a:focus-visible {
   .discogs-link:hover,
   .discogs-link:focus-visible {
     opacity: 1;
-    transform: scale(1.1);
+    transform: scale(1.05);
   }
 
   .discogs-link:focus-visible {
@@ -542,8 +544,26 @@ a:focus-visible {
 
   .discogs-link svg {
     display: block;
-    width: 40px;
-    height: 40px;
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+  }
+
+  .discogs-text {
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    font-weight: 300;
+    white-space: nowrap;
+  }
+
+  /* Show Turkish text only when html lang is tr */
+  html[lang="tr"] .discogs-text-en {
+    display: none;
+  }
+
+  /* Show English text only when html lang is en */
+  html[lang="en"] .discogs-text-tr {
+    display: none;
   }
 }
 

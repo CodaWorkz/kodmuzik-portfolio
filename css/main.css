@@ -511,6 +511,42 @@ a:focus-visible {
   outline-offset: 4px;
 }
 
+/* Discogs Link (Desktop Only)
+   ================================================ */
+.discogs-link {
+  display: none; /* Hidden by default (mobile) */
+}
+
+@media (min-width: 769px) {
+  .discogs-link {
+    display: block;
+    position: fixed;
+    bottom: 2rem;
+    left: 2rem;
+    z-index: 100;
+    color: var(--color-text);
+    opacity: 0.6;
+    transition: opacity var(--transition-speed), transform var(--transition-speed);
+  }
+
+  .discogs-link:hover,
+  .discogs-link:focus-visible {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+
+  .discogs-link:focus-visible {
+    outline: 2px dashed var(--color-accent);
+    outline-offset: 4px;
+  }
+
+  .discogs-link svg {
+    display: block;
+    width: 40px;
+    height: 40px;
+  }
+}
+
 /* 8. Responsive Design
    ================================================ */
 

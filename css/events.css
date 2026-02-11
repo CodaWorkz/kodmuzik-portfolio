@@ -12,7 +12,7 @@
 
 /* Fix: Ensure navbar always uses Anton font - v2 cache bust */
 .menu-link {
-  font-family: var(--font-display) !important;
+  font-family: "Anton", sans-serif !important;
 }
 
 /* 1. Events Header

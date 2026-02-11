@@ -522,8 +522,8 @@ a:focus-visible {
     display: block;
     position: fixed;
     bottom: 2rem;
-    left: 2rem;
-    z-index: 100;
+    right: 2rem;
+    z-index: 1001;
     color: var(--color-text);
     opacity: 0.6;
     transition: opacity var(--transition-speed), transform var(--transition-speed);

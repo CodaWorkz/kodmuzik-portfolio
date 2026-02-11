@@ -211,7 +211,7 @@ p {
 .menu-link {
   position: relative;
   padding-left: 18px; /* space for the indicator bar */
-  font-family: var(--font-display);
+  font-family: var(--font-display) !important;
   font-size: 1.2rem;
   letter-spacing: 1px;
   color: var(--menu-color-inactive);

@@ -188,7 +188,7 @@ p {
   align-items: baseline;
   white-space: nowrap;
   overflow: hidden; /* ensure no overflow beyond logo width */
-  font-family: var(--font-display);
+  font-family: "TASA Orbiter", sans-serif;
   color: var(--color-accent);
   font-size: 22px; /* scaled to fit 8 letters within 130px safely */
   line-height: 1;

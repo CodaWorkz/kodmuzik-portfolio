@@ -1,8 +1,36 @@
-# robots.txt for KOD Müzik Portfolio
-# Allow all search engines to crawl all pages
+# robots.txt for KOD Müzik
+# https://www.kodmuzik.com
 
 User-agent: *
-Allow: /
 
-# Sitemap location (if you add one in the future)
-# Sitemap: https://yourdomain.com/sitemap.xml
+# Allow all public pages
+Allow: /
+Allow: /en/
+Allow: /etkinlikler/
+Allow: /gelecek-etkinlikler/
+Allow: /hakkimizda/
+Allow: /iletisim/
+Allow: /en/etkinlikler/
+Allow: /en/gelecek-etkinlikler/
+Allow: /en/hakkimizda/
+Allow: /en/iletisim/
+
+# Disallow form handlers and backend files
+Disallow: /contact-handler.php
+Disallow: /*.json$
+
+# Disallow legacy/old content
+Disallow: /legacy-events-app/
+
+# Disallow development/config files
+Disallow: /.git/
+Disallow: /.vscode/
+Disallow: /node_modules/
+Disallow: /package.json
+Disallow: /vercel.json
+
+# Sitemap location
+# Sitemap: https://www.kodmuzik.com/sitemap.xml
+
+# Crawl delay (optional - be polite to server)
+Crawl-delay: 1

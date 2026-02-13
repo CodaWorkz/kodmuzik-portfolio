@@ -64,7 +64,7 @@ const translations = {
  * @returns {Date} JavaScript Date object
  */
 function parseEventDate(dateString) {
-  const parts = dateString.split('.');
+  const parts = dateString.split(".");
   if (parts.length === 3) {
     const day = parseInt(parts[0], 10);
     const month = parseInt(parts[1], 10) - 1; // JavaScript months are 0-indexed
@@ -83,9 +83,9 @@ function parseEventDate(dateString) {
 function getArtistName(artist, lang) {
   const value = artist[lang];
   if (Array.isArray(value)) {
-    return value.join(', ');
+    return value.join(", ");
   }
-  return value || '';
+  return value || "";
 }
 
 /**
@@ -110,7 +110,7 @@ function getGenresArray(genre, lang) {
  * @returns {boolean} True if event has the target genre
  */
 function genreMatches(event, targetGenre) {
-  const genres = getGenresArray(event.genre, 'en');
+  const genres = getGenresArray(event.genre, "en");
   return genres.includes(targetGenre);
 }
 
@@ -121,10 +121,10 @@ function genreMatches(event, targetGenre) {
 function readFiltersFromURL() {
   const params = new URLSearchParams(window.location.search);
   return {
-    artist: params.get('artist') || '',
-    genre: params.get('genre') || '',
-    year: params.get('year') || '',
-    venue: params.get('venue') || ''
+    artist: params.get("artist") || "",
+    genre: params.get("genre") || "",
+    year: params.get("year") || "",
+    venue: params.get("venue") || "",
   };
 }
 
@@ -133,28 +133,28 @@ function readFiltersFromURL() {
  * Updates the URL without reloading the page
  */
 function writeFiltersToURL() {
-  const artistFilter = document.getElementById('artist-filter').value;
-  const genreFilter = document.getElementById('genre-filter').dataset.value;
-  const yearFilter = document.getElementById('year-filter').dataset.value;
-  const venueFilter = document.getElementById('venue-filter').dataset.value;
+  const artistFilter = document.getElementById("artist-filter").value;
+  const genreFilter = document.getElementById("genre-filter").dataset.value;
+  const yearFilter = document.getElementById("year-filter").dataset.value;
+  const venueFilter = document.getElementById("venue-filter").dataset.value;
 
   const params = new URLSearchParams();
 
   // Only add non-empty filters to URL
-  if (artistFilter) params.set('artist', artistFilter);
-  if (genreFilter) params.set('genre', genreFilter);
-  if (yearFilter) params.set('year', yearFilter);
-  if (venueFilter) params.set('venue', venueFilter);
+  if (artistFilter) params.set("artist", artistFilter);
+  if (genreFilter) params.set("genre", genreFilter);
+  if (yearFilter) params.set("year", yearFilter);
+  if (venueFilter) params.set("venue", venueFilter);
 
   // Update URL without reloading the page
   const newURL = params.toString()
     ? `${window.location.pathname}?${params.toString()}`
     : window.location.pathname;
 
-  window.history.replaceState({}, '', newURL);
+  window.history.replaceState({}, "", newURL);
 
   // Update language switcher links to include new query parameters
-  if (typeof updateLanguageLinks === 'function') {
+  if (typeof updateLanguageLinks === "function") {
     updateLanguageLinks();
   }
 }
@@ -167,15 +167,15 @@ function applyURLFiltersToUI() {
   const urlFilters = readFiltersFromURL();
 
   // Apply artist filter
-  const artistInput = document.getElementById('artist-filter');
+  const artistInput = document.getElementById("artist-filter");
   if (artistInput && urlFilters.artist) {
     artistInput.value = urlFilters.artist;
   }
 
   // Apply custom select filters
-  applyCustomSelectValue('genre-filter', urlFilters.genre);
-  applyCustomSelectValue('year-filter', urlFilters.year);
-  applyCustomSelectValue('venue-filter', urlFilters.venue);
+  applyCustomSelectValue("genre-filter", urlFilters.genre);
+  applyCustomSelectValue("year-filter", urlFilters.year);
+  applyCustomSelectValue("venue-filter", urlFilters.venue);
 }
 
 /**
@@ -191,7 +191,7 @@ function applyCustomSelectValue(selectId, value) {
 
   // Find the option with the matching value
   const option = customSelect.querySelector(
-    `.custom-select-option[data-value="${value}"]`
+    `.custom-select-option[data-value="${value}"]`,
   );
 
   if (option) {
@@ -199,7 +199,7 @@ function applyCustomSelectValue(selectId, value) {
     customSelect.dataset.value = value;
 
     // Update the label text
-    const label = customSelect.querySelector('.custom-select-label');
+    const label = customSelect.querySelector(".custom-select-label");
     if (label) {
       label.textContent = option.textContent;
     }
@@ -221,17 +221,16 @@ async function loadEvents() {
     applyFilters();
   } catch (error) {
     console.error("Error loading events:", error);
-    document.getElementById(
-      "events-grid"
-    ).innerHTML = `<div class="error">${translations[currentLang].error}</div>`;
+    document.getElementById("events-grid").innerHTML =
+      `<div class="error">${translations[currentLang].error}</div>`;
   }
 }
 
 // 3. Language & Localization
 // ================================================
 function detectLanguage() {
-  // Use the same logic as main.js
-  currentLang = window.location.pathname.startsWith("/en") ? "en" : "tr";
+  // Use shared utility from utils.js
+  currentLang = detectCurrentLanguage();
   updateEventPageLanguage();
 }
 
@@ -292,12 +291,12 @@ function populateFilters(meta) {
 
   // Populate custom genre filter
   const genreOptions = document.querySelector(
-    "#genre-filter .custom-select-options"
+    "#genre-filter .custom-select-options",
   );
   genreOptions.innerHTML = createCustomOption(
     "",
     translations[currentLang].all,
-    translations[currentLang].all
+    translations[currentLang].all,
   );
   meta.genres.forEach((g) => {
     genreOptions.innerHTML += createCustomOption(g.en, g.tr, g.en);
@@ -305,16 +304,18 @@ function populateFilters(meta) {
 
   // Populate custom year filter
   const years = [
-    ...new Set(eventsData.map((event) => parseEventDate(event.date).getFullYear())),
+    ...new Set(
+      eventsData.map((event) => parseEventDate(event.date).getFullYear()),
+    ),
   ].sort((a, b) => b - a);
   window.allYears = years;
   const yearOptions = document.querySelector(
-    "#year-filter .custom-select-options"
+    "#year-filter .custom-select-options",
   );
   yearOptions.innerHTML = createCustomOption(
     "",
     translations[currentLang].all,
-    translations[currentLang].all
+    translations[currentLang].all,
   );
   years.forEach((year) => {
     yearOptions.innerHTML += createCustomOption(year, year, year);
@@ -322,13 +323,13 @@ function populateFilters(meta) {
 
   // Populate custom venue filter
   const venueOptions = document.querySelector(
-    "#venue-filter .custom-select-options"
+    "#venue-filter .custom-select-options",
   );
   if (venueOptions) {
     venueOptions.innerHTML = createCustomOption(
       "",
       translations[currentLang].all,
-      translations[currentLang].all
+      translations[currentLang].all,
     );
     meta.venues.forEach((v) => {
       venueOptions.innerHTML += createCustomOption(v.en, v.tr, v.en);
@@ -358,8 +359,8 @@ function getFilteredEvents() {
     // Artist filter - search in both languages
     if (
       artistFilter &&
-      !getArtistName(event.artist, 'tr').toLowerCase().includes(artistFilter) &&
-      !getArtistName(event.artist, 'en').toLowerCase().includes(artistFilter)
+      !getArtistName(event.artist, "tr").toLowerCase().includes(artistFilter) &&
+      !getArtistName(event.artist, "en").toLowerCase().includes(artistFilter)
     ) {
       return false;
     }
@@ -413,8 +414,8 @@ function updateCascadingFilters() {
     // Check artist filter
     if (
       artistFilter &&
-      !getArtistName(event.artist, 'tr').toLowerCase().includes(artistFilter) &&
-      !getArtistName(event.artist, 'en').toLowerCase().includes(artistFilter)
+      !getArtistName(event.artist, "tr").toLowerCase().includes(artistFilter) &&
+      !getArtistName(event.artist, "en").toLowerCase().includes(artistFilter)
     ) {
       matchesFilters = false;
     }
@@ -441,8 +442,8 @@ function updateCascadingFilters() {
       // Add available options for other filters
       if (!genreFilter || genreMatches(event, genreFilter)) {
         // Add all genres from this event to available genres
-        const eventGenres = getGenresArray(event.genre, 'en');
-        eventGenres.forEach(g => availableGenres.add(g));
+        const eventGenres = getGenresArray(event.genre, "en");
+        eventGenres.forEach((g) => availableGenres.add(g));
       }
       if (
         !yearFilter ||
@@ -504,12 +505,13 @@ function displayEvents(events) {
           year: "numeric",
           month: "long",
           day: "numeric",
-        }
+        },
       );
 
-      const seriesValue = (event.series && event.series[currentLang]
-        ? String(event.series[currentLang]).trim()
-        : "");
+      const seriesValue =
+        event.series && event.series[currentLang]
+          ? String(event.series[currentLang]).trim()
+          : "";
 
       return `
       <div class="event-card">
@@ -551,7 +553,7 @@ function setupCustomSelects() {
   document.querySelectorAll(".custom-select").forEach((customSelect) => {
     const trigger = customSelect.querySelector(".custom-select-trigger");
     const optionsContainer = customSelect.querySelector(
-      ".custom-select-options"
+      ".custom-select-options",
     );
     const label = trigger.querySelector(".custom-select-label");
 
@@ -642,7 +644,7 @@ function initializeEventListeners() {
     document.querySelectorAll(".custom-select").forEach((select) => {
       select.dataset.value = "";
       const allText = select.querySelector(
-        '.custom-select-option[data-value=""]'
+        '.custom-select-option[data-value=""]',
       ).dataset[currentLang];
       select.querySelector(".custom-select-label").textContent = allText;
     });
@@ -709,7 +711,10 @@ function fitSeriesOneLine(node) {
   node.style.fontSize = baseSize + "px";
 
   // Reduce font-size until content fits on one line
-  while (node.scrollWidth > node.clientWidth + 0.5 && iterations < maxIterations) {
+  while (
+    node.scrollWidth > node.clientWidth + 0.5 &&
+    iterations < maxIterations
+  ) {
     scale *= step;
     const next = Math.max(minPx, baseSize * scale);
     node.style.fontSize = next + "px";
@@ -722,13 +727,13 @@ function fitSeriesOneLine(node) {
 // Long title sizing (shrink by 20% if >30 chars)
 // ================================================
 function applyLongTitleSizing() {
-  const titles = document.querySelectorAll('.event-artist-name');
+  const titles = document.querySelectorAll(".event-artist-name");
   titles.forEach((node) => {
-    const text = (node.textContent || '').trim();
+    const text = (node.textContent || "").trim();
     if (text.length > 30) {
-      node.classList.add('is-long');
+      node.classList.add("is-long");
     } else {
-      node.classList.remove('is-long');
+      node.classList.remove("is-long");
     }
   });
 }

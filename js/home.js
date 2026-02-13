@@ -54,9 +54,9 @@ let isTransitioning = false;
 let touchStartX = 0;
 let touchStartY = 0;
 let sliderWrapper = null;
-const currentLocale = window.location.pathname.startsWith("/en") ? "en" : "tr";
+const currentLocale = detectCurrentLanguage();
 const prefersReducedMotion = window.matchMedia(
-  "(prefers-reduced-motion: reduce)"
+  "(prefers-reduced-motion: reduce)",
 ).matches;
 
 // 3. DOM Building
@@ -86,7 +86,7 @@ function createSlide(data, index) {
   slide.className = "slide";
   slide.setAttribute(
     "aria-label",
-    `Slide ${index + 1} of ${slideData.length}: ${data.artist}`
+    `Slide ${index + 1} of ${slideData.length}: ${data.artist}`,
   );
   slide.setAttribute("aria-hidden", index !== 0 ? "true" : "false");
 
@@ -180,7 +180,9 @@ function addEventListeners() {
   sliderWrapper.addEventListener("touchstart", handleTouchStart, {
     passive: true,
   });
-  sliderWrapper.addEventListener("touchmove", handleTouchMove, { passive: true });
+  sliderWrapper.addEventListener("touchmove", handleTouchMove, {
+    passive: true,
+  });
   sliderWrapper.addEventListener("touchend", handleTouchEnd, { passive: true });
 
   // Keyboard

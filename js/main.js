@@ -10,6 +10,8 @@
    5. Initialization
    ================================================ */
 
+// Note: getLocalePrefix() is now imported from utils.js
+
 // 1. Helper Functions
 // ================================================
 
@@ -48,15 +50,6 @@ function isMatch(currentPath, linkPath) {
 
 // 2. Path Management & Routing (TR-first logic)
 // ================================================
-
-/**
- * Gets the locale prefix from the current path.
- * English is at /en, Turkish (default) is at the root.
- * @returns {string} '/en' for English pages, '' for Turkish pages.
- */
-function getLocalePrefix() {
-  return getCurrentPath().startsWith("/en") ? "/en" : "";
-}
 
 /**
  * Updates menu links to be prefixed with the current locale if necessary.
@@ -151,23 +144,27 @@ function updateLanguageLinks() {
 // - Single tap (touch) should navigate to the other language
 // - Keep keyboard accessibility and avoid interfering with existing logic
 function enhanceLanguageSwitcher() {
-  const switcher = document.querySelector('.lang-switcher');
+  const switcher = document.querySelector(".lang-switcher");
   if (!switcher) return;
 
-  const tr = document.getElementById('lang-tr');
-  const en = document.getElementById('lang-en');
+  const tr = document.getElementById("lang-tr");
+  const en = document.getElementById("lang-en");
   if (!tr || !en) return;
 
   // Detect environments where hover is unreliable or absent
-  const canHover = window.matchMedia && window.matchMedia('(hover: hover)').matches;
-  const coarsePointer = window.matchMedia && window.matchMedia('(pointer: coarse)').matches;
+  const canHover =
+    window.matchMedia && window.matchMedia("(hover: hover)").matches;
+  const coarsePointer =
+    window.matchMedia && window.matchMedia("(pointer: coarse)").matches;
 
   // For touch/coarse pointer devices, make a single tap on the visible (active) link
   // navigate to the other language immediately.
   if (!canHover || coarsePointer) {
     const handler = (ev) => {
       // Get the inactive link dynamically to avoid stale references
-      const isENActive = en.classList.contains('active') || en.getAttribute('aria-current') === 'true';
+      const isENActive =
+        en.classList.contains("active") ||
+        en.getAttribute("aria-current") === "true";
       const inactiveLink = isENActive ? tr : en;
 
       // Only redirect if the tap/click target is within the switcher
@@ -184,7 +181,7 @@ function enhanceLanguageSwitcher() {
 
     // Use a single click handler for simplicity and reliability
     // Click events work on both touch and mouse devices
-    switcher.addEventListener('click', handler);
+    switcher.addEventListener("click", handler);
   }
 
   // Ensure keyboard users can reveal and activate the hidden option using focus

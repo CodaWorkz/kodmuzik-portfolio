@@ -10,11 +10,6 @@
    5. Responsive Overrides
    ================================================ */
 
-/* Fix: Ensure navbar always uses Anton font - v2 cache bust */
-.menu-link {
-  font-family: "Anton", sans-serif !important;
-}
-
 /* 1. Events Header
    ================================================ */
 .events-header {
@@ -219,16 +214,15 @@
   cursor: not-allowed;
   background-color: transparent;
 }
-
 /* Year filter: let grid control width, reduced by 15% via percentage in grid */
-#year-filter {
+.year-filter {
   width: 100%; /* fill grid column */
   align-self: stretch; /* use full grid column width */
 }
 
 /* Keep search input consistent with others */
-#artist-filter.filter-input {
-  background-color: var(--color-background) !important;
+.artist-filter.filter-input {
+  background-color: var(--color-background);
 }
 
 .filter-actions {
@@ -386,6 +380,8 @@
 }
 
 /* 5. Responsive Overrides */
+
+/* Mobile: < 768px */
 @media (max-width: 767px) {
   .filters-container {
     flex-wrap: wrap;
@@ -393,26 +389,22 @@
     padding: 1rem;
   }
 
-  /* Mobile: Genre and Year on first row */
   .filter-group:nth-child(1) {
     flex: 0 0 60%;
   }
 
   .filter-group:nth-child(2) {
-    flex: 0 0 37%;
+    flex: 0 0 35%;
   }
 
-  /* Mobile: Venue spans full width on second row */
   .filter-group:nth-child(3) {
     flex: 0 0 100%;
   }
 
-  /* Mobile: Artist spans full width on third row */
   .filter-group:nth-child(4) {
     flex: 0 0 100%;
   }
 
-  /* Mobile: Actions span full width on fourth row */
   .filter-actions {
     flex: 0 0 100%;
     justify-content: center;
@@ -424,49 +416,44 @@
     gap: 0.2rem;
   }
 
-  /* Compact mobile sizing */
   .custom-select-trigger,
   .filter-input {
     padding: 0.5rem;
     font-size: 0.8rem;
   }
 
-  /* Match Genre and Venue trigger font sizing to Year */
   .filter-group:nth-child(1) .custom-select-trigger,
   .filter-group:nth-child(3) .custom-select-trigger {
-    font-size: 0.8rem !important;
-    padding: 0.4rem !important;
+    font-size: 0.8rem;
+    padding: 0.4rem;
   }
 
-  /* And align the dropdown option font sizes too */
   .filter-group:nth-child(1) .custom-select-options,
   .filter-group:nth-child(3) .custom-select-options {
     font-size: 0.7rem;
   }
 
-  /* Prevent label overflow in the narrow YIL column */
   .custom-select-trigger {
     overflow: hidden;
   }
+
   .custom-select-trigger .custom-select-label {
     display: block;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
   }
-
   .filter-label {
     font-size: 0.7rem;
-    margin-bottom: 0 !important; /* rely on reduced group gap */
-  }
-  /* Constrain the year dropdown to fit its column */
-  .filter-group:nth-child(2) .custom-select-trigger {
-    font-size: 0.8rem !important; /* Smaller text */
-    padding: 0.4rem !important; /* Less padding */
-    min-width: 0; /* Allow it to shrink */
+    margin-bottom: 0;
   }
 
-  /* Make sure dropdown options also fit */
+  .filter-group:nth-child(2) .custom-select-trigger {
+    font-size: 0.8rem;
+    padding: 0.4rem;
+    min-width: 0;
+  }
+
   .filter-group:nth-child(2) .custom-select-options {
     font-size: 0.7rem;
   }
@@ -497,125 +484,79 @@
   }
 }
 
-/* Five-column layout for filters on wider viewports */
-/* Breakpoint 7: Small Vertical Tablets (>=768px and <1024px and portrait) */
-@media (min-width: 768px) and (max-width: 1023px) and (orientation: portrait) {
+/* Tablet: 768px - 1023px */
+@media (min-width: 768px) and (max-width: 1023px) {
   .events-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
   .event-artist {
-    font-size: 22px;
+    font-size: 20px;
   }
+
   .event-details {
-    font-size: 16px;
+    font-size: 14px;
   }
+
   .event-series-inline {
-    font-size: 16px;
+    font-size: 14px;
   }
 }
 
-/* Breakpoint 5: Small Horizontal Tablets (>=768px and <1024px and landscape) */
-@media (min-width: 768px) and (max-width: 1023px) and (orientation: landscape) {
+/* Tablet Landscape / Small Desktop: 1024px - 1199px */
+@media (min-width: 1024px) and (max-width: 1199px) {
   .events-grid {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
+
   .event-artist {
-    font-size: 16px;
+    font-size: 18px;
   }
+
   .event-details {
     font-size: 12px;
   }
+
   .event-series-inline {
     font-size: 12px;
   }
 }
 
-/* Breakpoint 6: Large Vertical Tablets (>=1024px and portrait) */
-@media (min-width: 1024px) and (orientation: portrait) {
-  .events-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .event-artist {
-    font-size: 26px;
-  }
-  .event-details {
-    font-size: 18px;
-  }
-  .event-series-inline {
-    font-size: 18px;
-  }
-}
-
-/* (moved below to refine override ordering) */
-
-/* Breakpoint 3: Standard Laptops (>=1200px and <1440px) */
+/* Standard Desktop: 1200px - 1439px */
 @media (min-width: 1200px) and (max-width: 1439px) {
   .events-grid {
     grid-template-columns: repeat(4, 1fr);
   }
+
   .event-artist {
     font-size: 20px;
   }
+
   .event-details {
     font-size: 14px;
   }
+
   .event-series-inline {
     font-size: 14px;
   }
 }
 
-/* Breakpoint 4: Large Horizontal Tablets (>=1024px and <=1365px and landscape) */
-@media (min-width: 1024px) and (max-width: 1365px) and (orientation: landscape) {
+/* Large Desktop: >= 1440px */
+@media (min-width: 1440px) {
   .events-grid {
     grid-template-columns: repeat(4, 1fr);
   }
-  .event-artist {
-    font-size: 18px;
-  }
-  .event-details {
-    font-size: 12px;
-  }
-  .event-series-inline {
-    font-size: 12px;
-  }
-}
 
-/* Breakpoint 2: Large Screens (>=1440px and <1600px) */
-@media (min-width: 1440px) and (max-width: 1599px) {
-  .events-grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
   .event-artist {
     font-size: 24px;
   }
+
   .event-details {
     font-size: 16px;
   }
+
   .event-series-inline {
     font-size: 16px;
-  }
-}
-
-/* Breakpoint 1: Very Large Screens (>=1600px) */
-@media (min-width: 1600px) {
-  .events-grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
-  .event-artist {
-    font-size: 24px;
-  }
-  .event-details {
-    font-size: 16px;
-  }
-  .event-series-inline {
-    font-size: 16px;
-  }
-}
-
-/* Override: Exactly 1024px wide in landscape → 3 columns only */
-@media (width: 1024px) and (orientation: landscape) {
-  .events-grid {
-    grid-template-columns: repeat(3, 1fr);
   }
 }
 

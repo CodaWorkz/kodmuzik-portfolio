@@ -16,39 +16,76 @@
 /* 1. Design Tokens (Variables)
    ================================================ */
 :root {
+  /* Typography */
   --font-primary: "Inter", sans-serif;
   --font-display: "Anton", sans-serif;
+
+  /* Core Colors */
   --color-text: #eaeaea;
   --color-background: #121212; /* base UI tokens used across the site */
   --color-accent: #ffffff;
   --color-muted: #a0a0a0;
+  --color-black: #000000;
+  --color-white: #ffffff;
+
+  /* UI Colors */
+  --color-border: #333333;
+  --color-border-light: #282828;
+
+  /* Layout */
   --menu-width-desktop: 200px;
   --menu-width-mobile: 45px;
   --transition-speed: 0.3s;
   --logo-top-offset: calc(2rem + 3rem); /* ~80px */
+
+  /* Menu Colors */
   --menu-color-inactive: #b6b6b6; /* lighter than now */
   --menu-color-active: #8a8a8a; /* your current inactive */
   --menu-color-hover: #ececec; /* near-white for hover/focus */
-  /* slower hover animations */
+
+  /* Animations */
   --menu-hover-duration: 420ms;
   --menu-hover-ease: cubic-bezier(0.34, 1.56, 0.64, 1); /* bouncier ease-out */
-  /* overlays */
+
+  /* Overlays */
   --overlay-main: rgba(0, 0, 0, 0.1);
   --overlay-menu: transparent;
-  /* background KOD logo transform controls */
+
+  /* Background KOD logo transform controls */
   --kod-bg-rotate: -15deg; /* counter-clockwise tilt from bottom-left to top-right */
-  --kod-bg-scale: 1.0; /* base scale for 161vmin sized logo */
+  --kod-bg-scale: 1; /* base scale for 161vmin sized logo */
+
   /* Language switcher sizing */
   --lang-circle-size-desktop: 45px; /* visible circle size on desktop */
-  --lang-circle-size-mobile: 36px;  /* visible circle size on mobile */
-  --lang-hit-desktop: 60px;         /* clickable area (>=44px) */
-  --lang-hit-mobile: 44px;          /* clickable area (>=44px) */
-  --lang-circle-gap: 2px;           /* vertical gap between visible circles */
-  --lang-hover-duration: 640ms;     /* slower hover/reveal */
-  --lang-bg-hover-duration: 420ms;  /* slower background tone animation */
-  --lang-text-color: #000000;       /* solid black text for max contrast */
+  --lang-circle-size-mobile: 36px; /* visible circle size on mobile */
+  --lang-hit-desktop: 60px; /* clickable area (>=44px) */
+  --lang-hit-mobile: 44px; /* clickable area (>=44px) */
+  --lang-circle-gap: 2px; /* vertical gap between visible circles */
+  --lang-hover-duration: 640ms; /* slower hover/reveal */
+  --lang-bg-hover-duration: 420ms; /* slower background tone animation */
+  --lang-text-color: var(--color-black); /* solid black text for max contrast */
   --lang-text-size-desktop: 14px;
   --lang-text-size-mobile: 12px;
+
+  /* Spacing & Borders */
+  --spacing-input: 0.75rem 1rem;
+  --border-radius-small: 6px;
+  --border-radius-medium: 8px;
+  --border-radius-pill: 20px;
+
+  /* Glassmorphism */
+  --glass-gradient: linear-gradient(
+    to bottom right,
+    rgba(255, 255, 255, 0.06),
+    rgba(255, 255, 255, 0.015)
+  );
+  --glass-bg: rgba(18, 18, 18, 0.48);
+  --glass-bg-alt: rgba(18, 18, 18, 0.5);
+  --glass-border: rgba(255, 255, 255, 0.18);
+  --glass-border-alt: rgba(255, 255, 255, 0.22);
+  --glass-shadow: 0 12px 36px rgba(0, 0, 0, 0.55);
+  --glass-shadow-alt: 0 12px 36px rgba(0, 0, 0, 0.6);
+  --glass-blur: blur(16px) saturate(140%);
 }
 
 /* 2. CSS Reset
@@ -84,12 +121,13 @@ body {
   top: 50%;
   left: 50%;
   transform-origin: center center;
-  transform: translate(-50%, -50%) rotate(var(--kod-bg-rotate)) scale(var(--kod-bg-scale));
+  transform: translate(-50%, -50%) rotate(var(--kod-bg-rotate))
+    scale(var(--kod-bg-scale));
   width: 161vmin;
   height: calc(161vmin * 28.05 / 74.62);
   pointer-events: none;
   /* Lighten watermark for better contrast on dark bg */
-  background-color: rgba(255, 255, 255, 0.10);
+  background-color: rgba(255, 255, 255, 0.1);
   -webkit-mask-image: url("/KodLogo.svg");
   -webkit-mask-repeat: no-repeat;
   -webkit-mask-position: center center;
@@ -126,6 +164,23 @@ p {
   font-size: 1.1rem;
   font-weight: 300;
   max-width: 65ch;
+}
+
+/* Utility Classes
+   ================================================ */
+.glass-panel {
+  background: var(--glass-gradient), var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--border-radius-medium);
+  -webkit-backdrop-filter: var(--glass-blur);
+  backdrop-filter: var(--glass-blur);
+  box-shadow: var(--glass-shadow);
+}
+
+.glass-panel--alt {
+  background: var(--glass-gradient), var(--glass-bg-alt);
+  border-color: var(--glass-border-alt);
+  box-shadow: var(--glass-shadow-alt);
 }
 
 /* 4. Side Menu Layout (Left Rail)
@@ -215,7 +270,8 @@ p {
   font-size: 1.2rem;
   letter-spacing: 1px;
   color: var(--menu-color-inactive);
-  transition: color var(--menu-hover-duration) var(--menu-hover-ease),
+  transition:
+    color var(--menu-hover-duration) var(--menu-hover-ease),
     transform var(--menu-hover-duration) var(--menu-hover-ease);
 }
 
@@ -249,7 +305,8 @@ p {
   width: 2px;
   height: 0; /* collapsed by default */
   transform: translateY(-50%);
-  transition: height var(--menu-hover-duration) var(--menu-hover-ease),
+  transition:
+    height var(--menu-hover-duration) var(--menu-hover-ease),
     background-color var(--menu-hover-duration) var(--menu-hover-ease);
   opacity: 0.9;
 }
@@ -347,7 +404,7 @@ p {
   display: flex;
   align-items: center;
   justify-content: center; /* perfect centering for text */
-  width: var(--lang-hit-desktop);  /* clickable area (>=44px) */
+  width: var(--lang-hit-desktop); /* clickable area (>=44px) */
   height: var(--lang-hit-desktop);
   color: var(--lang-text-color) !important; /* force solid black text */
   text-transform: uppercase;
@@ -375,12 +432,18 @@ p {
   height: var(--lang-circle-size-desktop);
   transform: translate(-50%, -50%);
   border-radius: 50%;
-  background: radial-gradient(circle at 30% 30%, #f2f2f2 0%, #e6e6e6 30%, #d4d4d4 70%, #bfbfbf 100%);
+  background: radial-gradient(
+    circle at 30% 30%,
+    #f2f2f2 0%,
+    #e6e6e6 30%,
+    #d4d4d4 70%,
+    #bfbfbf 100%
+  );
   box-shadow:
-    inset 0 2px 4px rgba(255, 255, 255, 0.8),  /* inner highlight */
-    inset 0 -2px 4px rgba(0, 0, 0, 0.10),      /* inner shadow */
-    0 6px 16px rgba(0, 0, 0, 0.20),            /* outer depth */
-    0 4px 12px rgba(0, 0, 0, 0.15);
+    inset 0 2px 4px rgba(255, 255, 255, 0.8),
+    /* inner highlight */ inset 0 -2px 4px rgba(0, 0, 0, 0.1),
+    /* inner shadow */ 0 6px 16px rgba(0, 0, 0, 0.2),
+    /* outer depth */ 0 4px 12px rgba(0, 0, 0, 0.15);
   transition:
     box-shadow var(--lang-bg-hover-duration) ease-in-out,
     background var(--lang-bg-hover-duration) ease-in-out,
@@ -397,7 +460,11 @@ p {
   width: 56%;
   height: 56%;
   border-radius: 50%;
-  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0) 65%);
+  background: radial-gradient(
+    circle at 30% 30%,
+    rgba(255, 255, 255, 0.55),
+    rgba(255, 255, 255, 0) 65%
+  );
   pointer-events: none;
 }
 
@@ -424,27 +491,40 @@ p {
   transform: translateY(0) scale(0.94);
   pointer-events: none;
   z-index: 1020;
-  transition: opacity var(--lang-hover-duration) var(--menu-hover-ease), visibility 0s 150ms, transform var(--lang-hover-duration) var(--menu-hover-ease);
+  transition:
+    opacity var(--lang-hover-duration) var(--menu-hover-ease),
+    visibility 0s 150ms,
+    transform var(--lang-hover-duration) var(--menu-hover-ease);
 }
 
 /* Hover/focus reveal on hover-capable devices */
-  @media (hover: hover) {
-    /* Hover tone-down for either button (background layer only) */
-    .lang-link:hover::before {
-    background: radial-gradient(circle at 30% 30%, #eaeaea 0%, #e0e0e0 30%, #cdcdcd 70%, #b8b8b8 100%);
-      box-shadow:
-        inset 0 1px 3px rgba(255, 255, 255, 0.7),
-        inset 0 -3px 6px rgba(0, 0, 0, 0.16),
-        0 12px 24px rgba(0, 0, 0, 0.3),
-        0 5px 12px rgba(0, 0, 0, 0.24);
-    }
+@media (hover: hover) {
+  /* Hover tone-down for either button (background layer only) */
+  .lang-link:hover::before {
+    background: radial-gradient(
+      circle at 30% 30%,
+      #eaeaea 0%,
+      #e0e0e0 30%,
+      #cdcdcd 70%,
+      #b8b8b8 100%
+    );
+    box-shadow:
+      inset 0 1px 3px rgba(255, 255, 255, 0.7),
+      inset 0 -3px 6px rgba(0, 0, 0, 0.16),
+      0 12px 24px rgba(0, 0, 0, 0.3),
+      0 5px 12px rgba(0, 0, 0, 0.24);
+  }
 
   /* Reveal inactive on hover/focus */
   .lang-switcher:hover .lang-link:not(.active):not([aria-current="true"]),
-  .lang-switcher:focus-within .lang-link:not(.active):not([aria-current="true"]) {
+  .lang-switcher:focus-within
+    .lang-link:not(.active):not([aria-current="true"]) {
     opacity: 1;
     visibility: visible;
-    transform: translateY(calc(-1 * (var(--lang-circle-size-desktop) - var(--lang-circle-gap)))) scale(1);
+    transform: translateY(
+        calc(-1 * (var(--lang-circle-size-desktop) - var(--lang-circle-gap)))
+      )
+      scale(1);
     pointer-events: all; /* clickable */
     transition-delay: 0ms; /* show immediately */
   }
@@ -452,10 +532,14 @@ p {
 
 /* Ensure keyboard focus reveals inactive link even without hover */
 .lang-switcher .lang-link:not(.active):not([aria-current="true"]):focus,
-.lang-switcher .lang-link:not(.active):not([aria-current="true"]):focus-visible {
+.lang-switcher
+  .lang-link:not(.active):not([aria-current="true"]):focus-visible {
   opacity: 1;
   visibility: visible;
-  transform: translateY(calc(-1 * (var(--lang-circle-size-desktop) - var(--lang-circle-gap)))) scale(1);
+  transform: translateY(
+      calc(-1 * (var(--lang-circle-size-desktop) - var(--lang-circle-gap)))
+    )
+    scale(1);
   pointer-events: all;
 }
 
@@ -528,7 +612,9 @@ a:focus-visible {
     z-index: 1001;
     color: var(--color-text);
     opacity: 0.6;
-    transition: opacity var(--transition-speed), transform var(--transition-speed);
+    transition:
+      opacity var(--transition-speed),
+      transform var(--transition-speed);
   }
 
   .discogs-link:hover,
@@ -656,7 +742,8 @@ a:focus-visible {
     letter-spacing: 0.03em;
     padding-left: 0;
     transform: none;
-    transition: color var(--menu-hover-duration) var(--menu-hover-ease),
+    transition:
+      color var(--menu-hover-duration) var(--menu-hover-ease),
       transform var(--menu-hover-duration) var(--menu-hover-ease);
   }
 
@@ -667,7 +754,8 @@ a:focus-visible {
     width: 0;
     height: 2px;
     transform: translateX(-50%);
-    transition: width var(--menu-hover-duration) var(--menu-hover-ease),
+    transition:
+      width var(--menu-hover-duration) var(--menu-hover-ease),
       background-color var(--menu-hover-duration) var(--menu-hover-ease);
     background-color: var(--menu-color-active);
   }

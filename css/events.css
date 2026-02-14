@@ -20,7 +20,7 @@
 .events-header {
   /* Top padding is now handled by .main-content for alignment with logo */
   padding: 0 0 2rem;
-  border-bottom: 1px solid #282828;
+  border-bottom: 1px solid var(--color-border-light);
 }
 
 .events-title {
@@ -57,18 +57,12 @@
   padding: 1.25rem 2rem; /* internal padding for the glass panel */
 
   /* Glassmorphism panel to match cards */
-  background:
-    linear-gradient(
-      to bottom right,
-      rgba(255, 255, 255, 0.06),
-      rgba(255, 255, 255, 0.015)
-    ),
-    rgba(18, 18, 18, 0.48);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  border-radius: 8px;
-  -webkit-backdrop-filter: blur(16px) saturate(140%);
-  backdrop-filter: blur(16px) saturate(140%);
-  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.55);
+  background: var(--glass-gradient), var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--border-radius-medium);
+  -webkit-backdrop-filter: var(--glass-blur);
+  backdrop-filter: var(--glass-blur);
+  box-shadow: var(--glass-shadow);
 }
 
 .filter-group {
@@ -112,10 +106,10 @@
 
 .filter-input {
   background: var(--color-background); /* match Genre/Year/Venue triggers */
-  border: 1px solid #333;
+  border: 1px solid var(--color-border);
   color: var(--color-text);
-  padding: 0.75rem 1rem;
-  border-radius: 6px;
+  padding: var(--spacing-input);
+  border-radius: var(--border-radius-small);
   font-size: 0.9rem;
   transition: var(--transition-speed);
   font-family: var(--font-primary);
@@ -136,10 +130,10 @@
 /* Native select styling to align with inputs */
 .filter-select {
   background: var(--color-background);
-  border: 1px solid #333;
+  border: 1px solid var(--color-border);
   color: var(--color-text);
-  padding: 0.75rem 1rem;
-  border-radius: 6px;
+  padding: var(--spacing-input);
+  border-radius: var(--border-radius-small);
   font-size: 0.9rem;
   transition: var(--transition-speed);
   font-family: var(--font-primary);
@@ -160,10 +154,10 @@
 .custom-select-trigger {
   width: 100%;
   background: var(--color-background);
-  border: 1px solid #333;
+  border: 1px solid var(--color-border);
   color: var(--color-text);
-  padding: 0.75rem 1rem;
-  border-radius: 6px;
+  padding: var(--spacing-input);
+  border-radius: var(--border-radius-small);
   font-size: 0.9rem;
   font-family: var(--font-primary);
   transition: var(--transition-speed);
@@ -196,8 +190,8 @@
   left: 0;
   right: 0;
   background: var(--color-background);
-  border: 1px solid #333;
-  border-radius: 6px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-small);
   z-index: 999;
   max-height: 200px;
   overflow-y: auto;
@@ -248,10 +242,10 @@
 
 .clear-filters {
   background: transparent;
-  border: 1px solid #333;
+  border: 1px solid var(--color-border);
   color: var(--color-muted);
   padding: 0.75rem 1.5rem;
-  border-radius: 6px;
+  border-radius: var(--border-radius-small);
   cursor: pointer;
   font-size: 0.9rem;
   transition: var(--transition-speed);
@@ -289,16 +283,10 @@
 }
 
 .event-card {
-  background:
-    linear-gradient(
-      to bottom right,
-      rgba(255, 255, 255, 0.06),
-      rgba(255, 255, 255, 0.015)
-    ),
-    rgba(18, 18, 18, 0.48);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  border-radius: 8px;
-  padding: 3rem 1.5rem; /* spacing consistent with old style */
+  background: var(--glass-gradient), var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--border-radius-medium);
+  padding: 3rem 1.5rem;
   transition: var(--transition-speed);
   cursor: pointer;
   display: flex;
@@ -307,9 +295,9 @@
   gap: 0;
   aspect-ratio: 1 / 1;
   overflow: hidden;
-  -webkit-backdrop-filter: blur(16px) saturate(140%);
-  backdrop-filter: blur(16px) saturate(140%);
-  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.55);
+  -webkit-backdrop-filter: var(--glass-blur);
+  backdrop-filter: var(--glass-blur);
+  box-shadow: var(--glass-shadow);
 }
 
 .event-card:hover {
@@ -330,8 +318,8 @@
 /* Rollback preset — SOLID style (previous look)
    Apply per-card via: class="event-card event-card--solid" */
 .event-card--solid {
-  background-color: #000;
-  border: 1px solid #333;
+  background-color: var(--color-black);
+  border: 1px solid var(--color-border);
 }
 .event-card--solid:hover {
   background-color: #0a0a0a;
@@ -407,11 +395,11 @@
 
   /* Mobile: Genre and Year on first row */
   .filter-group:nth-child(1) {
-    flex: 0 0 62%;
+    flex: 0 0 60%;
   }
 
   .filter-group:nth-child(2) {
-    flex: 0 0 35%;
+    flex: 0 0 37%;
   }
 
   /* Mobile: Venue spans full width on second row */
@@ -481,8 +469,6 @@
   /* Make sure dropdown options also fit */
   .filter-group:nth-child(2) .custom-select-options {
     font-size: 0.7rem;
-    right: 0; /* Align to right edge of column */
-    left: auto; /* Don't extend beyond left */
   }
 
   .events-grid {

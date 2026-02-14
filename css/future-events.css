@@ -15,7 +15,7 @@
 .future-header {
   /* Top padding is now handled by .main-content for alignment with logo */
   padding: 0 0 2rem;
-  border-bottom: 1px solid #282828;
+  border-bottom: 1px solid var(--color-border-light);
 }
 
 .future-title {
@@ -42,14 +42,9 @@
 
 .timeline-item {
   /* Stronger glassmorphism card */
-  background: linear-gradient(
-      to bottom right,
-      rgba(255, 255, 255, 0.06),
-      rgba(255, 255, 255, 0.015)
-    ),
-    rgba(18, 18, 18, 0.5); /* fallback on browsers without blur */
-  border: 1px solid rgba(255, 255, 255, 0.22);
-  border-radius: 8px;
+  background: var(--glass-gradient), var(--glass-bg-alt);
+  border: 1px solid var(--glass-border-alt);
+  border-radius: var(--border-radius-medium);
   padding: 2rem;
   margin-bottom: 1.5rem;
   display: grid;
@@ -57,9 +52,9 @@
   gap: 2rem;
   align-items: start;
   transition: var(--transition-speed);
-  -webkit-backdrop-filter: blur(16px) saturate(140%);
-  backdrop-filter: blur(16px) saturate(140%);
-  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.6);
+  -webkit-backdrop-filter: var(--glass-blur);
+  backdrop-filter: var(--glass-blur);
+  box-shadow: var(--glass-shadow-alt);
 }
 
 /* No hover effect on cards; pills handle subtle illumination */
@@ -102,7 +97,7 @@
 
 .action-pill {
   padding: 0.4rem 1.3rem;
-  border-radius: 20px;
+  border-radius: var(--border-radius-pill);
   font-size: 0.9rem;
   font-weight: 500;
   text-transform: uppercase;
@@ -118,49 +113,52 @@
 .pill-info {
   background: rgba(255, 193, 7, 0.12);
   color: #ffcd38;
-  box-shadow: 0 0 0 1px rgba(255, 193, 7, 0.28) inset,
-    0 0 10px rgba(255, 193, 7, 0.25), 0 0 26px rgba(255, 193, 7, 0.15);
+  box-shadow:
+    0 0 0 1px rgba(255, 193, 7, 0.28) inset,
+    0 0 10px rgba(255, 193, 7, 0.25),
+    0 0 26px rgba(255, 193, 7, 0.15);
 }
 
 .pill-info:hover,
 .pill-info:focus-visible {
   background: rgba(255, 193, 7, 0.18);
-  box-shadow: 0 0 0 1px rgba(255, 193, 7, 0.35) inset,
-    0 0 14px rgba(255, 193, 7, 0.35), 0 0 34px rgba(255, 193, 7, 0.2);
+  box-shadow:
+    0 0 0 1px rgba(255, 193, 7, 0.35) inset,
+    0 0 14px rgba(255, 193, 7, 0.35),
+    0 0 34px rgba(255, 193, 7, 0.2);
 }
 
 /* Dark neon green */
 .pill-tickets {
   background: rgba(76, 175, 80, 0.12);
   color: #69e071;
-  box-shadow: 0 0 0 1px rgba(76, 175, 80, 0.28) inset,
-    0 0 10px rgba(76, 175, 80, 0.25), 0 0 26px rgba(76, 175, 80, 0.15);
+  box-shadow:
+    0 0 0 1px rgba(76, 175, 80, 0.28) inset,
+    0 0 10px rgba(76, 175, 80, 0.25),
+    0 0 26px rgba(76, 175, 80, 0.15);
 }
 
 .pill-tickets:hover,
 .pill-tickets:focus-visible {
   background: rgba(76, 175, 80, 0.18);
-  box-shadow: 0 0 0 1px rgba(76, 175, 80, 0.35) inset,
-    0 0 14px rgba(76, 175, 80, 0.35), 0 0 34px rgba(76, 175, 80, 0.2);
+  box-shadow:
+    0 0 0 1px rgba(76, 175, 80, 0.35) inset,
+    0 0 14px rgba(76, 175, 80, 0.35),
+    0 0 34px rgba(76, 175, 80, 0.2);
 }
 
 /* 4. Newsletter Section
    ================================================ */
 .newsletter-section {
   /* Stronger glassmorphism panel */
-  background: linear-gradient(
-      to bottom right,
-      rgba(255, 255, 255, 0.06),
-      rgba(255, 255, 255, 0.015)
-    ),
-    rgba(18, 18, 18, 0.5);
-  border: 1px solid rgba(255, 255, 255, 0.22);
-  border-radius: 8px;
+  background: var(--glass-gradient), var(--glass-bg-alt);
+  border: 1px solid var(--glass-border-alt);
+  border-radius: var(--border-radius-medium);
   padding: 3rem;
   text-align: left; /* align content with header */
-  -webkit-backdrop-filter: blur(16px) saturate(140%);
-  backdrop-filter: blur(16px) saturate(140%);
-  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.6);
+  -webkit-backdrop-filter: var(--glass-blur);
+  backdrop-filter: var(--glass-blur);
+  box-shadow: var(--glass-shadow-alt);
 }
 
 .newsletter-title {
@@ -188,10 +186,10 @@
 .newsletter-input {
   flex: 1;
   background: var(--color-background);
-  border: 1px solid #333;
+  border: 1px solid var(--color-border);
   color: var(--color-text);
-  padding: 0.75rem 1rem;
-  border-radius: 6px;
+  padding: var(--spacing-input);
+  border-radius: var(--border-radius-small);
   font-family: var(--font-primary);
 }
 
@@ -205,7 +203,7 @@
   border: 1px solid var(--color-accent);
   color: var(--color-accent);
   padding: 0.75rem 1.5rem;
-  border-radius: 6px;
+  border-radius: var(--border-radius-small);
   cursor: pointer;
   font-family: var(--font-display);
   font-size: 0.9rem;

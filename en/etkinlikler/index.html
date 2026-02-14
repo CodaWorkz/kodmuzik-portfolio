@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <title>Events - Kodmüzik</title>
     <meta
       name="description"
@@ -112,9 +113,15 @@
       <section class="filters-section">
         <div class="filters-container">
           <div class="filter-group">
-            <label class="filter-label" data-label-key="genre">Genre</label>
+            <label
+              for="genre-filter-button"
+              class="filter-label"
+              data-label-key="genre"
+              >Genre</label
+            >
             <div id="genre-filter" class="custom-select" data-value="">
               <button
+                id="genre-filter-button"
                 type="button"
                 class="custom-select-trigger"
                 aria-haspopup="listbox"
@@ -140,9 +147,15 @@
             </div>
           </div>
           <div class="filter-group">
-            <label class="filter-label" data-label-key="year">Year</label>
+            <label
+              for="year-filter-button"
+              class="filter-label"
+              data-label-key="year"
+              >Year</label
+            >
             <div id="year-filter" class="custom-select" data-value="">
               <button
+                id="year-filter-button"
                 type="button"
                 class="custom-select-trigger"
                 aria-haspopup="listbox"
@@ -168,9 +181,15 @@
             </div>
           </div>
           <div class="filter-group">
-            <label class="filter-label" data-label-key="venue">Venue</label>
+            <label
+              for="venue-filter-button"
+              class="filter-label"
+              data-label-key="venue"
+              >Venue</label
+            >
             <div id="venue-filter" class="custom-select" data-value="">
               <button
+                id="venue-filter-button"
                 type="button"
                 class="custom-select-trigger"
                 aria-haspopup="listbox"
@@ -196,7 +215,12 @@
             </div>
           </div>
           <div class="filter-group">
-            <label class="filter-label" data-label-key="artist">Artist</label>
+            <label
+              for="artist-filter"
+              class="filter-label"
+              data-label-key="artist"
+              >Artist</label
+            >
             <input
               type="text"
               id="artist-filter"

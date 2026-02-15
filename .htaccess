@@ -1,0 +1,29 @@
+# Force HTTPS and WWW
+RewriteEngine On
+
+# Force HTTPS (redirect http to https)
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Force WWW (redirect non-www to www)
+RewriteCond %{HTTP_HOST} !^www\. [NC]
+RewriteRule ^(.*)$ https://www.kodmuzik.com/$1 [L,R=301]
+
+# Security Headers
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "SAMEORIGIN"
+    Header set X-XSS-Protection "1; mode=block"
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+# MIME Types for JSON and SVG
+AddType application/json .json
+AddType image/svg+xml .svg .svgz
+AddEncoding gzip .svgz
+
+# UTF-8 Encoding
+AddDefaultCharset UTF-8
+
+# Prevent directory browsing
+Options -Indexes

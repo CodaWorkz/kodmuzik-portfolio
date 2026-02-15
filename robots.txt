@@ -30,7 +30,7 @@ Disallow: /package.json
 Disallow: /vercel.json
 
 # Sitemap location
-# Sitemap: https://www.kodmuzik.com/sitemap.xml
+Sitemap: https://www.kodmuzik.com/sitemap.xml
 
 # Crawl delay (optional - be polite to server)
 Crawl-delay: 1

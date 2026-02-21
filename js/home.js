@@ -42,7 +42,7 @@ const slideData = [
 
 const ctaConfig = {
   tr: { text: "Geçmiş Etkinlikler", href: "/etkinlikler" },
-  en: { text: "Past Events", href: "/en/etkinlikler" },
+  en: { text: "Past Events", href: "/en/events" },
 };
 
 // 2. Slider State

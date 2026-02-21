@@ -24,6 +24,22 @@ function joinPath(...segments) {
   return segments.join("/").replace(/\/+/g, "/");
 }
 
+// Slug map: Turkish path → English sub-path
+const SLUG_MAP = {
+  "/hakkimizda": "/about",
+  "/etkinlikler": "/events",
+  "/gelecek-etkinlikler": "/upcoming-events",
+  "/iletisim": "/contact",
+};
+
+// Reverse map: English sub-path → Turkish path
+const SLUG_MAP_REVERSE = {
+  "/about": "/hakkimizda",
+  "/events": "/etkinlikler",
+  "/upcoming-events": "/gelecek-etkinlikler",
+  "/contact": "/iletisim",
+};
+
 /**
  * Gets the current URL pathname, normalized without a trailing slash.
  * @returns {string} The normalized pathname.
@@ -58,12 +74,16 @@ function updateMenuLinksForLocale() {
   const localePrefix = getLocalePrefix();
   const menuLinks = document.querySelectorAll(".menu-link");
 
-  if (!menuLinks.length) return; // Defensive check
+  if (!menuLinks.length) return;
 
   menuLinks.forEach((link) => {
     const basePath = link.dataset.path || "/";
-    // Only prefix with /en if on an English page
-    link.href = localePrefix ? joinPath(localePrefix, basePath) : basePath;
+    if (localePrefix) {
+      const enSlug = SLUG_MAP[basePath] || basePath;
+      link.href = joinPath(localePrefix, enSlug);
+    } else {
+      link.href = basePath;
+    }
   });
 }
 
@@ -106,13 +126,12 @@ function setActiveLink() {
  */
 function updateLanguageLinks() {
   const currentPath = getCurrentPath();
-  const queryString = window.location.search; // Preserve query parameters
+  const queryString = window.location.search;
   const langEN = document.getElementById("lang-en");
   const langTR = document.getElementById("lang-tr");
 
-  if (!langEN || !langTR) return; // Defensive check
+  if (!langEN || !langTR) return;
 
-  // Reset states
   [langEN, langTR].forEach((a) => {
     a.classList.remove("active");
     a.removeAttribute("aria-current");
@@ -121,17 +140,19 @@ function updateLanguageLinks() {
   if (currentPath.startsWith("/en")) {
     // Current page is EN, switch to TR
     const pathWithoutEN = currentPath.substring(3) || "/";
-    langTR.href = pathWithoutEN + queryString;
-    langEN.href = currentPath + queryString; // Link to self
+    const trSlug = SLUG_MAP_REVERSE[pathWithoutEN] || pathWithoutEN;
+    langTR.href = trSlug + queryString;
+    langEN.href = currentPath + queryString;
 
     langEN.classList.add("active");
     langEN.setAttribute("aria-current", "true");
     document.documentElement.lang = "en";
   } else {
     // Current page is TR, switch to EN
-    const enPath = joinPath("/en", currentPath);
+    const enSlug = SLUG_MAP[currentPath] || currentPath;
+    const enPath = joinPath("/en", enSlug);
     langEN.href = enPath + queryString;
-    langTR.href = currentPath + queryString; // Link to self
+    langTR.href = currentPath + queryString;
 
     langTR.classList.add("active");
     langTR.setAttribute("aria-current", "true");

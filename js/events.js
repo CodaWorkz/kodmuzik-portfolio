@@ -638,7 +638,6 @@ function initializeEventListeners() {
   // Clear filters
   document.querySelector(".clear-filters").addEventListener("click", () => {
     document.getElementById("artist-filter").value = "";
-    document.getElementById("venue-filter").value = "";
 
     // Reset custom selects
     document.querySelectorAll(".custom-select").forEach((select) => {
@@ -679,6 +678,7 @@ if (document.readyState !== "loading") {
 // Re-detect language on navigation
 window.addEventListener("popstate", () => {
   detectLanguage();
+  applyURLFiltersToUI();
   applyFilters();
 });
 

@@ -80,9 +80,10 @@ function updateMenuLinksForLocale() {
     const basePath = link.dataset.path || "/";
     if (localePrefix) {
       const enSlug = SLUG_MAP[basePath] || basePath;
-      link.href = joinPath(localePrefix, enSlug);
+      const href = joinPath(localePrefix, enSlug);
+      link.href = href === "/" ? href : href + "/";
     } else {
-      link.href = basePath;
+      link.href = basePath === "/" ? basePath : basePath + "/";
     }
   });
 }
@@ -141,8 +142,10 @@ function updateLanguageLinks() {
     // Current page is EN, switch to TR
     const pathWithoutEN = currentPath.substring(3) || "/";
     const trSlug = SLUG_MAP_REVERSE[pathWithoutEN] || pathWithoutEN;
-    langTR.href = trSlug + queryString;
-    langEN.href = currentPath + queryString;
+    const trHref = trSlug === "/" ? trSlug : trSlug + "/";
+    const enHref = currentPath === "/" ? currentPath : currentPath + "/";
+    langTR.href = trHref + queryString;
+    langEN.href = enHref + queryString;
 
     langEN.classList.add("active");
     langEN.setAttribute("aria-current", "true");
@@ -151,8 +154,10 @@ function updateLanguageLinks() {
     // Current page is TR, switch to EN
     const enSlug = SLUG_MAP[currentPath] || currentPath;
     const enPath = joinPath("/en", enSlug);
-    langEN.href = enPath + queryString;
-    langTR.href = currentPath + queryString;
+    const enHref = enPath === "/" ? enPath : enPath + "/";
+    const trHref = currentPath === "/" ? currentPath : currentPath + "/";
+    langEN.href = enHref + queryString;
+    langTR.href = trHref + queryString;
 
     langTR.classList.add("active");
     langTR.setAttribute("aria-current", "true");

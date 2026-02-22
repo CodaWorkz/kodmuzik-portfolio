@@ -1,44 +1,45 @@
-# Force HTTPS and WWW in a single redirect to avoid double hops
+# KOD Müzik - Production-Safe Canonical Consolidation & Security
+# Target: https://www.kodmuzik.com/
+
 RewriteEngine On
 RewriteBase /
 
-# 1. Combined Redirect: Force HTTPS and WWW
-# One-step canonicalization of protocol and host
+# 1. Combined Canonical Redirect: HTTPS and WWW in one step
 RewriteCond %{HTTPS} off [OR]
 RewriteCond %{HTTP_HOST} !^www\.kodmuzik\.com$ [NC]
 RewriteRule ^(.*)$ https://www.kodmuzik.com/$1 [L,R=301]
 
-# 2. English slug migration (old Turkish slugs → localized English slugs)
+# 2. English Slug Migration (Old Turkish Slugs -> New English Slugs)
 RewriteRule ^en/hakkimizda/?$ /en/about/ [L,R=301,NC]
 RewriteRule ^en/etkinlikler/?$ /en/events/ [L,R=301,NC]
 RewriteRule ^en/gelecek-etkinlikler/?$ /en/upcoming-events/ [L,R=301,NC]
 RewriteRule ^en/iletisim/?$ /en/contact/ [L,R=301,NC]
 
-# 3. Remove .html extension and Redirect to Trailing Slash
-# Example: /hakkimizda.html -> /hakkimizda/
-RewriteCond %{THE_REQUEST} /([^/.]+)\.html [NC]
+# 3. Safe .html Extension Removal
+# Redirects /page.html to /page/
+RewriteCond %{THE_REQUEST} \s/([^.]+)\.html [NC]
 RewriteRule ^ /%1/ [L,R=301]
 
-# 4. Force Trailing Slash on extensionless URLs (Optimized Relative Path)
-# Ensures consistency: /hakkimizda -> /hakkimizda/
+# 4. Force Trailing Slash (Relative Path)
 RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_URI} !/$
-RewriteRule ^(.*)$ /$1/ [L,R=301]
+RewriteRule ^(.+)$ /$1/ [L,R=301]
 
-# 5. Internal Rewrites (Serves .html content while keeping the clean URL)
-# Turkish pages
+# 5. Internal Rewrites (Serves content while keeping clean URLs)
+# Turkish Pages
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}\.html -f
 RewriteRule ^([^/]+)/$ $1.html [L]
 
-# English folder pages
+# English Pages
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{DOCUMENT_ROOT}/en/$1\.html -f
 RewriteRule ^en/([^/]+)/$ en/$1.html [L]
 
-# 6. Modern Security Headers
+# 6. Optimized Security Headers
 <IfModule mod_headers.c>
     Header set X-Content-Type-Options "nosniff"
     Header set X-Frame-Options "SAMEORIGIN"
@@ -46,13 +47,8 @@ RewriteRule ^en/([^/]+)/$ en/$1.html [L]
     Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
 </IfModule>
 
-# MIME Types
+# MIME Types & UTF-8
+AddDefaultCharset UTF-8
 AddType application/json .json
 AddType image/svg+xml .svg .svgz
-AddEncoding gzip .svgz
-
-# UTF-8 Encoding
-AddDefaultCharset UTF-8
-
-# Prevent directory browsing
 Options -Indexes

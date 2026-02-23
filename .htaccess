@@ -15,6 +15,10 @@ RewriteRule ^en/etkinlikler/?$ /en/events/ [L,R=301,NC]
 RewriteRule ^en/gelecek-etkinlikler/?$ /en/upcoming-events/ [L,R=301,NC]
 RewriteRule ^en/iletisim/?$ /en/contact/ [L,R=301,NC]
 
+# 2b. Orphaned Page Redirects
+RewriteRule ^organizasyonlar\.html$ /etkinlikler/ [L,R=301,NC]
+RewriteRule ^organizasyonlar/?$ /etkinlikler/ [L,R=301,NC]
+
 # 3. Safe .html Extension Removal
 # Redirects /page.html to /page/
 RewriteCond %{THE_REQUEST} \s/([^.]+)\.html [NC]

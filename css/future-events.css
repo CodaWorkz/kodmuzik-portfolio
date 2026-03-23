@@ -1,348 +1,545 @@
 /* ================================================
-   future-events.css - Future Events Page Styles
+   future-events.css - Future Events Placeholder
    KOD Müzik Website
-   
-   Contents:
-   1. Page Header
-   2. Timeline Events
-   3. Action Pills
-   4. Newsletter Section
-   5. Responsive Design
+
+   Akira / Serial Experiments Lain lightboard.
+   Opaque sign. Surface texture. Imperfections
+   revealed by the radiating light.
+   Our silver screen — darker than the rest.
    ================================================ */
 
-/* 1. Page Header
+/* 0. Page-level overrides — the silver screen
+   This page is darker than everything else.
    ================================================ */
-.future-header {
-  /* Top padding is now handled by .main-content for alignment with logo */
-  padding: 0 0 2rem;
-  border-bottom: 1px solid var(--color-border-light);
+.future-page {
+  /* Override site background for this page only */
+  background-color: #080808;
+  /* Contain the animated ambient spill that scales beyond viewport */
+  overflow: hidden;
 }
 
-.future-title {
+/* Also darken the body behind the menu for this page */
+body:has(.future-page) {
+  background-color: #080808;
+  /* Prevent the scaled pseudo-elements from creating scrollbars */
+  overflow: hidden;
+}
+
+/* Dim the KOD watermark further on this page */
+body:has(.future-page) #kod-bg {
+  background-color: rgba(255, 255, 255, 0.055);
+}
+
+/* 1. Full-viewport centering
+   ================================================ */
+.future-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 2rem);
+  min-height: calc(100dvh - 2rem);
+  padding: 2rem 1rem;
+  margin-top: -3rem;
+  position: relative;
+}
+
+/* Ambient light spill — the pool of light on the wall.
+   Visibly radiates outward. */
+.future-placeholder::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 85%;
+  max-width: 900px;
+  aspect-ratio: 2.2 / 1;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(210, 210, 210, 0.07) 0%,
+    rgba(190, 190, 190, 0.045) 25%,
+    rgba(170, 170, 170, 0.02) 50%,
+    transparent 75%
+  );
+  filter: blur(50px);
+  pointer-events: none;
+  z-index: 0;
+  transform: translate(-50%, -52%) scale(1);
+  opacity: 0.5;
+  animation: ambient-radiate 8s ease-in-out infinite;
+}
+
+/* Far ambient spill — wider, softer, offset timing */
+.future-placeholder::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 120%;
+  max-width: 1200px;
+  aspect-ratio: 3 / 1;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(200, 200, 200, 0.03) 0%,
+    rgba(180, 180, 180, 0.015) 35%,
+    transparent 65%
+  );
+  filter: blur(70px);
+  pointer-events: none;
+  z-index: 0;
+  transform: translate(-50%, -50%) scale(0.9);
+  opacity: 0.3;
+  animation: ambient-radiate-far 8s ease-in-out infinite;
+  animation-delay: -2s;
+}
+
+/* 2. The Sign — BIGGER, opaque, physical object
+   ================================================ */
+.lightboard {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  overflow: hidden; /* contain the texture layers */
+
+  /* BIGGER — generous horizontal rectangle */
+  padding: 3.8rem 7rem;
+  background: #0a0a0a;
+  border: 1.5px solid rgba(200, 200, 200, 0.13);
+
+  /* Light bleeding outward — dim state */
+  box-shadow:
+    inset 0 0 25px rgba(200, 200, 200, 0.02),
+    0 0 6px rgba(200, 200, 200, 0.05),
+    0 0 15px rgba(190, 190, 190, 0.035),
+    0 0 40px rgba(180, 180, 180, 0.02),
+    0 0 80px rgba(170, 170, 170, 0.012),
+    0 0 120px rgba(160, 160, 160, 0.008);
+
+  animation: sign-radiate 8s ease-in-out infinite;
+}
+
+/* Inner bezel catching light */
+.lightboard > .lightboard-surface ~ .lightboard-title {
+  position: relative;
+  z-index: 2;
+}
+.lightboard > .lightboard-surface ~ .lightboard-rule,
+.lightboard > .lightboard-surface ~ .lightboard-sub {
+  position: relative;
+  z-index: 2;
+}
+
+/* 3. Surface texture layers — the physicality of the sign
+   These sit INSIDE the sign and are revealed by the light.
+   ================================================ */
+.lightboard-surface {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Fine grain — the matte coating of the sign panel.
+   Like the slightly rough surface of a real lightbox. */
+.lightboard-grain {
+  filter: url(#grain);
+  background: rgba(255, 255, 255, 0.5);
+  opacity: 0;
+  mix-blend-mode: overlay;
+  animation: surface-reveal 8s ease-in-out infinite;
+}
+
+/* Coarser imperfections — dust settled on the surface,
+   hairline scratches, uneven coating.
+   Only visible when the light pushes through. */
+.lightboard-imperfections {
+  filter: url(#imperfections);
+  background: rgba(255, 255, 255, 0.6);
+  opacity: 0;
+  mix-blend-mode: soft-light;
+  animation: imperfections-reveal 8s ease-in-out infinite;
+  animation-delay: -0.5s; /* slightly offset from grain */
+}
+
+/* Static subtle inner gradient — simulates uneven internal
+   illumination, brighter at center, darker at edges.
+   Like how real lightboxes have hotspots. */
+.lightboard::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at 50% 45%,
+    rgba(255, 255, 255, 0.02) 0%,
+    rgba(255, 255, 255, 0.008) 40%,
+    transparent 70%
+  );
+  pointer-events: none;
+  z-index: 1;
+  animation: hotspot-radiate 8s ease-in-out infinite;
+}
+
+/* Bottom reflection — light pooling downward */
+.lightboard::after {
+  content: "";
+  position: absolute;
+  bottom: -50px;
+  left: 8%;
+  right: 8%;
+  height: 50px;
+  background: linear-gradient(
+    to bottom,
+    rgba(200, 200, 200, 0.025),
+    transparent
+  );
+  filter: blur(12px);
+  pointer-events: none;
+  z-index: 0;
+  transform-origin: top center;
+  transform: scaleY(1) scaleX(0.85);
+  opacity: 0.4;
+  animation: reflection-radiate 8s ease-in-out infinite;
+}
+
+/* 4. Typography — fluorescent tube text
+   ================================================ */
+.lightboard-title {
   font-family: var(--font-display);
-  font-size: clamp(2rem, 4vw, 3rem);
+  font-size: clamp(1.6rem, 4vw, 3.2rem);
   font-weight: 400;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--color-accent);
-  margin-bottom: 0.5rem;
-  /* REMOVED margin-top from here - desktop doesn't need it */
+  line-height: 1.1;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+
+  /* Dim state */
+  color: rgba(230, 230, 230, 0.88);
+  text-shadow:
+    0 0 2px rgba(255, 255, 255, 0.4),
+    0 0 6px rgba(220, 220, 220, 0.2),
+    0 0 15px rgba(200, 200, 200, 0.08),
+    0 0 30px rgba(190, 190, 190, 0.04);
+
+  animation: title-radiate 8s ease-in-out infinite;
 }
 
-.future-subtitle {
-  color: var(--color-muted);
-  font-weight: 300;
-}
-
-/* 2. Timeline Events
-   ================================================ */
-.timeline-section {
-  margin-bottom: 4rem;
-}
-
-.timeline-item {
-  /* Stronger glassmorphism card */
-  background: var(--glass-gradient), var(--glass-bg-alt);
-  border: 1px solid var(--glass-border-alt);
-  border-radius: var(--border-radius-medium);
-  padding: 2rem;
-  margin-bottom: 1.5rem;
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 2rem;
-  align-items: start;
-  transition: var(--transition-speed);
-  -webkit-backdrop-filter: var(--glass-blur);
-  backdrop-filter: var(--glass-blur);
-  box-shadow: var(--glass-shadow-alt);
-}
-
-/* No hover effect on cards; pills handle subtle illumination */
-
-.timeline-content {
-  display: flex;
-  flex-direction: column;
-}
-
-.timeline-date {
-  font-family: var(--font-display);
-  font-size: 1.1rem;
-  color: var(--color-accent);
-  margin-bottom: 0.5rem;
-  letter-spacing: 0.03em;
-}
-
-.timeline-title {
-  font-size: 1.3rem;
-  font-weight: 500;
-  color: var(--color-accent);
-  margin-bottom: 0.5rem;
-}
-
-.timeline-venue {
-  color: var(--color-muted);
-  font-size: 0.95rem;
-  margin-bottom: 1rem;
-}
-
-/* 3. Action Pills
-   ================================================ */
-.timeline-actions {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  align-items: stretch; /* Equal width buttons */
-  justify-content: flex-start;
-  min-width: 120px; /* Minimum width for button container */
-}
-
-.action-pill {
-  padding: 0.4rem 1.3rem;
-  border-radius: var(--border-radius-pill);
-  font-size: 0.9rem;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.03em;
-  cursor: pointer;
-  transition: var(--transition-speed);
-  border: none;
-  text-decoration: none;
-  white-space: nowrap;
-  text-align: center; /* Center text within button */
-}
-
-/* Dark neon amber */
-.pill-info {
-  background: rgba(255, 193, 7, 0.12);
-  color: #ffcd38;
-  box-shadow:
-    0 0 0 1px rgba(255, 193, 7, 0.28) inset,
-    0 0 10px rgba(255, 193, 7, 0.25),
-    0 0 26px rgba(255, 193, 7, 0.15);
-}
-
-.pill-info:hover,
-.pill-info:focus-visible {
-  background: rgba(255, 193, 7, 0.18);
-  box-shadow:
-    0 0 0 1px rgba(255, 193, 7, 0.35) inset,
-    0 0 14px rgba(255, 193, 7, 0.35),
-    0 0 34px rgba(255, 193, 7, 0.2);
-}
-
-/* Dark neon green */
-.pill-tickets {
-  background: rgba(76, 175, 80, 0.12);
-  color: #69e071;
-  box-shadow:
-    0 0 0 1px rgba(76, 175, 80, 0.28) inset,
-    0 0 10px rgba(76, 175, 80, 0.25),
-    0 0 26px rgba(76, 175, 80, 0.15);
-}
-
-.pill-tickets:hover,
-.pill-tickets:focus-visible {
-  background: rgba(76, 175, 80, 0.18);
-  box-shadow:
-    0 0 0 1px rgba(76, 175, 80, 0.35) inset,
-    0 0 14px rgba(76, 175, 80, 0.35),
-    0 0 34px rgba(76, 175, 80, 0.2);
-}
-
-/* 4. Newsletter Section
-   ================================================ */
-.newsletter-section {
-  /* Stronger glassmorphism panel */
-  background: var(--glass-gradient), var(--glass-bg-alt);
-  border: 1px solid var(--glass-border-alt);
-  border-radius: var(--border-radius-medium);
-  padding: 3rem;
-  text-align: left; /* align content with header */
-  -webkit-backdrop-filter: var(--glass-blur);
-  backdrop-filter: var(--glass-blur);
-  box-shadow: var(--glass-shadow-alt);
-}
-
-.newsletter-title {
-  font-family: var(--font-display);
-  font-size: 1.8rem;
-  color: var(--color-accent);
-  margin-bottom: 1rem;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
-}
-
-.newsletter-text {
-  color: var(--color-muted);
-  margin-bottom: 2rem;
-  font-size: 1.1rem;
-}
-
-.newsletter-form {
-  display: flex;
-  gap: 1rem;
-  max-width: 400px;
-  margin: 0; /* left align with header */
-}
-
-.newsletter-input {
-  flex: 1;
-  background: var(--color-background);
-  border: 1px solid var(--color-border);
-  color: var(--color-text);
-  padding: var(--spacing-input);
-  border-radius: var(--border-radius-small);
+.lightboard-sub {
   font-family: var(--font-primary);
-}
-
-.newsletter-input:focus {
-  outline: none;
-  border-color: var(--color-muted);
-}
-
-.newsletter-button {
-  background: transparent;
-  border: 1px solid var(--color-accent);
-  color: var(--color-accent);
-  padding: 0.75rem 1.5rem;
-  border-radius: var(--border-radius-small);
-  cursor: pointer;
-  font-family: var(--font-display);
-  font-size: 0.9rem;
-  letter-spacing: 0.03em;
+  font-size: clamp(0.72rem, 1.3vw, 1rem);
+  font-weight: 300;
+  letter-spacing: 0.32em;
   text-transform: uppercase;
-  transition: var(--transition-speed);
+  text-align: center;
+  margin-top: 1rem;
+  position: relative;
+  z-index: 2;
+
+  /* Dim state */
+  color: rgba(160, 160, 160, 0.55);
+  text-shadow:
+    0 0 2px rgba(190, 190, 190, 0.12),
+    0 0 8px rgba(170, 170, 170, 0.05);
+
+  animation: sub-radiate 8s ease-in-out infinite;
 }
 
-.newsletter-button:hover {
-  background: var(--color-accent);
-  color: var(--color-background);
+/* Divider strip */
+.lightboard-rule {
+  width: 56px;
+  height: 1px;
+  border: none;
+  margin: 1rem 0 0 0;
+  position: relative;
+  z-index: 2;
+  background: rgba(200, 200, 200, 0.15);
+  box-shadow:
+    0 0 3px rgba(200, 200, 200, 0.08),
+    0 0 8px rgba(190, 190, 190, 0.04);
+  animation: rule-radiate 8s ease-in-out infinite;
 }
 
-/* 5. Responsive Design
+/* 5. Animations
    ================================================ */
 
-/* Mobile responsiveness */
+/* Ambient wall spill — GROWS outward */
+@keyframes ambient-radiate {
+  0%, 100% {
+    transform: translate(-50%, -52%) scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translate(-50%, -52%) scale(1.35);
+    opacity: 1;
+  }
+}
+
+@keyframes ambient-radiate-far {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(0.9);
+    opacity: 0.2;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.25);
+    opacity: 0.6;
+  }
+}
+
+/* Sign box-shadow — dim hum to bright push */
+@keyframes sign-radiate {
+  0%, 100% {
+    box-shadow:
+      inset 0 0 25px rgba(200, 200, 200, 0.02),
+      0 0 6px rgba(200, 200, 200, 0.05),
+      0 0 15px rgba(190, 190, 190, 0.035),
+      0 0 40px rgba(180, 180, 180, 0.02),
+      0 0 80px rgba(170, 170, 170, 0.012),
+      0 0 120px rgba(160, 160, 160, 0.008);
+    border-color: rgba(200, 200, 200, 0.13);
+  }
+  50% {
+    box-shadow:
+      inset 0 0 50px rgba(210, 210, 210, 0.06),
+      0 0 15px rgba(220, 220, 220, 0.14),
+      0 0 35px rgba(210, 210, 210, 0.10),
+      0 0 80px rgba(200, 200, 200, 0.07),
+      0 0 150px rgba(190, 190, 190, 0.045),
+      0 0 250px rgba(180, 180, 180, 0.025);
+    border-color: rgba(210, 210, 210, 0.30);
+  }
+}
+
+/* Surface grain — invisible in dark, revealed at peak */
+@keyframes surface-reveal {
+  0%, 100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.35;
+  }
+}
+
+/* Imperfections — same but slightly different timing */
+@keyframes imperfections-reveal {
+  0%, 100% {
+    opacity: 0;
+  }
+  45% {
+    opacity: 0.25;
+  }
+  55% {
+    opacity: 0.28;
+  }
+}
+
+/* Internal hotspot — center brightens more */
+@keyframes hotspot-radiate {
+  0%, 100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Title tube — dims and brightens */
+@keyframes title-radiate {
+  0%, 100% {
+    color: rgba(230, 230, 230, 0.88);
+    text-shadow:
+      0 0 2px rgba(255, 255, 255, 0.4),
+      0 0 6px rgba(220, 220, 220, 0.2),
+      0 0 15px rgba(200, 200, 200, 0.08),
+      0 0 30px rgba(190, 190, 190, 0.04);
+  }
+  50% {
+    color: rgba(255, 255, 255, 1);
+    text-shadow:
+      0 0 4px rgba(255, 255, 255, 0.9),
+      0 0 14px rgba(235, 235, 235, 0.5),
+      0 0 32px rgba(215, 215, 215, 0.25),
+      0 0 60px rgba(200, 200, 200, 0.14),
+      0 0 90px rgba(190, 190, 190, 0.07);
+  }
+}
+
+/* Subtitle */
+@keyframes sub-radiate {
+  0%, 100% {
+    color: rgba(160, 160, 160, 0.55);
+    text-shadow:
+      0 0 2px rgba(190, 190, 190, 0.12),
+      0 0 8px rgba(170, 170, 170, 0.05);
+  }
+  50% {
+    color: rgba(200, 200, 200, 0.88);
+    text-shadow:
+      0 0 3px rgba(220, 220, 220, 0.35),
+      0 0 14px rgba(200, 200, 200, 0.18),
+      0 0 30px rgba(185, 185, 185, 0.08);
+  }
+}
+
+/* Rule strip */
+@keyframes rule-radiate {
+  0%, 100% {
+    background: rgba(200, 200, 200, 0.15);
+    box-shadow:
+      0 0 3px rgba(200, 200, 200, 0.08),
+      0 0 8px rgba(190, 190, 190, 0.04);
+  }
+  50% {
+    background: rgba(220, 220, 220, 0.40);
+    box-shadow:
+      0 0 8px rgba(220, 220, 220, 0.28),
+      0 0 20px rgba(200, 200, 200, 0.14),
+      0 0 35px rgba(190, 190, 190, 0.06);
+  }
+}
+
+/* Bottom reflection — stretches and brightens */
+@keyframes reflection-radiate {
+  0%, 100% {
+    transform: scaleY(1) scaleX(0.85);
+    opacity: 0.4;
+  }
+  50% {
+    transform: scaleY(1.8) scaleX(1.2);
+    opacity: 1;
+  }
+}
+
+/* 6. Responsive — Mobile
+   ================================================ */
 @media (max-width: 768px) {
-  .future-header {
-    /* Keep padding consistent with events page */
-    padding: 0 0 1.5rem;
-  }
-
-  /* FIX: Add margin-top ONLY for mobile to align with logo */
-  .future-title {
-    margin-top: calc(2.5rem - 38px);
-  }
-
-  .timeline-item {
-    padding: 1.5rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  .timeline-content {
-    display: contents; /* Flatten to allow direct grid control */
-  }
-
-  .timeline-title {
-    order: -3; /* Title first */
-    font-size: 1.2rem;
-    margin-bottom: 0.8rem;
-  }
-
-  .timeline-date {
-    order: -2; /* Date second */
-    grid-column: 1;
-    font-size: 0.85rem;
-    margin-bottom: 0;
-  }
-
-  .timeline-venue {
-    order: 1; /* Venue last */
-    margin-bottom: 0;
-    margin-top: 0.5rem;
-  }
-
-  /* Create row for date + buttons */
-  .timeline-item {
-    display: grid;
-    grid-template-columns: 40% 60%;
-    grid-template-rows: auto auto auto;
-    gap: 0.5rem 1rem;
-    align-items: start;
-  }
-
-  .timeline-title {
-    grid-column: 1 / -1; /* Full width */
-    grid-row: 1;
-  }
-
-  .timeline-date {
-    grid-column: 1;
-    grid-row: 2;
-    align-self: center;
-  }
-
-  .timeline-actions {
-    grid-column: 2;
-    grid-row: 2;
-    flex-direction: column;
-    gap: 0.6rem;
-    align-items: stretch; /* Buttons same width */
+  .future-placeholder {
     margin-top: 0;
+    min-height: calc(100vh - 4rem);
+    min-height: calc(100dvh - 4rem);
+    padding: 1rem 0.75rem;
   }
 
-  .timeline-venue {
-    grid-column: 1 / -1; /* Full width */
-    grid-row: 3;
+  .lightboard {
+    /* Still big — fills most of the mobile width */
+    padding: 2.8rem 2rem;
+    width: calc(100% - 1rem);
+    max-width: 420px;
   }
 
-  .action-pill {
-    font-size: 0.75rem;
-    padding: 0.4rem 0.8rem;
-    width: 100%; /* Full width of column */
-    text-align: center;
+  .lightboard-title {
+    font-size: clamp(1.2rem, 6vw, 1.8rem);
+    letter-spacing: 0.12em;
   }
 
-  .newsletter-section {
-    padding: 2rem 1.5rem;
+  .lightboard-sub {
+    letter-spacing: 0.2em;
+    font-size: clamp(0.58rem, 2.5vw, 0.75rem);
+    margin-top: 0.75rem;
   }
 
-  .newsletter-form {
-    flex-direction: column;
-    gap: 1rem;
-    align-items: flex-start; /* left align inputs on mobile too */
+  .lightboard-rule {
+    width: 40px;
+    margin-top: 0.75rem;
+  }
+
+  .future-placeholder::before {
+    width: 100%;
+    aspect-ratio: 2 / 1;
+  }
+
+  .future-placeholder::after {
+    width: 130%;
+  }
+
+  .lightboard::after {
+    bottom: -35px;
+    height: 35px;
+    left: 12%;
+    right: 12%;
   }
 }
 
-/* Tablet responsiveness */
-@media (max-width: 1024px) and (min-width: 769px) {
-  .timeline-item {
-    padding: 2rem 1.5rem;
-    grid-template-columns: 1fr auto;
-    gap: 1.5rem;
+@media (max-width: 480px) {
+  .lightboard {
+    padding: 2.4rem 1.4rem;
   }
 
-  .timeline-title {
-    font-size: 1.2rem;
+  .lightboard-title {
+    letter-spacing: 0.1em;
   }
 
-  .timeline-date {
-    font-size: 1rem;
+  .lightboard-sub {
+    letter-spacing: 0.14em;
   }
 }
 
-/* Large screen optimization: left-align without changing box width */
-@media (min-width: 1200px) {
-  .timeline-section,
-  .newsletter-section {
-    max-width: 800px; /* requested max width */
-    margin-left: 0; /* align to the left edge */
-    margin-right: auto; /* prevents centering */
+/* Tablet — sign stays generous */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .lightboard {
+    padding: 3.2rem 5rem;
   }
 
-  .timeline-item {
-    padding: 2.5rem;
+  .lightboard-title {
+    font-size: clamp(1.5rem, 3.5vw, 2.4rem);
+  }
+}
+
+/* 7. Reduced motion
+   ================================================ */
+@media (prefers-reduced-motion: reduce) {
+  .lightboard,
+  .lightboard::before,
+  .lightboard::after,
+  .lightboard-title,
+  .lightboard-sub,
+  .lightboard-rule,
+  .lightboard-grain,
+  .lightboard-imperfections,
+  .future-placeholder::before,
+  .future-placeholder::after {
+    animation: none;
+  }
+  /* Static at mid-brightness — texture visible */
+  .future-placeholder::before {
+    transform: translate(-50%, -52%) scale(1.15);
+    opacity: 0.75;
+  }
+  .lightboard {
+    box-shadow:
+      inset 0 0 38px rgba(205, 205, 205, 0.04),
+      0 0 10px rgba(210, 210, 210, 0.09),
+      0 0 25px rgba(200, 200, 200, 0.07),
+      0 0 60px rgba(190, 190, 190, 0.045),
+      0 0 115px rgba(180, 180, 180, 0.028),
+      0 0 185px rgba(170, 170, 170, 0.016);
+    border-color: rgba(205, 205, 205, 0.21);
+  }
+  .lightboard-grain {
+    opacity: 0.18;
+  }
+  .lightboard-imperfections {
+    opacity: 0.14;
+  }
+  .lightboard-title {
+    color: rgba(242, 242, 242, 0.94);
+    text-shadow:
+      0 0 3px rgba(255, 255, 255, 0.65),
+      0 0 10px rgba(228, 228, 228, 0.35),
+      0 0 24px rgba(208, 208, 208, 0.16),
+      0 0 45px rgba(195, 195, 195, 0.09);
+  }
+  .lightboard-sub {
+    color: rgba(180, 180, 180, 0.72);
+    text-shadow:
+      0 0 3px rgba(205, 205, 205, 0.24),
+      0 0 11px rgba(185, 185, 185, 0.12);
+  }
+  .lightboard::after {
+    transform: scaleY(1.4) scaleX(1);
+    opacity: 0.7;
   }
 }

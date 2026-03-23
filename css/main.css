@@ -907,4 +907,50 @@ a:focus-visible {
   p {
     font-size: 1rem;
   }
+
+  /* ---- Height-responsive mobile menu ----
+     Elements stay at their ORIGINAL fixed sizes at normal phone
+     heights (500px+). Only start shrinking below ~500px CSS height
+     (landscape, split-screen, very short devices).
+     vh multipliers are calibrated so: original_size / 500 * 100 */
+
+  .side-menu {
+    padding-top: clamp(0.75rem, 6.4vh, 2rem);
+    padding-bottom: clamp(0.5rem, 4.8vh, 1.5rem);
+  }
+
+  .menu-logo {
+    margin-top: clamp(4px, 3vh, 15px);
+  }
+
+  .menu-logo-img {
+    width: clamp(34px, 11.6vh, 58px);
+  }
+
+  .menu-logo-caption {
+    font-size: clamp(0.6rem, 3.2vh, 1rem);
+  }
+
+  .menu-items {
+    gap: clamp(0.4rem, 3.8vh, 1.2rem);
+  }
+
+  .menu-link {
+    font-size: clamp(0.65rem, 3vh, 0.95rem);
+  }
+
+  .lang-switcher {
+    padding: clamp(6px, 3.2vh, 16px);
+  }
+
+  .lang-link {
+    width: clamp(28px, 8.8vh, var(--lang-hit-mobile));
+    height: clamp(28px, 8.8vh, var(--lang-hit-mobile));
+    font-size: clamp(9px, 2.4vh, var(--lang-text-size-mobile));
+  }
+
+  .lang-link::before {
+    width: clamp(24px, 7.2vh, var(--lang-circle-size-mobile));
+    height: clamp(24px, 7.2vh, var(--lang-circle-size-mobile));
+  }
 }

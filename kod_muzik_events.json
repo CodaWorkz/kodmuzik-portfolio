@@ -10547,6 +10547,118 @@
         "tr": "",
         "en": ""
       }
+    },
+    {
+      "id": "event_376",
+      "artist": {
+        "tr": ["Hiromi Solo"],
+        "en": ["Hiromi Solo"]
+      },
+      "genre": {
+        "tr": "Caz",
+        "en": "Jazz"
+      },
+      "date": "10.12.2022",
+      "venue": {
+        "tr": "Zorlu PSM",
+        "en": "Zorlu PSM"
+      },
+      "city": {
+        "tr": "İstanbul",
+        "en": "Istanbul"
+      },
+      "series": {
+        "tr": "",
+        "en": ""
+      },
+      "description": {
+        "tr": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "event_377",
+      "artist": {
+        "tr": ["Dean Brown Groove Warriors"],
+        "en": ["Dean Brown Groove Warriors"]
+      },
+      "genre": {
+        "tr": "Caz",
+        "en": "Jazz"
+      },
+      "date": "04.08.2021",
+      "venue": {
+        "tr": "CRR Konser Salonu",
+        "en": "CRR Concert Hall"
+      },
+      "city": {
+        "tr": "İstanbul",
+        "en": "Istanbul"
+      },
+      "series": {
+        "tr": "",
+        "en": ""
+      },
+      "description": {
+        "tr": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "event_378",
+      "artist": {
+        "tr": ["Septic Flesh"],
+        "en": ["Septic Flesh"]
+      },
+      "genre": {
+        "tr": "Metal",
+        "en": "Metal"
+      },
+      "date": "05.11.2019",
+      "venue": {
+        "tr": "Zorlu PSM",
+        "en": "Zorlu PSM"
+      },
+      "city": {
+        "tr": "İstanbul",
+        "en": "Istanbul"
+      },
+      "series": {
+        "tr": "",
+        "en": ""
+      },
+      "description": {
+        "tr": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "event_379",
+      "artist": {
+        "tr": ["Lars Danielsson Libretto"],
+        "en": ["Lars Danielsson Libretto"]
+      },
+      "genre": {
+        "tr": "Caz",
+        "en": "Jazz"
+      },
+      "date": "03.11.2026",
+      "venue": {
+        "tr": "Paribu Art",
+        "en": "Paribu Art"
+      },
+      "city": {
+        "tr": "İstanbul",
+        "en": "Istanbul"
+      },
+      "series": {
+        "tr": "",
+        "en": ""
+      },
+      "description": {
+        "tr": "",
+        "en": ""
+      }
     }
   ],
   "meta": {
@@ -10746,6 +10858,10 @@
         "en": "Parkorman"
       },
       {
+        "tr": "Paribu Art",
+        "en": "Paribu Art"
+      },
+      {
         "tr": "Proje 4 L",
         "en": "Proje 4 L"
       },
@@ -10837,10 +10953,10 @@
       }
     },
     "progress": {
-      "currentPeriod": "1996-2025",
-      "eventsCompleted": 375,
-      "estimatedTotal": "375+",
-      "lastUpdated": "01.02.2026"
+      "currentPeriod": "1996-2026",
+      "eventsCompleted": 379,
+      "estimatedTotal": "379+",
+      "lastUpdated": "23.03.2026"
     }
   }
 }

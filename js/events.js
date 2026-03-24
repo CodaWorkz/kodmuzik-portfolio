@@ -210,6 +210,8 @@ function applyCustomSelectValue(selectId, value) {
 // ================================================
 async function loadEvents() {
   try {
+    // ── SWITCHOVER: Uncomment the API line and comment the JSON line to switch to database ──
+    // const response = await fetch("/api/events.php?type=past");
     const response = await fetch("/kod_muzik_events.json");
     if (!response.ok) throw new Error("Failed to load events");
 

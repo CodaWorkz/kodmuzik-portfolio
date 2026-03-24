@@ -1,0 +1,13 @@
+# Force HTTPS on admin
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Deny direct access to includes/
+<Files "*.php">
+    # Allow all PHP files by default
+</Files>
+
+<IfModule mod_rewrite.c>
+    RewriteRule ^includes/ - [F,L]
+</IfModule>

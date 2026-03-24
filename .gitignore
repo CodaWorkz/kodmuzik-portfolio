@@ -1,2 +1,6 @@
 .DS_Store
 ~.xlsx
+
+# Backend — credentials and user uploads
+api/config.php
+/uploads/

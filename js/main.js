@@ -29,6 +29,7 @@ const SLUG_MAP = {
   "/hakkimizda": "/about",
   "/etkinlikler": "/events",
   "/gelecek-etkinlikler": "/upcoming-events",
+  "/galeri": "/gallery",
   "/iletisim": "/contact",
 };
 
@@ -37,6 +38,7 @@ const SLUG_MAP_REVERSE = {
   "/about": "/hakkimizda",
   "/events": "/etkinlikler",
   "/upcoming-events": "/gelecek-etkinlikler",
+  "/gallery": "/galeri",
   "/contact": "/iletisim",
 };
 

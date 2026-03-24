@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <title>Gallery - Kodmüzik</title>
+    <meta
+      name="description"
+      content="KOD Müzik event photos, posters and flyers"
+    />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;500&family=TASA+Orbiter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Global Styles -->
+    <link rel="stylesheet" href="/css/main.css" />
+    <!-- Gallery Styles -->
+    <link rel="stylesheet" href="/css/gallery.css" />
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.kodmuzik.com/en/gallery/" />
+    <!-- Hreflang -->
+    <link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://www.kodmuzik.com/galeri/"
+    />
+    <link
+      rel="alternate"
+      hreflang="tr"
+      href="https://www.kodmuzik.com/galeri/"
+    />
+    <link
+      rel="alternate"
+      hreflang="en"
+      href="https://www.kodmuzik.com/en/gallery/"
+    />
+  </head>
+  <body>
+    <!-- Skip to content link for screen readers -->
+    <a href="#main-content" class="skip-to-content">Skip to content</a>
+
+    <!-- Side Menu -->
+    <nav class="side-menu" aria-label="Main menu">
+      <!-- Logo/Home -->
+      <a href="/en/" class="menu-logo" aria-label="Kodmüzik home">
+        <img
+          src="/KodLogo.svg"
+          alt="Kodmüzik logo"
+          class="menu-logo-img"
+          loading="eager"
+          decoding="async"
+        />
+        <span class="menu-logo-caption" aria-hidden="true"
+          ><span class="menu-logo-letter">K</span
+          ><span class="menu-logo-letter">O</span
+          ><span class="menu-logo-letter">D</span
+          ><span class="menu-logo-letter">M</span
+          ><span class="menu-logo-letter">Ü</span
+          ><span class="menu-logo-letter">Z</span
+          ><span class="menu-logo-letter">İ</span
+          ><span class="menu-logo-letter">K</span></span
+        >
+      </a>
+
+      <!-- Navigation -->
+      <div class="menu-nav">
+        <ul class="menu-items">
+          <li class="menu-item">
+            <a href="/en/about/" class="menu-link" data-path="/hakkimizda"
+              >ABOUT</a
+            >
+          </li>
+          <li class="menu-item">
+            <a href="/en/events/" class="menu-link" data-path="/etkinlikler"
+              >PAST</a
+            >
+          </li>
+          <li class="menu-item">
+            <a
+              href="/en/upcoming-events/"
+              class="menu-link"
+              data-path="/gelecek-etkinlikler"
+              >FUTURE</a
+            >
+          </li>
+          <li class="menu-item">
+            <a href="/en/gallery/" class="menu-link" data-path="/galeri"
+              >GALLERY</a
+            >
+          </li>
+          <li class="menu-item">
+            <a href="/en/contact/" class="menu-link" data-path="/iletisim"
+              >CONTACT</a
+            >
+          </li>
+        </ul>
+      </div>
+
+      <!-- Language Toggle -->
+      <div class="lang-toggle-menu" aria-label="Language selection">
+        <div class="lang-switcher" role="group" aria-label="Language selection">
+          <a
+            href="/galeri/"
+            class="lang-link"
+            id="lang-tr"
+            hreflang="tr"
+            lang="tr"
+            >TR</a
+          >
+          <a
+            href="/en/gallery/"
+            class="lang-link"
+            id="lang-en"
+            hreflang="en"
+            lang="en"
+            >EN</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main id="main-content" class="main-content">
+      <!-- Gallery Header -->
+      <section class="gallery-header">
+        <h1 class="gallery-title">Gallery</h1>
+      </section>
+
+      <!-- Filters -->
+      <section class="gallery-filters">
+        <div class="gallery-filters-container">
+          <select id="gallery-category-filter" class="gallery-filter-select">
+            <option value="">All</option>
+            <option value="photo">Photos</option>
+            <option value="poster">Posters</option>
+            <option value="flyer">Flyers</option>
+            <option value="other">Other</option>
+          </select>
+          <select id="gallery-year-filter" class="gallery-filter-select">
+            <option value="">All Years</option>
+          </select>
+        </div>
+      </section>
+
+      <!-- Gallery Grid -->
+      <section class="gallery-section">
+        <div id="gallery-grid" class="gallery-grid">
+          <div class="loading">Loading...</div>
+        </div>
+      </section>
+
+      <!-- Lightbox -->
+      <div id="gallery-lightbox" class="gallery-lightbox" hidden>
+        <button class="lightbox-close" aria-label="Close">&times;</button>
+        <button class="lightbox-prev" aria-label="Previous">&#8249;</button>
+        <button class="lightbox-next" aria-label="Next">&#8250;</button>
+        <div class="lightbox-content">
+          <img id="lightbox-img" src="" alt="" />
+          <p id="lightbox-caption" class="lightbox-caption"></p>
+        </div>
+      </div>
+    </main>
+
+    <!-- Global Scripts -->
+    <script src="/js/utils.js" defer></script>
+    <script src="/js/main.js" defer></script>
+    <script src="/js/gallery.js" defer></script>
+  </body>
+</html>

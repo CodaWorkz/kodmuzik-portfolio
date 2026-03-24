@@ -16,9 +16,9 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 $language = (strpos($_SERVER['HTTP_REFERER'] ?? '', '/en/') !== false) ? 'en' : 'tr';
 
 // Sanitize and validate inputs
-$name = trim(filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING));
+$name = trim(htmlspecialchars(filter_input(INPUT_POST, 'name', FILTER_DEFAULT) ?? '', ENT_QUOTES, 'UTF-8'));
 $email = trim(filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL));
-$message = trim(filter_input(INPUT_POST, 'message', FILTER_SANITIZE_STRING));
+$message = trim(htmlspecialchars(filter_input(INPUT_POST, 'message', FILTER_DEFAULT) ?? '', ENT_QUOTES, 'UTF-8'));
 
 // Validation
 $errors = [];

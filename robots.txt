@@ -15,6 +15,10 @@ Allow: /en/gelecek-etkinlikler/
 Allow: /en/hakkimizda/
 Allow: /en/iletisim/
 
+# Disallow admin and API (not indexable pages)
+Disallow: /admin/
+Disallow: /api/
+
 # Disallow form handlers and backend files
 Disallow: /contact-handler.php
 Disallow: /*.json$

@@ -37,7 +37,7 @@
   // Show a lightweight loading state
   elTimeline.innerHTML = `<div class="loading" style="padding:1rem 0;color:var(--color-muted);">${i18n[lang].loading}</div>`;
 
-  fetch("/future_events.json")
+  fetch("/api/events.php?type=future")
     .then((r) => {
       if (!r.ok) throw new Error("network");
       return r.json();

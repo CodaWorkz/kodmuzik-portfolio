@@ -16,8 +16,8 @@
 // Update these values to match your cPanel database credentials
 $dbHost    = 'localhost';
 $dbName    = 'kodmuzik_events';       // [CHANGE_ME] actual cPanel DB name
-$dbUser    = 'kodmuzik_admin';        // [CHANGE_ME] actual cPanel DB user
-$dbPass    = 'CHANGE_ME_PASSWORD';    // [CHANGE_ME] actual cPanel DB password
+$dbUser    = 'kodmuzik_admin';        // cPanel DB user
+$dbPass    = 'KodMuzik.26!';         // cPanel DB password
 $dbCharset = 'utf8mb4';
 
 // Default admin credentials (change password after first login)
@@ -38,6 +38,16 @@ try {
     echo "✓ Database connection successful.\n\n";
 } catch (PDOException $e) {
     die("✗ Database connection failed: " . $e->getMessage() . "\n");
+}
+
+// ── Run Schema ──────────────────────────────────────────────────────────────
+$schemaFile = __DIR__ . '/schema.sql';
+if (file_exists($schemaFile)) {
+    $schema = file_get_contents($schemaFile);
+    $pdo->exec($schema);
+    echo "✓ Schema tables created.\n\n";
+} else {
+    echo "⚠ schema.sql not found, assuming tables already exist.\n\n";
 }
 
 // ── Helper: Convert DD.MM.YYYY or DD-MM-YYYY to YYYY-MM-DD ────────────────

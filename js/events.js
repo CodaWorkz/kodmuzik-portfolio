@@ -210,9 +210,9 @@ function applyCustomSelectValue(selectId, value) {
 // ================================================
 async function loadEvents() {
   try {
-    // ── SWITCHOVER: Uncomment the API line and comment the JSON line to switch to database ──
-    // const response = await fetch("/api/events.php?type=past");
-    const response = await fetch("/kod_muzik_events.json");
+    // ── SWITCHOVER: API active — reading from database ──
+    const response = await fetch("/api/events.php?type=past");
+    // const response = await fetch("/kod_muzik_events.json");
     if (!response.ok) throw new Error("Failed to load events");
 
     const data = await response.json();
@@ -488,6 +488,7 @@ function displayEvents(events) {
 
   if (events.length === 0) {
     grid.innerHTML = `<div class="no-results">${translations[currentLang].noResults}</div>`;
+    grid.classList.remove('has-ssr');
     return;
   }
 
@@ -498,6 +499,7 @@ function displayEvents(events) {
     return dateB - dateA; // Descending order (newest first)
   });
 
+  grid.classList.add("js-rendered");
   grid.innerHTML = sortedEvents
     .map((event, index) => {
       const date = parseEventDate(event.date);
@@ -516,7 +518,7 @@ function displayEvents(events) {
           : "";
 
       return `
-      <div class="event-card">
+      <div class="event-card" style="--i:${index}">
         <h3 class="event-artist">${seriesValue ? `<span class=\"event-series-inline\">${seriesValue}</span> ` : ""}<span class=\"event-artist-name\">${getArtistName(event.artist, currentLang)}</span></h3>
         <div class="event-details">
           <div class="event-detail">
@@ -533,7 +535,7 @@ function displayEvents(events) {
     })
     .join("");
 
-  // Fit series text to one line and apply long-title sizing
+  // Fit series text after DOM is populated
   if (typeof requestAnimationFrame === "function") {
     requestAnimationFrame(() => {
       applyLongTitleSizing();

@@ -1,3 +1,25 @@
+<?php
+$ssr_events = [];
+$config = $_SERVER['DOCUMENT_ROOT'] . '/api/config.php';
+if (file_exists($config)) {
+    require_once $config;
+    try {
+        $pdo = getDB();
+        $stmt = $pdo->query("
+            SELECT artists_tr, genre_tr, event_date, venue_tr
+            FROM events
+            WHERE event_type = 'past' AND status = 'published'
+            ORDER BY event_date DESC
+            LIMIT 20
+        ");
+        $ssr_events = $stmt->fetchAll();
+    } catch (Exception $e) {
+        // Silently fail — JS will load events
+    }
+}
+$tr_months = ['', 'Ocak', 'Şubat', 'Mart', 'Nisan', 'Mayıs', 'Haziran',
+               'Temmuz', 'Ağustos', 'Eylül', 'Ekim', 'Kasım', 'Aralık'];
+?>
 <!doctype html>
 <html lang="tr">
   <head>
@@ -22,6 +44,10 @@
     <link rel="stylesheet" href="/css/main.css" />
     <!-- Events Page Styles -->
     <link rel="stylesheet" href="/css/events.css" />
+    <!-- SSR → JS seamless handoff: hide loading spinner when SSR provides content -->
+    <style>
+      .has-ssr .loading { display: none; }
+    </style>
     <!-- Canonical URL -->
     <link rel="canonical" href="https://www.kodmuzik.com/etkinlikler/" />
     <!-- Hreflang -->
@@ -264,9 +290,28 @@
         </div>
       </section>
 
-      <!-- Events Grid -->
+      <!-- Events Grid — SSR content rendered directly, JS replaces in-place -->
       <section class="events-section">
-        <div id="events-grid" class="events-grid">
+        <div id="events-grid" class="events-grid<?php echo !empty($ssr_events) ? ' has-ssr' : ''; ?>">
+          <?php if (!empty($ssr_events)): ?>
+          <?php foreach ($ssr_events as $ev):
+            $artists = json_decode($ev['artists_tr'], true) ?: [];
+            $artistName = implode(' & ', array_filter($artists)) ?: '—';
+            $genre = $ev['genre_tr'] ?? '';
+            $d = new DateTime($ev['event_date']);
+            $date = $d->format('j') . ' ' . $tr_months[(int)$d->format('n')] . ' ' . $d->format('Y');
+            $venue = $ev['venue_tr'] ?? '';
+          ?>
+          <div class="event-card">
+            <h3 class="event-artist"><span class="event-artist-name"><?= htmlspecialchars($artistName, ENT_QUOTES, 'UTF-8') ?></span></h3>
+            <div class="event-details">
+              <div class="event-detail"><span class="event-detail-label">Tarih:</span> <span><?= htmlspecialchars($date, ENT_QUOTES, 'UTF-8') ?></span></div>
+              <div class="event-detail"><span class="event-detail-label">Mekan:</span> <span><?= htmlspecialchars($venue, ENT_QUOTES, 'UTF-8') ?></span></div>
+              <?php if ($genre): ?><div class="event-detail"><span class="event-detail-label">Tür:</span> <span><?= htmlspecialchars($genre, ENT_QUOTES, 'UTF-8') ?></span></div><?php endif; ?>
+            </div>
+          </div>
+          <?php endforeach; ?>
+          <?php endif; ?>
           <div class="loading">Yükleniyor...</div>
         </div>
       </section>

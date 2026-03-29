@@ -1,3 +1,23 @@
+<?php
+$ssr_events = [];
+$config = $_SERVER['DOCUMENT_ROOT'] . '/api/config.php';
+if (file_exists($config)) {
+    require_once $config;
+    try {
+        $pdo = getDB();
+        $stmt = $pdo->query("
+            SELECT artists_en, genre_en, event_date, venue_en
+            FROM events
+            WHERE event_type = 'past' AND status = 'published'
+            ORDER BY event_date DESC
+            LIMIT 20
+        ");
+        $ssr_events = $stmt->fetchAll();
+    } catch (Exception $e) {
+        // Silently fail — JS will load events
+    }
+}
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -22,6 +42,10 @@
     <link rel="stylesheet" href="/css/main.css" />
     <!-- Events Page Styles -->
     <link rel="stylesheet" href="/css/events.css" />
+    <!-- SSR → JS seamless handoff: hide loading spinner when SSR provides content -->
+    <style>
+      .has-ssr .loading { display: none; }
+    </style>
     <!-- Canonical URL -->
     <link rel="canonical" href="https://www.kodmuzik.com/en/events/" />
     <!-- Hreflang -->
@@ -261,9 +285,27 @@
         </div>
       </section>
 
-      <!-- Events Grid -->
+      <!-- Events Grid — SSR content rendered directly, JS replaces in-place -->
       <section class="events-section">
-        <div id="events-grid" class="events-grid">
+        <div id="events-grid" class="events-grid<?php echo !empty($ssr_events) ? ' has-ssr' : ''; ?>">
+          <?php if (!empty($ssr_events)): ?>
+          <?php foreach ($ssr_events as $ev):
+            $artists = json_decode($ev['artists_en'], true) ?: [];
+            $artistName = implode(' & ', array_filter($artists)) ?: '—';
+            $genre = $ev['genre_en'] ?? '';
+            $date = date('F j, Y', strtotime($ev['event_date']));
+            $venue = $ev['venue_en'] ?? '';
+          ?>
+          <div class="event-card">
+            <h3 class="event-artist"><span class="event-artist-name"><?= htmlspecialchars($artistName, ENT_QUOTES, 'UTF-8') ?></span></h3>
+            <div class="event-details">
+              <div class="event-detail"><span class="event-detail-label">Date:</span> <span><?= htmlspecialchars($date, ENT_QUOTES, 'UTF-8') ?></span></div>
+              <div class="event-detail"><span class="event-detail-label">Venue:</span> <span><?= htmlspecialchars($venue, ENT_QUOTES, 'UTF-8') ?></span></div>
+              <?php if ($genre): ?><div class="event-detail"><span class="event-detail-label">Genre:</span> <span><?= htmlspecialchars($genre, ENT_QUOTES, 'UTF-8') ?></span></div><?php endif; ?>
+            </div>
+          </div>
+          <?php endforeach; ?>
+          <?php endif; ?>
           <div class="loading">Loading...</div>
         </div>
       </section>

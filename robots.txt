@@ -10,10 +10,10 @@ Allow: /etkinlikler/
 Allow: /gelecek-etkinlikler/
 Allow: /hakkimizda/
 Allow: /iletisim/
-Allow: /en/etkinlikler/
-Allow: /en/gelecek-etkinlikler/
-Allow: /en/hakkimizda/
-Allow: /en/iletisim/
+Allow: /en/events/
+Allow: /en/upcoming-events/
+Allow: /en/about/
+Allow: /en/contact/
 
 # Disallow admin and API (not indexable pages)
 Disallow: /admin/

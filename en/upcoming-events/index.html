@@ -21,7 +21,7 @@
     <!-- Global Styles -->
     <link rel="stylesheet" href="/css/main.css" />
     <!-- Future Events Styles -->
-    <link rel="stylesheet" href="/css/future-events.css" />
+    <link rel="stylesheet" href="/css/future-events-timeline.css" />
     <!-- Canonical URL -->
     <link rel="canonical" href="https://www.kodmuzik.com/en/upcoming-events/" />
     <!-- Hreflang -->
@@ -120,41 +120,18 @@
       </div>
     </nav>
 
-    <!-- SVG filters for sign surface texture — hidden, referenced by CSS -->
-    <svg class="sr-only" aria-hidden="true" style="position:absolute;width:0;height:0">
-      <defs>
-        <!-- Fine grain — the base matte surface of the sign panel -->
-        <filter id="grain" x="0" y="0" width="100%" height="100%">
-          <feTurbulence type="fractalNoise" baseFrequency="0.75" numOctaves="4" stitchTiles="stitch" result="noise"/>
-          <feColorMatrix type="saturate" values="0" in="noise" result="mono"/>
-          <feComponentTransfer in="mono" result="final">
-            <feFuncA type="linear" slope="0.12"/>
-          </feComponentTransfer>
-        </filter>
-        <!-- Coarser imperfections — dust, micro-scratches -->
-        <filter id="imperfections" x="0" y="0" width="100%" height="100%">
-          <feTurbulence type="fractalNoise" baseFrequency="0.15 0.35" numOctaves="2" seed="3" stitchTiles="stitch" result="noise"/>
-          <feColorMatrix type="saturate" values="0" in="noise" result="mono"/>
-          <feComponentTransfer in="mono" result="final">
-            <feFuncA type="linear" slope="0.08"/>
-          </feComponentTransfer>
-        </filter>
-      </defs>
-    </svg>
-
     <!-- Main Content -->
-    <main id="main-content" class="main-content future-page">
-      <div class="future-placeholder">
-        <div class="lightboard" role="status" aria-label="Future events coming soon">
-          <!-- Surface layers — texture that catches the light -->
-          <div class="lightboard-surface lightboard-grain" aria-hidden="true"></div>
-          <div class="lightboard-surface lightboard-imperfections" aria-hidden="true"></div>
-          <!-- Content -->
-          <h1 class="lightboard-title">Future Events</h1>
-          <hr class="lightboard-rule" aria-hidden="true" />
-          <p class="lightboard-sub">will be announced soon</p>
-        </div>
-      </div>
+    <main id="main-content" class="main-content">
+      <!-- Header -->
+      <section class="future-header">
+        <h1 class="future-title">Future</h1>
+        <p class="future-subtitle">Upcoming events</p>
+      </section>
+
+      <!-- Timeline -->
+      <section class="timeline-section" aria-label="Upcoming events">
+        <div class="loading" style="padding:1rem 0;color:var(--color-muted);">Loading…</div>
+      </section>
     </main>
 
     <!-- Global Scripts -->

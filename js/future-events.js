@@ -104,10 +104,11 @@
   }
 
   function renderPill(text, cls, url, disabled) {
-    if (!url) {
-      return `<button class="action-pill ${cls}" type="button" disabled aria-disabled="true" style="opacity:.5;cursor:not-allowed;">${text}</button>`;
+    const safe = url ? safeUrl(url) : null;
+    if (!safe) {
+      return `<button class="action-pill ${cls}" type="button" disabled aria-disabled="true" style="opacity:.5;cursor:not-allowed;">${escapeHtml(text)}</button>`;
     }
-    return `<a class="action-pill ${cls}" href="${encodeURI(url)}" target="_blank" rel="noopener">${text}</a>`;
+    return `<a class="action-pill ${cls}" href="${escapeHtml(safe)}" target="_blank" rel="noopener">${escapeHtml(text)}</a>`;
   }
 
   function wireActions(root) {
@@ -138,5 +139,17 @@
       .replace(/>/g, "&gt;")
       .replace(/"/g, "&quot;")
       .replace(/'/g, "&#039;");
+  }
+
+  function safeUrl(url) {
+    try {
+      const u = new URL(url, window.location.href);
+      if (u.protocol === "http:" || u.protocol === "https:") {
+        return u.href;
+      }
+    } catch (_) {
+      // invalid URL
+    }
+    return null;
   }
 })();

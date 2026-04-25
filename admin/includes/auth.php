@@ -118,8 +118,16 @@ function generateCSRF(): string
 function validateCSRF(): bool
 {
     startSecureSession();
-    $token = $_POST[CSRF_TOKEN_NAME] ?? '';
-    return hash_equals($_SESSION[CSRF_TOKEN_NAME] ?? '', $token);
+    $sessionToken = $_SESSION[CSRF_TOKEN_NAME] ?? '';
+    $postToken    = $_POST[CSRF_TOKEN_NAME] ?? '';
+
+    if (!is_string($sessionToken) || !is_string($postToken)) {
+        return false;
+    }
+    if ($sessionToken === '' || $postToken === '') {
+        return false;
+    }
+    return hash_equals($sessionToken, $postToken);
 }
 
 /**

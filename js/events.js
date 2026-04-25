@@ -59,6 +59,18 @@ const translations = {
 // Helper Functions
 // ================================================
 /**
+ * Escape HTML special chars for safe interpolation into innerHTML strings.
+ */
+function escapeHtml(str) {
+  return String(str)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+}
+
+/**
  * Parse date in DD.MM.YYYY format to JavaScript Date object
  * @param {string} dateString - Date in DD.MM.YYYY format
  * @returns {Date} JavaScript Date object
@@ -344,7 +356,7 @@ function populateFilters(meta) {
 
 function createCustomOption(value, textTr, textEn) {
   const text = currentLang === "tr" ? textTr : textEn;
-  return `<div class="custom-select-option" role="option" tabindex="-1" data-value="${value}" data-tr="${textTr}" data-en="${textEn}">${text}</div>`;
+  return `<div class="custom-select-option" role="option" tabindex="-1" data-value="${escapeHtml(value)}" data-tr="${escapeHtml(textTr)}" data-en="${escapeHtml(textEn)}">${escapeHtml(text)}</div>`;
 }
 
 // 5. Filter Logic & Cascading
@@ -519,7 +531,7 @@ function displayEvents(events) {
 
       return `
       <div class="event-card" style="--i:${index}">
-        <h3 class="event-artist">${seriesValue ? `<span class=\"event-series-inline\">${seriesValue}</span> ` : ""}<span class=\"event-artist-name\">${getArtistName(event.artist, currentLang)}</span></h3>
+        <h3 class="event-artist">${seriesValue ? `<span class=\"event-series-inline\">${escapeHtml(seriesValue)}</span> ` : ""}<span class=\"event-artist-name\">${escapeHtml(getArtistName(event.artist, currentLang))}</span></h3>
         <div class="event-details">
           <div class="event-detail">
             <span class="event-detail-label">${translations[currentLang].dateLabel}</span>
@@ -527,7 +539,7 @@ function displayEvents(events) {
           </div>
           <div class="event-detail">
             <span class="event-detail-label">${translations[currentLang].venueLabel}</span>
-            <span>${event.venue[currentLang]}</span>
+            <span>${escapeHtml(event.venue[currentLang])}</span>
           </div>
         </div>
       </div>

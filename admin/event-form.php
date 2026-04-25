@@ -35,6 +35,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit;
     }
 
+    $ticketUrl = trim($_POST['ticket_url'] ?? '') ?: null;
+    $infoUrl   = trim($_POST['info_url'] ?? '') ?: null;
+
+    foreach ([['Bilet', $ticketUrl], ['Bilgi', $infoUrl]] as [$label, $u]) {
+        if ($u === null) continue;
+        $p = parse_url($u);
+        $ok = isset($p['scheme'], $p['host'])
+            && in_array(strtolower($p['scheme']), ['http', 'https'], true);
+        if (!$ok) {
+            setFlash('error', "{$label} linki http:// veya https:// ile başlamalı ve bir alan adı içermelidir.");
+            header('Location: ' . $_SERVER['REQUEST_URI']);
+            exit;
+        }
+    }
+
     $eventType = $_POST['event_type'] ?? 'past';
     $data = [
         ':event_type'     => in_array($eventType, ['past', 'future'], true) ? $eventType : 'past',
@@ -59,8 +74,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         ':series_en'      => trim($_POST['series_en'] ?? ''),
         ':description_tr' => trim($_POST['description_tr'] ?? '') ?: null,
         ':description_en' => trim($_POST['description_en'] ?? '') ?: null,
-        ':ticket_url'     => trim($_POST['ticket_url'] ?? '') ?: null,
-        ':info_url'       => trim($_POST['info_url'] ?? '') ?: null,
+        ':ticket_url'     => $ticketUrl,
+        ':info_url'       => $infoUrl,
         ':status'         => ($_POST['status'] ?? 'published') === 'draft' ? 'draft' : 'published',
     ];
 

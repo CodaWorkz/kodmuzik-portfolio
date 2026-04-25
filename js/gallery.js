@@ -17,6 +17,15 @@
   let allImages = [];
   let currentIndex = 0;
 
+  function escapeHtml(str) {
+    return String(str)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#039;");
+  }
+
   // Load gallery data
   fetch("/api/gallery.php")
     .then((r) => {
@@ -80,17 +89,20 @@
     }
 
     grid.innerHTML = images
-      .map(
-        (img, i) => `
+      .map((img, i) => {
+        const caption = (img.caption && img.caption[lang]) || "";
+        const thumb   = img.thumbnail || img.image || "";
+        const full    = img.image || "";
+        return `
       <div class="gallery-item" data-index="${i}">
-        <img src="${img.thumbnail || img.image}"
-             alt="${img.caption[lang] || ""}"
+        <img src="${escapeHtml(thumb)}"
+             alt="${escapeHtml(caption)}"
              loading="lazy"
-             data-full="${img.image}" />
-        ${img.caption[lang] ? `<p class="gallery-item-caption">${img.caption[lang]}</p>` : ""}
+             data-full="${escapeHtml(full)}" />
+        ${caption ? `<p class="gallery-item-caption">${escapeHtml(caption)}</p>` : ""}
       </div>
-    `,
-      )
+    `;
+      })
       .join("");
 
     // Click handlers

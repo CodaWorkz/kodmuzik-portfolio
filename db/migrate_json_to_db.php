@@ -13,28 +13,25 @@
  */
 
 // ── Configuration ──────────────────────────────────────────────────────────
-// Update these values to match your cPanel database credentials
-$dbHost    = 'localhost';
-$dbName    = 'kodmuzik_events';       // [CHANGE_ME] actual cPanel DB name
-$dbUser    = 'kodmuzik_admin';        // cPanel DB user
-$dbPass    = 'KodMuzik.26!';         // cPanel DB password
-$dbCharset = 'utf8mb4';
+// DB credentials come from api/config.php (gitignored).
+require_once __DIR__ . '/../api/config.php';
 
-// Default admin credentials (change password after first login)
+// Initial admin login password — supply via env var, never hardcode.
+//   ADMIN_INITIAL_PASS='choose-a-strong-pass' php db/migrate_json_to_db.php
 $adminUser    = 'admin';
-$adminPass    = 'kodmuzik2026!';
+$adminPass    = getenv('ADMIN_INITIAL_PASS') ?: '';
 $adminDisplay = 'KOD Müzik Admin';
+
+if ($adminPass === '') {
+    die("✗ Set ADMIN_INITIAL_PASS env var before running:\n"
+      . "  ADMIN_INITIAL_PASS='choose-a-strong-pass' php db/migrate_json_to_db.php\n");
+}
 
 // ── Connect ────────────────────────────────────────────────────────────────
 header('Content-Type: text/plain; charset=utf-8');
 
 try {
-    $dsn = "mysql:host={$dbHost};dbname={$dbName};charset={$dbCharset}";
-    $pdo = new PDO($dsn, $dbUser, $dbPass, [
-        PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
-        PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-        PDO::ATTR_EMULATE_PREPARES   => false,
-    ]);
+    $pdo = getDB();
     echo "✓ Database connection successful.\n\n";
 } catch (PDOException $e) {
     die("✗ Database connection failed: " . $e->getMessage() . "\n");
@@ -204,7 +201,7 @@ if ($existingAdmin->fetch()) {
         ':password_hash' => $hash,
         ':display_name'  => $adminDisplay,
     ]);
-    echo "✓ Admin user created: {$adminUser} / {$adminPass}\n";
+    echo "✓ Admin user created: {$adminUser}\n";
     echo "  ⚠ CHANGE THIS PASSWORD after first login!\n\n";
 }
 

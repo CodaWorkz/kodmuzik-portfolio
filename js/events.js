@@ -497,10 +497,11 @@ function updateFilterOptions(filterId, availableValues, isNumeric = false) {
 // ================================================
 function displayEvents(events) {
   const grid = document.getElementById("events-grid");
+  const isHydrating = grid.classList.contains("has-ssr");
 
   if (events.length === 0) {
     grid.innerHTML = `<div class="no-results">${translations[currentLang].noResults}</div>`;
-    grid.classList.remove('has-ssr');
+    grid.classList.remove("has-ssr");
     return;
   }
 
@@ -511,7 +512,12 @@ function displayEvents(events) {
     return dateB - dateA; // Descending order (newest first)
   });
 
-  grid.classList.add("js-rendered");
+  // Skip cardEnter animation on the first SSR→API hydration to prevent
+  // a visible re-render flicker. Subsequent filter/search renders still animate.
+  if (!isHydrating) {
+    grid.classList.add("js-rendered");
+  }
+
   grid.innerHTML = sortedEvents
     .map((event, index) => {
       const date = parseEventDate(event.date);
@@ -529,6 +535,10 @@ function displayEvents(events) {
           ? String(event.series[currentLang]).trim()
           : "";
 
+      const genreValue = event.genre
+        ? getGenresArray(event.genre, currentLang).join(", ").trim()
+        : "";
+
       return `
       <div class="event-card" style="--i:${index}">
         <h3 class="event-artist">${seriesValue ? `<span class=\"event-series-inline\">${escapeHtml(seriesValue)}</span> ` : ""}<span class=\"event-artist-name\">${escapeHtml(getArtistName(event.artist, currentLang))}</span></h3>
@@ -541,11 +551,16 @@ function displayEvents(events) {
             <span class="event-detail-label">${translations[currentLang].venueLabel}</span>
             <span>${escapeHtml(event.venue[currentLang])}</span>
           </div>
+          ${genreValue ? `<div class="event-detail"><span class="event-detail-label">${translations[currentLang].genreLabel}</span><span>${escapeHtml(genreValue)}</span></div>` : ""}
         </div>
       </div>
     `;
     })
     .join("");
+
+  if (isHydrating) {
+    grid.classList.remove("has-ssr");
+  }
 
   // Fit series text after DOM is populated
   if (typeof requestAnimationFrame === "function") {

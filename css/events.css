@@ -277,12 +277,11 @@
 }
 
 .event-card {
-  background: var(--glass-gradient), var(--glass-bg);
-  border: 1px solid var(--glass-border);
+  background: var(--glass-gradient), var(--glass-bg-alt);
+  border: 1px solid var(--glass-border-alt);
   border-radius: var(--border-radius-medium);
   padding: 3rem 1.5rem;
   transition: var(--transition-speed);
-  cursor: pointer;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -291,7 +290,7 @@
   overflow: hidden;
   -webkit-backdrop-filter: var(--glass-blur);
   backdrop-filter: var(--glass-blur);
-  box-shadow: var(--glass-shadow);
+  box-shadow: var(--glass-shadow-alt);
 }
 
 .event-card:hover {
@@ -561,12 +560,26 @@
 }
 
 /* Card animation on load */
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to   { opacity: 1; }
+@keyframes cardEnter {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+    filter: blur(8px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0);
+  }
 }
 
 #events-grid.js-rendered .event-card {
-  animation: fadeIn 0.3s ease both;
-  animation-delay: calc(var(--i, 0) * 0.03s);
+  animation: cardEnter 520ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: calc(var(--i, 0) * 0.035s);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #events-grid.js-rendered .event-card {
+    animation: none;
+  }
 }

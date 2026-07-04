@@ -13,8 +13,8 @@ RewriteRule ^(.*)$ https://www.kodmuzik.com/$1 [L,R=301]
 RewriteCond %{THE_REQUEST} ^[A-Z]+\s(.*?)//+([^\s?]*)
 RewriteRule ^ %1/%2 [L,R=301]
 
-# 1c. Redirect /index/ and /en/index/ to clean roots
-RedirectMatch 301 ^/index/?$ /
+# 1c. Redirect /index/ and /en/index/ to clean roots (pure mod_rewrite)
+RewriteRule ^index/?$ / [L,R=301,NC]
 RewriteRule ^en/index/?$ /en/ [L,R=301,NC]
 
 # 2. English Slug Migration (Old Turkish Slugs -> New English Slugs)
@@ -40,7 +40,14 @@ RewriteRule ^(.*)$ /$1? [L,R=301]
 RewriteCond %{THE_REQUEST} \s/([^.]+)\.html [NC]
 RewriteRule ^ /%1/ [L,R=301]
 
-# 4. Force Trailing Slash (Relative Path)
+# 3a. Force Trailing Slash on Directories
+# Physical directories (etkinlikler, en/events, etc.) are skipped by
+# Rule 4's !-d condition, so they need their own trailing-slash 301.
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteCond %{REQUEST_URI} !/$
+RewriteRule ^(.+)$ /$1/ [L,R=301]
+
+# 4. Force Trailing Slash (Non-Directory Paths)
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_URI} !/$

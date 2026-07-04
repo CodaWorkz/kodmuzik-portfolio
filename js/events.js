@@ -235,8 +235,14 @@ async function loadEvents() {
     applyFilters();
   } catch (error) {
     console.error("Error loading events:", error);
-    document.getElementById("events-grid").innerHTML =
-      `<div class="error">${translations[currentLang].error}</div>`;
+    const grid = document.getElementById("events-grid");
+    // Preserve SSR-rendered event cards when the API is unreachable
+    // (e.g. Googlebot's rendering servers). Only show the error when
+    // there is no server-rendered fallback. Prevents Soft 404.
+    if (!grid.classList.contains("has-ssr")) {
+      grid.innerHTML =
+        `<div class="error">${translations[currentLang].error}</div>`;
+    }
   }
 }
 

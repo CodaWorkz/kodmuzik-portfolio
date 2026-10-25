@@ -57,6 +57,7 @@ api/events.php
 api/gallery.php
 contact-handler.php
 css/events.css
+css/gallery.css
 css/main.css
 index.html
 en/index.html

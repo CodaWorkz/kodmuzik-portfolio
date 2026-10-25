@@ -27,7 +27,7 @@ $is_bot = trim((string) ($_POST['website'] ?? '')) !== '';
 $rate_file = sys_get_temp_dir() . '/kodmuzik_contact_' . hash('sha256', $_SERVER['REMOTE_ADDR'] ?? 'unknown') . '.json';
 $now = time();
 $recent = [];
-if (is_file($rate_file)) {
+if (@is_file($rate_file)) {
     $recent = json_decode((string) file_get_contents($rate_file), true) ?: [];
     $recent = array_values(array_filter($recent, fn($t) => is_int($t) && $t > $now - 3600));
 }
@@ -93,7 +93,7 @@ $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
 if ($is_bot) {
     $mail_sent = true;
 } else {
-    $mail_sent = mail($to, $subject, $email_body, $headers);
+    $mail_sent = mail($to, $subject, $email_body, $headers, '-f iletisim@kodmuzik.com');
     if ($mail_sent) {
         $recent[] = $now;
         @file_put_contents($rate_file, json_encode($recent), LOCK_EX);

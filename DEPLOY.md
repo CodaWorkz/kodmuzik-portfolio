@@ -87,8 +87,16 @@ js/home.js
 legacy-events-app/
 ```
 
+### Before upload
+
+- Open the server's `api/config.php` and confirm it defines `UPLOAD_DIR`
+  (the template does; the new gallery delete check uses it).
+- Download the live `.htaccess` as `.htaccess.bak` so it can be put back in one step.
+
 ### Checks after upload
 
+0. Right after uploading `.htaccess`, load the home page. If it shows a 500 error,
+   put `.htaccess.bak` back and tell me: the host then limits `.htaccess` overrides.
 1. `bash scripts/verify-deploy.sh` → 0 problems.
 2. https://www.kodmuzik.com/etkinlikler/ loads, cards show; pick a year filter, clear it,
    scroll straight to the bottom: cards down to 1996 are visible within about a second.

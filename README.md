@@ -23,7 +23,7 @@ hakkimizda/, en/about/     About (content from kod_about_tr.json / kod_about_en.
 etkinlikler/, en/events/   Past events (PHP: server-rendered first cards)
 gelecek-etkinlikler/,
 en/upcoming-events/        Upcoming events timeline (loads /api/events.php?type=future)
-galeri/, en/gallery/       Gallery (loads /api/gallery.php)
+galeri/, en/gallery/       Unlinked gallery prototype (not in the menu or sitemap)
 iletisim/, en/contact/     Contact form -> contact-handler.php
 api/                       Public JSON endpoints; api/config.php holds DB credentials (not in git)
 admin/                     Admin panel (events, gallery, settings)

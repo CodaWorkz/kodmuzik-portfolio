@@ -90,28 +90,6 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.kodmuzik.com/gelecek-etkinlikler/" />
   </url>
   
-  <!-- Turkish Gallery -->
-  <url>
-    <loc>https://www.kodmuzik.com/galeri/</loc>
-    <lastmod>2026-10-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.kodmuzik.com/en/gallery/" />
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.kodmuzik.com/galeri/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.kodmuzik.com/galeri/" />
-  </url>
-  
-  <!-- English Gallery -->
-  <url>
-    <loc>https://www.kodmuzik.com/en/gallery/</loc>
-    <lastmod>2026-10-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.kodmuzik.com/en/gallery/" />
-    <xhtml:link rel="alternate" hreflang="tr" href="https://www.kodmuzik.com/galeri/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.kodmuzik.com/galeri/" />
-  </url>
-  
   <!-- Turkish Contact -->
   <url>
     <loc>https://www.kodmuzik.com/iletisim/</loc>

@@ -57,7 +57,6 @@ api/events.php
 api/gallery.php
 contact-handler.php
 css/events.css
-css/gallery.css
 css/main.css
 index.html
 en/index.html
@@ -67,13 +66,10 @@ etkinlikler/index.php
 en/events/index.php
 gelecek-etkinlikler/index.html
 en/upcoming-events/index.html
-galeri/index.html
-en/gallery/index.html
 iletisim/index.html
 en/contact/index.html
 js/events.js
 js/future-events.js
-js/gallery.js
 js/main.js
 robots.txt
 sitemap.xml
@@ -101,12 +97,12 @@ legacy-events-app/
 1. `bash scripts/verify-deploy.sh` → 0 problems.
 2. https://www.kodmuzik.com/etkinlikler/ loads, cards show; pick a year filter, clear it,
    scroll straight to the bottom: cards down to 1996 are visible within about a second.
-3. Menu shows GALERİ / GALLERY on every page; the gallery page loads images.
+3. English pages: the current page is highlighted in the menu.
 4. Contact form: send one test message from `/iletisim/`; it arrives at iletisim@kodmuzik.com
    with **From: KOD Müzik Web Sitesi** and the visitor's address as Reply-To.
 5. Admin: log in, log out (logout is now a button), log in again; add or edit one event;
-   upload one gallery image.
+   upload one image in the admin gallery section.
 6. https://www.kodmuzik.com/db/schema.sql and https://www.kodmuzik.com/README.md return 403.
-7. https://www.kodmuzik.com/robots.txt shows the two `Allow: /api/...` lines.
-8. In Search Console, request indexing for `/galeri/`, `/en/gallery/`,
-   `/gelecek-etkinlikler/` and `/en/upcoming-events/`, and resubmit `sitemap.xml`.
+7. https://www.kodmuzik.com/robots.txt shows the `Allow: /api/events.php` line.
+8. In Search Console, request indexing for `/gelecek-etkinlikler/` and
+   `/en/upcoming-events/`, and resubmit `sitemap.xml`.

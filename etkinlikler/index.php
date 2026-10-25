@@ -116,11 +116,6 @@ $tr_months = ['', 'Ocak', 'Şubat', 'Mart', 'Nisan', 'Mayıs', 'Haziran',
             >
           </li>
           <li class="menu-item">
-            <a href="/galeri/" class="menu-link" data-path="/galeri"
-              >GALERİ</a
-            >
-          </li>
-          <li class="menu-item">
             <a href="/iletisim/" class="menu-link" data-path="/iletisim"
               >İLETİŞİM</a
             >

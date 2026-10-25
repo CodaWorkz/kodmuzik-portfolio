@@ -114,11 +114,6 @@ if (file_exists($config)) {
             >
           </li>
           <li class="menu-item">
-            <a href="/en/gallery/" class="menu-link" data-path="/galeri"
-              >GALLERY</a
-            >
-          </li>
-          <li class="menu-item">
             <a href="/en/contact/" class="menu-link" data-path="/iletisim"
               >CONTACT</a
             >

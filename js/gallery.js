@@ -9,7 +9,6 @@
   const lightbox = document.getElementById("gallery-lightbox");
   const lightboxImg = document.getElementById("lightbox-img");
   const lightboxCaption = document.getElementById("lightbox-caption");
-  let lastFocused = null;
   const categoryFilter = document.getElementById("gallery-category-filter");
   const yearFilter = document.getElementById("gallery-year-filter");
 
@@ -95,7 +94,7 @@
         const thumb   = img.thumbnail || img.image || "";
         const full    = img.image || "";
         return `
-      <div class="gallery-item" data-index="${i}" tabindex="0" role="button" aria-haspopup="dialog">
+      <div class="gallery-item" data-index="${i}">
         <img src="${escapeHtml(thumb)}"
              alt="${escapeHtml(caption)}"
              loading="lazy"
@@ -110,14 +109,7 @@
     grid.querySelectorAll(".gallery-item").forEach((item) => {
       item.addEventListener("click", () => {
         currentIndex = parseInt(item.dataset.index);
-        lastFocused = item;
         openLightbox(images[currentIndex]);
-      });
-      item.addEventListener("keydown", (e) => {
-        if (e.key === "Enter" || e.key === " ") {
-          e.preventDefault();
-          item.click();
-        }
       });
     });
   }
@@ -129,14 +121,12 @@
     lightboxCaption.textContent = img.caption[lang] || "";
     lightbox.hidden = false;
     document.body.style.overflow = "hidden";
-    lightbox.querySelector(".lightbox-close").focus();
   }
 
   function closeLightbox() {
     lightbox.hidden = true;
     lightboxImg.src = "";
     document.body.style.overflow = "";
-    if (lastFocused) lastFocused.focus();
   }
 
   function navigate(direction) {
@@ -165,16 +155,6 @@
   document.addEventListener("keydown", (e) => {
     if (lightbox.hidden) return;
     if (e.key === "Escape") closeLightbox();
-    if (e.key === "Tab") {
-      // Keep focus inside the lightbox while it is open
-      const buttons = [...lightbox.querySelectorAll("button")];
-      const i = buttons.indexOf(document.activeElement);
-      const next = e.shiftKey
-        ? (i <= 0 ? buttons.length - 1 : i - 1)
-        : (i === buttons.length - 1 ? 0 : i + 1);
-      e.preventDefault();
-      buttons[next].focus();
-    }
     if (e.key === "ArrowLeft") navigate(-1);
     if (e.key === "ArrowRight") navigate(1);
   });

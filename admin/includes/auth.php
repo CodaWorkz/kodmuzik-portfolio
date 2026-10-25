@@ -5,6 +5,10 @@
 
 require_once __DIR__ . '/../../api/config.php';
 
+if (!headers_sent()) {
+    header('Cache-Control: no-store');
+}
+
 /**
  * Start secure session.
  */
@@ -43,6 +47,56 @@ function requireAuth(): void
 }
 
 /**
+ * Per-IP login rate limit file (survives cookie/session loss).
+ */
+function loginRateFile(): string
+{
+    return sys_get_temp_dir() . '/kod_login_' . hash('sha256', $_SERVER['REMOTE_ADDR'] ?? '') . '.json';
+}
+
+/**
+ * Read the per-IP attempt record; optionally increment it (unless already at the limit).
+ * Returns ['attempts' => int, 'first' => int].
+ */
+function loginRateUpdate(bool $increment): array
+{
+    $fh = @fopen(loginRateFile(), 'c+');
+    if (!$fh) {
+        return ['attempts' => 0, 'first' => time()];
+    }
+    flock($fh, LOCK_EX);
+    $data = json_decode((string) stream_get_contents($fh), true);
+    if (!is_array($data) || !isset($data['attempts'], $data['first'])) {
+        $data = ['attempts' => 0, 'first' => time()];
+    }
+
+    // Reset counter after 15 minutes
+    if (time() - (int) $data['first'] > 900) {
+        $data = ['attempts' => 0, 'first' => time()];
+    }
+
+    if ($increment && $data['attempts'] < 5) {
+        $data['attempts']++;
+    }
+
+    ftruncate($fh, 0);
+    rewind($fh);
+    fwrite($fh, json_encode($data));
+    fflush($fh);
+    flock($fh, LOCK_UN);
+    fclose($fh);
+    return $data;
+}
+
+/**
+ * Current failed-attempt count for this IP.
+ */
+function loginAttemptCount(): int
+{
+    return (int) loginRateUpdate(false)['attempts'];
+}
+
+/**
  * Attempt login. Returns true on success, false on failure.
  */
 function attemptLogin(string $username, string $password): bool
@@ -50,29 +104,20 @@ function attemptLogin(string $username, string $password): bool
     startSecureSession();
 
     // Rate limiting: max 5 attempts per 15 minutes
-    if (!isset($_SESSION['login_attempts'])) {
-        $_SESSION['login_attempts'] = 0;
-        $_SESSION['first_attempt']  = time();
-    }
-
-    // Reset counter after 15 minutes
-    if (time() - $_SESSION['first_attempt'] > 900) {
-        $_SESSION['login_attempts'] = 0;
-        $_SESSION['first_attempt']  = time();
-    }
-
-    if ($_SESSION['login_attempts'] >= 5) {
+    if (loginAttemptCount() >= 5) {
         return false;
     }
 
-    $_SESSION['login_attempts']++;
+    loginRateUpdate(true);
 
     $pdo  = getDB();
     $stmt = $pdo->prepare('SELECT id, username, password_hash, display_name FROM admin_users WHERE username = :username');
     $stmt->execute([':username' => $username]);
     $user = $stmt->fetch();
 
-    if (!$user || !password_verify($password, $user['password_hash'])) {
+    // Always run password_verify so unknown usernames take the same time
+    $hash = $user ? $user['password_hash'] : '$2y$10$gYYpsAKaNj52npP0zP71D.mCzftOK9MtwsbsgZ3Y23ov5/n9s7UHi';
+    if (!password_verify($password, $hash) || !$user) {
         return false;
     }
 
@@ -82,7 +127,7 @@ function attemptLogin(string $username, string $password): bool
     $_SESSION['admin_username'] = $user['username'];
     $_SESSION['admin_display']  = $user['display_name'];
     $_SESSION['last_activity']  = time();
-    $_SESSION['login_attempts'] = 0;
+    @unlink(loginRateFile());
 
     // Update last_login
     $pdo->prepare('UPDATE admin_users SET last_login = NOW() WHERE id = :id')

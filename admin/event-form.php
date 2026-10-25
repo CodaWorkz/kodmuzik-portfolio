@@ -50,6 +50,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     }
 
+    $eventDate = $_POST['event_date'] ?? date('Y-m-d');
+    $dt = is_string($eventDate) ? DateTime::createFromFormat('Y-m-d', $eventDate) : false;
+    if (!$dt || $dt->format('Y-m-d') !== $eventDate) {
+        setFlash('error', 'Geçersiz tarih. Lütfen YYYY-AA-GG formatında bir tarih girin.');
+        header('Location: ' . $_SERVER['REQUEST_URI']);
+        exit;
+    }
+
     $eventType = $_POST['event_type'] ?? 'past';
     $data = [
         ':event_type'     => in_array($eventType, ['past', 'future'], true) ? $eventType : 'past',
@@ -65,7 +73,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         ),
         ':genre_tr'       => trim($_POST['genre_tr'] ?? '') ?: null,
         ':genre_en'       => trim($_POST['genre_en'] ?? '') ?: null,
-        ':event_date'     => $_POST['event_date'] ?? date('Y-m-d'),
+        ':event_date'     => $eventDate,
         ':venue_tr'       => trim($_POST['venue_tr'] ?? ''),
         ':venue_en'       => trim($_POST['venue_en'] ?? ''),
         ':city_tr'        => trim($_POST['city_tr'] ?? ''),

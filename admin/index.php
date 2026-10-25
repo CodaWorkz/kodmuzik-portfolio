@@ -17,7 +17,9 @@ $error = '';
 $timeout = isset($_GET['timeout']);
 
 // Handle login POST
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && !validateCSRF()) {
+    $error = 'Güvenlik hatası. Tekrar deneyin.';
+} elseif ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = trim($_POST['username'] ?? '');
     $password = $_POST['password'] ?? '';
 
@@ -27,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     // Check if rate limited
-    if (($_SESSION['login_attempts'] ?? 0) >= 5) {
+    if (loginAttemptCount() >= 5) {
         $error = 'Çok fazla deneme. 15 dakika bekleyin.';
     } else {
         $error = 'Kullanıcı adı veya şifre hatalı.';
@@ -58,6 +60,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <?php endif; ?>
 
         <form method="POST" class="login-form">
+            <?= csrfField() ?>
             <div class="form-group">
                 <label for="username">Kullanıcı Adı</label>
                 <input type="text" id="username" name="username" required autocomplete="username" autofocus>

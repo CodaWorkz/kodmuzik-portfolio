@@ -36,7 +36,7 @@ $tr_months = ['', 'Ocak', 'Şubat', 'Mart', 'Nisan', 'Mayıs', 'Haziran',
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;500&family=TASA+Orbiter:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;500&family=TASA+Orbiter:wght@400&display=swap"
       rel="stylesheet"
     />
 
@@ -113,6 +113,11 @@ $tr_months = ['', 'Ocak', 'Şubat', 'Mart', 'Nisan', 'Mayıs', 'Haziran',
               class="menu-link"
               data-path="/gelecek-etkinlikler"
               >GELECEK</a
+            >
+          </li>
+          <li class="menu-item">
+            <a href="/galeri/" class="menu-link" data-path="/galeri"
+              >GALERİ</a
             >
           </li>
           <li class="menu-item">

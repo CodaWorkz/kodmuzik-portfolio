@@ -105,6 +105,11 @@ function setActiveLink() {
     ? currentPath.substring(localePrefix.length) || "/"
     : currentPath;
 
+  // Menu links carry the Turkish path in data-path, so map English slugs back
+  const comparePath = localePrefix
+    ? SLUG_MAP_REVERSE[pathWithoutLocale] || pathWithoutLocale
+    : pathWithoutLocale;
+
   const menuLinks = document.querySelectorAll(".menu-link");
   if (!menuLinks.length) return; // Defensive check
 
@@ -114,7 +119,7 @@ function setActiveLink() {
 
     const linkBasePath = link.dataset.path || "/";
 
-    if (isMatch(pathWithoutLocale, linkBasePath)) {
+    if (isMatch(comparePath, linkBasePath)) {
       link.classList.add("active");
       link.setAttribute("aria-current", "page");
     }

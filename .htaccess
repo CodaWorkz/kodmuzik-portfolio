@@ -81,3 +81,30 @@ AddDefaultCharset UTF-8
 AddType application/json .json
 AddType image/svg+xml .svg .svgz
 Options -Indexes
+
+# 7. Block repository and documentation files from being served
+<FilesMatch "(\.(md|pptx|sql|log)|^package(-lock)?\.json)$">
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+</FilesMatch>
+<IfModule mod_alias.c>
+    RedirectMatch 404 /\.(git|vscode)(/|$)
+</IfModule>
+
+# 8. Caching
+# HTML, CSS and JS revalidate on every visit (ETag), so a deploy is picked up
+# immediately and no version strings are needed. Images and fonts are cached.
+<IfModule mod_headers.c>
+    <FilesMatch "\.(html|css|js)$">
+        Header set Cache-Control "no-cache"
+    </FilesMatch>
+    <FilesMatch "\.(svg|ico|png|jpe?g|webp|gif|woff2?)$">
+        Header set Cache-Control "public, max-age=2592000"
+    </FilesMatch>
+</IfModule>
+
+# 9. Compression
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/css text/plain text/xml application/javascript application/json image/svg+xml
+</IfModule>

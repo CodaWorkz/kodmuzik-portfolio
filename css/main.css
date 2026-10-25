@@ -19,6 +19,7 @@
   /* Typography */
   --font-primary: "Inter", sans-serif;
   --font-display: "Anton", sans-serif;
+  --font-body: var(--font-primary);
 
   /* Core Colors */
   --color-text: #eaeaea;

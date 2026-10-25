@@ -23,7 +23,10 @@ $flash = getFlash();
             <a href="/admin/events.php" class="<?= $currentFile === 'events' ? 'active' : '' ?>">Etkinlikler</a>
             <a href="/admin/gallery.php" class="<?= $currentFile === 'gallery' ? 'active' : '' ?>">Galeri</a>
             <a href="/admin/settings.php" class="<?= $currentFile === 'settings' ? 'active' : '' ?>">Ayarlar</a>
-            <a href="/admin/logout.php" class="admin-nav-logout">Çıkış</a>
+            <form method="POST" action="/admin/logout.php" style="display: contents;">
+                <?= csrfField() ?>
+                <button type="submit" class="admin-nav-logout" style="background: none; border: 0; cursor: pointer; font: inherit; font-size: 0.85rem; padding: 0.35rem 0.75rem; border-radius: var(--admin-radius);">Çıkış</button>
+            </form>
         </div>
     </nav>
     <main class="admin-main">

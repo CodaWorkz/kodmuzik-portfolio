@@ -110,7 +110,54 @@ function validateImageUpload(array $file): ?string
         return 'Dosya geçerli bir resim değil.';
     }
 
+    if ($info[0] > 6000 || $info[1] > 6000) {
+        return 'Görsel boyutları çok büyük. Maksimum: 6000 piksel.';
+    }
+
     return null;
+}
+
+/**
+ * Re-encode an image in place through GD (same format) to strip EXIF/GPS and appended bytes.
+ * Returns false if GD is available but the image could not be re-encoded.
+ */
+function reencodeImage(string $path): bool
+{
+    $info = getimagesize($path);
+    if (!$info) {
+        return false;
+    }
+
+    [$load, $save] = match ($info['mime']) {
+        'image/jpeg' => ['imagecreatefromjpeg', 'imagejpeg'],
+        'image/png'  => ['imagecreatefrompng', 'imagepng'],
+        'image/webp' => ['imagecreatefromwebp', 'imagewebp'],
+        default      => [null, null],
+    };
+
+    // No GD support for this format: keep current behaviour
+    if ($load === null || !function_exists($load) || !function_exists($save)) {
+        return true;
+    }
+
+    $img = @$load($path);
+    if (!$img) {
+        return false;
+    }
+
+    if ($info['mime'] !== 'image/jpeg') {
+        imagealphablending($img, false);
+        imagesavealpha($img, true);
+    }
+
+    $ok = match ($info['mime']) {
+        'image/jpeg' => imagejpeg($img, $path, 90),
+        'image/png'  => imagepng($img, $path),
+        'image/webp' => imagewebp($img, $path, 90),
+    };
+    imagedestroy($img);
+
+    return $ok;
 }
 
 /**

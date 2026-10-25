@@ -308,17 +308,6 @@
 
 /* Preview overrides removed: glass now applied to all cards */
 
-/* Rollback preset — SOLID style (previous look)
-   Apply per-card via: class="event-card event-card--solid" */
-.event-card--solid {
-  background-color: var(--color-black);
-  border: 1px solid var(--color-border);
-}
-.event-card--solid:hover {
-  background-color: #0a0a0a;
-  border-color: #555;
-}
-
 .event-artist {
   font-size: 24px; /* Desktop reference */
   font-weight: 300;
@@ -575,7 +564,12 @@
 
 #events-grid.js-rendered .event-card {
   animation: cardEnter 520ms cubic-bezier(0.22, 1, 0.36, 1) both;
-  animation-delay: calc(var(--i, 0) * 0.035s);
+  animation-delay: calc(min(var(--i, 0), 20) * 0.035s);
+}
+
+/* Only the first screenful animates; the rest render immediately */
+#events-grid.js-rendered .event-card:nth-child(n + 25) {
+  animation: none;
 }
 
 @media (prefers-reduced-motion: reduce) {

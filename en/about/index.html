@@ -14,7 +14,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;500&family=TASA+Orbiter:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;500&family=TASA+Orbiter:wght@400&display=swap"
       rel="stylesheet"
     />
 
@@ -78,6 +78,11 @@
             >
           </li>
           <li class="menu-item">
+            <a href="/en/gallery/" class="menu-link" data-path="/galeri"
+              >GALLERY</a
+            >
+          </li>
+          <li class="menu-item">
             <a href="/en/contact/" class="menu-link" data-path="/iletisim"
               >CONTACT</a
             >
@@ -124,7 +129,7 @@
     </main>
 
     <!-- Lightbox Overlay -->
-    <div class="lightbox-overlay" id="journeyLightbox" aria-hidden="true">
+    <div class="lightbox-overlay" id="journeyLightbox" role="dialog" aria-modal="true" aria-labelledby="journeyTitle" aria-hidden="true">
       <div class="lightbox-container">
         <button class="lightbox-close" id="closeLightbox" aria-label="Close">
           <svg

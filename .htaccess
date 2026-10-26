@@ -100,8 +100,9 @@ Options -Indexes
 </IfModule>
 
 # 8. Caching
-# HTML, CSS and JS revalidate on every visit (ETag), so a deploy is picked up
-# immediately and no version strings are needed. Images and fonts are cached.
+# HTML, CSS and JS revalidate on every visit (ETag). The CSS and JS links in the
+# 10 page files carry ?v= tags, which must be bumped to the deploy date on every
+# deploy that changes CSS or JS (see DEPLOY.md). Images and fonts are cached.
 <IfModule mod_headers.c>
     <FilesMatch "\.(html|css|js)$">
         Header set Cache-Control "no-cache"

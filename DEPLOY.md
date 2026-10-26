@@ -1,12 +1,28 @@
 # Deploying to kodmuzik.com
 
 **Live commit: `88e97fb`** (fix/audit-safe-batch + cache-busting ?v= tags), deployed 2026-10-26.
+Not yet uploaded: the `.htaccess` section 8 caching comment change (comment only, no rule changes) is
+committed but not on the server. Upload `.htaccess` with the next deploy.
 
 The site is deployed by uploading files over FTP / cPanel File Manager.
 A partial upload is what left `css/events.css` out of date from July to October 2026,
 so every deploy follows the same three steps.
 
 When any CSS or JS file changes, bump ?v= in the 10 page files to the deploy date (YYYYMMDD) and upload them too.
+The 10 page files:
+
+```
+index.html
+en/index.html
+hakkimizda/index.html
+en/about/index.html
+etkinlikler/index.php
+en/events/index.php
+gelecek-etkinlikler/index.html
+en/upcoming-events/index.html
+iletisim/index.html
+en/contact/index.html
+```
 
 ## 1. Get the list of changed files
 

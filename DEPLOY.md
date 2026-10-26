@@ -34,7 +34,7 @@ Then record the deployed commit at the top of this file.
 
 ---
 
-## Release: fix/audit-safe-batch (October 2026)
+## Release: fix/audit-safe-batch + new mobile menu (October 2026)
 
 Live before this release: `3d60a79` for most files, but `css/events.css` was still
 the `1ba5648` version (April 2026).
@@ -98,6 +98,9 @@ legacy-events-app/
 2. https://www.kodmuzik.com/etkinlikler/ loads, cards show; pick a year filter, clear it,
    scroll straight to the bottom: cards down to 1996 are visible within about a second.
 3. English pages: the current page is highlighted in the menu.
+3b. On a phone (or a narrow browser window): the top bar shows the logo and a
+   two-line menu icon; tapping it opens the full-screen menu, which turns from dark
+   to white; TR | EN switches language; × closes it. Desktop looks as before.
 4. Contact form: send one test message from `/iletisim/`; it arrives at iletisim@kodmuzik.com
    with **From: KOD Müzik Web Sitesi** and the visitor's address as Reply-To.
 5. Admin: log in, log out (logout is now a button), log in again; add or edit one event;

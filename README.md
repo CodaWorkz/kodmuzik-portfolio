@@ -41,8 +41,10 @@ scripts/verify-deploy.sh   Compares local files with what the live site serves
 
 ## Local development
 
-On a Mac with Homebrew, one script installs PHP and MariaDB, clones the repo,
-creates a local database and copies the live events into it:
+On a Mac, one script sets up a full local copy. It reuses the PHP and MySQL
+already installed (Homebrew, XAMPP or MAMP) and installs them with Homebrew only
+if missing, clones the repo, creates its own `kodmuzik_local` database and copies
+the live events into it:
 
 ```
 bash scripts/local/setup.sh          # once; clones into ~/kodmuzik-local

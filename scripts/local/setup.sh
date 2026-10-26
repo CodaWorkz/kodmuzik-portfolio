@@ -81,7 +81,7 @@ mkdir -p uploads/gallery uploads/thumbnails
 step "5/5 Events"
 ADMINS=$(mysql -u "$DB_USER" -p"$DB_PASS" -N -e "SELECT COUNT(*) FROM admin_users" "$DB_NAME" 2>/dev/null || echo 0)
 if [ "$ADMINS" = "0" ]; then
-  ADMIN_INITIAL_PASS="$ADMIN_PASS" php db/migrate_json_to_db.php | tail -n 6
+  ADMIN_INITIAL_PASS="$ADMIN_PASS" php db/migrate_json_to_db.php | grep -E "Events in database|Admin users" || true
 fi
 SYNC_OUT=$(php db/sync-from-live.php 2>&1 || true)
 if printf '%s' "$SYNC_OUT" | grep -q "✗"; then

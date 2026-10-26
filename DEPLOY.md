@@ -6,6 +6,8 @@ The site is deployed by uploading files over FTP / cPanel File Manager.
 A partial upload is what left `css/events.css` out of date from July to October 2026,
 so every deploy follows the same three steps.
 
+When any CSS or JS file changes, bump ?v= in the 10 page files to the deploy date (YYYYMMDD) and upload them too.
+
 ## 1. Get the list of changed files
 
 From the repo root, against the commit that is currently live:

@@ -41,9 +41,9 @@ $tr_months = ['', 'Ocak', 'Şubat', 'Mart', 'Nisan', 'Mayıs', 'Haziran',
     />
 
     <!-- Global Styles -->
-    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="/css/main.css?v=20261026" />
     <!-- Events Page Styles -->
-    <link rel="stylesheet" href="/css/events.css" />
+    <link rel="stylesheet" href="/css/events.css?v=20261026" />
     <!-- SSR → JS seamless handoff: hide loading spinner when SSR provides content -->
     <style>
       .has-ssr .loading { display: none; }
@@ -318,9 +318,9 @@ $tr_months = ['', 'Ocak', 'Şubat', 'Mart', 'Nisan', 'Mayıs', 'Haziran',
     </main>
 
     <!-- Global Scripts -->
-    <script src="/js/utils.js" defer></script>
-    <script src="/js/main.js" defer></script>
+    <script src="/js/utils.js?v=20261026" defer></script>
+    <script src="/js/main.js?v=20261026" defer></script>
     <!-- Events Page Scripts -->
-    <script src="/js/events.js" defer></script>
+    <script src="/js/events.js?v=20261026" defer></script>
   </body>
 </html>

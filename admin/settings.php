@@ -48,6 +48,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $pdo->prepare('UPDATE admin_users SET password_hash = :hash WHERE id = :id')
         ->execute([':hash' => $newHash, ':id' => $_SESSION['admin_id']]);
 
+    session_regenerate_id(true);
+
     setFlash('success', 'Şifre güncellendi.');
     header('Location: /admin/settings.php');
     exit;

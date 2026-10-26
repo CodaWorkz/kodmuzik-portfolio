@@ -7,11 +7,18 @@
  * GET /api/gallery.php?category=poster&year=1996 → Filtered query
  */
 
+if (!is_file(__DIR__ . '/config.php')) {
+    http_response_code(503);
+    header('Content-Type: application/json; charset=utf-8');
+    echo json_encode(['error' => 'Service unavailable']);
+    exit;
+}
 require_once __DIR__ . '/config.php';
 
 // Headers
 header('Content-Type: application/json; charset=utf-8');
 header('Access-Control-Allow-Origin: *');
+header('X-Robots-Tag: noindex');
 header('Cache-Control: public, max-age=300');
 
 try {

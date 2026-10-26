@@ -34,14 +34,14 @@ if (file_exists($config)) {
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;500&family=TASA+Orbiter:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;500&family=TASA+Orbiter:wght@400&display=swap"
       rel="stylesheet"
     />
 
     <!-- Global Styles -->
-    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="/css/main.css?v=20261026" />
     <!-- Events Page Styles -->
-    <link rel="stylesheet" href="/css/events.css" />
+    <link rel="stylesheet" href="/css/events.css?v=20261026" />
     <!-- SSR → JS seamless handoff: hide loading spinner when SSR provides content -->
     <style>
       .has-ssr .loading { display: none; }
@@ -312,9 +312,9 @@ if (file_exists($config)) {
     </main>
 
     <!-- Global Scripts -->
-    <script src="/js/utils.js" defer></script>
-    <script src="/js/main.js" defer></script>
+    <script src="/js/utils.js?v=20261026" defer></script>
+    <script src="/js/main.js?v=20261026" defer></script>
     <!-- Events Page Scripts -->
-    <script src="/js/events.js" defer></script>
+    <script src="/js/events.js?v=20261026" defer></script>
   </body>
 </html>

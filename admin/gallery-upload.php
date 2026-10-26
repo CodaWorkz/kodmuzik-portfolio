@@ -58,10 +58,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit;
     }
 
+    if (!reencodeImage($destPath)) {
+        @unlink($destPath);
+        setFlash('error', 'Dosya geçerli bir resim değil.');
+        header('Location: /admin/gallery-upload.php');
+        exit;
+    }
+
     // Create thumbnail
     $thumbFilename = pathinfo($filename, PATHINFO_FILENAME) . '.webp';
     $thumbPath = THUMB_DIR . $thumbFilename;
-    createThumbnail($destPath, $thumbPath);
+    $thumbOk = createThumbnail($destPath, $thumbPath);
 
     // Insert into database
     $stmt = $pdo->prepare("
@@ -71,7 +78,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt->execute([
         ':event_id'       => ((int) ($_POST['event_id'] ?? 0)) ?: null,
         ':image_path'     => '/uploads/gallery/' . $filename,
-        ':thumbnail_path' => '/uploads/thumbnails/' . $thumbFilename,
+        ':thumbnail_path' => $thumbOk ? '/uploads/thumbnails/' . $thumbFilename : null,
         ':caption_tr'     => trim($_POST['caption_tr'] ?? '') ?: null,
         ':caption_en'     => trim($_POST['caption_en'] ?? '') ?: null,
         ':category'       => in_array($_POST['category'] ?? '', ['poster', 'photo', 'flyer', 'other'], true)

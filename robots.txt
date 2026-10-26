@@ -18,6 +18,10 @@ Allow: /en/contact/
 # Disallow admin and API (not indexable pages)
 Disallow: /admin/
 Disallow: /api/
+# The events pages load their content from this endpoint, so Googlebot
+# must be able to fetch it to render them. The API responses carry
+# X-Robots-Tag: noindex, so they are not indexed themselves.
+Allow: /api/events.php
 
 # Disallow form handlers and backend files
 Disallow: /contact-handler.php
@@ -31,7 +35,6 @@ Disallow: /.git/
 Disallow: /.vscode/
 Disallow: /node_modules/
 Disallow: /package.json
-Disallow: /vercel.json
 
 # Sitemap location
 Sitemap: https://www.kodmuzik.com/sitemap.xml

@@ -38,11 +38,19 @@ if ($image) {
     $imageFull = $_SERVER['DOCUMENT_ROOT'] . $image['image_path'];
     $thumbFull = $_SERVER['DOCUMENT_ROOT'] . ($image['thumbnail_path'] ?? '');
 
-    if (file_exists($imageFull)) {
-        unlink($imageFull);
+    // Only unlink files that resolve inside the upload directory
+    $uploadRoot = realpath(UPLOAD_DIR);
+    $isSafe = static function (string $path) use ($uploadRoot): bool {
+        $real = realpath($path);
+        return $uploadRoot !== false && $real !== false && is_file($real)
+            && str_starts_with($real, $uploadRoot . DIRECTORY_SEPARATOR);
+    };
+
+    if ($isSafe($imageFull)) {
+        unlink(realpath($imageFull));
     }
-    if ($image['thumbnail_path'] && file_exists($thumbFull)) {
-        unlink($thumbFull);
+    if ($image['thumbnail_path'] && $isSafe($thumbFull)) {
+        unlink(realpath($thumbFull));
     }
 
     // Delete database record

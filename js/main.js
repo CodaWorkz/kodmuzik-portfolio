@@ -105,6 +105,11 @@ function setActiveLink() {
     ? currentPath.substring(localePrefix.length) || "/"
     : currentPath;
 
+  // Menu links carry the Turkish path in data-path, so map English slugs back
+  const comparePath = localePrefix
+    ? SLUG_MAP_REVERSE[pathWithoutLocale] || pathWithoutLocale
+    : pathWithoutLocale;
+
   const menuLinks = document.querySelectorAll(".menu-link");
   if (!menuLinks.length) return; // Defensive check
 
@@ -114,7 +119,7 @@ function setActiveLink() {
 
     const linkBasePath = link.dataset.path || "/";
 
-    if (isMatch(pathWithoutLocale, linkBasePath)) {
+    if (isMatch(comparePath, linkBasePath)) {
       link.classList.add("active");
       link.setAttribute("aria-current", "page");
     }
@@ -189,6 +194,9 @@ function enhanceLanguageSwitcher() {
   // navigate to the other language immediately.
   if (!canHover || coarsePointer) {
     const handler = (ev) => {
+      // On mobile both languages are visible in the menu pill, so links work as normal
+      if (window.matchMedia("(max-width: 768px)").matches) return;
+
       // Get the inactive link dynamically to avoid stale references
       const isENActive =
         en.classList.contains("active") ||
@@ -249,6 +257,91 @@ domReady(initializeApp);
 
 // Run language switcher enhancement separately to avoid touching initializeApp
 domReady(enhanceLanguageSwitcher);
+
+// Mobile menu: top bar with a hamburger that opens a full-screen menu
+domReady(setupMobileMenu);
+
+// 5b. Mobile menu
+// ================================================
+// The menu opens in the page's dark colour and washes to white (CSS).
+// .is-expanded = full screen, .is-open = white colours and visible items.
+// On close, the colours go back first, then the menu collapses to the bar.
+function setupMobileMenu() {
+  const nav = document.querySelector(".side-menu");
+  if (!nav || nav.querySelector(".menu-toggle")) return;
+
+  const isEN = document.documentElement.lang === "en";
+  const labels = isEN
+    ? { open: "Open menu", close: "Close menu" }
+    : { open: "Menüyü aç", close: "Menüyü kapat" };
+  const WASH_MS = 520;
+  const mobile = window.matchMedia("(max-width: 768px)");
+
+  const button = document.createElement("button");
+  button.type = "button";
+  button.className = "menu-toggle";
+  button.setAttribute("aria-expanded", "false");
+  button.setAttribute("aria-label", labels.open);
+  button.innerHTML = "<span></span><span></span>";
+
+  const logo = nav.querySelector(".menu-logo");
+  if (logo && logo.nextSibling) {
+    nav.insertBefore(button, logo.nextSibling);
+  } else {
+    nav.appendChild(button);
+  }
+
+  let collapseTimer = null;
+
+  function open() {
+    clearTimeout(collapseTimer);
+    nav.classList.add("is-expanded", "is-open");
+    document.documentElement.classList.add("menu-locked");
+    button.setAttribute("aria-expanded", "true");
+    button.setAttribute("aria-label", labels.close);
+  }
+
+  function close(immediate) {
+    nav.classList.remove("is-open");
+    document.documentElement.classList.remove("menu-locked");
+    button.setAttribute("aria-expanded", "false");
+    button.setAttribute("aria-label", labels.open);
+    clearTimeout(collapseTimer);
+    if (immediate) {
+      nav.classList.remove("is-expanded");
+    } else {
+      collapseTimer = setTimeout(() => nav.classList.remove("is-expanded"), WASH_MS);
+    }
+  }
+
+  button.addEventListener("click", () => {
+    if (nav.classList.contains("is-open")) {
+      close(false);
+    } else {
+      open();
+    }
+  });
+
+  document.addEventListener("keydown", (ev) => {
+    if (ev.key === "Escape" && nav.classList.contains("is-open")) {
+      close(false);
+      button.focus();
+    }
+  });
+
+  // Leaving mobile width (rotation, window resize) resets the menu
+  const onChange = () => {
+    if (!mobile.matches) close(true);
+  };
+  if (mobile.addEventListener) {
+    mobile.addEventListener("change", onChange);
+  } else if (mobile.addListener) {
+    mobile.addListener(onChange);
+  }
+
+  // Coming back with the browser's back button can restore an open menu
+  window.addEventListener("pageshow", () => close(true));
+}
 
 // 6. Background watermark installer
 // ================================================

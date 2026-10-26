@@ -2,7 +2,7 @@
    future-events.js - Future Events (Timeline)
    KOD Müzik Website
 
-   Loads /future_events.json and renders timeline items.
+   Loads /api/events.php?type=future and renders timeline items.
    Supports TR / EN via URL prefix, and disables action
    pills when URLs are not provided.
    ================================================ */

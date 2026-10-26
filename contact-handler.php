@@ -15,23 +15,43 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 // Get form language (from referer or default to TR)
 $language = (strpos($_SERVER['HTTP_REFERER'] ?? '', '/en/') !== false) ? 'en' : 'tr';
 
-// Sanitize and validate inputs
-$name = trim(filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING));
-$email = trim(filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL));
-$message = trim(filter_input(INPUT_POST, 'message', FILTER_SANITIZE_STRING));
+// Sanitize and validate inputs (CR/LF removed from single-line fields to block header injection)
+$name = trim(str_replace(["\r", "\n"], ' ', strip_tags((string) ($_POST['name'] ?? ''))));
+$email = trim(str_replace(["\r", "\n"], '', (string) ($_POST['email'] ?? '')));
+$message = trim(strip_tags((string) ($_POST['message'] ?? '')));
+
+// Honeypot: real visitors never fill the hidden "website" field
+$is_bot = trim((string) ($_POST['website'] ?? '')) !== '';
+
+// Per-IP rate limit: at most 5 messages per hour
+$rate_file = sys_get_temp_dir() . '/kodmuzik_contact_' . hash('sha256', $_SERVER['REMOTE_ADDR'] ?? 'unknown') . '.json';
+$now = time();
+$recent = [];
+if (@is_file($rate_file)) {
+    $recent = json_decode((string) file_get_contents($rate_file), true) ?: [];
+    $recent = array_values(array_filter($recent, fn($t) => is_int($t) && $t > $now - 3600));
+}
+if (!$is_bot && count($recent) >= 5) {
+    http_response_code(429);
+    echo '<h2>' . ($language === 'en' ? 'Too many messages' : 'Çok fazla mesaj') . '</h2>';
+    echo '<p>' . ($language === 'en'
+        ? 'Please try again later or email us directly at iletisim@kodmuzik.com'
+        : 'Lütfen daha sonra tekrar deneyin veya doğrudan iletisim@kodmuzik.com adresine e-posta gönderin') . '</p>';
+    exit;
+}
 
 // Validation
 $errors = [];
 
-if (empty($name) || strlen($name) < 2) {
+if (empty($name) || mb_strlen($name) < 2 || mb_strlen($name) > 100) {
     $errors[] = $language === 'en' ? 'Name is required' : 'Ad-Soyad gereklidir';
 }
 
-if (empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+if (empty($email) || strlen($email) > 254 || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
     $errors[] = $language === 'en' ? 'Valid email is required' : 'Geçerli e-posta adresi gereklidir';
 }
 
-if (empty($message) || strlen($message) < 10) {
+if (empty($message) || mb_strlen($message) < 10 || mb_strlen($message) > 5000) {
     $errors[] = $language === 'en' ? 'Message must be at least 10 characters' : 'Mesaj en az 10 karakter olmalıdır';
 }
 
@@ -62,14 +82,23 @@ $email_body .= "Sent from: " . ($_SERVER['HTTP_REFERER'] ?? 'Unknown') . "\n";
 $email_body .= "IP Address: " . ($_SERVER['REMOTE_ADDR'] ?? 'Unknown') . "\n";
 $email_body .= "Date: " . date('Y-m-d H:i:s') . "\n";
 
-// Email headers
-$headers = "From: $name <$email>\r\n";
+// Email headers: fixed From on our own domain (SPF/DMARC), visitor goes in Reply-To
+$from_name = '=?UTF-8?B?' . base64_encode('KOD Müzik Web Sitesi') . '?=';
+$headers = "From: $from_name <iletisim@kodmuzik.com>\r\n";
 $headers .= "Reply-To: $email\r\n";
 $headers .= "X-Mailer: PHP/" . phpversion() . "\r\n";
 $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
 
-// Send email
-$mail_sent = mail($to, $subject, $email_body, $headers);
+// Send email (bots get the normal success page but nothing is sent)
+if ($is_bot) {
+    $mail_sent = true;
+} else {
+    $mail_sent = mail($to, $subject, $email_body, $headers, '-f iletisim@kodmuzik.com');
+    if ($mail_sent) {
+        $recent[] = $now;
+        @file_put_contents($rate_file, json_encode($recent), LOCK_EX);
+    }
+}
 
 // Response
 if ($mail_sent) {

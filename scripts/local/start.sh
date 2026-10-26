@@ -7,8 +7,24 @@ set -euo pipefail
 PORT="${1:-8000}"
 cd "$(dirname "$0")/../.."
 
+for d in /Applications/XAMPP/xamppfiles/bin /Applications/MAMP/Library/bin; do
+  [ -x "$d/mysql" ] && PATH="$PATH:$d"
+done
+
+# Make sure the database server is running
+if ! mysqladmin ping >/dev/null 2>&1; then
+  if command -v brew >/dev/null 2>&1 && brew list mysql >/dev/null 2>&1; then
+    brew services start mysql >/dev/null
+  elif command -v brew >/dev/null 2>&1 && brew list mariadb >/dev/null 2>&1; then
+    brew services start mariadb >/dev/null
+  else
+    echo "MySQL is not running. Start it (XAMPP/MAMP control panel or Homebrew) and try again."
+    exit 1
+  fi
+  for i in $(seq 1 20); do mysqladmin ping >/dev/null 2>&1 && break; sleep 1; done
+fi
+
 if [ "$(uname)" = "Darwin" ]; then
-  brew services start mariadb >/dev/null 2>&1 || true
   IP=$(ipconfig getifaddr en0 2>/dev/null || true)
 fi
 

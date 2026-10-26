@@ -1,5 +1,7 @@
 # Deploying to kodmuzik.com
 
+**Live commit: `83ace16`** (fix/audit-safe-batch + new mobile menu), deployed 2026-10-26.
+
 The site is deployed by uploading files over FTP / cPanel File Manager.
 A partial upload is what left `css/events.css` out of date from July to October 2026,
 so every deploy follows the same three steps.

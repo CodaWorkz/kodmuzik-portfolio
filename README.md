@@ -41,16 +41,17 @@ scripts/verify-deploy.sh   Compares local files with what the live site serves
 
 ## Local development
 
-PHP's built-in server runs the pages and the API, but it ignores `.htaccess`
-(no clean-URL rewrites or redirects):
+On a Mac with Homebrew, one script installs PHP and MariaDB, clones the repo,
+creates a local database and copies the live events into it:
 
 ```
-npm run serve        # php -S localhost:8000
+bash scripts/local/setup.sh          # once; clones into ~/kodmuzik-local
+bash ~/kodmuzik-local/scripts/local/start.sh
 ```
 
-Open `http://localhost:8000/etkinlikler/index.php` etc. The API needs a local
-MySQL with `api/config.php` pointing at it; `db/sync-from-live.php` copies the
-live data down.
+The site then runs at http://localhost:8000/ (and on a phone on the same Wi-Fi at
+the address the script prints). PHP's built-in server ignores `.htaccess`, so the
+redirects and caching rules do not run locally; pages, menu, events and admin do.
 
 ## Deploying
 

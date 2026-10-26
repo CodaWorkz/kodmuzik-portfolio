@@ -10,12 +10,23 @@
 
 $liveBase = 'https://www.kodmuzik.com/api/events.php';
 
-// Local DB (always local — this script is never run on production)
-$dbHost    = 'localhost';
-$dbName    = 'kodmuzik_events';
-$dbUser    = 'root';
-$dbPass    = '';
-$dbCharset = 'utf8mb4';
+// Local DB (always local — this script is never run on production).
+// Uses api/config.php when it exists (scripts/local/setup.sh writes one).
+$localConfig = __DIR__ . '/../api/config.php';
+if (is_file($localConfig)) {
+    require_once $localConfig;
+    $dbHost    = DB_HOST;
+    $dbName    = DB_NAME;
+    $dbUser    = DB_USER;
+    $dbPass    = DB_PASS;
+    $dbCharset = DB_CHARSET;
+} else {
+    $dbHost    = 'localhost';
+    $dbName    = 'kodmuzik_events';
+    $dbUser    = 'root';
+    $dbPass    = '';
+    $dbCharset = 'utf8mb4';
+}
 
 echo "╔══════════════════════════════════════╗\n";
 echo "║  KOD Müzik — Sync from Live Server  ║\n";

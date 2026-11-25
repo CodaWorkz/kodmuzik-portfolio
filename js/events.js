@@ -203,7 +203,7 @@ function applyCustomSelectValue(selectId, value) {
 
   // Find the option with the matching value
   const option = customSelect.querySelector(
-    `.custom-select-option[data-value="${value}"]`,
+    `.custom-select-option[data-value="${CSS.escape(value)}"]`,
   );
 
   if (option) {
@@ -222,9 +222,7 @@ function applyCustomSelectValue(selectId, value) {
 // ================================================
 async function loadEvents() {
   try {
-    // ── SWITCHOVER: API active — reading from database ──
     const response = await fetch("/api/events.php?type=past");
-    // const response = await fetch("/kod_muzik_events.json");
     if (!response.ok) throw new Error("Failed to load events");
 
     const data = await response.json();
@@ -289,17 +287,6 @@ function updateFilterOptionsLanguage() {
         });
     }
   });
-
-  // Update native venue select
-  const venueSelect = document.getElementById("venue-filter");
-  if (venueSelect && window.allVenues) {
-    venueSelect.querySelectorAll('option[value!=""]').forEach((option) => {
-      const venueData = window.allVenues.find((v) => v.en === option.value);
-      if (venueData) {
-        option.textContent = venueData[currentLang];
-      }
-    });
-  }
 }
 
 // 4. Filter Population
@@ -318,9 +305,9 @@ function populateFilters(meta) {
     translations[currentLang].all,
     translations[currentLang].all,
   );
-  meta.genres.forEach((g) => {
-    genreOptions.innerHTML += createCustomOption(g.en, g.tr, g.en);
-  });
+  genreOptions.innerHTML += meta.genres
+    .map((g) => createCustomOption(g.en, g.tr, g.en))
+    .join("");
 
   // Populate custom year filter
   const years = [
@@ -337,9 +324,9 @@ function populateFilters(meta) {
     translations[currentLang].all,
     translations[currentLang].all,
   );
-  years.forEach((year) => {
-    yearOptions.innerHTML += createCustomOption(year, year, year);
-  });
+  yearOptions.innerHTML += years
+    .map((year) => createCustomOption(year, year, year))
+    .join("");
 
   // Populate custom venue filter
   const venueOptions = document.querySelector(
@@ -351,9 +338,9 @@ function populateFilters(meta) {
       translations[currentLang].all,
       translations[currentLang].all,
     );
-    meta.venues.forEach((v) => {
-      venueOptions.innerHTML += createCustomOption(v.en, v.tr, v.en);
-    });
+    venueOptions.innerHTML += meta.venues
+      .map((v) => createCustomOption(v.en, v.tr, v.en))
+      .join("");
   }
 
   // Initial cascade update
@@ -620,6 +607,11 @@ function setupCustomSelects() {
 
         label.textContent = text;
         customSelect.dataset.value = value;
+        optionsContainer
+          .querySelectorAll(".custom-select-option")
+          .forEach((o) =>
+            o.setAttribute("aria-selected", o === option ? "true" : "false"),
+          );
 
         // Close dropdown
         customSelect.classList.remove("is-open");
@@ -631,11 +623,49 @@ function setupCustomSelects() {
       }
     });
 
+    // Keyboard support: arrows move between options, Enter/Space selects,
+    // Escape closes and returns focus to the trigger, Tab closes.
+    const enabledOptions = () =>
+      [...optionsContainer.querySelectorAll(".custom-select-option")].filter(
+        (o) => !o.classList.contains("is-disabled"),
+      );
+    const close = () => {
+      customSelect.classList.remove("is-open");
+      trigger.setAttribute("aria-expanded", "false");
+      optionsContainer.hidden = true;
+    };
+
     customSelect.addEventListener("keydown", (e) => {
+      const isOpen = customSelect.classList.contains("is-open");
+      const options = enabledOptions();
+      const current = options.indexOf(document.activeElement);
+
       if (e.key === "Escape") {
-        customSelect.classList.remove("is-open");
-        trigger.setAttribute("aria-expanded", "false");
-        optionsContainer.hidden = true;
+        close();
+        trigger.focus();
+      } else if (e.key === "Tab") {
+        close();
+      } else if (e.key === "ArrowDown" || e.key === "ArrowUp") {
+        e.preventDefault();
+        if (!isOpen) trigger.click();
+        if (!options.length) return;
+        const selected = options.findIndex(
+          (o) => o.dataset.value === (customSelect.dataset.value || ""),
+        );
+        let next;
+        if (current === -1) next = selected === -1 ? 0 : selected;
+        else if (e.key === "ArrowDown")
+          next = Math.min(current + 1, options.length - 1);
+        else next = Math.max(current - 1, 0);
+        options[next].focus();
+      } else if (
+        (e.key === "Enter" || e.key === " ") &&
+        current !== -1 &&
+        isOpen
+      ) {
+        e.preventDefault();
+        options[current].click();
+        trigger.focus();
       }
     });
   });

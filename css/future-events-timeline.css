@@ -41,6 +41,24 @@
   margin-bottom: 4rem;
 }
 
+/* Shown until events load, and kept when none are announced */
+.timeline-empty {
+  max-width: 40rem;
+  color: var(--color-muted);
+  font-weight: 300;
+  line-height: 1.7;
+}
+
+.timeline-empty p + p {
+  margin-top: 1rem;
+}
+
+.timeline-empty a {
+  color: var(--color-text);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
 .timeline-item {
   /* Stronger glassmorphism card */
   background: var(--glass-gradient), var(--glass-bg-alt);

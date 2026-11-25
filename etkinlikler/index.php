@@ -10,7 +10,6 @@ if (file_exists($config)) {
             FROM events
             WHERE event_type = 'past' AND status = 'published'
             ORDER BY event_date DESC
-            LIMIT 20
         ");
         $ssr_events = $stmt->fetchAll();
     } catch (Exception $e) {
@@ -26,24 +25,24 @@ $tr_months = ['', 'Ocak', 'Şubat', 'Mart', 'Nisan', 'Mayıs', 'Haziran',
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-    <title>Etkinlikler - Kodmüzik</title>
+    <title>Geçmiş Etkinlikler: Konser Arşivi - Kodmüzik</title>
     <meta
       name="description"
-      content="Kodmüzik etkinlikleri - 1999'dan beri düzenlenen seçkin müzik etkinlikleri"
+      content="KOD Müzik'in düzenlediği konser ve etkinliklerin arşivi. Sanatçıya, yıla, mekana ve türe göre arayın."
     />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;500&family=TASA+Orbiter:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;500&family=TASA+Orbiter:wght@400&display=swap"
       rel="stylesheet"
     />
 
     <!-- Global Styles -->
-    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="/css/main.css?v=c96f4e97" />
     <!-- Events Page Styles -->
-    <link rel="stylesheet" href="/css/events.css" />
+    <link rel="stylesheet" href="/css/events.css?v=02dab2fa" />
     <!-- SSR → JS seamless handoff: hide loading spinner when SSR provides content -->
     <style>
       .has-ssr .loading { display: none; }
@@ -318,9 +317,9 @@ $tr_months = ['', 'Ocak', 'Şubat', 'Mart', 'Nisan', 'Mayıs', 'Haziran',
     </main>
 
     <!-- Global Scripts -->
-    <script src="/js/utils.js" defer></script>
-    <script src="/js/main.js" defer></script>
+    <script src="/js/utils.js?v=83b8dab4" defer></script>
+    <script src="/js/main.js?v=918932fd" defer></script>
     <!-- Events Page Scripts -->
-    <script src="/js/events.js" defer></script>
+    <script src="/js/events.js?v=cb59caeb" defer></script>
   </body>
 </html>

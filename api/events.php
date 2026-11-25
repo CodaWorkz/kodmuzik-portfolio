@@ -6,11 +6,18 @@
  * GET /api/events.php?type=future  → Future events (matches future_events.json format)
  */
 
+if (!is_file(__DIR__ . '/config.php')) {
+    http_response_code(503);
+    header('Content-Type: application/json; charset=utf-8');
+    echo json_encode(['error' => 'Service unavailable']);
+    exit;
+}
 require_once __DIR__ . '/config.php';
 
 // Headers
 header('Content-Type: application/json; charset=utf-8');
 header('Access-Control-Allow-Origin: *');
+header('X-Robots-Tag: noindex');
 header('Cache-Control: public, max-age=300');
 
 $type = $_GET['type'] ?? 'past';
@@ -133,6 +140,7 @@ function getFutureEvents(PDO $pdo): array
                ticket_url, info_url
         FROM events
         WHERE event_type = 'future' AND status = 'published'
+          AND event_date >= CURDATE()
         ORDER BY event_date ASC, id ASC
     ");
 

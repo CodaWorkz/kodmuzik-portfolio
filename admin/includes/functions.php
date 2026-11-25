@@ -110,7 +110,75 @@ function validateImageUpload(array $file): ?string
         return 'Dosya geçerli bir resim değil.';
     }
 
+    if ($info[0] > 6000 || $info[1] > 6000) {
+        return 'Görsel boyutları çok büyük. Maksimum: 6000 piksel.';
+    }
+
     return null;
+}
+
+/**
+ * Re-encode an image in place through GD (same format) to strip EXIF/GPS and appended bytes.
+ * Returns false if GD is available but the image could not be re-encoded.
+ */
+function reencodeImage(string $path): bool
+{
+    $info = getimagesize($path);
+    if (!$info) {
+        return false;
+    }
+
+    [$load, $save] = match ($info['mime']) {
+        'image/jpeg' => ['imagecreatefromjpeg', 'imagejpeg'],
+        'image/png'  => ['imagecreatefrompng', 'imagepng'],
+        'image/webp' => ['imagecreatefromwebp', 'imagewebp'],
+        default      => [null, null],
+    };
+
+    // No GD support for this format: keep current behaviour
+    if ($load === null || !function_exists($load) || !function_exists($save)) {
+        return true;
+    }
+
+    $img = @$load($path);
+    if (!$img) {
+        return false;
+    }
+
+    if ($info['mime'] !== 'image/jpeg') {
+        imagealphablending($img, false);
+        imagesavealpha($img, true);
+    }
+
+    // Re-encoding drops EXIF, so apply the camera's Orientation tag to the pixels first
+    if ($info['mime'] === 'image/jpeg' && function_exists('exif_read_data')) {
+        $orientation = (int) (@exif_read_data($path)['Orientation'] ?? 1);
+        if ($orientation === 2 || $orientation === 4 || $orientation === 5 || $orientation === 7) {
+            imageflip($img, IMG_FLIP_HORIZONTAL);
+        }
+        $angle = match ($orientation) {
+            3, 4 => 180,
+            5, 6 => -90,
+            7, 8 => 90,
+            default => 0,
+        };
+        if ($angle !== 0) {
+            $rotated = imagerotate($img, $angle, 0);
+            if ($rotated) {
+                imagedestroy($img);
+                $img = $rotated;
+            }
+        }
+    }
+
+    $ok = match ($info['mime']) {
+        'image/jpeg' => imagejpeg($img, $path, 90),
+        'image/png'  => imagepng($img, $path),
+        'image/webp' => imagewebp($img, $path, 90),
+    };
+    imagedestroy($img);
+
+    return $ok;
 }
 
 /**

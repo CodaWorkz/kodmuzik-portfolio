@@ -1,10 +1,9 @@
 {
-  "name": "search-app",
+  "name": "kodmuzik-website",
   "version": "1.0.0",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "serve": "npx http-server -c-1"
+    "serve": "php -S localhost:8000",
+    "verify-deploy": "bash scripts/verify-deploy.sh"
   },
   "repository": {
     "type": "git",
@@ -17,5 +16,5 @@
     "url": "https://github.com/CodaWorkz/kodmuzik-portfolio/issues"
   },
   "homepage": "https://github.com/CodaWorkz/kodmuzik-portfolio#readme",
-  "description": ""
+  "description": "KOD Müzik bilingual portfolio website"
 }

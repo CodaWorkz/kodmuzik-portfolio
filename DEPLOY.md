@@ -1,6 +1,6 @@
 # Deploying to kodmuzik.com
 
-**Live commit: `88e97fb`** (fix/audit-safe-batch + cache-busting ?v= tags), deployed 2026-10-26.
+**Live commit: `aed372a`** (fix/audit-safe-batch + login password kept out of stack traces), deployed 2026-11-25.
 Not yet uploaded: the `.htaccess` section 8 caching comment change (comment only, no rule changes) is
 committed but not on the server. Upload `.htaccess` with the next deploy.
 

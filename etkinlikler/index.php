@@ -26,10 +26,10 @@ $tr_months = ['', 'Ocak', 'Şubat', 'Mart', 'Nisan', 'Mayıs', 'Haziran',
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-    <title>Etkinlikler - Kodmüzik</title>
+    <title>Geçmiş Etkinlikler: Konser Arşivi - Kodmüzik</title>
     <meta
       name="description"
-      content="Kodmüzik etkinlikleri - 1999'dan beri düzenlenen seçkin müzik etkinlikleri"
+      content="KOD Müzik'in düzenlediği konser ve etkinliklerin arşivi. Sanatçıya, yıla, mekana ve türe göre arayın."
     />
 
     <!-- Fonts -->
@@ -319,7 +319,7 @@ $tr_months = ['', 'Ocak', 'Şubat', 'Mart', 'Nisan', 'Mayıs', 'Haziran',
 
     <!-- Global Scripts -->
     <script src="/js/utils.js?v=83b8dab4" defer></script>
-    <script src="/js/main.js?v=101a6a2c" defer></script>
+    <script src="/js/main.js?v=918932fd" defer></script>
     <!-- Events Page Scripts -->
     <script src="/js/events.js?v=cb59caeb" defer></script>
   </body>

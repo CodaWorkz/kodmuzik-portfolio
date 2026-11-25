@@ -16,8 +16,6 @@
       venue: "Mekan",
       info: "Bilgi",
       tickets: "Bilet",
-      loading: "Yükleniyor…",
-      error: "Gelecek etkinlikler yüklenemedi",
       tba: "Duyurulacak",
     },
     en: {
@@ -25,8 +23,6 @@
       venue: "Venue",
       info: "Info",
       tickets: "Tickets",
-      loading: "Loading…",
-      error: "Failed to load future events",
       tba: "TBA",
     },
   };
@@ -34,9 +30,8 @@
   const elTimeline = document.querySelector(".timeline-section");
   if (!elTimeline) return; // Not on this page
 
-  // Show a lightweight loading state
-  elTimeline.innerHTML = `<div class="loading" style="padding:1rem 0;color:var(--color-muted);">${i18n[lang].loading}</div>`;
-
+  // The HTML message stays until events arrive, and stays if there are none
+  // or the request fails, so crawlers never see an empty or error page.
   fetch("/api/events.php?type=future")
     .then((r) => {
       if (!r.ok) throw new Error("network");
@@ -47,10 +42,7 @@
         .filter(isFuture)
         .sort((a, b) => parseDate(a.date) - parseDate(b.date));
 
-      if (!events.length) {
-        elTimeline.innerHTML = "";
-        return;
-      }
+      if (!events.length) return;
 
       const html = events.map(renderItem).join("");
       elTimeline.innerHTML = html;
@@ -58,7 +50,6 @@
     })
     .catch((e) => {
       console.error(e);
-      elTimeline.innerHTML = `<div class="error" style="padding:1rem 0;color:var(--color-muted);">${i18n[lang].error}</div>`;
     });
 
   function parseDate(dmy) {

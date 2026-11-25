@@ -29,7 +29,6 @@ const SLUG_MAP = {
   "/hakkimizda": "/about",
   "/etkinlikler": "/events",
   "/gelecek-etkinlikler": "/upcoming-events",
-  "/galeri": "/gallery",
   "/iletisim": "/contact",
 };
 
@@ -38,7 +37,6 @@ const SLUG_MAP_REVERSE = {
   "/about": "/hakkimizda",
   "/events": "/etkinlikler",
   "/upcoming-events": "/gelecek-etkinlikler",
-  "/gallery": "/galeri",
   "/contact": "/iletisim",
 };
 
@@ -161,7 +159,7 @@ function updateLanguageLinks() {
     // Current page is TR, switch to EN
     const enSlug = SLUG_MAP[currentPath] || currentPath;
     const enPath = joinPath("/en", enSlug);
-    const enHref = enPath === "/" ? enPath : enPath + "/";
+    const enHref = enPath.endsWith("/") ? enPath : enPath + "/";
     const trHref = currentPath === "/" ? currentPath : currentPath + "/";
     langEN.href = enHref + queryString;
     langTR.href = trHref + queryString;

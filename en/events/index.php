@@ -24,10 +24,10 @@ if (file_exists($config)) {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-    <title>Events - Kodmüzik</title>
+    <title>Past Events: Concert Archive - Kodmüzik</title>
     <meta
       name="description"
-      content="Kodmüzik events - Selective music events organized since 1999"
+      content="Archive of concerts and events organised by KOD Müzik. Search by artist, year, venue and genre."
     />
 
     <!-- Fonts -->
@@ -313,7 +313,7 @@ if (file_exists($config)) {
 
     <!-- Global Scripts -->
     <script src="/js/utils.js?v=83b8dab4" defer></script>
-    <script src="/js/main.js?v=101a6a2c" defer></script>
+    <script src="/js/main.js?v=918932fd" defer></script>
     <!-- Events Page Scripts -->
     <script src="/js/events.js?v=cb59caeb" defer></script>
   </body>

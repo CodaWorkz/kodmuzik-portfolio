@@ -10,7 +10,6 @@ if (file_exists($config)) {
             FROM events
             WHERE event_type = 'past' AND status = 'published'
             ORDER BY event_date DESC
-            LIMIT 20
         ");
         $ssr_events = $stmt->fetchAll();
     } catch (Exception $e) {
@@ -39,7 +38,7 @@ if (file_exists($config)) {
     />
 
     <!-- Global Styles -->
-    <link rel="stylesheet" href="/css/main.css?v=98bc4b12" />
+    <link rel="stylesheet" href="/css/main.css?v=c96f4e97" />
     <!-- Events Page Styles -->
     <link rel="stylesheet" href="/css/events.css?v=02dab2fa" />
     <!-- SSR → JS seamless handoff: hide loading spinner when SSR provides content -->

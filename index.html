@@ -19,7 +19,7 @@
     />
 
     <!-- Global Styles -->
-    <link rel="stylesheet" href="/css/main.css?v=98bc4b12" />
+    <link rel="stylesheet" href="/css/main.css?v=c96f4e97" />
     <!-- Canonical URL -->
     <link rel="canonical" href="https://www.kodmuzik.com/" />
     <!-- Hreflang -->
@@ -30,6 +30,18 @@
       hreflang="x-default"
       href="https://www.kodmuzik.com/"
     />
+    <!-- Structured data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "KOD Müzik",
+        "alternateName": "Kodmüzik",
+        "url": "https://www.kodmuzik.com/",
+        "email": "iletisim@kodmuzik.com",
+        "sameAs": ["https://www.discogs.com/label/204578-Kod-M%C3%BCzik"]
+      }
+    </script>
   </head>
   <body>
     <!-- Skip to content link for screen readers -->
@@ -101,7 +113,12 @@
     </nav>
 
     <!-- Main Content -->
-    <main id="main-content" class="main-content"></main>
+    <main id="main-content" class="main-content">
+      <div class="visually-hidden">
+        <h1>KOD Müzik</h1>
+        <p>1999'dan bu yana seçkin konserler, festivaller ve özel müzik serileri düzenliyoruz.</p>
+      </div>
+    </main>
 
     <!-- Discogs Link (Desktop Only) -->
     <a

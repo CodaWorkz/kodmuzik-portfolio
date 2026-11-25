@@ -5,7 +5,7 @@
   <!-- Turkish Homepage -->
   <url>
     <loc>https://www.kodmuzik.com/</loc>
-    <lastmod>2026-10-25</lastmod>
+    <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.kodmuzik.com/en/" />
@@ -16,7 +16,7 @@
   <!-- English Homepage -->
   <url>
     <loc>https://www.kodmuzik.com/en/</loc>
-    <lastmod>2026-10-25</lastmod>
+    <lastmod>2026-11-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.kodmuzik.com/en/" />

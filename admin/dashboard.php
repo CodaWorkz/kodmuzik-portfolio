@@ -14,7 +14,6 @@ $pdo = getDB();
 // Stats
 $pastCount    = (int) $pdo->query("SELECT COUNT(*) FROM events WHERE event_type = 'past'")->fetchColumn();
 $futureCount  = (int) $pdo->query("SELECT COUNT(*) FROM events WHERE event_type = 'future'")->fetchColumn();
-$galleryCount = (int) $pdo->query("SELECT COUNT(*) FROM gallery")->fetchColumn();
 
 // Recent events
 $recentEvents = $pdo->query("
@@ -38,10 +37,6 @@ require __DIR__ . '/includes/header.php';
     <div class="stat-card">
         <div class="stat-number"><?= $futureCount ?></div>
         <div class="stat-label">Gelecek Etkinlik</div>
-    </div>
-    <div class="stat-card">
-        <div class="stat-number"><?= $galleryCount ?></div>
-        <div class="stat-label">Galeri Görseli</div>
     </div>
 </div>
 

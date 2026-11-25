@@ -21,7 +21,6 @@ $flash = getFlash();
         <div class="admin-nav-links">
             <a href="/admin/dashboard.php" class="<?= $currentFile === 'dashboard' ? 'active' : '' ?>">Panel</a>
             <a href="/admin/events.php" class="<?= $currentFile === 'events' ? 'active' : '' ?>">Etkinlikler</a>
-            <a href="/admin/gallery.php" class="<?= $currentFile === 'gallery' ? 'active' : '' ?>">Galeri</a>
             <a href="/admin/settings.php" class="<?= $currentFile === 'settings' ? 'active' : '' ?>">Ayarlar</a>
             <form method="POST" action="/admin/logout.php" style="display: contents;">
                 <?= csrfField() ?>

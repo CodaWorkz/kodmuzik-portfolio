@@ -108,6 +108,11 @@
   justify-content: center;
 }
 
+/* display:flex above would otherwise override the hidden attribute */
+.gallery-lightbox[hidden] {
+  display: none;
+}
+
 .lightbox-content {
   max-width: 90vw;
   max-height: 90vh;

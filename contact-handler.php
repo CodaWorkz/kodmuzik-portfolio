@@ -109,7 +109,7 @@ if ($mail_sent) {
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title><?php echo $language === 'en' ? 'Message Sent' : 'Mesaj Gönderildi'; ?></title>
-        <link rel="stylesheet" href="/css/main.css">
+        <link rel="stylesheet" href="/css/main.css?v=98bc4b12">
         <style>
             .success-page {
                 display: flex;
@@ -176,7 +176,7 @@ if ($mail_sent) {
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title><?php echo $language === 'en' ? 'Error' : 'Hata'; ?></title>
-        <link rel="stylesheet" href="/css/main.css">
+        <link rel="stylesheet" href="/css/main.css?v=98bc4b12">
     </head>
     <body>
         <div class="success-page">

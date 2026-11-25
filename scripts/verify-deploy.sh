@@ -14,6 +14,12 @@ hash_cmd() {
 
 fail=0
 total=0
+
+# Every CSS/JS link must carry the fingerprint of the file it points to
+if ! bash scripts/bump-versions.sh --check; then
+  fail=$((fail + 1))
+fi
+
 tmp="$(mktemp)"
 trap 'rm -f "$tmp"' EXIT
 

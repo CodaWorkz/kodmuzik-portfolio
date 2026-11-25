@@ -100,9 +100,10 @@ Options -Indexes
 </IfModule>
 
 # 8. Caching
-# HTML, CSS and JS revalidate on every visit (ETag). The CSS and JS links in the
-# 10 page files carry ?v= tags, which must be bumped to the deploy date on every
-# deploy that changes CSS or JS (see DEPLOY.md). Images and fonts are cached.
+# HTML, CSS and JS revalidate on every visit (Last-Modified). CSS/JS links carry
+# ?v= fingerprints set by scripts/bump-versions.sh, because Google's renderer
+# caches CSS/JS for up to 30 days regardless of these headers (see DEPLOY.md).
+# Images and fonts are cached.
 <IfModule mod_headers.c>
     <FilesMatch "\.(html|css|js)$">
         Header set Cache-Control "no-cache"

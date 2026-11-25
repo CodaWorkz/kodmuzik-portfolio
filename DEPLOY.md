@@ -8,21 +8,11 @@ The site is deployed by uploading files over FTP / cPanel File Manager.
 A partial upload is what left `css/events.css` out of date from July to October 2026,
 so every deploy follows the same three steps.
 
-When any CSS or JS file changes, bump ?v= in the 10 page files to the deploy date (YYYYMMDD) and upload them too.
-The 10 page files:
-
-```
-index.html
-en/index.html
-hakkimizda/index.html
-en/about/index.html
-etkinlikler/index.php
-en/events/index.php
-gelecek-etkinlikler/index.html
-en/upcoming-events/index.html
-iletisim/index.html
-en/contact/index.html
-```
+When any CSS or JS file changes, run `bash scripts/bump-versions.sh` first and commit what it changes.
+It sets `?v=` on every CSS/JS link to a fingerprint of that file and lists the pages it changed.
+Upload the changed CSS/JS files before those pages. `verify-deploy.sh` reports a problem if any
+`?v=` does not match its file. Browsers re-check CSS/JS on every visit anyway, but Google's renderer
+keeps them for up to 30 days whatever the cache headers say, so a changed file needs a new URL.
 
 ## 1. Get the list of changed files
 

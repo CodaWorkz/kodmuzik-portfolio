@@ -99,7 +99,7 @@ function loginAttemptCount(): int
 /**
  * Attempt login. Returns true on success, false on failure.
  */
-function attemptLogin(string $username, string $password): bool
+function attemptLogin(string $username, #[\SensitiveParameter] string $password): bool
 {
     startSecureSession();
 

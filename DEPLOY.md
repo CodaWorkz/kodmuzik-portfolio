@@ -1,8 +1,7 @@
 # Deploying to kodmuzik.com
 
-**Live commit: `2df713f`** (fix/audit-safe-batch + shorter no-events message on the upcoming pages), deployed 2026-11-26.
-Not yet uploaded: the `.htaccess` section 8 caching comment change (comment only, no rule changes) is
-committed but not on the server. Upload `.htaccess` with the next deploy.
+**Live commit: `3608322`** (PR #3: fixes for the 8 Codex audit findings), deployed 2026-11-26.
+`.htaccess` went up with it, so the server copy now matches the repo (comment change included).
 
 The site is deployed by uploading files over FTP / cPanel File Manager.
 A partial upload is what left `css/events.css` out of date from July to October 2026,
@@ -29,6 +28,10 @@ Never upload: `.git/`, `.vscode/`, `scripts/`, `*.md`, `*.pptx`, `package.json`,
 ## 2. Upload
 
 Upload each `A` / `M` file to the same path under `public_html/`, and delete each `D` file.
+
+Uploading with `curl` over FTPS: add `--tls-max 1.2`. Over TLS 1.3 the server (Pure-FTPd) aborts
+uploads larger than about 16 KB with `451 Error during read from data connection` and leaves the
+live file empty (this happened to `css/main.css` on 2026-11-26 until it was re-uploaded).
 
 ## 3. Verify
 

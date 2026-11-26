@@ -38,8 +38,9 @@
       return r.json();
     })
     .then((data) => {
+      // The API already returns only events from today (Turkish server date) onwards.
+      // No second check against the visitor's own clock, which can be a day ahead.
       const events = (data.events || [])
-        .filter(isFuture)
         .sort((a, b) => parseDate(a.date) - parseDate(b.date));
 
       if (!events.length) return;
@@ -56,13 +57,6 @@
     // Expect DD-MM-YYYY
     const [d, m, y] = dmy.split("-").map((v) => parseInt(v, 10));
     return new Date(y, (m || 1) - 1, d || 1);
-  }
-
-  function isFuture(ev) {
-    const now = new Date();
-    const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
-    const t = parseDate(ev.date);
-    return t >= today;
   }
 
   function renderItem(ev) {

@@ -1,6 +1,6 @@
 # Deploying to kodmuzik.com
 
-**Live commit: `bfe5cee`** (fix/audit-safe-batch + search fixes: all events in the HTML, home heading, organisation data), deployed 2026-11-25.
+**Live commit: `2df713f`** (fix/audit-safe-batch + shorter no-events message on the upcoming pages), deployed 2026-11-26.
 Not yet uploaded: the `.htaccess` section 8 caching comment change (comment only, no rule changes) is
 committed but not on the server. Upload `.htaccess` with the next deploy.
 

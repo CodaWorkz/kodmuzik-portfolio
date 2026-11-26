@@ -38,7 +38,7 @@ if (file_exists($config)) {
     />
 
     <!-- Global Styles -->
-    <link rel="stylesheet" href="/css/main.css?v=c96f4e97" />
+    <link rel="stylesheet" href="/css/main.css?v=3fb120ab" />
     <!-- Events Page Styles -->
     <link rel="stylesheet" href="/css/events.css?v=02dab2fa" />
     <!-- SSR → JS seamless handoff: hide loading spinner when SSR provides content -->
@@ -312,8 +312,8 @@ if (file_exists($config)) {
 
     <!-- Global Scripts -->
     <script src="/js/utils.js?v=83b8dab4" defer></script>
-    <script src="/js/main.js?v=918932fd" defer></script>
+    <script src="/js/main.js?v=21b209d7" defer></script>
     <!-- Events Page Scripts -->
-    <script src="/js/events.js?v=cb59caeb" defer></script>
+    <script src="/js/events.js?v=db284a2d" defer></script>
   </body>
 </html>

@@ -19,7 +19,7 @@
     />
 
     <!-- Global Styles -->
-    <link rel="stylesheet" href="/css/main.css?v=c96f4e97" />
+    <link rel="stylesheet" href="/css/main.css?v=3fb120ab" />
     <!-- About Page Styles -->
     <link rel="stylesheet" href="/css/about.css?v=9433fb72" />
     <!-- Canonical URL -->
@@ -164,7 +164,7 @@
 
     <!-- Global Scripts -->
     <script src="/js/utils.js?v=83b8dab4" defer></script>
-    <script src="/js/main.js?v=918932fd" defer></script>
+    <script src="/js/main.js?v=21b209d7" defer></script>
 
     <!-- Journey Content Script -->
    <script>
@@ -219,9 +219,11 @@
       lightbox.classList.add("active");
       lightbox.setAttribute("aria-hidden", "false");
       document.body.style.overflow = "hidden";
+      setBackgroundInert(true);
 
-      // Focus management
-      closeButton.focus();
+      // Focus management: wait until the fade-in has made the button visible,
+      // since a hidden button cannot take focus
+      setTimeout(() => closeButton.focus(), 50);
     }
 
     // Close lightbox
@@ -229,9 +231,25 @@
       lightbox.classList.remove("active");
       lightbox.setAttribute("aria-hidden", "true");
       document.body.style.overflow = "";
+      setBackgroundInert(false);
 
       // Return focus to button
       journeyButton.focus();
+    }
+
+    // While the dialog is open, the page behind it is inert, so Tab stays in the dialog
+    let inertElements = [];
+    function setBackgroundInert(on) {
+      if (on) {
+        if (inertElements.length) return; // already inert
+        inertElements = Array.from(document.body.children).filter(
+          (el) => el !== lightbox && !el.inert,
+        );
+        inertElements.forEach((el) => (el.inert = true));
+      } else {
+        inertElements.forEach((el) => (el.inert = false));
+        inertElements = [];
+      }
     }
 
     // Event listeners

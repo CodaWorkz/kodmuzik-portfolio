@@ -23,23 +23,6 @@ $message = trim(strip_tags((string) ($_POST['message'] ?? '')));
 // Honeypot: real visitors never fill the hidden "website" field
 $is_bot = trim((string) ($_POST['website'] ?? '')) !== '';
 
-// Per-IP rate limit: at most 5 messages per hour
-$rate_file = sys_get_temp_dir() . '/kodmuzik_contact_' . hash('sha256', $_SERVER['REMOTE_ADDR'] ?? 'unknown') . '.json';
-$now = time();
-$recent = [];
-if (@is_file($rate_file)) {
-    $recent = json_decode((string) file_get_contents($rate_file), true) ?: [];
-    $recent = array_values(array_filter($recent, fn($t) => is_int($t) && $t > $now - 3600));
-}
-if (!$is_bot && count($recent) >= 5) {
-    http_response_code(429);
-    echo '<h2>' . ($language === 'en' ? 'Too many messages' : 'Çok fazla mesaj') . '</h2>';
-    echo '<p>' . ($language === 'en'
-        ? 'Please try again later or email us directly at iletisim@kodmuzik.com'
-        : 'Lütfen daha sonra tekrar deneyin veya doğrudan iletisim@kodmuzik.com adresine e-posta gönderin') . '</p>';
-    exit;
-}
-
 // Validation
 $errors = [];
 
@@ -68,6 +51,39 @@ if (!empty($errors)) {
     exit;
 }
 
+// Per-IP rate limit: at most 5 messages per hour. The check and the count happen under one
+// lock, before sending, so simultaneous submissions cannot all get past the check.
+if (!$is_bot) {
+    $rate_file = sys_get_temp_dir() . '/kodmuzik_contact_' . hash('sha256', $_SERVER['REMOTE_ADDR'] ?? 'unknown') . '.json';
+    $now = time();
+    $limited = false;
+    $fh = @fopen($rate_file, 'c+');
+    if ($fh) {
+        flock($fh, LOCK_EX);
+        $recent = json_decode((string) stream_get_contents($fh), true);
+        $recent = is_array($recent) ? array_values(array_filter($recent, fn($t) => is_int($t) && $t > $now - 3600)) : [];
+        if (count($recent) >= 5) {
+            $limited = true;
+        } else {
+            $recent[] = $now;
+            ftruncate($fh, 0);
+            rewind($fh);
+            fwrite($fh, json_encode($recent));
+            fflush($fh);
+        }
+        flock($fh, LOCK_UN);
+        fclose($fh);
+    }
+    if ($limited) {
+        http_response_code(429);
+        echo '<h2>' . ($language === 'en' ? 'Too many messages' : 'Çok fazla mesaj') . '</h2>';
+        echo '<p>' . ($language === 'en'
+            ? 'Please try again later or email us directly at iletisim@kodmuzik.com'
+            : 'Lütfen daha sonra tekrar deneyin veya doğrudan iletisim@kodmuzik.com adresine e-posta gönderin') . '</p>';
+        exit;
+    }
+}
+
 // Prepare email
 $to = 'iletisim@kodmuzik.com';
 $subject = $language === 'en'
@@ -94,10 +110,6 @@ if ($is_bot) {
     $mail_sent = true;
 } else {
     $mail_sent = mail($to, $subject, $email_body, $headers, '-f iletisim@kodmuzik.com');
-    if ($mail_sent) {
-        $recent[] = $now;
-        @file_put_contents($rate_file, json_encode($recent), LOCK_EX);
-    }
 }
 
 // Response
@@ -109,7 +121,7 @@ if ($mail_sent) {
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title><?php echo $language === 'en' ? 'Message Sent' : 'Mesaj Gönderildi'; ?></title>
-        <link rel="stylesheet" href="/css/main.css?v=c96f4e97">
+        <link rel="stylesheet" href="/css/main.css?v=3fb120ab">
         <style>
             .success-page {
                 display: flex;
@@ -176,7 +188,7 @@ if ($mail_sent) {
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title><?php echo $language === 'en' ? 'Error' : 'Hata'; ?></title>
-        <link rel="stylesheet" href="/css/main.css?v=c96f4e97">
+        <link rel="stylesheet" href="/css/main.css?v=3fb120ab">
     </head>
     <body>
         <div class="success-page">

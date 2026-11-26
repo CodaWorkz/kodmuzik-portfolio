@@ -43,7 +43,26 @@ function requireAuth(): void
         exit;
     }
 
+    // A password change ends every other session: each session keeps a fingerprint of the
+    // password hash it logged in with, and that must still match the database.
+    $stmt = getDB()->prepare('SELECT password_hash FROM admin_users WHERE id = :id');
+    $stmt->execute([':id' => $_SESSION['admin_id']]);
+    $hash = $stmt->fetchColumn();
+    if (!is_string($hash) || !hash_equals(passwordFingerprint($hash), (string) ($_SESSION['admin_pw'] ?? ''))) {
+        session_destroy();
+        header('Location: /admin/');
+        exit;
+    }
+
     $_SESSION['last_activity'] = time();
+}
+
+/**
+ * Fingerprint of a password hash, kept in the session to detect password changes.
+ */
+function passwordFingerprint(string $hash): string
+{
+    return hash('sha256', $hash);
 }
 
 /**
@@ -56,13 +75,14 @@ function loginRateFile(): string
 
 /**
  * Read the per-IP attempt record; optionally increment it (unless already at the limit).
- * Returns ['attempts' => int, 'first' => int].
+ * Returns ['attempts' => int, 'first' => int, 'allowed' => bool], where 'allowed' says
+ * whether the limit had room when the record was read.
  */
 function loginRateUpdate(bool $increment): array
 {
     $fh = @fopen(loginRateFile(), 'c+');
     if (!$fh) {
-        return ['attempts' => 0, 'first' => time()];
+        return ['attempts' => 0, 'first' => time(), 'allowed' => true];
     }
     flock($fh, LOCK_EX);
     $data = json_decode((string) stream_get_contents($fh), true);
@@ -75,7 +95,8 @@ function loginRateUpdate(bool $increment): array
         $data = ['attempts' => 0, 'first' => time()];
     }
 
-    if ($increment && $data['attempts'] < 5) {
+    $allowed = $data['attempts'] < 5;
+    if ($increment && $allowed) {
         $data['attempts']++;
     }
 
@@ -85,7 +106,7 @@ function loginRateUpdate(bool $increment): array
     fflush($fh);
     flock($fh, LOCK_UN);
     fclose($fh);
-    return $data;
+    return $data + ['allowed' => $allowed];
 }
 
 /**
@@ -103,12 +124,11 @@ function attemptLogin(string $username, #[\SensitiveParameter] string $password)
 {
     startSecureSession();
 
-    // Rate limiting: max 5 attempts per 15 minutes
-    if (loginAttemptCount() >= 5) {
+    // Rate limiting: max 5 attempts per 15 minutes. One locked step checks the limit and
+    // counts this attempt, so simultaneous requests cannot all get past the check.
+    if (!loginRateUpdate(true)['allowed']) {
         return false;
     }
-
-    loginRateUpdate(true);
 
     $pdo  = getDB();
     $stmt = $pdo->prepare('SELECT id, username, password_hash, display_name FROM admin_users WHERE username = :username');
@@ -126,6 +146,7 @@ function attemptLogin(string $username, #[\SensitiveParameter] string $password)
     $_SESSION['admin_id']      = $user['id'];
     $_SESSION['admin_username'] = $user['username'];
     $_SESSION['admin_display']  = $user['display_name'];
+    $_SESSION['admin_pw']       = passwordFingerprint($user['password_hash']);
     $_SESSION['last_activity']  = time();
     @unlink(loginRateFile());
 

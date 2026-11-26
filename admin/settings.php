@@ -49,6 +49,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         ->execute([':hash' => $newHash, ':id' => $_SESSION['admin_id']]);
 
     session_regenerate_id(true);
+    // Keep this session; every other session now fails the check in requireAuth()
+    $_SESSION['admin_pw'] = passwordFingerprint($newHash);
 
     setFlash('success', 'Şifre güncellendi.');
     header('Location: /admin/settings.php');

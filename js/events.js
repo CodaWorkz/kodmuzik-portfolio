@@ -395,6 +395,9 @@ function getFilteredEvents() {
 }
 
 function applyFilters() {
+  // Until the API data has arrived (or if it never does), keep the server-rendered cards
+  if (eventsData.length === 0) return;
+
   const filteredEvents = getFilteredEvents();
   displayEvents(filteredEvents);
   updateResultsCount(filteredEvents.length);
@@ -410,57 +413,34 @@ function updateCascadingFilters() {
   const yearFilter = document.getElementById("year-filter").dataset.value;
   const venueFilter = document.getElementById("venue-filter").dataset.value;
 
-  // Get available options based on current filters
+  // Each list offers the values that give results together with the OTHER filters,
+  // so a visitor can switch straight from one year (genre, venue) to another.
   const availableGenres = new Set();
   const availableYears = new Set();
   const availableVenues = new Set();
 
   eventsData.forEach((event) => {
-    let matchesFilters = true;
-
-    // Check artist filter
     if (
       artistFilter &&
       !getArtistName(event.artist, "tr").toLowerCase().includes(artistFilter) &&
       !getArtistName(event.artist, "en").toLowerCase().includes(artistFilter)
     ) {
-      matchesFilters = false;
+      return;
     }
 
-    // Check year filter
-    if (
-      yearFilter &&
-      parseEventDate(event.date).getFullYear() !== parseInt(yearFilter)
-    ) {
-      matchesFilters = false;
-    }
+    const year = parseEventDate(event.date).getFullYear();
+    const yearOk = !yearFilter || year === parseInt(yearFilter);
+    const genreOk = !genreFilter || genreMatches(event, genreFilter);
+    const venueOk = !venueFilter || event.venue.en === venueFilter;
 
-    // Check genre filter
-    if (genreFilter && !genreMatches(event, genreFilter)) {
-      matchesFilters = false;
+    if (yearOk && venueOk) {
+      getGenresArray(event.genre, "en").forEach((g) => availableGenres.add(g));
     }
-
-    // Check venue filter
-    if (venueFilter && event.venue.en !== venueFilter) {
-      matchesFilters = false;
+    if (genreOk && venueOk) {
+      availableYears.add(year);
     }
-
-    if (matchesFilters) {
-      // Add available options for other filters
-      if (!genreFilter || genreMatches(event, genreFilter)) {
-        // Add all genres from this event to available genres
-        const eventGenres = getGenresArray(event.genre, "en");
-        eventGenres.forEach((g) => availableGenres.add(g));
-      }
-      if (
-        !yearFilter ||
-        parseEventDate(event.date).getFullYear() === parseInt(yearFilter)
-      ) {
-        availableYears.add(parseEventDate(event.date).getFullYear());
-      }
-      if (!venueFilter || event.venue.en === venueFilter) {
-        availableVenues.add(event.venue.en);
-      }
+    if (genreOk && yearOk) {
+      availableVenues.add(event.venue.en);
     }
   });
 
@@ -709,10 +689,14 @@ function initializeEventListeners() {
     // Reset custom selects
     document.querySelectorAll(".custom-select").forEach((select) => {
       select.dataset.value = "";
-      const allText = select.querySelector(
+      // The options only exist once the API data has loaded
+      const allOption = select.querySelector(
         '.custom-select-option[data-value=""]',
-      ).dataset[currentLang];
-      select.querySelector(".custom-select-label").textContent = allText;
+      );
+      if (allOption) {
+        select.querySelector(".custom-select-label").textContent =
+          allOption.dataset[currentLang];
+      }
     });
 
     applyFilters();

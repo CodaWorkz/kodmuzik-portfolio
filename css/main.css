@@ -1040,7 +1040,8 @@ a:focus-visible {
     height: auto;
     padding: 7px 18px;
     opacity: 1;
-    visibility: visible;
+    /* Follow the menu footer: hidden (and out of the Tab order) while the menu is closed */
+    visibility: inherit;
     transform: none;
     pointer-events: auto;
     font-family: var(--font-primary);

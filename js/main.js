@@ -291,12 +291,28 @@ function setupMobileMenu() {
 
   let collapseTimer = null;
 
+  // While the full-screen menu is open, the page behind it is inert, so Tab stays in the menu
+  let inertElements = [];
+  function setPageInert(on) {
+    if (on) {
+      if (inertElements.length) return; // already inert
+      inertElements = Array.from(document.body.children).filter(
+        (el) => el !== nav && !el.contains(nav) && !el.inert,
+      );
+      inertElements.forEach((el) => (el.inert = true));
+    } else {
+      inertElements.forEach((el) => (el.inert = false));
+      inertElements = [];
+    }
+  }
+
   function open() {
     clearTimeout(collapseTimer);
     nav.classList.add("is-expanded", "is-open");
     document.documentElement.classList.add("menu-locked");
     button.setAttribute("aria-expanded", "true");
     button.setAttribute("aria-label", labels.close);
+    setPageInert(true);
   }
 
   function close(immediate) {
@@ -304,6 +320,7 @@ function setupMobileMenu() {
     document.documentElement.classList.remove("menu-locked");
     button.setAttribute("aria-expanded", "false");
     button.setAttribute("aria-label", labels.open);
+    setPageInert(false);
     clearTimeout(collapseTimer);
     if (immediate) {
       nav.classList.remove("is-expanded");

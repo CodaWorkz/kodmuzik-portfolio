@@ -209,9 +209,11 @@
       lightbox.classList.add("active");
       lightbox.setAttribute("aria-hidden", "false");
       document.body.style.overflow = "hidden";
+      setBackgroundInert(true);
 
-      // Focus management
-      closeButton.focus();
+      // Focus management: wait until the fade-in has made the button visible,
+      // since a hidden button cannot take focus
+      setTimeout(() => closeButton.focus(), 50);
     }
 
     // Close lightbox
@@ -219,9 +221,25 @@
       lightbox.classList.remove("active");
       lightbox.setAttribute("aria-hidden", "true");
       document.body.style.overflow = "";
+      setBackgroundInert(false);
 
       // Return focus to button
       journeyButton.focus();
+    }
+
+    // While the dialog is open, the page behind it is inert, so Tab stays in the dialog
+    let inertElements = [];
+    function setBackgroundInert(on) {
+      if (on) {
+        if (inertElements.length) return; // already inert
+        inertElements = Array.from(document.body.children).filter(
+          (el) => el !== lightbox && !el.inert,
+        );
+        inertElements.forEach((el) => (el.inert = true));
+      } else {
+        inertElements.forEach((el) => (el.inert = false));
+        inertElements = [];
+      }
     }
 
     // Event listeners
